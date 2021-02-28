@@ -1,0 +1,1 @@
+$(document).ready(function(){var o=$("header");o.before(o.clone().addClass("clone"));$(window).on("scroll",function(){var o=$(window).scrollTop();$("body").toggleClass("down",o>500)})});

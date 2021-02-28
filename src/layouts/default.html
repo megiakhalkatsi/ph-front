@@ -1,0 +1,53 @@
+{{!-- This is the base layout for your project, and will be used on every page.
+--}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0,user-scalable=0, shrink-to-fit=no"
+    />
+    <!-- Chrome, Firefox OS and Opera -->
+    <!-- <meta name="theme-color" content="#1A1F26" /> -->
+    <!-- Windows Phone -->
+    <!-- <meta name="msapplication-navbutton-color" content="#1A1F26" /> -->
+    <!-- iOS Safari -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="#1A1F26" /> -->
+    <title>{{title}}</title>
+    <!-- <link rel="icon" href="assets/img/favicon.ico" /> -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+
+     <!--svg sprite all used icons-->
+     <svg width="0" height="0" class="hidden d-none">
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.825 5" id="arrow-dropdown">
+        <path d="M0 0l3.413 5 3.413-5z" fill="#202631"></path>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.223 15.064" id="metro-user">
+        <path d="M9.27 10.477v-.961a5.176 5.176 0 002.318-4.3c0-2.88 0-5.215-3.476-5.215S4.635 2.335 4.635 5.216a5.176 5.176 0 002.317 4.3v.956c-3.93.326-6.951 2.257-6.951 4.592h16.222c0-2.335-3.022-4.267-6.953-4.588z"></path>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.621 15.621" id="search">
+        <path d="M12.167 6.833A5.333 5.333 0 116.833 1.5a5.333 5.333 0 015.334 5.333zM13.5 13.5l-2.9-2.9"></path>
+      </symbol>
+    </svg>
+    <!--svg sprite all used icons end-->
+    <div class="page active">
+      <!--all modals here-->
+      <!-- {{>modals}} -->
+      <!--******-->
+      <div class="page__main">
+        {{>navigation}}
+        <div class="page__content">{{>body}} {{>footer}}</div>
+      </div>
+    </div>
+    <script src="assets/vendors/js/jquery.min.js"></script>
+    <script src="assets/vendors/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
