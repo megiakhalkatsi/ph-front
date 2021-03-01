@@ -11,7 +11,7 @@
         width: 100%;
     }
     &__logo{
-        color: $component-color2;
+        color: $black;
         font-family: $firagoExtraBold;
         font-size: 16px;
         margin: 0 0 0 10px;
@@ -42,14 +42,159 @@
         width: 12px;
     }
 }
-header.clone {
-    position:fixed;
-    top:-100%;
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+// header.clone {
+//     position:fixed;
+//     top:-100%;
+//     left: 0;
+//     right: 0;
+//     z-index:999;
+//     transition:0.4s top cubic-bezier(.3,.73,.3,.74);
+// }
+// body.down header.clone {
+//     top:0;
+// }
+
+/*dropdown*/
+.dropdown__elem {
+    border-radius: 2px;
+    border: 1px solid blue;
+    transition: .3s;
+    position: relative;
+    border-radius: 8px;
+    width: 254px;
+    @media (max-width: 1500px){
+        width: 200px;
+    }
+    @media #{$breakpoint-xl}{
+        width: 164px;
+    }
+    &--inner{
+        padding: 11px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        .text--active{
+            font-size: 14px;
+            font-family: $firagoRegular;
+            transition: .6s;
+            color: $black;
+            @media (max-width: 1500px){
+                font-size: 12px;
+            }
+        }
+        svg{
+            fill: #0485EA;
+            transition: .6s;
+            transform: rotate(180deg);
+            width: 14.5px;
+            height: 8px;
+        }
+    }
+    &.open{
+        .dropdown__elem--inner svg {
+            transform: rotate(0);
+        }
+    }
+}
+.dropdown {
+    position: absolute;
     left: 0;
-    right: 0;
-    z-index:999;
-    transition:0.4s top cubic-bezier(.3,.73,.3,.74);
+    z-index: 1;
+    border: 1px solid blue;
+    // background: white;
+    width: 100%;
+    top: calc(100% + 9px);
+    -webkit-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+    &__nav{
+        width: 100%;
+        .dropdown__item{
+            font-size: 14px;
+            font-family: $firagoRegular;
+            color: $black;
+            padding: 5px 15px;
+            cursor: pointer;
+            transition: .3s;
+            position: relative;
+            @media (max-width: 1500px){
+                font-size: 12px;
+            }
+            &:hover{
+                background: rgba(96,112,190,0.14)
+            }
+            // &.text-today{
+            //     &:before{
+            //         content: '23 December';
+            //         position: absolute;
+            //         left: 70px;
+            //         color: yellow;
+            //         font-size: 15px;
+            //         font-family: $firagoRegular;
+            //         @media (max-width: 1500px){
+            //             left: 60px;
+            //             font-size: 13px;
+            //         }
+            //         @media #{$breakpoint-xl}{
+            //             font-size: 10px;
+            //             left: 55px;
+            //             top:5px;
+            //         }
+            //     }
+            // }
+            // &.text-yesterday{
+            //     &:before{
+            //         content: '22 December';
+            //         position: absolute;
+            //         left: 95px;
+            //         color: yellow;
+            //         font-size: 15px;
+            //         font-family: $firagoRegular;
+            //         @media (max-width: 1500px){
+            //             left: 85px;
+            //             font-size: 13px;
+            //         }
+            //         @media #{$breakpoint-xl}{
+            //             font-size: 10px;
+            //             left: 80px;
+            //             top:5px;
+            //         }
+            //     }
+            // }
+        }
+        .dropdown__item--custom{
+            padding: 11px 15px;
+            color: $black;
+            font-size: 14px;
+            font-family: $firagoRegular;
+            border-top: 1px solid blue;
+            cursor: pointer;
+            transition: .3s;
+            @media (max-width: 1500px){
+                font-size: 12px;
+            }
+            &:hover{
+                background: rgba(96,112,190,0.14)
+            }
+        }
+    }
 }
-body.down header.clone {
-    top:0;
-}
+/*dropdown*/

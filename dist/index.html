@@ -43,7 +43,7 @@
             <header class="header">
                 <div class="header__container">
                     <a href="index.html" class="header__logo__container">
-                        <img src="assets/img/icons/kickstarter.svg" alt="kickstarter" class="header__logo__img" >
+                        <img src="assets/img/icons/kickstarter.svg" alt="kickstarter" class="header__logo__img">
                         <h1 class="header__logo">Kickstarter</h1>
                     </a>
                     <nav class="header__nav">
@@ -62,18 +62,25 @@
                                 <use xlink:href="#search"></use>
                             </svg>
                         </a>
-                        <div class="dropdown header__nav__item">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                En
-                                <svg class="icon">
-                                    <use xlink:href="#arrow-dropdown"></use>
-                                </svg>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                              <button class="dropdown-item" type="button">English</button>
-                              <button class="dropdown-item" type="button">Russian</button>
+                        <div class="dropdown__elem" id="1">
+                            <div class="dropdown__elem--inner dropdown--toggler">
+                                <span class="text--active dropdown--selected">
+                                    En
+                                </span>
+                                <div class="svg__block">
+                                    <svg class="icon">
+                                        <use xlink:href="#arrow-dropdown"></use>
+                                    </svg>
+                                </div>
                             </div>
-                          </div>
+                            <div class="dropdown" data-for="1">
+                                <nav class="dropdown__nav">
+                                    <li class="dropdown__item dropdown__item--active">English</li>
+                                    <li class="dropdown__item">Russian</li>
+                                    <li class="dropdown__item">Spanish</li>
+                                </nav>
+                            </div>
+                        </div>
                     </nav>
                 </div>
             </header>
