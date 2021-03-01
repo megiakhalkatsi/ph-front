@@ -1,18 +1,6 @@
 //fixed header on scroll
 
-// $(document).ready(function() {
-//     var $header = $("header"),
-//         $clone = $header.before($header.clone().addClass("clone"));
-    
-//     $(window).on("scroll", function() {
-//         var fromTop = $(window).scrollTop();
-//         $("body").toggleClass("down", (fromTop > 500));
-//     });
-// });
-
-var header = document.getElementById("myHeader");
-// var sticky = header.offsetTop;
-
+var header = document.getElementById("header");
 function fixedHeaderFunction() {
   if (window.pageYOffset > 400) {
     header.classList.add("sticky");

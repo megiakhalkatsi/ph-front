@@ -5,98 +5,111 @@
     line-height: 80px;
     background: $white;
     color: $black;
-    &__container{
+    transition: .8s;
+    &.sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transform: translateY(0);
+    }
+    &__container {
         display: flex;
         justify-content: space-between;
         width: 100%;
     }
-    &__logo{
+    &__logo {
         color: $black;
         font-family: $firagoExtraBold;
         font-size: 16px;
         margin: 0 0 0 10px;
         text-transform: uppercase;
-        text-decoration: none;
-        &:hover{
-            text-decoration: none;
-        }
-        &__container{
+        &__container {
             display: flex;
             align-items: center;
+            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+            }
         }
-        &__img{
+        &__img {
             height: 40px;
             object-fit: contain;
         }
     }
-    &__nav{
+    &__nav {
         display: flex;
-        &__list{
+        &__list {
             display: flex;
-            &__item{
+        }
+        &__item {
+            list-style-type: none;
+            text-decoration: none;
+            margin-right: 30px;
+            &:hover{
                 text-decoration: none;
+            }
+            &-link{
+                font-size: 16px;
+                font-family: $firagoMedium;
+                color: $black;
+                &.active{
+                    color: $component-color2;
+                }
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+        &__btn{
+            color: $white;
+            background-color: $component-color2;
+            border-radius: 8px;
+            .icon{
+                fill: $component-color3;
+                width: 16px;
+                height: 16px;
+            }
+        }
+        &__search{
+            .icon {
+                width: 12px;
+                height: 12px;
             }
         }
     }
-    .icon{
-        width: 12px;
-    }
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-// header.clone {
-//     position:fixed;
-//     top:-100%;
-//     left: 0;
-//     right: 0;
-//     z-index:999;
-//     transition:0.4s top cubic-bezier(.3,.73,.3,.74);
-// }
-// body.down header.clone {
-//     top:0;
-// }
 
 /*dropdown*/
 .dropdown__elem {
     border-radius: 2px;
     border: 1px solid blue;
-    transition: .3s;
+    transition: 0.3s;
     position: relative;
     border-radius: 8px;
-    width: 254px;
-    @media (max-width: 1500px){
-        width: 200px;
-    }
-    @media #{$breakpoint-xl}{
-        width: 164px;
-    }
-    &--inner{
+    &--inner {
         padding: 11px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
-        .text--active{
+        .text--active {
             font-size: 14px;
             font-family: $firagoRegular;
-            transition: .6s;
+            transition: 0.6s;
             color: $black;
-            @media (max-width: 1500px){
+            @media (max-width: 1500px) {
                 font-size: 12px;
             }
         }
-        svg{
-            fill: #0485EA;
-            transition: .6s;
+        .icon {
+            fill: #0485ea;
+            transition: 0.6s;
             transform: rotate(180deg);
-            width: 14.5px;
+            width: 8px;
             height: 8px;
         }
     }
-    &.open{
+    &.open {
         .dropdown__elem--inner svg {
             transform: rotate(0);
         }
@@ -114,7 +127,7 @@
     box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
     opacity: 0;
     visibility: hidden;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
@@ -125,21 +138,21 @@
         opacity: 1;
         visibility: visible;
     }
-    &__nav{
+    &__nav {
         width: 100%;
-        .dropdown__item{
+        .dropdown__item {
             font-size: 14px;
             font-family: $firagoRegular;
             color: $black;
             padding: 5px 15px;
             cursor: pointer;
-            transition: .3s;
+            transition: 0.3s;
             position: relative;
-            @media (max-width: 1500px){
+            @media (max-width: 1500px) {
                 font-size: 12px;
             }
-            &:hover{
-                background: rgba(96,112,190,0.14)
+            &:hover {
+                background: rgba(96, 112, 190, 0.14);
             }
             // &.text-today{
             //     &:before{
@@ -180,19 +193,19 @@
             //     }
             // }
         }
-        .dropdown__item--custom{
+        .dropdown__item--custom {
             padding: 11px 15px;
             color: $black;
             font-size: 14px;
             font-family: $firagoRegular;
             border-top: 1px solid blue;
             cursor: pointer;
-            transition: .3s;
-            @media (max-width: 1500px){
+            transition: 0.3s;
+            @media (max-width: 1500px) {
                 font-size: 12px;
             }
-            &:hover{
-                background: rgba(96,112,190,0.14)
+            &:hover {
+                background: rgba(96, 112, 190, 0.14);
             }
         }
     }
