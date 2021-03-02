@@ -1,12 +1,100 @@
 // global styles
-body{
+body {
     background-color: $component-color1;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
-.page{
-    &__content{
+.page {
+    &__content {
         padding-top: 100px;
+    }
+}
+
+// search bar
+.search {
+    &__container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: $white;
+        height: 100vh;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // display: none;
+        transition: .3s;
+        transform: translateY(-100%);
+        &.active{
+            // display: flex;
+            transform: translateY(0);
+        }
+        &__row {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 21px;
+        }
+        &__title {
+            font-size: 21px;
+            font-family: $firagoBold;
+            color: $black;
+        }
+        &__form {
+            width: 100%;
+            position: relative;
+            &__input {
+                background-color: $component-color4;
+                width: 100%;
+                font-family: $firagoMedium;
+                font-size: 16px;
+                color: $black;
+                border-radius: 8px;
+                height: 60px;
+                padding: 0 30px;
+                &::-webkit-input-placeholder {
+                    color: rgba($color: $black, $alpha: 0.3);
+                  }
+                  &::-moz-placeholder {
+                    color: rgba($color: $black, $alpha: 0.3);
+                  }
+                  &:-ms-input-placeholder {
+                    color: rgba($color: $black, $alpha: 0.3);
+                  }
+                  &:-moz-placeholder {
+                    color: rgba($color: $black, $alpha: 0.3);
+                  }
+                  &:focus::placeholder {
+                    color: transparent;
+                  }
+            }
+            .icon {
+                width: 20px;
+                height: 20px;
+                stroke: $component-color2;
+                position: absolute;
+                cursor: pointer;
+                right: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    &__close {
+        background-color: $component-color2;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        cursor: pointer;
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: $white;
+        }
     }
 }

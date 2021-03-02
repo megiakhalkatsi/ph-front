@@ -11,6 +11,7 @@
     background: $white;
     border-radius: 0px 0px 8px 8px;
     box-shadow: 0px 0px 30px #2026311a;
+    z-index: 2;
     &.sticky {
         height: 60px;
         .header__container{
@@ -102,6 +103,12 @@
             }
             &:hover{
                 background-color: darken($component-color4,3%);
+            }
+            &.active{
+                background-color: $component-color2;
+                .icon {
+                    stroke: $white;
+                }
             }
         }
     }

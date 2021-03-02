@@ -11,6 +11,22 @@ function fixedHeaderFunction() {
 
 window.onscroll = function() {fixedHeaderFunction()};
 
+
+function clickers() {
+    $('.header__nav__item-link').click(function() {
+        $('.header__nav__item-link').removeClass('active')
+        $(this).addClass('active');
+    })
+    $('.header__nav__search').click(function() {
+        $(this).toggleClass('active');
+        $('.search__container').toggleClass('active');
+    })
+    $('.search__close').click(function() {
+        $('.search__container').removeClass('active');
+    })
+}
+clickers();
+
 // dropdown
 
 const dropdownToggler = () => {
