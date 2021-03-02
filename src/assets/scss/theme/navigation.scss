@@ -1,0 +1,196 @@
+.header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    color: $black;
+    transition: .8s;
+    position: fixed;
+    left: 0;
+    padding: 0 15px;
+    max-width: 1400px;
+    &.sticky {
+        height: 60px;
+    }
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background: $white;
+        padding: 0 10px;
+    }
+    &__logo {
+        color: $black;
+        font-family: $firagoExtraBold;
+        font-size: 16px;
+        margin: 0 0 0 10px;
+        text-transform: uppercase;
+        &__container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        &__img {
+            height: 40px;
+            object-fit: contain;
+        }
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+        &__list {
+            display: flex;
+            margin: 0;
+            align-items: center;
+        }
+        &__item {
+            list-style-type: none;
+            text-decoration: none;
+            margin-right: 30px;
+            &:hover{
+                text-decoration: none;
+            }
+            &-link{
+                font-size: 16px;
+                font-family: $firagoMedium;
+                color: $black;
+                &.active{
+                    color: $component-color2;
+                }
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+        &__btn{
+            color: $white;
+            background-color: $component-color2;
+            border-radius: 8px;
+            padding: 10px 12px;
+            height: 40px;
+            .icon{
+                fill: $component-color3;
+                width: 16px;
+                height: 16px;
+            }
+            &:hover{
+                background-color: darken($component-color2,3%);
+                text-decoration: none;
+                color: $white;
+            }
+        }
+        &__search{
+            width: 40px;
+            height: 40px;
+            background: $component-color4;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .icon {
+                width: 12px;
+                height: 12px;
+                stroke: $black;
+            }
+            &:hover{
+                background-color: darken($component-color4,3%);
+            }
+        }
+    }
+}
+
+/*dropdown*/
+.dropdown__elem {
+    transition: 0.3s;
+    position: relative;
+    width: 50px;
+    border: 2px solid transparent;
+    background: $white;
+    border-bottom: 0;
+    &--inner {
+        // padding: 11px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: $firagoRegular;
+        .text--active {
+            // font-size: 14px;
+            
+            transition: 0.6s;
+            color: $black;
+            line-height: 2;
+            // @media (max-width: 1500px) {
+            //     font-size: 12px;
+            // }
+        }
+        .icon {
+            fill: #0485ea;
+            transition: 0.6s;
+            transform: rotate(180deg);
+            width: 8px;
+            height: 8px;
+            margin-left: 7px;
+        }
+    }
+    &.open {
+        border-left: 2px solid $component-color2;
+        border-top: 2px solid $component-color2;
+        border-right: 2px solid $component-color2;
+        border-radius: 8px 8px 0 0;
+        .dropdown__elem--inner svg {
+            transform: rotate(0);
+        }
+    }
+}
+.dropdown {
+    position: absolute;
+    left: -2px;
+    z-index: 1;
+    background: $white;
+    top: calc(100%-2px);
+    -webkit-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 50px;
+    border: 2px solid transparent;
+    border-top: 0;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        border-left: 2px solid $component-color2;
+        border-bottom: 2px solid $component-color2;
+        border-right: 2px solid $component-color2;
+        border-radius: 0 0 8px 8px;
+        left: -2px;
+    }
+    &__nav {
+        width: 100%;
+        .dropdown__item {
+            list-style-type: none;
+            text-align: center;
+            cursor: pointer;
+            line-height: 2;
+            font-family: $firagoRegular;
+            color: $black;
+            font-size: 16px;
+            transition: 0.3s;
+            &:hover {
+                background: rgba(96, 112, 190, 0.14);
+            }
+        }
+    }
+}
+/*dropdown*/

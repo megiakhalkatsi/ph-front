@@ -1,0 +1,12 @@
+// global styles
+body{
+    background-color: $component-color1;
+    margin:0;
+    padding:0;
+}
+
+.page{
+    &__content{
+        padding-top: 100px;
+    }
+}

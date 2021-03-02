@@ -1,0 +1,30 @@
+/* ***** Master Stylesheet ***** */
+@import 'theme/reset';
+
+/* ***** Import All CSS Plugins */
+@import '../vendors/css/bootstrap.min.css';
+@import '../vendors/css/swiper-bundle.min.css';
+
+// *******************
+//     utilities
+// *******************
+@import 'theme/color';
+@import 'theme/fonts';
+@import 'theme/variables';
+@import 'theme/responsive';
+
+
+//     stylesheet
+// *******************
+@import 'theme/modals';
+
+//partials
+@import 'theme/navigation';
+@import 'theme/footer';
+
+
+//    pages
+// *******************
+@import 'pages/main';
+
+
