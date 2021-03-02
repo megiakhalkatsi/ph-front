@@ -29,12 +29,12 @@ const dropdownToggler = () => {
             })
         })
     })
-    $(document).on("click", function (e) {
-        if ($(e.target).is(".dropdown--toggler") === false) {
-            $(".dropdown__elem").removeClass("open");
-            $(".dropdown__elem .dropdown").removeClass("open");
-        }
-    });
+    // $(document).on("click", function (e) {
+    //     if ($(e.target).is(".dropdown--toggler") === false) {
+    //         $(".dropdown__elem").removeClass("open");
+    //         $(".dropdown__elem .dropdown").removeClass("open");
+    //     }
+    // });
 }
 dropdownToggler()
 
