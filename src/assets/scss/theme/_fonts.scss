@@ -9,14 +9,13 @@
     }
   }
   
-  // @include font-face('firagoBlack', '../fonts/FiraGO-Black');
   @include font-face('firagoBold', '../fonts/FiraGO-Bold');
   @include font-face('firagoSemiBold', '../fonts/FiraGO-SemiBold');
   @include font-face('firagoMedium', '../fonts/FiraGO-Medium');
   @include font-face('firagoRegular', '../fonts/FiraGO-Regular');
-  // @include font-face('firagoItalic', '../fonts/FiraGO-Italic');
   @include font-face('firagoExtraBold', '../fonts/FiraGO-ExtraBold');
-  
+    // @include font-face('firagoBlack', '../fonts/FiraGO-Black');
+  // @include font-face('firagoItalic', '../fonts/FiraGO-Italic');
   
   // Fonts
   $fonts: 'firagoRegular';
@@ -25,9 +24,10 @@
   $firagoSemiBold: 'firagoSemiBold';
   $firagoMedium: 'firagoMedium';
   $firagoRegular: 'firagoRegular';
+  $firagoExtraBold: 'firagoExtraBold';
   // $firagoItalic: 'firagoItalic';
   // $firagoBlack: 'firagoBlack';
-  $firagoExtraBold: 'firagoExtraBold';
+  
   .firagoSemiBold{
     font-family: $firagoSemiBold;
   }
@@ -40,15 +40,15 @@
   .firagoRegular{
     font-family: $firagoRegular;
   }
+  .firagoExtraBold{
+    font-family: $firagoExtraBold;
+  }
   // .firagoItalic{
   //   font-family: $firagoItalic;
   // }
   // .firagoBlack{
   //   font-family: $firagoBlack;
   // }
-  .firagoExtraBold{
-    font-family: $firagoExtraBold;
-  }
   
   
   
