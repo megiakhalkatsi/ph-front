@@ -94,3 +94,26 @@ togglePassword.addEventListener('click', function (e) {
     // toggle the eye slash icon
     // this.classList.toggle('fa-eye-slash');
 });
+
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated'),
+          $('.form__label').addClass('error'),
+          $('.form__error__message').addClass('active')
+        }, false)
+      })
+  })()

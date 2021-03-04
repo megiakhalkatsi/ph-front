@@ -21,29 +21,36 @@ title: მოსწავლეების რესურსი
     </section>
     <section class="form__section">
         <div class="row">
-            <div class="col-12 col-lg-6 m-auto">
+            <div class="col-12">
                 <h1 class="form__section__title">ავტორიზაცია</h1>
                 <p class="form__section__text">ავტორიზაცია შესაძლებელია მხოლოდ განმანათლებლებისთვის</p>
-                <form class="form">
+                <form class="form needs-validation" novalidate>
                     <div class="form-group">
                         <label for="email" class="form__label">ელ. ფოსტა</label>
-                        <input type="email" class="form-control form__input" id="email">
+                        <input type="email" class="form-control form__input" id="email" required>
+                        <div class="invalid-feedback">
+                            შეყვანილი ელ. ფოსტა დაკავებულია
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="password" class="form__label">პაროლი</label>
                         <div class="form__input-relative">
-                            <input type="password" class="form-control form__input" id="password">
+                            <input type="password" class="form-control form__input" id="password" required>
                             <svg class="icon" id="togglePassword">
                                 <use xlink:href="#feather-eye"></use>
                             </svg>
+                            <div class="invalid-feedback">
+                                შეყვანილი პაროლი არასწორია
+                            </div>
                         </div>
                     </div>
                     <div class="form__row">
                         <div class="form__row__link__cont">
                             <a href="#" class="form__row__link">პაროლის აღდგენა</a>
                         </div>
-                        <button type="button" class="form__row__btn bt-blue">შესვლა</button>
+                        <button type="submit" class="form__row__btn form__row__btn-login bt-blue">შესვლა</button>
                     </div>
+                    <p class="form__error__message">გთხოვთ შეავსოთ ყველა ველი</p>
                 </form>
                 <div class="form__section__text__line">
                     <span>ან</span>
@@ -59,6 +66,15 @@ title: მოსწავლეების რესურსი
                             <use xlink:href="#icon-google"></use>
                         </svg>
                         ავტორიზაცია Gmail-ით</a>
+                </div>
+                <div class="form__section__text-sm">
+                    <span>გსურთ რეგისტრაცია? მიყევით </span>
+                    <a href="#" class="form__section__text-sm-link">
+                         ამ ბმულს
+                        <svg class="icon">
+                            <use xlink:href="#feather-arrow-up-right"></use>
+                          </svg>
+                    </a>
                 </div>
             </div>
         </div>

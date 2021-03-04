@@ -2,8 +2,10 @@
     text-align: left;
     color: $black;
     &__section {
-        margin-top: 20px;
+        margin: 20px auto 0;
         text-align: center;
+        width: 100%;
+        max-width: 526px;
         &__title {
             font-size: 55px;
             color: $black;
@@ -15,12 +17,28 @@
             font-size: 21px;
             color: $component-color2;
             &__line {
-                border-bottom: 1px dashed $component-color2;
+                border-bottom: 2px dashed $component-color2;
                 line-height: 0.1em;
                 margin: 55px auto;
                 span{
                     background-color: $component-color1;
                     padding: 0 50px;
+                }
+            }
+            &-sm{
+                color: $black;
+                font-size: 16px;
+                font-family: $firagoRegular;
+                &-link{
+                    color: $component-color2;
+                    text-decoration: underline;
+                    .icon{
+                        stroke: $component-color2;
+                        width: 12px;
+                        height: 12px;
+                        text-decoration: none;
+                        margin-left: 10px;
+                    }
                 }
             }
         }
@@ -69,6 +87,9 @@
     &__label {
         font-family: $firagoMedium;
         font-size: 16px;
+        &.error{
+            color: $error-red;
+        }
     }
     &__input {
         border-radius: 8px;
@@ -84,6 +105,7 @@
                 right: 10px;
                 transform: translateY(-50%);
                 width: 22px;
+                height: 22px;
                 stroke: $component-color2;
                 fill: $white;
                 cursor: pointer;
@@ -110,5 +132,28 @@
                 outline: none;
             }
         }
+    }
+    .invalid-feedback{
+        color: $error-red;
+        font-size: 13px;
+        font-family: $firagoRegular;
+    }
+    &__error__message{
+        font-size: 13px;
+        font-family: $firagoRegular;
+        color: $error-red;
+        text-align: center;
+        margin-top: 30px;
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid{
+    border-color: $error-red;
+    &+.icon{
+        top: 20px;
     }
 }
