@@ -72,8 +72,6 @@
             }
         }
         &__btn{
-            color: $white;
-            background-color: $component-color2;
             border-radius: 8px;
             padding: 10px 12px;
             height: 40px;
@@ -81,11 +79,6 @@
                 fill: $component-color3;
                 width: 16px;
                 height: 16px;
-            }
-            &:hover{
-                background-color: darken($component-color2,3%);
-                text-decoration: none;
-                color: $white;
             }
         }
         &__search{

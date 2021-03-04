@@ -4,6 +4,17 @@ body {
     margin: 0;
     padding: 0;
 }
+// button styles
+.bt-blue{
+    color: $white;
+    background-color: $component-color2;
+    transition: .3s;
+    &:hover{
+        background-color: darken($component-color2,3%);
+        text-decoration: none;
+        color: $white;
+    }
+}
 
 .page {
     &__content {
