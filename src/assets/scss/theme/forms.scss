@@ -1,0 +1,35 @@
+.form{
+    text-align: left;
+    &__section{
+        margin-top: 20px;
+        text-align: center;
+        &__title{
+            font-size: 55px;
+            color: $black;
+            font-family: $firagoBold;
+            margin-bottom: 34px;
+        }
+        &__text{
+            font-family: $firagoRegular;
+            font-size: 21px;
+            color: $component-color2;
+        }
+    }
+    &__input{
+        border-radius: 8px;
+        border: 1px solid $component-color2;
+        &-relative{
+            position: relative;
+            .icon{
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                width: 22px;
+                stroke: $component-color2;
+                fill: $white;
+                cursor: pointer;
+            }
+        }
+    }
+}
