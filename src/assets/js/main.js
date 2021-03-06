@@ -24,6 +24,14 @@ function clickers() {
     $('.search__close').click(function() {
         $('.search__container').removeClass('active');
     })
+    $('.dropdown__item').click(function() {
+        $('#txtData').hide();
+        // $('.dropdown--selected').addClass('active');
+        // $('.text__placeholder').addClass('notActive');
+    })
+    $('.select_other').click(function() {
+        $('#txtData').show();
+    })
 }
 clickers();
 
@@ -95,7 +103,7 @@ togglePassword.addEventListener('click', function (e) {
     // this.classList.toggle('fa-eye-slash');
 });
 
-
+// bootstrap forms validation
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
@@ -117,3 +125,4 @@ togglePassword.addEventListener('click', function (e) {
         }, false)
       })
   })()
+

@@ -20,19 +20,19 @@
                 border-bottom: 2px dashed $component-color2;
                 line-height: 0.1em;
                 margin: 55px auto;
-                span{
+                span {
                     background-color: $component-color1;
                     padding: 0 50px;
                 }
             }
-            &-sm{
+            &-sm {
                 color: $black;
                 font-size: 16px;
                 font-family: $firagoRegular;
-                &-link{
+                &-link {
                     color: $component-color2;
                     text-decoration: underline;
-                    .icon{
+                    .icon {
                         stroke: $component-color2;
                         width: 12px;
                         height: 12px;
@@ -42,12 +42,12 @@
                 }
             }
         }
-        &__btn{
-            &-cont{
+        &__btn {
+            &-cont {
                 display: flex;
                 flex-direction: column;
             }
-            &-social{
+            &-social {
                 width: 100%;
                 background: gray;
                 margin-bottom: 21px;
@@ -57,28 +57,28 @@
                 padding: 10px 0;
                 position: relative;
                 border-radius: 8px;
-                transition: .3s;
-                .icon{
+                transition: 0.3s;
+                .icon {
                     height: 22px;
                     width: 22px;
                     fill: $white;
                     position: absolute;
                     left: 12px;
                 }
-                &.fb{
+                &.fb {
                     background-color: $fb-color;
-                    &:hover{
+                    &:hover {
                         color: $white;
                         text-decoration: none;
-                        background-color: darken($fb-color,5%);
+                        background-color: darken($fb-color, 5%);
                     }
                 }
-                &.google{
+                &.google {
                     background-color: $google-color;
-                    &:hover{
+                    &:hover {
                         color: $white;
                         text-decoration: none;
-                        background-color: darken($google-color,5%);
+                        background-color: darken($google-color, 5%);
                     }
                 }
             }
@@ -87,8 +87,15 @@
     &__label {
         font-family: $firagoMedium;
         font-size: 16px;
-        &.error{
+        &.error {
             color: $error-red;
+        }
+        &.required {
+            &:after {
+                content: "*";
+                color: $error-red;
+                margin-left: 5px;
+            }
         }
     }
     &__input {
@@ -133,27 +140,166 @@
             }
         }
     }
-    .invalid-feedback{
+    .invalid-feedback {
         color: $error-red;
         font-size: 13px;
         font-family: $firagoRegular;
     }
-    &__error__message{
+    &__error__message {
         font-size: 13px;
         font-family: $firagoRegular;
         color: $error-red;
         text-align: center;
         margin-top: 30px;
         display: none;
-        &.active{
+        &.active {
             display: block;
         }
     }
 }
 
-.form-control.is-invalid, .was-validated .form-control:invalid{
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
     border-color: $error-red;
-    &+.icon{
+    & + .icon {
         top: 20px;
     }
 }
+
+/*dropdown*/
+.dropdown__elem {
+    transition: 0.3s;
+    position: relative;
+    width: 50px;
+    border: 2px solid transparent;
+    background: $white;
+    border-bottom: 0;
+    &.form-select {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid $component-color2;
+        color: $black;
+        font-size: 16px;
+        font-family: $firagoRegular;
+        &.open {
+            border-bottom: transparent;
+        }
+        .dropdown__elem {
+            &--inner {
+                justify-content: space-between;
+                .icon {
+                    stroke: $component-color2;
+                    fill: $component-color2;
+                    width: 12px;
+                }
+                span {
+                    color: rgba($color: $black, $alpha: 0.3);
+                    // &.dropdown--selected{
+                    //     display: none;
+                    //     &.active{
+                    //         display: block;
+                    //     }
+                    // }
+                    // &.text__placeholder{
+                    //     color: rgba($color: $black, $alpha: 0.3);
+                    //     &.notActive{
+                    //         display: none;
+                    //     }
+                    // }
+                }
+            }
+        }
+        .dropdown {
+            width: 100.8%;
+            &__item {
+                margin: 5px 10px;
+                text-align: left;
+                padding: 0 10px;
+                color: $component-color2;
+                font-family: $firagoMedium;
+                font-size: 13px;
+                border-radius: 8px;
+                &:hover {
+                    background-color: $component-color2;
+                    color: $white;
+                }
+            }
+        }
+    }
+    &--inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: $firagoRegular;
+        .text--active {
+            transition: 0.6s;
+            color: $black;
+            line-height: 2;
+        }
+        .icon {
+            fill: $black;
+            transition: 0.6s;
+            width: 8px;
+            height: 8px;
+            margin-left: 7px;
+        }
+    }
+    &.open {
+        border-left: 2px solid $component-color2;
+        border-top: 2px solid $component-color2;
+        border-right: 2px solid $component-color2;
+        border-radius: 8px 8px 0 0;
+        .dropdown__elem--inner .icon {
+            transform: rotate(180deg);
+        }
+    }
+}
+.dropdown {
+    position: absolute;
+    left: -2px;
+    z-index: 1;
+    background: $white;
+    top: calc(100%-2px);
+    -webkit-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 50px;
+    border: 2px solid transparent;
+    border-top: 0;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        border-left: 2px solid $component-color2;
+        border-bottom: 2px solid $component-color2;
+        border-right: 2px solid $component-color2;
+        border-radius: 0 0 8px 8px;
+        left: -2px;
+    }
+    &__nav {
+        width: 100%;
+        .dropdown__item {
+            list-style-type: none;
+            text-align: center;
+            cursor: pointer;
+            line-height: 2;
+            font-family: $firagoRegular;
+            color: $black;
+            font-size: 16px;
+            transition: 0.3s;
+            &:hover {
+                background: rgba(96, 112, 190, 0.14);
+            }
+        }
+    }
+}
+/*dropdown*/
