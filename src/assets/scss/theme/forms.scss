@@ -303,3 +303,66 @@
     }
 }
 /*dropdown*/
+
+// custom checkbox
+
+.checkbox {
+    &-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 18px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: $firagoMedium;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+            &:checked ~ .checkmark {
+                background-color: $component-color2;
+                &:after {
+                    display: block;
+                }
+            }
+        }
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border-radius: 2px;
+            background-color: $component-color3;
+            border: 1px solid $component-color2;
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                left: 6px;
+                top: 2px;
+                width: 7px;
+                height: 12px;
+                border: solid $white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+    &-link{
+        color: $component-color2;
+        text-decoration: underline;
+    }
+}
