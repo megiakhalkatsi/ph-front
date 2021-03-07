@@ -26,8 +26,6 @@ function clickers() {
     })
     $('.dropdown__item').click(function() {
         $('#txtData').hide();
-        // $('.dropdown--selected').addClass('active');
-        // $('.text__placeholder').addClass('notActive');
     })
     $('.select_other').click(function() {
         $('#txtData').show();
@@ -53,12 +51,6 @@ const dropdownToggler = () => {
             })
         })
     })
-    // $(document).on("click", function (e) {
-    //     if ($(e.target).is(".dropdown--toggler") === false) {
-    //         $(".dropdown__elem").removeClass("open");
-    //         $(".dropdown__elem .dropdown").removeClass("open");
-    //     }
-    // });
 }
 dropdownToggler()
 

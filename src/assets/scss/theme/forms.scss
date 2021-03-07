@@ -104,6 +104,21 @@
         color: $black;
         font-size: 16px;
         font-family: $firagoRegular;
+        &::-webkit-input-placeholder {
+            color: rgba($color: $black, $alpha: 0.3);
+        }
+        &::-moz-placeholder {
+            color: rgba($color: $black, $alpha: 0.3);
+        }
+        &:-ms-input-placeholder {
+            color: rgba($color: $black, $alpha: 0.3);
+        }
+        &:-moz-placeholder {
+            color: rgba($color: $black, $alpha: 0.3);
+        }
+        &:focus::placeholder {
+            color: transparent;
+        }
         &-relative {
             position: relative;
             .icon {
@@ -137,6 +152,9 @@
             line-height: 1;
             &:focus {
                 outline: none;
+            }
+            &-sm{
+                max-width: 200px;
             }
         }
     }
@@ -194,18 +212,6 @@
                 }
                 span {
                     color: rgba($color: $black, $alpha: 0.3);
-                    // &.dropdown--selected{
-                    //     display: none;
-                    //     &.active{
-                    //         display: block;
-                    //     }
-                    // }
-                    // &.text__placeholder{
-                    //     color: rgba($color: $black, $alpha: 0.3);
-                    //     &.notActive{
-                    //         display: none;
-                    //     }
-                    // }
                 }
             }
         }
