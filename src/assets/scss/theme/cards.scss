@@ -1,0 +1,84 @@
+.theme {
+    &__item {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        &:hover {
+            text-decoration: none;
+        }
+        &__img {
+            height: 248px;
+            object-fit: contain;
+            border-radius: 16px;
+        }
+        &__title {
+            font-size: 21px;
+            font-family: $firagoMedium;
+            color: $black;
+            margin-top: 14px;
+        }
+    }
+}
+
+.resource {
+    &__item {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+        &:hover {
+            text-decoration: none;
+        }
+        &-relative {
+            position: relative;
+            height: 140px;
+            margin-bottom: 26px;
+            background-color: $component-color4;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__img {
+            width: 100%;
+            object-fit: contain;
+            border-radius: 8px 8px 0 0;
+            &.file {
+                width: auto;
+                height: 40px;
+            }
+        }
+        &__icon {
+            &__container {
+                display: flex;
+            }
+            &__position {
+                position: absolute;
+                bottom: -10px;
+                left: 20px;
+            }
+            &__bg {
+                background-color: $white;
+                width: 30px;
+                height: 30px;
+                border-radius: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+            }
+        }
+        &__title {
+            color: $black;
+            font-family: $firagoMedium;
+            font-size: 13px;
+            &.underline{
+                text-decoration: underline;
+            }
+        }
+        &__description {
+            color: $component-color5;
+            font-family: $firagoRegular;
+            font-size: 13px;
+        }
+    }
+}

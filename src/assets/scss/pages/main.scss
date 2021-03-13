@@ -59,11 +59,9 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // display: none;
         transition: 0.3s;
         transform: translateY(-100%);
         &.active {
-            // display: flex;
             transform: translateY(0);
         }
         &__row {
@@ -104,6 +102,9 @@ body {
                 &:focus::placeholder {
                     color: transparent;
                 }
+                &:focus {
+                    outline: none;
+                }
             }
             .icon {
                 width: 20px;
@@ -130,6 +131,28 @@ body {
             width: 20px;
             height: 20px;
             fill: $white;
+        }
+    }
+    // search results
+    &__result{
+        margin-top: 55px;
+        &__title{
+            font-family: $firagoRegular;
+            font-size: 34px;
+            color: $black;
+            &.margins{
+                margin-bottom: 34px;
+                &.mt{
+                    margin-top: 45px;
+                }
+            }
+            .purple{
+                color: $component-color2;
+                font-family: $firagoBold;
+            }
+        } 
+        &__word{
+           color: $component-color2; 
         }
     }
 }
@@ -187,6 +210,9 @@ body {
         width: 100%;
         margin: 55px 0 85px;
         border-top: 2px dashed rgba($color: $component-color2, $alpha: 0.3);
+        &.mg-sm{
+            margin: 21px 0 34px;
+        }
     }
     &__btn{
         &__container{

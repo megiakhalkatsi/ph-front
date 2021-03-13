@@ -93,7 +93,7 @@ gulp.task('images', function() {
 
 // Copies video assets to dist
 gulp.task('media', function() {
-    return gulp.src('src/assets/video/**/*')
+    return gulp.src('src/assets/video/**/*.+(mp4)')
         .pipe(gulp.dest('dist/assets/video/'));
 });
 
