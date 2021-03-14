@@ -1,0 +1,10 @@
+.section{
+    &__themes{
+        margin-top: 55px;
+        &__title{
+            font-size: 34px;
+            font-family: $firagoBold;
+            color: $black;
+        }
+    }
+}

@@ -25,6 +25,7 @@ body {
         &__list{
             display: flex;
             align-items: center;
+            margin-bottom: 0;
             &__item{
                 list-style: none;
                 margin-right: 10px;
