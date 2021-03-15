@@ -155,7 +155,7 @@
             &:focus {
                 outline: none;
             }
-            &-sm{
+            &-sm {
                 max-width: 200px;
             }
         }
@@ -369,8 +369,61 @@
             }
         }
     }
-    &-link{
+    &-link {
         color: $component-color2;
         text-decoration: underline;
+    }
+}
+
+// custom radio button
+
+.radiobutton__container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: $firagoMedium;
+    color: rgba($color: $black, $alpha: 0.6);
+    user-select: none;
+    &:first-child{
+        margin-right: 50px;
+    }
+    &:hover input ~ .checkmark {
+        background-color: $component-color1;
+    }
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        &:checked ~ .checkmark {
+            background-color: $white;
+        }
+        &:checked ~ .checkmark:after {
+            display: block;
+        }
+    }
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: $component-color3;
+        border: 1px solid $component-color2;
+        border-radius: 50%;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: $component-color2;
+        }
     }
 }
