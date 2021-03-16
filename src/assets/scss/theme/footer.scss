@@ -6,13 +6,13 @@
     }
     &__text{
         font-family: $firagoRegular;
-        font-size: 14px;
+        font-size: 12px;
         color: rgba($color: $black, $alpha: 0.6);
         margin-bottom: 0;
         &.black{
             color: $black;
             @media #{$breakpoint-xxl} {
-                font-size: 12px;
+                font-size: 14px;
             }
         }
     }
@@ -31,9 +31,9 @@
         }
     }
     &__item{
-        margin-left: 30px;
+        margin-left: 20px;
         @media #{$breakpoint-xxl} {
-            margin-left: 20px;
+            margin-left: 30px;
         }
     }
     &__link{
