@@ -20,7 +20,7 @@ title: მოსწავლეების რესურსი
         </ul>
     </section>
     <section>
-        <h1 class="section__themes__title mt-3">რესურსები</h1>
+        <h1 class="section__themes__title mt-3 mb-5">რესურსები</h1>
         <div class="row">
             <div class="col-4">
                 <div class="filter__container">
@@ -112,7 +112,39 @@ title: მოსწავლეების რესურსი
                     </form>
                 </div>
             </div>
-            <div class="col-8"></div>
+            <div class="col-8">
+                <form action="" class="search__container__form">
+                    <input type="search" class="search__container__form__input" placeholder="ძიება">
+                      <svg class="icon">
+                        <use xlink:href="#ico-search"></use>
+                      </svg>
+                </form>
+                <div class="section__resources">
+                  <div class="section__resources__row">
+                    <h2 class="section__resources__title">დამატებითი რესურსები</h2>
+                    <div class="dropdown__elem sort form-control form-select" id="sort">
+                      <div class="dropdown__elem--inner dropdown--toggler">
+                          <span class="text--active dropdown--selected">
+                             სორტირება
+                          </span>
+                          <svg class="icon">
+                              <use xlink:href="#arrow-dropdown"></use>
+                          </svg>
+                      </div>
+                      <div class="dropdown" data-for="sort">
+                          <nav class="dropdown__nav">
+                              <li class="dropdown__item dropdown__item--active" value="0">თარიღი კლებადი</li>
+                              <li class="dropdown__item" value="1">თარიღი ზრდადი</li>
+                              <li class="dropdown__item" value="2">ანბანი კლებადი</li>
+                              <li class="dropdown__item" value="3">ანბანი ზრდადი</li>
+                          </nav>
+                      </div>
+                  </div>
+
+
+                  </div>
+                </div>
+            </div>
         </div>
     </section>
 </div>

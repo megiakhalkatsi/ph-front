@@ -312,6 +312,21 @@
 }
 /*dropdown*/
 
+/*dropdown for sorting*/
+.sort{
+    &.dropdown{
+        &__elem{
+            width: 134px;
+            border: none;
+        }
+        &--inner {
+            font-family: $firagoMedium; 
+        }
+    }
+}
+
+/*dropdown for sorting*/
+
 // custom checkbox
 
 .checkbox {
