@@ -809,133 +809,45 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-12">
-              <h1 class="m-0">თემები</h1>
+              <h1 class="m-0">თემის რედაქტირება</h1>
             </div>
           </div>
         </div>
       </div>
-      <!-- /.content-header -->
-
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-header-title">თემები</h3>
-                  <div class="card-header-right">
-                    <a href="themesUpload.html" class="card-header-btn btn btn-primary">დამატება</a>
-                    <div class="card-header-tools">
-                      <div class="input-group input-group-sm">
-                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-                        <div class="input-group-append">
-                          <button type="submit" class="btn btn-default">
-                            <i class="fas fa-search"></i>
-                          </button>
+            <div class="col-12 col-md-10 m-auto">
+                <div class="card card-primary">
+                 
+                  <form>
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label for="themeName">თემის სახელი</label>
+                        <input type="text" class="form-control" id="themeName" placeholder="შეიყვანეთ თემის სახელი" value="სამართლებრივი კულტურა">
+                      </div>
+                      <div class="form-group">
+                        <label for="themeTags">თეგები</label>
+                        <input type="text" class="form-control" id="themeTags" placeholder="შეიყვანეთ თეგები" value="სამართალი, კულტურა">
+                      </div>
+                      <div class="form-group">
+                        <label for="illustrationFile">ილუსტრაცია</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="illustrationFile">
+                            <label class="custom-file-label" for="illustrationFile">ატვირთეთ ილუსტრაცია</label>
+                          </div>
                         </div>
+                        <img src="../src/assets/img/themes/theme1.png" alt="theme" class="table-img mt-1">
                       </div>
                     </div>
-                  </div>
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-primary">შენახვა</button>
+                    </div>
+                  </form>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body table-responsive p-0">
-                  <table class="table table-hover text-nowrap">
-                    <thead>
-                      <tr>
-                        <th>თემის სახელი</th>
-                        <th>ილუსტრაცია </th>
-                        <th>თეგები </th>
-                        <th>რედაქტირება</th>
-                        <th>დამალვა</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>სამართლებრივი კულტურა</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme1.png" alt="theme" class="table-img">
-                        </td>
-                        <td>სამართალი, კულტურა</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ბავშვთა უფლებები</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme2.png" alt="theme" class="table-img">
-                        </td>
-                        <td>უფლებები</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ცხოვრების ჯანსაღი წესი</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme3.png" alt="theme" class="table-img">
-                        </td>
-                        <td>ჯანსაღი</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>სამართლის დაცვა საქართველოში</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme4.png" alt="theme" class="table-img">
-                        </td>
-                        <td>სამართალი</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>არასრულწოვანი და კანონი</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme5.png" alt="theme" class="table-img">
-                        </td>
-                        <td>არასრულწოვანი, კანონი</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>კიბერდანაშაული</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme6.png" alt="theme" class="table-img">
-                        </td>
-                        <td>კიბერდანაშაული</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.card-body -->
               </div>
-              <!-- /.card -->
-            </div>
           </div>
         </div>
       </section>

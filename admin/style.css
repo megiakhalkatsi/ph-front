@@ -1,0 +1,28 @@
+.nav-sidebar .nav-link{
+    font-size: 13px;
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.card-header-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+.card-header-title{
+    font-size: 16px;
+}
+.card-header-btn{
+    margin-right: 10px;
+}
+.form-check-input:hover{
+    cursor: pointer;
+}
+.table-img{
+    height: 60px;
+    object-fit: contain;
+}
