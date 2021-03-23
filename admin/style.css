@@ -26,3 +26,17 @@
     height: 60px;
     object-fit: contain;
 }
+.resource__theme__item{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.resource__theme__item__img{
+    height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+.resource__theme__item__title{
+    color: black;
+    font-size: 18px;
+}
