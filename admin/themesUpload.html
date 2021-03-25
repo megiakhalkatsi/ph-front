@@ -819,33 +819,76 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12 col-md-10 m-auto">
-                <div class="card card-primary">
-                 
-                  <form>
-                    <div class="card-body">
-                      <div class="form-group">
-                        <label for="themeName">თემის სახელი</label>
-                        <input type="text" class="form-control" id="themeName" placeholder="შეიყვანეთ თემის სახელი">
-                      </div>
-                      <div class="form-group">
-                        <label for="themeTags">თეგები</label>
-                        <input type="text" class="form-control" id="themeTags" placeholder="შეიყვანეთ თეგები">
-                      </div>
-                      <div class="form-group">
-                        <label for="illustrationFile">ილუსტრაცია</label>
-                        <div class="input-group">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="illustrationFile">
-                            <label class="custom-file-label" for="illustrationFile">ატვირთეთ ილუსტრაცია</label>
+              <ul class="nav nav-tabs" id="languages" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button" role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab" aria-controls="english" aria-selected="false">ინგლისური</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab" aria-controls="Russian" aria-selected="false">რუსული</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="languagesContent">
+                <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
+                  <div class="card card-primary">
+                    <form>
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="themeName">თემის სახელი</label>
+                          <input type="text" class="form-control" id="themeName" placeholder="შეიყვანეთ თემის სახელი">
+                        </div>
+                        <div class="form-group">
+                          <label for="themeTags">თეგები</label>
+                          <input type="text" class="form-control" id="themeTags" placeholder="შეიყვანეთ თეგები">
+                        </div>
+                        <div class="form-group">
+                          <label for="illustrationFile">ილუსტრაცია</label>
+                          <div class="input-group">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="illustrationFile">
+                              <label class="custom-file-label" for="illustrationFile">ატვირთეთ ილუსტრაცია</label>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="card-footer">
-                      <button type="submit" class="btn btn-primary">დამატება</button>
-                    </div>
-                  </form>
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">დამატება</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
+                <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
+                  <div class="card card-primary">
+                    <form>
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="themeName">Theme Name</label>
+                          <input type="text" class="form-control" id="themeName" placeholder="Enter Theme Name">
+                        </div>
+                        <div class="form-group">
+                          <label for="themeTags">Tags</label>
+                          <input type="text" class="form-control" id="themeTags" placeholder="Enter Tags">
+                        </div>
+                        <div class="form-group">
+                          <label for="illustrationFile">Illustration</label>
+                          <div class="input-group">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="illustrationFile">
+                              <label class="custom-file-label" for="illustrationFile">Upload Illustration</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
+              </div>
               </div>
           </div>
         </div>
