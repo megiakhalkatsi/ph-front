@@ -19,10 +19,6 @@
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
   <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
@@ -813,153 +809,82 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-12">
-              <h1 class="m-0">დამატებითი რესურსები</h1>
+              <h1 class="m-0">დამატებითი რესურსის დამატება</h1>
             </div>
           </div>
         </div>
       </div>
-      <!-- /.content-header -->
-
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-12">
-              <!-- /.card -->
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-header-title">დამატებითი რესურსები</h3>
-                  <div class="card-header-right">
-                    <a href="additionalResourceUpload.html" class="card-header-btn btn btn-primary">დამატება</a>
-                  </div>
+            <div class="col-12 col-md-10 m-auto">
+                <div class="card card-primary">
+                 
+                  <form>
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label>თემის არჩევა</label>
+                        <select class="form-control">
+                          <option>სამართლებრივი კულტურა</option>
+                          <option>ბავშთა უფლებები</option>
+                          <option>ცხოვრების ჯანსაღი წესი</option>
+                          <option>სამართლის დაცვა საქართველოში</option>
+                          <option>არასრულწოვანი და კანონი</option>
+                          <option>კიბერდანაშაული</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>მიმართულების არჩევა</label>
+                        <select class="form-control">
+                          <option>მოსწავლის რესურსი</option>
+                          <option>განმანათლებლის რესურსი</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>ტიპის არჩევა</label>
+                        <select class="form-control" id="resourceTypeSelect">
+                          <option>ფოტო</option>
+                          <option>ვიდეო</option>
+                          <option>ლინკი</option>
+                          <option>pdf ფაილი</option>
+                        </select>
+                      </div>
+                      <div class="form-group resourceTypeSelectLink">
+                        <label>ლინკის ტიპის არჩევა</label>
+                        <select class="form-control">
+                          <option>თამაში</option>
+                          <option>სავარჯიშო</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="resourceFile">ფაილი</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="resourceFile">
+                            <label class="custom-file-label" for="resourceFile">ატვირთეთ ფაილი</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="resourceTitle">სათაური</label>
+                        <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                      </div>
+                      <div class="form-group">
+                        <label for="resourceDescription">აღწერა</label>
+                        <input type="text" class="form-control" id="resourceDescription" placeholder="შეიყვანეთ აღწერა">
+                      </div>
+                      <div class="form-group">
+                        <label for="resourceSource">წყარო</label>
+                        <input type="text" class="form-control" id="resourceSource" placeholder="შეიყვანეთ წყარო">
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-primary">დამატება</button>
+                    </div>
+                  </form>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="mainDataTable" class="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                        <th>მიმართულება</th>
-                        <th>რესურსის ტიპი</th>
-                        <th>თემა</th>
-                        <th>სათაური</th>
-                        <th>ვიზუალი</th>
-                        <th>აღწერა</th>
-                        <th>წყარო</th>
-                        <th class="text-center">რედაქტირება</th>
-                        <th class="text-center">დამალვა</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>სასკოლო რესურსი</td>
-                        <td>ფოტო</td>
-                        <td>სამართლებრივი კულტურა</td>
-                        <th>ვინ არის სამართალდამცავი</th>
-                        <td>
-                          <img src="../src/assets/img/resource-img.png" alt="theme" class="table-img">
-                        </td>
-                        <td>აღწერა 1</td>
-                        <td>წყარო 1</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ონლაინ სწავლება</td>
-                        <td>ლინკი</td>
-                        <td>სამართლებრივი კულტურა</td>
-                        <th>ვინ არის სამართალდამცავი</th>
-                        <td>
-                            <a href="https://bit.ly/3rj8C5t" target="_blank" rel="noopener noreferrer">https://bit.ly/3rj8C5t</a>
-                        </td>
-                        <td>აღწერა 2</td>
-                        <td>წყარო 2</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>სასკოლო რესურსი</td>
-                        <td>ვიდეო</td>
-                        <td>სამართლებრივი კულტურა</td>
-                        <th>ვინ არის სამართალდამცავი</th>
-                        <td>
-                          <img src="../src/assets/img/resource-img.png" alt="theme" class="table-img">
-                        </td>
-                        <td>აღწერა 1</td>
-                        <td>წყარო 1</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ონლაინ სწავლება</td>
-                        <td>pdf ფაილი</td>
-                        <td>სამართლებრივი კულტურა</td>
-                        <th>ვინ არის სამართალდამცავი</th>
-                        <td>
-                          <img src="../src/assets/img/icons/file.svg" alt="theme" class="table-img">
-                        </td>
-                        <td>აღწერა 1</td>
-                        <td>წყარო 1</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>სასკოლო რესურსი</td>
-                        <td>თამაში</td>
-                        <td>სამართლებრივი კულტურა</td>
-                        <th>ვინ არის სამართალდამცავი</th>
-                        <td>
-                          <img src="../src/assets/img/resource-img.png" alt="theme" class="table-img">
-                        </td>
-                        <td>აღწერა 1</td>
-                        <td>წყარო 1</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ონლაინ სწავლება</td>
-                        <td>სავარჯიშო</td>
-                        <td>სამართლებრივი კულტურა</td>
-                        <th>ვინ არის სამართალდამცავი</th>
-                        <td>
-                          <img src="../src/assets/img/resource-img.png" alt="theme" class="table-img">
-                        </td>
-                        <td>აღწერა 1</td>
-                        <td>წყარო 1</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.card-body -->
               </div>
-              <!-- /.card -->
-
-            </div>
           </div>
         </div>
       </section>
@@ -1010,34 +935,24 @@
   <script src="plugins/summernote/summernote-bs4.min.js"></script>
   <!-- overlayScrollbars -->
   <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <!-- DataTables  & Plugins -->
-  <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="plugins/jszip/jszip.min.js"></script>
-  <script src="plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
-  <!-- Page specific script -->
   <script>
-    $(function () {
-      $("#mainDataTable").DataTable({
-        "responsive": true, 
-        "lengthChange": true, 
-        "autoWidth": false,
-      });
+$(document).ready(function () {
+    $("#resourceTypeSelect").change(function () {
+        var val = $(this).val();
+        if (val == "ლინკი") {
+            $(".resourceTypeSelectLink").addClass('active');
+        }
+        else{
+          $(".resourceTypeSelectLink").removeClass('active');
+        }
     });
+});
   </script>
 </body>
 

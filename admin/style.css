@@ -43,3 +43,10 @@
     color: black;
     font-size: 18px;
 }
+
+.resourceTypeSelectLink{
+    display: none;
+}
+.resourceTypeSelectLink.active{
+    display: block;
+}
