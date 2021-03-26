@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .playbutton {
+        background: url(https://cdn0.iconfinder.com/data/icons/vector-basic-tab-bar-icons/48/play_button-128.png) center center no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 74px;
+        height: 74px;
+        margin: -37px 0 0 -37px;
+        z-index: 10;
+        opacity: .6;
+    }
+
+    .youtube-video {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        cursor: pointer;
+    }
+
+    .youtube-video iframe {
+        border-style: none;
+        height: 100%;
+        width: 100%;
+    }
+
+    .content {
+        position: relative;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        padding: 20px;
+        top: 236px;
+    }
+
+
+    .thumb {
+        height: 200px;
+        width: 250px;
+        transition: .3s;
+    }
+    .thumb.active {
+    height: 80%;
+    width: auto;
+    object-fit: contain;
+
+    }
+</style>
+
+<body>
+    <div id="videoContainer" class="youtube-video"
+        style="width:560px; height:315px; background-image:url(../src/assets/img/resource-img.png)">
+        <a class="introVid" href="#video"><span class="playbutton"></span></a>
+        <h1 class="content">Git Commit Show</h1>
+    </div>
+
+
+    <!-- full width images -->
+
+    <img class="thumb" src="http://farm4.staticflickr.com/3712/9032543579_1217e6566b_b.jpg" />
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.8.3/video.min.js"></script>
+<script>
+    jQuery('a.introVid').click(function () {
+        autoPlayVideo('JCOJS1wWmeo', '560', '315');
+    });
+    function autoPlayVideo(vcode, width, height) {
+        "use strict";
+        $("#videoContainer").html('<iframe width="' + width + '" height="' + height + '" src="https://www.youtube.com/embed/' + vcode + '?autoplay=1&loop=1&rel=0&wmode=transparent" frameborder="0" allowfullscreen wmode="Opaque"></iframe>');
+    }
+
+
+    // full width images 
+    $(".thumb").click(function() {
+    $(this).toggleClass("active");    
+    });
+
+</script>
+
+</html>
