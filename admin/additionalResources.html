@@ -154,7 +154,7 @@ e<!DOCTYPE html>
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="languages.html" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   ენები
@@ -834,7 +834,7 @@ e<!DOCTYPE html>
                   </div>
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body">
+                <div class="card-body" style="overflow: auto;">
                   <table id="mainDataTable" class="table table-bordered table-striped">
                     <thead>
                       <tr>
@@ -1036,9 +1036,9 @@ e<!DOCTYPE html>
   <script>
     $(function () {
       $("#mainDataTable").DataTable({
-        "responsive": true, 
+        // "responsive": true, 
         "lengthChange": true, 
-        "autoWidth": false,
+        // "autoWidth": false,
       });
     });
   </script>
