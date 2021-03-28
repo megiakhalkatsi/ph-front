@@ -19,10 +19,6 @@
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
   <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
@@ -114,7 +110,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="themes.html" class="nav-link active">
+              <a href="themes.html" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   თემები
@@ -162,7 +158,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="websiteTexts.html" class="nav-link">
+              <a href="websiteTexts.html" class="nav-link active">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   საიტის ტექსტები
@@ -813,125 +809,35 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-12">
-              <h1 class="m-0">თემები</h1>
+              <h1 class="m-0">ტექსტის რედაქტირება</h1>
             </div>
           </div>
         </div>
       </div>
-      <!-- /.content-header -->
-
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-12">
-              <!-- /.card -->
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-header-title">თემები</h3>
-                  <div class="card-header-right">
-                    <a href="themesUpload.html" class="card-header-btn btn btn-primary">დამატება</a>
-                  </div>
+            <div class="col-12 col-md-10 m-auto">
+                <div class="card card-primary">
+                  <form>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="textTitle">სათაური</label>
+                            <input type="text" class="form-control" id="textTitle" placeholder="შეიყვანეთ სათაური" value="სამართლებრივი კულტურა">
+                          </div>
+                          <div class="form-group">
+                            <label for="text">ტექსტი</label>
+                            <textarea class="form-control" id="text" placeholder="შეიყვანეთ ტექსტი" rows="4" cols="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-primary">შენახვა</button>
+                    </div>
+                  </form>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="mainDataTable" class="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                        <th>თემის სახელი</th>
-                        <th>ილუსტრაცია</th>
-                        <th>თეგები</th>
-                        <th class="text-center">რედაქტირება</th>
-                        <th class="text-center">დამალვა</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>სამართლებრივი კულტურა</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme1.png" alt="theme" class="table-img">
-                        </td>
-                        <td>სამართალი, კულტურა</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ბავშვთა უფლებები</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme2.png" alt="theme" class="table-img">
-                        </td>
-                        <td>უფლებები</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ცხოვრების ჯანსაღი წესი</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme3.png" alt="theme" class="table-img">
-                        </td>
-                        <td>ჯანსაღი</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>სამართლის დაცვა საქართველოში</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme4.png" alt="theme" class="table-img">
-                        </td>
-                        <td>სამართალი</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>არასრულწოვანი და კანონი</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme5.png" alt="theme" class="table-img">
-                        </td>
-                        <td>არასრულწოვანი, კანონი</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>კიბერდანაშაული</td>
-                        <td>
-                          <img src="../src/assets/img/themes/theme6.png" alt="theme" class="table-img">
-                        </td>
-                        <td>კიბერდანაშაული</td>
-                        <td class="text-center"><a href="themesEdit.html"><i class="fas fa-edit"></i></a></td>
-                        <td class="text-center">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.card-body -->
               </div>
-              <!-- /.card -->
-
-            </div>
           </div>
         </div>
       </section>
@@ -982,35 +888,12 @@
   <script src="plugins/summernote/summernote-bs4.min.js"></script>
   <!-- overlayScrollbars -->
   <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <!-- DataTables  & Plugins -->
-  <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="plugins/jszip/jszip.min.js"></script>
-  <script src="plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
-  <!-- Page specific script -->
-  <script>
-    $(function () {
-      $("#mainDataTable").DataTable({
-        "responsive": true, 
-        "lengthChange": true, 
-        "autoWidth": false,
-      });
-    });
-  </script>
 </body>
 
 </html>
