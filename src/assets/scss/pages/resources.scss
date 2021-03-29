@@ -2,8 +2,9 @@
     &__container{
         background-color: $component-color1;
         border-radius: 8px;
-        padding: 34px;
+        padding: 34px 20px;
         margin-bottom: 34px;
+        width: 387px;
     }
     &__row{
         display: flex;
@@ -40,3 +41,32 @@
         }
     }
 }
+
+.section__resources{
+    width: 100%;
+    margin-left: 100px;
+    &__row{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+
+// ეს არის რესურსების გვერდი: https://xd.adobe.com/view/f272ad39-4ddd-4fe1-84e5-7f794b56134e-a721/screen/591b306d-c846-4fac-9471-b2dbce86fc75?fbclid=IwAR0pUmkQGFp0mSDHlQNAapHjwTu0s_s5YLi87xh3qAGdKDcqFB4CuwRNWIk
+
+// მარცხნივ, ფილტრში თავიდან არაფერი არ უნდა იყოს მონიშნული. 
+
+// შემდეგ გვერდზე ჩანს, როგორ ჩამოდის სორტირება.
+
+// თითოეული კომპონენტი არის 4-დან 1 კატეგორიაში: ფოტო, ლინკი, ვიდეო და პდფ. თითოეულს რო ქონდეს თავისი კლასიც, რომ ბექენდმა გამოიყენოს.
+
+// ვიდეოს და ფოტოს ექნება თავისი ვიზუალები და კლიკზე უნდა გამოვიდეს დიდად. ეს ფუნქციონალი უნდა იყოს სხვა გვერდებზეც: თემის შიდა გვერდებზეც, სადაც იქნება ფოტოები, კლიკზე უნდა გაიხსნას დიდად. 
+// ვიდეოები წამოღებული იქნება youtube-დან და აქაც კლიკზე დიდ ეკრანზე გამოვიდეს.
+// რაღაც ბიბლიოთეკები არის და იმით შეიძლება გაკეთება.
+
+// თითოეულ ფოტოს, ვიდეოს და pdf-ს აქვთ გადმოწერის ღილაკიც. ვიდეო youtube-დან იქნება და გადმოწერა თუ არ გამოვა, არაუშავს.
+
+// https://xd.adobe.com/view/f272ad39-4ddd-4fe1-84e5-7f794b56134e-a721/screen/df814e44-0d5f-4f0b-8cb3-bd4d22813c3b/?fbclid=IwAR0pUmkQGFp0mSDHlQNAapHjwTu0s_s5YLi87xh3qAGdKDcqFB4CuwRNWIk - ამ გვერდზე ჩანს, როგორი იქნება, როცა ვინმე რამეს ჩაწერს რეურსების ძებნაში
+
+// რესურსების ფეიჯინგზე და სხვა რამეებზე ჰოვერის ეფექტები არის აქ: https://xd.adobe.com/view/f272ad39-4ddd-4fe1-84e5-7f794b56134e-a721/screen/32876e63-3b0a-4a8a-8713-a5c992a4e728/?fbclid=IwAR0pUmkQGFp0mSDHlQNAapHjwTu0s_s5YLi87xh3qAGdKDcqFB4CuwRNWIk

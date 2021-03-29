@@ -313,14 +313,31 @@
 /*dropdown*/
 
 /*dropdown for sorting*/
-.sort{
-    &.dropdown{
-        &__elem{
-            width: 134px;
-            border: none;
-        }
-        &--inner {
-            font-family: $firagoMedium; 
+.dropdown__elem.form-select{
+    &.sort{
+        width: 165px;
+        border: none;
+        .dropdown{
+            &__elem{
+                &--inner {
+                    font-family: $firagoMedium; 
+                    span{
+                        color: $black;
+                    }
+                    .icon{
+                        fill: $black;
+                        stroke: $black;
+                    }
+                }
+            }
+            &__item{
+                color: rgba($color: $black, $alpha: 0.6);
+                &:hover{
+                    color: $black;
+                    border-radius: 8px;
+                    background-color: $component-color4;
+                }
+            }
         }
     }
 }
