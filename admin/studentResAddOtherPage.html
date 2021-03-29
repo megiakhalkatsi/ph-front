@@ -110,7 +110,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="themes.html" class="nav-link active">
+              <a href="themes.html" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   თემები
@@ -118,7 +118,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="studentResource.html" class="nav-link">
+              <a href="studentResource.html" class="nav-link active">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   მოსწავლის რესურსი
@@ -142,7 +142,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="additionalResources.html" class="nav-link">
+              <a href="additionalResources.html" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   დამატებითი რესურსები
@@ -809,7 +809,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-12">
-              <h1 class="m-0">თემის დამატება</h1>
+              <h1 class="m-0">გვერდის დამატება</h1>
             </div>
           </div>
         </div>
@@ -818,78 +818,159 @@
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-12 col-md-10 m-auto">
-              <ul class="nav nav-tabs" id="languages" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button" role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab" aria-controls="english" aria-selected="false">ინგლისური</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab" aria-controls="Russian" aria-selected="false">რუსული</a>
-                </li>
-              </ul>
-              <div class="tab-content" id="languagesContent">
-                <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
-                  <div class="card card-primary">
-                    <form>
-                      <div class="card-body">
-                        <div class="form-group">
-                          <label for="themeName">თემის სახელი</label>
-                          <input type="text" class="form-control" id="themeName" placeholder="შეიყვანეთ თემის სახელი">
+              <div class="col-12 col-md-10 m-auto">
+                <ul class="nav nav-tabs" id="languages" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button" role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab" aria-controls="english" aria-selected="false">ინგლისური</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab" aria-controls="Russian" aria-selected="false">რუსული</a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="languagesContent">
+                  <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
+                    <div class="card card-primary">
+                      <form>
+                        <div class="card-body">
+
+                          <div class="form-group">
+                            <label for="resourceTitle">სათაური</label>
+                            <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="resourceTitle">ქვესათაური</label>
+                            <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ ქვესათაური">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="resourceDescription">ტექსტი</label>
+                            <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
+                          </div>
+
+
+                          <div class="form-check form-group">
+                            <input type="checkbox" class="form-check-input" id="page-has-main-visual">
+                            <label class="form-check-label" for="exampleCheck1">აქვს თუ არა გვერდს მთავარი ვიზუალი?</label>
+                          </div>
+
+
+                          <div id="main-visual-options">
+
+
+                            <div class="form-group">
+                              <label>აირჩიეთ გვერდის ლეიაუთი</label>
+                              <select class="form-control">
+                                <option value="0">აირჩიეთ</option>
+                                <option value="1">ვიზუალი ზემოთ, ტექსტი ქვემოთ</option>
+                                <option value="2">ვიზუალი ქვემოთ, ტექსტი ზემოთ</option>
+                                <option value="3">ვიზუალი მარჯვნივ, ტექსტი მარცხნივ</option>
+                                <option value="4">ვიზუალი მარცხნივ, ტექსტი მარჯვნივ</option>
+                              </select>
+                            </div>
+
+
+
+                            <div class="form-group">
+                              <label>რა ტიპისაა მთავარი ვიზუალი?</label>
+                              <select class="form-control" id="main-visual-type">
+                                <option value="none">აირჩიეთ</option>
+                                <option value="image">ფოტო / ილუსტრაცია / გიფი</option>
+                                <option value="video">ვიდეო</option>
+                              </select>
+                            </div>
+
+
+
+                          </div>
+
+
+
+                          <div id="upload-image-wrapper">
+
+                            <div class="form-group">
+                              <label for="resourceFile">ილუსტრაცია</label>
+                              <div class="input-group">
+                                <div class="custom-file">
+                                  <input type="file" class="custom-file-input" id="resourceFile">
+                                  <label class="custom-file-label" for="resourceFile">ატვირთეთ ილუსტრაცია</label>
+                                </div>
+                              </div>
+                            </div>
+
+
+                          <div class="form-group">
+                            <label for="resourceTitle">ილუსტრაციის სათაური</label>
+                            <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="resourceDescription">ილუსტრაციის აღწერა</label>
+                            <input type="text" class="form-control" id="resourceDescription" placeholder="შეიყვანეთ აღწერა">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="resourceSource">ილუსტრაციის წყარო</label>
+                            <input type="text" class="form-control" id="resourceSource" placeholder="შეიყვანეთ წყარო">
+                          </div>
                         </div>
-                        <div class="form-group">
-                          <label for="themeTags">თეგები</label>
-                          <input type="text" class="form-control" id="themeTags" placeholder="შეიყვანეთ თეგები">
+
+
+
+                        <div id="upload-video-wrapper">
+                          <div class="form-group">
+                            <label for="resourceTitle">ვიდეოს ლინკი youtube-დან</label>
+                            <input type="text" class="form-control" id="videoURL" placeholder="შეიყვანეთ ლინკი">
+                          </div>
                         </div>
+
+
+
+                        <p style="color:red;">გვერდის დამატებითი რესურსები როგორ გამოვაჩნოთ?</p>
+
+
+
                         <div class="form-group">
-                          <label for="illustrationFile">ილუსტრაცია</label>
+                          <label for="resourceFile">ფაილის ატვირთვა და ლინკის მიღება</label>
                           <div class="input-group">
                             <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="illustrationFile">
-                              <label class="custom-file-label" for="illustrationFile">ატვირთეთ ილუსტრაცია</label>
+                              <input type="file" class="custom-file-input" id="resourceFile">
+                              <label class="custom-file-label" for="resourceFile">ატვირთეთ ფაილი</label>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">დამატება</button>
-                      </div>
-                    </form>
+
+
+                        <div class="form-check form-group">
+                          <input type="checkbox" class="form-check-input">
+                          <label class="form-check-label" for="exampleCheck1">გამოჩნდეს ნაბიჯების ჩამონათვალი</label>
+                        </div>
+
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="card-footer">
+                          <button type="submit" class="btn btn-primary">დამატება</button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
-                </div>
-                <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-                  <div class="card card-primary">
-                    <form>
-                      <div class="card-body">
-                        <div class="form-group">
-                          <label for="themeName">Theme Name</label>
-                          <input type="text" class="form-control" id="themeName" placeholder="Enter Theme Name">
-                        </div>
-                        <div class="form-group">
-                          <label for="themeTags">Tags</label>
-                          <input type="text" class="form-control" id="themeTags" placeholder="Enter Tags">
-                        </div>
-                        <div class="form-group">
-                          <label for="illustrationFile">Illustration</label>
-                          <div class="input-group">
-                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="illustrationFile">
-                              <label class="custom-file-label" for="illustrationFile">Upload Illustration</label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </div>
-                    </form>
+                  <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
+                    English
                   </div>
+                  <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
                 </div>
-                <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
-              </div>
-              </div>
+                </div>
           </div>
         </div>
       </section>
@@ -946,6 +1027,48 @@
   <script src="dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
+  <script>
+$(document).ready(function () {
+
+  $("#main-visual-options").hide();
+  $("#upload-image-wrapper").hide();
+  $("#upload-video-wrapper").hide();
+
+
+  $('#page-has-main-visual').on('change', function(e) {
+
+  if($(this).is(':checked')) {
+
+    $("#main-visual-options").show();
+  } else {
+    $("#main-visual-options").hide();
+    $("#upload-image-wrapper").hide();
+    $("#upload-video-wrapper").hide();
+  }
+});
+
+
+$("#main-visual-type").change(function () {
+    var val = $(this).val();
+
+    if (val == "image") {
+
+        $("#upload-video-wrapper").hide();
+        $("#upload-image-wrapper").show();
+    }
+    else if (val=="video"){
+      $("#upload-image-wrapper").hide();
+      $("#upload-video-wrapper").show();
+    }
+    else {
+      $("#upload-image-wrapper").hide();
+      $("#upload-video-wrapper").hide();
+    }
+});
+
+
+});
+  </script>
 </body>
 
 </html>

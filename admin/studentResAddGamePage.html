@@ -110,7 +110,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="themes.html" class="nav-link active">
+              <a href="themes.html" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   თემები
@@ -118,7 +118,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="studentResource.html" class="nav-link">
+              <a href="studentResource.html" class="nav-link active">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   მოსწავლის რესურსი
@@ -142,7 +142,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="additionalResources.html" class="nav-link">
+              <a href="additionalResources.html" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   დამატებითი რესურსები
@@ -809,7 +809,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-12">
-              <h1 class="m-0">თემის დამატება</h1>
+              <h1 class="m-0">სავარჯიშოს გვერდის დამატება</h1>
             </div>
           </div>
         </div>
@@ -818,78 +818,115 @@
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-12 col-md-10 m-auto">
-              <ul class="nav nav-tabs" id="languages" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button" role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab" aria-controls="english" aria-selected="false">ინგლისური</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab" aria-controls="Russian" aria-selected="false">რუსული</a>
-                </li>
-              </ul>
-              <div class="tab-content" id="languagesContent">
-                <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
-                  <div class="card card-primary">
-                    <form>
-                      <div class="card-body">
-                        <div class="form-group">
-                          <label for="themeName">თემის სახელი</label>
-                          <input type="text" class="form-control" id="themeName" placeholder="შეიყვანეთ თემის სახელი">
+              <div class="col-12 col-md-10 m-auto">
+                <ul class="nav nav-tabs" id="languages" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button" role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab" aria-controls="english" aria-selected="false">ინგლისური</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab" aria-controls="Russian" aria-selected="false">რუსული</a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="languagesContent">
+                  <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
+                    <div class="card card-primary">
+                      <form>
+                        <div class="card-body">
+
+                          <div class="form-group">
+                            <label for="resourceTitle">სათაური</label>
+                            <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="resourceTitle">ქვესათაური</label>
+                            <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ ქვესათაური">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="resourceDescription">სავარჯიშოს ინსტრუქცია</label>
+                            <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
+                          </div>
+
+
+
+
+                            <div class="form-group">
+                              <label>რა ტიპისაა სავარჯიშო?</label>
+                              <select class="form-control" id="game-type">
+                                <option value="none">აირჩიეთ</option>
+                                <option value="test">ტესტი</option>
+                                <option value="other">სხვა</option>
+                              </select>
+                            </div>
+
+
+
+                          <div id="custom-game-wrapper">
+
+                            <div class="form-group">
+                              <label for="resourceDescription">სავარჯიშოს კოდი</label>
+                              <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
+                            </div>
+
+
+
                         </div>
-                        <div class="form-group">
-                          <label for="themeTags">თეგები</label>
-                          <input type="text" class="form-control" id="themeTags" placeholder="შეიყვანეთ თეგები">
+
+
+
+                        <div id="test-wrapper">
+
+                        <p style="color: red;">ტესტები როგორ დავამატებინოთ?</p>
+
+
                         </div>
+
+
+
+
+
                         <div class="form-group">
-                          <label for="illustrationFile">ილუსტრაცია</label>
+                          <label for="resourceFile">ფაილის ატვირთვა და ლინკის მიღება</label>
                           <div class="input-group">
                             <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="illustrationFile">
-                              <label class="custom-file-label" for="illustrationFile">ატვირთეთ ილუსტრაცია</label>
+                              <input type="file" class="custom-file-input" id="resourceFile">
+                              <label class="custom-file-label" for="resourceFile">ატვირთეთ ფაილი</label>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">დამატება</button>
-                      </div>
-                    </form>
+
+
+                        <div class="form-check form-group">
+                          <input type="checkbox" class="form-check-input">
+                          <label class="form-check-label" for="exampleCheck1">გამოჩნდეს ნაბიჯების ჩამონათვალი</label>
+                        </div>
+
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="card-footer">
+                          <button type="submit" class="btn btn-primary">დამატება</button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
-                </div>
-                <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-                  <div class="card card-primary">
-                    <form>
-                      <div class="card-body">
-                        <div class="form-group">
-                          <label for="themeName">Theme Name</label>
-                          <input type="text" class="form-control" id="themeName" placeholder="Enter Theme Name">
-                        </div>
-                        <div class="form-group">
-                          <label for="themeTags">Tags</label>
-                          <input type="text" class="form-control" id="themeTags" placeholder="Enter Tags">
-                        </div>
-                        <div class="form-group">
-                          <label for="illustrationFile">Illustration</label>
-                          <div class="input-group">
-                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="illustrationFile">
-                              <label class="custom-file-label" for="illustrationFile">Upload Illustration</label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </div>
-                    </form>
+                  <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
+                    English
                   </div>
+                  <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
                 </div>
-                <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
-              </div>
-              </div>
+                </div>
           </div>
         </div>
       </section>
@@ -946,6 +983,35 @@
   <script src="dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
+  <script>
+$(document).ready(function () {
+
+
+  $("#custom-game-wrapper").hide();
+  $("#test-wrapper").hide();
+
+
+$("#game-type").change(function () {
+    var val = $(this).val();
+
+    if (val == "test") {
+
+        $("#custom-game-wrapper").hide();
+        $("#test-wrapper").show();
+    }
+    else if(val=="other"){
+      $("#test-wrapper").hide();
+      $("#custom-game-wrapper").show();
+    }
+    else {
+      $("#test-wrapper").hide();
+      $("#custom-game-wrapper").hide();
+    }
+});
+
+
+});
+  </script>
 </body>
 
 </html>
