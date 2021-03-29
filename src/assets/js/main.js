@@ -30,6 +30,11 @@ function clickers() {
     $('.select_other').click(function() {
         $('#txtData').show();
     })
+      //video player
+    $(".resource__item__video").click(function(){
+        $('iframe',this)[0].src += "&amp;autoplay=1";
+        $(this).addClass('open');
+    });
 }
 clickers();
 
@@ -117,4 +122,3 @@ togglePassword.addEventListener('click', function (e) {
         }, false)
       })
   })()
-

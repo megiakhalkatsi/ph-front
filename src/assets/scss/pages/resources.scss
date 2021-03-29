@@ -1,67 +1,146 @@
-.filter{
-    &__container{
-        background-color: $component-color1;
-        border-radius: 8px;
-        padding: 34px 20px;
-        margin-bottom: 34px;
-        width: 387px;
-    }
-    &__row{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__title{
-        color: $black;
-        font-family: $firagoMedium;
-        font-size: 21px;
-    }
-    &__icon{
-        height: 22px;
-        margin-bottom: 34px;
-    }
-    &__line{
-        width: 100%;
-        height: 1px;
-        background-color: rgba($color: $black, $alpha: 0.1);
-    }
-    &__form{
-        font-family: $firagoMedium;
-        font-size: 16px;
-        &__section{
-            margin-top: 34px;
-            &__title{
-                color: $black;
-                margin-bottom: 20px;
-            }
-            .checkbox-container{
-                color: rgba($color: $black, $alpha: 0.6);
-                margin-bottom: 10px;
-            }
-        }
-    }
-}
-
-.section__resources{
+.filter {
+  &__container {
+    background-color: $component-color1;
+    border-radius: 8px;
+    padding: 34px 20px;
+    margin-bottom: 34px;
+    width: 387px;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    color: $black;
+    font-family: $firagoMedium;
+    font-size: 21px;
+  }
+  &__icon {
+    height: 22px;
+    margin-bottom: 34px;
+  }
+  &__line {
     width: 100%;
-    margin-left: 100px;
-    &__row{
-        display: flex;
-        justify-content: space-between;
+    height: 1px;
+    background-color: rgba($color: $black, $alpha: 0.1);
+  }
+  &__form {
+    font-family: $firagoMedium;
+    font-size: 16px;
+    &__section {
+      margin-top: 34px;
+      &__title {
+        color: $black;
+        margin-bottom: 20px;
+      }
+      .checkbox-container {
+        color: rgba($color: $black, $alpha: 0.6);
+        margin-bottom: 10px;
+      }
     }
+  }
 }
 
+.section__resources {
+  width: 100%;
+  margin-left: 100px;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+  }
+  &__title {
+    font-size: 34px;
+    color: $firagoRegular;
+    color: $black;
+  }
+  .document__line {
+    margin: 21px 0 55px;
+  }
+}
+
+.resource__item__video {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover .bt-play {
+    transform: scale(1.1);
+  }
+  &.open {
+    .bg-video {
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: all 0.6s 0.8s;
+      transition: all 0.6s 0.8s;
+    }
+    .video-container {
+      opacity: 1;
+      -webkit-transition: all 0.6s 0.8s;
+      transition: all 0.6s 0.8s;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+  }
+  .video-container {
+    position: relative;
+    margin: 0;
+    z-index: 1;
+  }
+  .bt-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -30px 0 0 -30px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    text-indent: -999em;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: 0;
+      width: 0;
+      margin: -12px 0 0 -6px;
+      border: solid transparent;
+      border-left-color: #000;
+      border-width: 12px 20px;
+      -webkit-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+    }
+  }
+}
 
 
 // ეს არის რესურსების გვერდი: https://xd.adobe.com/view/f272ad39-4ddd-4fe1-84e5-7f794b56134e-a721/screen/591b306d-c846-4fac-9471-b2dbce86fc75?fbclid=IwAR0pUmkQGFp0mSDHlQNAapHjwTu0s_s5YLi87xh3qAGdKDcqFB4CuwRNWIk
 
-// მარცხნივ, ფილტრში თავიდან არაფერი არ უნდა იყოს მონიშნული. 
+// მარცხნივ, ფილტრში თავიდან არაფერი არ უნდა იყოს მონიშნული.
 
 // შემდეგ გვერდზე ჩანს, როგორ ჩამოდის სორტირება.
 
 // თითოეული კომპონენტი არის 4-დან 1 კატეგორიაში: ფოტო, ლინკი, ვიდეო და პდფ. თითოეულს რო ქონდეს თავისი კლასიც, რომ ბექენდმა გამოიყენოს.
 
-// ვიდეოს და ფოტოს ექნება თავისი ვიზუალები და კლიკზე უნდა გამოვიდეს დიდად. ეს ფუნქციონალი უნდა იყოს სხვა გვერდებზეც: თემის შიდა გვერდებზეც, სადაც იქნება ფოტოები, კლიკზე უნდა გაიხსნას დიდად. 
+// ვიდეოს და ფოტოს ექნება თავისი ვიზუალები და კლიკზე უნდა გამოვიდეს დიდად. ეს ფუნქციონალი უნდა იყოს სხვა გვერდებზეც: თემის შიდა გვერდებზეც, სადაც იქნება ფოტოები, კლიკზე უნდა გაიხსნას დიდად.
 // ვიდეოები წამოღებული იქნება youtube-დან და აქაც კლიკზე დიდ ეკრანზე გამოვიდეს.
 // რაღაც ბიბლიოთეკები არის და იმით შეიძლება გაკეთება.
 

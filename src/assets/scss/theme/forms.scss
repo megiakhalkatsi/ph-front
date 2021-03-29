@@ -323,10 +323,12 @@
                     font-family: $firagoMedium; 
                     span{
                         color: $black;
+                        font-size: 13px;
                     }
                     .icon{
                         fill: $black;
                         stroke: $black;
+                        width: 10px;
                     }
                 }
             }
@@ -337,6 +339,10 @@
                     border-radius: 8px;
                     background-color: $component-color4;
                 }
+            }
+            &.open{
+                border: 2px solid $component-color2;
+                border-radius: 8px;
             }
         }
     }
