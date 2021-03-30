@@ -50,3 +50,9 @@
 .resourceTypeSelectLink.active{
     display: block;
 }
+.output-img{
+    margin-top: 10px;
+    display: block;
+    width: 300px;
+    object-fit: contain;
+}

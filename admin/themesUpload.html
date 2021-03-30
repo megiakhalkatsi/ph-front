@@ -821,13 +821,16 @@
             <div class="col-12 col-md-10 m-auto">
               <ul class="nav nav-tabs" id="languages" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button" role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
+                  <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button"
+                    role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab" aria-controls="english" aria-selected="false">ინგლისური</a>
+                  <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab"
+                    aria-controls="english" aria-selected="false">ინგლისური</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab" aria-controls="Russian" aria-selected="false">რუსული</a>
+                  <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab"
+                    aria-controls="Russian" aria-selected="false">რუსული</a>
                 </li>
               </ul>
               <div class="tab-content" id="languagesContent">
@@ -847,10 +850,12 @@
                           <label for="illustrationFile">ილუსტრაცია</label>
                           <div class="input-group">
                             <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="illustrationFile">
-                              <label class="custom-file-label" for="illustrationFile">ატვირთეთ ილუსტრაცია</label>
+                              <input type="file" class="custom-file-input" id="illustrationFile" accept="image/*" name="image" onchange="loadFile(event)"
+                                style="display: none;">
+                              <label class="custom-file-label" for="illustrationFile" style="cursor: pointer;">ატვირთეთ ილუსტრაცია</label>
                             </div>
                           </div>
+                          <img id="output" class="output-img" />
                         </div>
                       </div>
                       <div class="card-footer">
@@ -889,7 +894,7 @@
                 </div>
                 <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
               </div>
-              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -946,6 +951,12 @@
   <script src="dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
+  <script>
+    var loadFile = function (event) {
+      var image = document.getElementById('output');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    };
+  </script>
 </body>
 
 </html>

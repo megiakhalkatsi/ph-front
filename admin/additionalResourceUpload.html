@@ -818,91 +818,98 @@
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                <ul class="nav nav-tabs" id="languages" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button" role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab" aria-controls="english" aria-selected="false">ინგლისური</a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab" aria-controls="Russian" aria-selected="false">რუსული</a>
-                  </li>
-                </ul>
-                <div class="tab-content" id="languagesContent">
-                  <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
-                    <div class="card card-primary">
-                      <form>
-                        <div class="card-body">
-                          <div class="form-group">
-                            <label>თემის არჩევა</label>
-                            <select class="form-control">
-                              <option>სამართლებრივი კულტურა</option>
-                              <option>ბავშთა უფლებები</option>
-                              <option>ცხოვრების ჯანსაღი წესი</option>
-                              <option>სამართლის დაცვა საქართველოში</option>
-                              <option>არასრულწოვანი და კანონი</option>
-                              <option>კიბერდანაშაული</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label>მიმართულების არჩევა</label>
-                            <select class="form-control">
-                              <option>მოსწავლის რესურსი</option>
-                              <option>განმანათლებლის რესურსი</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label>ტიპის არჩევა</label>
-                            <select class="form-control" id="resourceTypeSelect">
-                              <option>ფოტო</option>
-                              <option>ვიდეო</option>
-                              <option>ლინკი</option>
-                              <option>pdf ფაილი</option>
-                            </select>
-                          </div>
-                          <div class="form-group resourceTypeSelectLink">
-                            <label>ლინკის ტიპის არჩევა</label>
-                            <select class="form-control">
-                              <option>თამაში</option>
-                              <option>სავარჯიშო</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="resourceFile">ფაილი</label>
-                            <div class="input-group">
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="resourceFile">
-                                <label class="custom-file-label" for="resourceFile">ატვირთეთ ფაილი</label>
-                              </div>
+            <div class="col-12 col-md-10 m-auto">
+              <ul class="nav nav-tabs" id="languages" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button"
+                    role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab"
+                    aria-controls="english" aria-selected="false">ინგლისური</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab"
+                    aria-controls="Russian" aria-selected="false">რუსული</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="languagesContent">
+                <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
+                  <div class="card card-primary">
+                    <form>
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label>თემის არჩევა</label>
+                          <select class="form-control">
+                            <option>სამართლებრივი კულტურა</option>
+                            <option>ბავშთა უფლებები</option>
+                            <option>ცხოვრების ჯანსაღი წესი</option>
+                            <option>სამართლის დაცვა საქართველოში</option>
+                            <option>არასრულწოვანი და კანონი</option>
+                            <option>კიბერდანაშაული</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label>მიმართულების არჩევა</label>
+                          <select class="form-control">
+                            <option>მოსწავლის რესურსი</option>
+                            <option>განმანათლებლის რესურსი</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label>ტიპის არჩევა</label>
+                          <select class="form-control" id="resourceTypeSelect">
+                            <option>ფოტო</option>
+                            <option>ვიდეო</option>
+                            <option>ლინკი</option>
+                            <option>pdf ფაილი</option>
+                          </select>
+                        </div>
+                        <div class="form-group resourceTypeSelectLink">
+                          <label>ლინკის ტიპის არჩევა</label>
+                          <select class="form-control">
+                            <option>თამაში</option>
+                            <option>სავარჯიშო</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="resourceFile">ფაილი</label>
+                          <div class="input-group">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="resourceFile" accept="image/*"
+                                name="image" onchange="loadFile(event)" style="display: none;">
+                              <label class="custom-file-label" for="resourceFile" style="cursor: pointer;">ატვირთეთ
+                                ფაილი</label>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <label for="resourceTitle">სათაური</label>
-                            <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
-                          </div>
-                          <div class="form-group">
-                            <label for="resourceDescription">აღწერა</label>
-                            <input type="text" class="form-control" id="resourceDescription" placeholder="შეიყვანეთ აღწერა">
-                          </div>
-                          <div class="form-group">
-                            <label for="resourceSource">წყარო</label>
-                            <input type="text" class="form-control" id="resourceSource" placeholder="შეიყვანეთ წყარო">
-                          </div>
+                          <img id="output" class="output-img" />
                         </div>
-                        <div class="card-footer">
-                          <button type="submit" class="btn btn-primary">დამატება</button>
+                        <div class="form-group">
+                          <label for="resourceTitle">სათაური</label>
+                          <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
                         </div>
-                      </form>
-                    </div>
+                        <div class="form-group">
+                          <label for="resourceDescription">აღწერა</label>
+                          <input type="text" class="form-control" id="resourceDescription"
+                            placeholder="შეიყვანეთ აღწერა">
+                        </div>
+                        <div class="form-group">
+                          <label for="resourceSource">წყარო</label>
+                          <input type="text" class="form-control" id="resourceSource" placeholder="შეიყვანეთ წყარო">
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">დამატება</button>
+                      </div>
+                    </form>
                   </div>
-                  <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-                    English
-                  </div>
-                  <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
                 </div>
+                <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
+                  English
                 </div>
+                <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -960,17 +967,23 @@
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
   <script>
-$(document).ready(function () {
-    $("#resourceTypeSelect").change(function () {
+    $(document).ready(function () {
+      $("#resourceTypeSelect").change(function () {
         var val = $(this).val();
         if (val == "ლინკი") {
-            $(".resourceTypeSelectLink").addClass('active');
+          $(".resourceTypeSelectLink").addClass('active');
         }
-        else{
+        else {
           $(".resourceTypeSelectLink").removeClass('active');
         }
+      });
     });
-});
+
+
+    var loadFile = function (event) {
+      var image = document.getElementById('output');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    };
   </script>
 </body>
 

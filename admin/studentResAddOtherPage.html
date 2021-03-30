@@ -818,88 +818,95 @@
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                <ul class="nav nav-tabs" id="languages" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button" role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab" aria-controls="english" aria-selected="false">ინგლისური</a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab" aria-controls="Russian" aria-selected="false">რუსული</a>
-                  </li>
-                </ul>
-                <div class="tab-content" id="languagesContent">
-                  <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
-                    <div class="card card-primary">
-                      <form>
-                        <div class="card-body">
+            <div class="col-12 col-md-10 m-auto">
+              <ul class="nav nav-tabs" id="languages" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button"
+                    role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab"
+                    aria-controls="english" aria-selected="false">ინგლისური</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab"
+                    aria-controls="Russian" aria-selected="false">რუსული</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="languagesContent">
+                <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
+                  <div class="card card-primary">
+                    <form>
+                      <div class="card-body">
+
+                        <div class="form-group">
+                          <label for="resourceTitle">სათაური</label>
+                          <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="resourceTitle">ქვესათაური</label>
+                          <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ ქვესათაური">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="resourceDescription">ტექსტი</label>
+                          <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
+                        </div>
+
+
+                        <div class="form-check form-group">
+                          <input type="checkbox" class="form-check-input" id="page-has-main-visual">
+                          <label class="form-check-label" for="exampleCheck1">აქვს თუ არა გვერდს მთავარი
+                            ვიზუალი?</label>
+                        </div>
+
+
+                        <div id="main-visual-options">
+
 
                           <div class="form-group">
-                            <label for="resourceTitle">სათაური</label>
-                            <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                            <label>აირჩიეთ გვერდის ლეიაუთი</label>
+                            <select class="form-control">
+                              <option value="0">აირჩიეთ</option>
+                              <option value="1">ვიზუალი ზემოთ, ტექსტი ქვემოთ</option>
+                              <option value="2">ვიზუალი ქვემოთ, ტექსტი ზემოთ</option>
+                              <option value="3">ვიზუალი მარჯვნივ, ტექსტი მარცხნივ</option>
+                              <option value="4">ვიზუალი მარცხნივ, ტექსტი მარჯვნივ</option>
+                            </select>
                           </div>
+
+
 
                           <div class="form-group">
-                            <label for="resourceTitle">ქვესათაური</label>
-                            <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ ქვესათაური">
+                            <label>რა ტიპისაა მთავარი ვიზუალი?</label>
+                            <select class="form-control" id="main-visual-type">
+                              <option value="none">აირჩიეთ</option>
+                              <option value="image">ფოტო / ილუსტრაცია / გიფი</option>
+                              <option value="video">ვიდეო</option>
+                            </select>
                           </div>
+
+
+
+                        </div>
+
+
+
+                        <div id="upload-image-wrapper">
 
                           <div class="form-group">
-                            <label for="resourceDescription">ტექსტი</label>
-                            <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
-                          </div>
-
-
-                          <div class="form-check form-group">
-                            <input type="checkbox" class="form-check-input" id="page-has-main-visual">
-                            <label class="form-check-label" for="exampleCheck1">აქვს თუ არა გვერდს მთავარი ვიზუალი?</label>
-                          </div>
-
-
-                          <div id="main-visual-options">
-
-
-                            <div class="form-group">
-                              <label>აირჩიეთ გვერდის ლეიაუთი</label>
-                              <select class="form-control">
-                                <option value="0">აირჩიეთ</option>
-                                <option value="1">ვიზუალი ზემოთ, ტექსტი ქვემოთ</option>
-                                <option value="2">ვიზუალი ქვემოთ, ტექსტი ზემოთ</option>
-                                <option value="3">ვიზუალი მარჯვნივ, ტექსტი მარცხნივ</option>
-                                <option value="4">ვიზუალი მარცხნივ, ტექსტი მარჯვნივ</option>
-                              </select>
-                            </div>
-
-
-
-                            <div class="form-group">
-                              <label>რა ტიპისაა მთავარი ვიზუალი?</label>
-                              <select class="form-control" id="main-visual-type">
-                                <option value="none">აირჩიეთ</option>
-                                <option value="image">ფოტო / ილუსტრაცია / გიფი</option>
-                                <option value="video">ვიდეო</option>
-                              </select>
-                            </div>
-
-
-
-                          </div>
-
-
-
-                          <div id="upload-image-wrapper">
-
-                            <div class="form-group">
-                              <label for="resourceFile">ილუსტრაცია</label>
-                              <div class="input-group">
-                                <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="resourceFile">
-                                  <label class="custom-file-label" for="resourceFile">ატვირთეთ ილუსტრაცია</label>
-                                </div>
+                            <label for="resourceFile">ილუსტრაცია</label>
+                            <div class="input-group">
+                              <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="resourceFile" accept="image/*"
+                                  name="image" onchange="loadFile(event)" style="display: none;">
+                                <label class="custom-file-label" for="resourceFile" style="cursor: pointer;">ატვირთეთ
+                                  ილუსტრაცია</label>
                               </div>
                             </div>
+                            <img id="output" class="output-img" />
+                          </div>
 
 
                           <div class="form-group">
@@ -909,7 +916,8 @@
 
                           <div class="form-group">
                             <label for="resourceDescription">ილუსტრაციის აღწერა</label>
-                            <input type="text" class="form-control" id="resourceDescription" placeholder="შეიყვანეთ აღწერა">
+                            <input type="text" class="form-control" id="resourceDescription"
+                              placeholder="შეიყვანეთ აღწერა">
                           </div>
 
                           <div class="form-group">
@@ -937,10 +945,13 @@
                           <label for="resourceFile">ფაილის ატვირთვა და ლინკის მიღება</label>
                           <div class="input-group">
                             <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="resourceFile">
-                              <label class="custom-file-label" for="resourceFile">ატვირთეთ ფაილი</label>
+                              <input type="file" class="custom-file-input" id="resourceFile2" accept="image/*"
+                                name="image" onchange="loadFile2(event)" style="display: none;">
+                              <label class="custom-file-label" for="resourceFile2" style="cursor: pointer;">ატვირთეთ
+                                ფაილი</label>
                             </div>
                           </div>
+                          <img id="output2" class="output-img" />
                         </div>
 
 
@@ -951,7 +962,7 @@
 
 
 
-                        </div>
+                      </div>
 
 
 
@@ -959,18 +970,18 @@
 
 
 
-                        <div class="card-footer">
-                          <button type="submit" class="btn btn-primary">დამატება</button>
-                        </div>
-                      </form>
-                    </div>
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">დამატება</button>
+                      </div>
+                    </form>
                   </div>
-                  <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-                    English
-                  </div>
-                  <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
                 </div>
+                <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
+                  English
                 </div>
+                <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1028,46 +1039,53 @@
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
   <script>
-$(document).ready(function () {
+    $(document).ready(function () {
 
-  $("#main-visual-options").hide();
-  $("#upload-image-wrapper").hide();
-  $("#upload-video-wrapper").hide();
-
-
-  $('#page-has-main-visual').on('change', function(e) {
-
-  if($(this).is(':checked')) {
-
-    $("#main-visual-options").show();
-  } else {
-    $("#main-visual-options").hide();
-    $("#upload-image-wrapper").hide();
-    $("#upload-video-wrapper").hide();
-  }
-});
-
-
-$("#main-visual-type").change(function () {
-    var val = $(this).val();
-
-    if (val == "image") {
-
-        $("#upload-video-wrapper").hide();
-        $("#upload-image-wrapper").show();
-    }
-    else if (val=="video"){
-      $("#upload-image-wrapper").hide();
-      $("#upload-video-wrapper").show();
-    }
-    else {
+      $("#main-visual-options").hide();
       $("#upload-image-wrapper").hide();
       $("#upload-video-wrapper").hide();
-    }
-});
 
 
-});
+      $('#page-has-main-visual').on('change', function (e) {
+
+        if ($(this).is(':checked')) {
+
+          $("#main-visual-options").show();
+        } else {
+          $("#main-visual-options").hide();
+          $("#upload-image-wrapper").hide();
+          $("#upload-video-wrapper").hide();
+        }
+      });
+
+
+      $("#main-visual-type").change(function () {
+        var val = $(this).val();
+
+        if (val == "image") {
+
+          $("#upload-video-wrapper").hide();
+          $("#upload-image-wrapper").show();
+        }
+        else if (val == "video") {
+          $("#upload-image-wrapper").hide();
+          $("#upload-video-wrapper").show();
+        }
+        else {
+          $("#upload-image-wrapper").hide();
+          $("#upload-video-wrapper").hide();
+        }
+      });
+
+    });
+    var loadFile = function (event) {
+      var image = document.getElementById('output');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    };
+    var loadFile2 = function (event) {
+      var image = document.getElementById('output2');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    };
   </script>
 </body>
 
