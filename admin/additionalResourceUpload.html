@@ -849,6 +849,7 @@
                         <div class="form-group">
                           <label>ტიპის არჩევა</label>
                           <select class="form-control" id="resourceTypeSelect">
+                            <option hidden disabled [value]="" selected></option>
                             <option>ფოტო</option>
                             <option>ვიდეო</option>
                             <option>ლინკი</option>
@@ -858,21 +859,26 @@
                         <div class="form-group resourceTypeSelectLink">
                           <label>ლინკის ტიპის არჩევა</label>
                           <select class="form-control">
+                            <option hidden disabled [value]="" selected></option>
                             <option>თამაში</option>
                             <option>სავარჯიშო</option>
                           </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group addResourceFile">
                           <label for="resourceFile">ფაილი</label>
                           <div class="input-group">
                             <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="resourceFile" accept="image/*"
+                              <input type="file" class="custom-file-input" id="resourceFile"  
                                 name="image" onchange="loadFile(event)" style="display: none;">
                               <label class="custom-file-label" for="resourceFile" style="cursor: pointer;">ატვირთეთ
                                 ფაილი</label>
                             </div>
                           </div>
                           <img id="output" class="output-img" />
+                        </div>
+                        <div class="form-group addResourceLink">
+                          <label for="resourceLink">ლინკი</label>
+                          <input type="text" class="form-control" id="resourceLink" placeholder="შეიყვანეთ ლინკი">
                         </div>
                         <div class="form-group">
                           <label for="resourceTitle">სათაური</label>
@@ -956,13 +962,26 @@
         var val = $(this).val();
         if (val == "ლინკი") {
           $(".resourceTypeSelectLink").addClass('active');
+          $(".addResourceFile").addClass('active');
         }
         else {
           $(".resourceTypeSelectLink").removeClass('active');
+          $(".addResourceFile").removeClass('active');
+        }
+        if (val == "ლინკი" || val == "ვიდეო" ) {
+          $(".addResourceLink").addClass('active');
+        }
+        else {
+          $(".addResourceLink").removeClass('active');
+        }
+        if (val == "ფოტო" || val == "pdf ფაილი" ) {
+          $(".addResourceFile").addClass('active');
+        }
+        else {
+          $(".addResourceFile").removeClass('active');
         }
       });
     });
-
 
     var loadFile = function (event) {
       var image = document.getElementById('output');

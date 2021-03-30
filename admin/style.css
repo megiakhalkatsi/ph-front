@@ -25,7 +25,8 @@
     cursor: pointer;
 }
 .table-img{
-    height: 60px;
+    height: 100px;
+    width: 160px;
     object-fit: contain;
 }
 .resource__theme__item{
@@ -57,6 +58,23 @@
     object-fit: contain;
 }
 
-#mainDataTable td a{
+.mainDataTable-link{
     color: black;
 }
+
+.addResourceLink{
+    display: none;
+}
+.addResourceLink.active{
+    display: block;
+}
+.addResourceFile{
+    display: none;
+}
+.addResourceFile.active{
+    display: block;
+}
+
+/* 
+დამატებითი რესურსის ატვირთვისას და შეცვლისას: 
+თუ აირჩევენ ლინკს, ფაილის ატვირთვის მაგივრად უნდა ჩანდეს ლინკის ჩაწერა. ვიდეოს არჩევის შემთხვევაში ლინკი უნდა ჩანდეს */
