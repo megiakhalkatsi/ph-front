@@ -74,6 +74,12 @@
 .addResourceFile.active{
     display: block;
 }
+.addResourceImage{
+    display: none;
+}
+.addResourceImage.active{
+    display: block;
+}
 
 /* 
 დამატებითი რესურსის ატვირთვისას და შეცვლისას: 

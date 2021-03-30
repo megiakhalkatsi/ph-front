@@ -175,7 +175,7 @@
                   <form>
                     <div class="card-body">
                       <div class="form-group">
-                        <label>თემის არჩევა</label>
+                        <label>თემა</label>
                         <select class="form-control">
                           <option>სამართლებრივი კულტურა</option>
                           <option>ბავშთა უფლებები</option>
@@ -186,7 +186,7 @@
                         </select>
                       </div>
                       <div class="form-group">
-                        <label>მიმართულების არჩევა</label>
+                        <label>მიმართულება</label>
                         <select class="form-control">
                           <option>მოსწავლის რესურსი</option>
                           <option>განმანათლებლის რესურსი</option>
@@ -201,24 +201,25 @@
                           <option>pdf ფაილი</option>
                         </select>
                       </div>
-                      <div class="form-group resourceTypeSelectLink">
+                      <div class="form-group">
                         <label>ლინკის ტიპის არჩევა</label>
                         <select class="form-control">
+                          <option hidden disabled [value]="" selected>არჩევა</option>
                           <option>თამაში</option>
                           <option>სავარჯიშო</option>
                         </select>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group addResourceFile active">
                         <label for="resourceFile">ფაილი</label>
-                        <div class="input-group">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="resourceFile"  
-                              name="image" onchange="loadFile(event)" style="display: none;">
-                            <label class="custom-file-label" for="resourceFile" style="cursor: pointer;">ატვირთეთ
-                              ფაილი</label>
-                          </div>
-                        </div>
-                        <img id="output" class="output-img" />
+                        <div><a href="https://bit.ly/3sNMGkJ" target="_blank" rel="noopener noreferrer">https://bit.ly/3sNMGkJ</a></div>
+                      </div>
+                      <div class="form-group addResourceImage active">
+                        <label for="resourceImage">ფოტო</label>
+                        <img src="../src/assets/img/resource-img.png" class="output-img">
+                      </div>
+                      <div class="form-group addResourceLink active">
+                        <label for="resourceLink">ლინკი</label>
+                        <div><a href="https://bit.ly/3sNMGkJ" target="_blank" rel="noopener noreferrer">https://bit.ly/3sNMGkJ</a></div>
                       </div>
                       <div class="form-group">
                         <label for="resourceTitle">სათაური</label>
@@ -289,24 +290,36 @@
   <script src="dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
-  <script>
-$(document).ready(function () {
-    $("#resourceTypeSelect").change(function () {
+  <!-- <script>
+    $(document).ready(function () {
+      $("#resourceTypeSelect").change(function () {
         var val = $(this).val();
-        if (val == "ლინკი") {
-            $(".resourceTypeSelectLink").addClass('active');
+        if (val == "ლინკი" || val == "ვიდეო" ) {
+          $(".addResourceLink").addClass('active');
         }
-        else{
-          $(".resourceTypeSelectLink").removeClass('active');
+        else {
+          $(".addResourceLink").removeClass('active');
         }
+        if (val == "pdf ფაილი" ) {
+          $(".addResourceFile").addClass('active');
+        }
+        else {
+          $(".addResourceFile").removeClass('active');
+        }
+        if (val == "ფოტო" || val == "pdf ფაილი" || val == "ლინკი" ) {
+          $(".addResourceImage").addClass('active');
+        }
+        else {
+          $(".addResourceImage").removeClass('active');
+        }
+      });
     });
-});
 
     var loadFile = function (event) {
       var image = document.getElementById('output');
       image.src = URL.createObjectURL(event.target.files[0]);
     };
-  </script>
+  </script> -->
 </body>
 
 </html>
