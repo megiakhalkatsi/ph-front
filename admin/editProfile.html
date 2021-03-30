@@ -140,7 +140,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="websiteTexts.html" class="nav-link active">
+              <a href="websiteTexts.html" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   საიტის ტექსტები
@@ -160,7 +160,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-12">
-              <h1 class="m-0">ტექსტის რედაქტირება</h1>
+              <h1 class="m-0">პროფილის რედაქტირება</h1>
             </div>
           </div>
         </div>
@@ -170,48 +170,29 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12 col-md-10 m-auto">
-              <ul class="nav nav-tabs" id="languages" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button"
-                    role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab"
-                    aria-controls="english" aria-selected="false">ინგლისური</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab"
-                    aria-controls="Russian" aria-selected="false">რუსული</a>
-                </li>
-              </ul>
-              <div class="tab-content" id="languagesContent">
-                <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
-                  <div class="card card-primary">
-                    <form>
-                      <div class="card-body">
-                        <div class="form-group">
-                          <label for="textTitle">სათაური</label>
-                          <input type="text" class="form-control" id="textTitle" placeholder="შეიყვანეთ სათაური"
-                            value="სამართლებრივი კულტურა">
-                        </div>
-                        <div class="form-group">
-                          <label for="text">ტექსტი</label>
-                          <textarea class="form-control" id="text" placeholder="შეიყვანეთ ტექსტი" rows="4" cols="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </textarea>
-                        </div>
+                <div class="card card-primary">
+
+                  <form>
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label for="userName">სახელი</label>
+                        <input type="text" class="form-control" id="userName" placeholder="სახელი" value="სახელი1">
                       </div>
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">შენახვა</button>
+                      <div class="form-group">
+                        <label for="userSurname">გვარი</label>
+                        <input type="text" class="form-control" id="userSurname" placeholder="გვარი" value="გვარი1">
                       </div>
-                    </form>
-                  </div>
+                      <div class="form-group">
+                        <label for="password">პაროლი</label>
+                        <input type="text" class="form-control" id="password" placeholder="პაროლი" value="password1">
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-primary">შენახვა</button>
+                    </div>
+                  </form>
                 </div>
-                <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-                  English
-                </div>
-                <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
               </div>
-            </div>
           </div>
         </div>
       </section>
@@ -219,7 +200,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer"></footer>
-
+    
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->
@@ -262,6 +243,12 @@
   <script src="dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
+  <script>
+    var loadFile = function (event) {
+      var image = document.getElementById('output');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    };
+  </script>
 </body>
 
 </html>
