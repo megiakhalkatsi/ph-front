@@ -56,3 +56,7 @@
     width: 300px;
     object-fit: contain;
 }
+
+#mainDataTable td a{
+    color: black;
+}
