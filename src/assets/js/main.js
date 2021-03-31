@@ -2,41 +2,52 @@
 
 var header = document.getElementById("header");
 function fixedHeaderFunction() {
-  if (window.pageYOffset > 400) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
+    if (window.pageYOffset > 400) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
 }
 
-window.onscroll = function() {fixedHeaderFunction()};
+window.onscroll = function () { fixedHeaderFunction() };
 
 
 function clickers() {
-    $('.header__nav__item-link').click(function() {
+    $('.header__nav__item-link').click(function () {
         $('.header__nav__item-link').removeClass('active')
         $(this).addClass('active');
     })
-    $('.header__nav__search').click(function() {
+    $('.header__nav__search').click(function () {
         $(this).toggleClass('active');
         $('.search__container').toggleClass('active');
     })
-    $('.search__close').click(function() {
+    $('.search__close').click(function () {
         $('.search__container').removeClass('active');
     })
-    $('.dropdown__item').click(function() {
+    $('.dropdown__item').click(function () {
         $('#txtData').hide();
     })
-    $('.select_other').click(function() {
+    $('.select_other').click(function () {
         $('#txtData').show();
     })
-      //video player
-    $(".resource__item__video").click(function(){
-        $('iframe',this)[0].src += "&amp;autoplay=1";
+    //video player
+    $(".resource__item__video").click(function () {
+        $('iframe', this)[0].src += "&amp;autoplay=1";
         $(this).addClass('open');
     });
 }
 clickers();
+
+//full size images
+var imgs = document.getElementsByClassName("resource__item__img");
+for (var i = 0; i < imgs.length; i++) {
+    imgs[i].onclick = function () { imageZoom(this); }
+}
+function imageZoom(ele) {
+    document.getElementById("image-fullscreen").style.background = 'black url(' + ele.src + ') no-repeat fixed center center';
+    document.getElementById("image-fullscreen").style.backgroundSize = 'contain';
+    console.log(document.getElementById("image-fullscreen").style);
+}
 
 // dropdown
 
@@ -106,19 +117,25 @@ togglePassword.addEventListener('click', function (e) {
     'use strict'
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.needs-validation')
-  
+
     // Loop over them and prevent submission
     Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated'),
-          $('.form__label').addClass('error'),
-          $('.form__error__message').addClass('active')
-        }, false)
-      })
-  })()
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated'),
+                    $('.form__label').addClass('error'),
+                    $('.form__error__message').addClass('active')
+            }, false)
+        })
+})()
+
+//header navigation - active items
+$(function () {
+    $('.header__nav__list a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+});
+
