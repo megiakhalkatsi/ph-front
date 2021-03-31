@@ -51,20 +51,26 @@ body {
 // search bar
 .search {
     &__container {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         background: $white;
-        height: 100vh;
-        z-index: 1;
+        min-height: 100vh;
+        z-index: 2;
         display: flex;
         flex-direction: column;
         justify-content: center;
         transition: 0.3s;
         transform: translateY(-100%);
+        box-shadow: 0px 0px 30px #2026311a;
         &.active {
             transform: translateY(0);
+        }
+        &.result__active{
+            .search__container__row{
+                margin-top: 120px;
+            }
         }
         &__row {
             display: flex;
@@ -138,6 +144,10 @@ body {
     // search results
     &__result{
         margin-top: 55px;
+        display: none;
+        &.active{
+            display: block;
+        }
         &__title{
             font-family: $firagoRegular;
             font-size: 34px;

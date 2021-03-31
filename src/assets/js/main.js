@@ -24,6 +24,10 @@ function clickers() {
     $('.search__close').click(function () {
         $('.search__container').removeClass('active');
     })
+    $('.search__icon').click(function () {
+        $('.search__result').addClass('active');
+        $('.search__container').addClass('result__active');
+    })
     $('.dropdown__item').click(function () {
         $('#txtData').hide();
     })
