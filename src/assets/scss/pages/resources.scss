@@ -4,7 +4,11 @@
     border-radius: 8px;
     padding: 34px 20px;
     margin-bottom: 34px;
-    width: 387px;
+    width: 300px;
+    flex: 0 0 auto;
+    @media #{$breakpoint-xxl} {
+      width: 387px;
+    }
   }
   &__row {
     display: flex;

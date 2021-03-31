@@ -70,6 +70,7 @@
   
   a {
     background-color: transparent; /* Remove the gray background on active links in IE 10 */
+    text-decoration: none;
   }
   
   a:active,
@@ -278,5 +279,9 @@
   /* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
   [aria-disabled="true"] {
     cursor: default;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
   }
   

@@ -84,9 +84,13 @@
             }
         }
     }
+    &-group {
+        margin-bottom: 15px;
+    }
     &__label {
         font-family: $firagoMedium;
         font-size: 16px;
+        margin-bottom: 7px;
         &.error {
             color: $error-red;
         }
@@ -313,34 +317,34 @@
 /*dropdown*/
 
 /*dropdown for sorting*/
-.dropdown__elem.form-select{
-    &.sort{
+.dropdown__elem.form-select {
+    &.sort {
         width: 165px;
         border: none;
-        .dropdown{
-            &__elem{
+        .dropdown {
+            &__elem {
                 &--inner {
-                    font-family: $firagoMedium; 
-                    span{
+                    font-family: $firagoMedium;
+                    span {
                         color: $black;
                         font-size: 13px;
                     }
-                    .icon{
+                    .icon {
                         fill: $black;
                         stroke: $black;
                         width: 10px;
                     }
                 }
             }
-            &__item{
+            &__item {
                 color: rgba($color: $black, $alpha: 0.6);
-                &:hover{
+                &:hover {
                     color: $black;
                     border-radius: 8px;
                     background-color: $component-color4;
                 }
             }
-            &.open{
+            &.open {
                 border: 2px solid $component-color2;
                 border-radius: 8px;
             }
@@ -359,12 +363,15 @@
         padding-left: 35px;
         margin-bottom: 18px;
         cursor: pointer;
-        font-size: 16px;
         font-family: $firagoMedium;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+        font-size: 14px;
+        @media #{$breakpoint-xxl} {
+            font-size: 16px;
+        }
         &:hover input ~ .checkmark {
             background-color: #ccc;
         }
@@ -425,7 +432,7 @@
     font-family: $firagoMedium;
     color: rgba($color: $black, $alpha: 0.6);
     user-select: none;
-    &:first-child{
+    &:first-child {
         margin-right: 50px;
     }
     &:hover input ~ .checkmark {
