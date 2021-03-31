@@ -159,8 +159,8 @@
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-12">
-              <h1 class="m-0">თემის დამატება</h1>
+            <div class="col-12 col-md-10 m-auto">
+              <h4 class="m-0">თემის დამატება</h4>
             </div>
           </div>
         </div>
@@ -170,6 +170,36 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12 col-md-10 m-auto">
+
+    <form>
+
+              <div class="card card-primary">
+
+                  <div class="card-body">
+
+
+
+                    <div class="form-group">
+                       <label>რომელი თემის შემდეგ იყოს?</label><span style="color:red;"> *</span>
+                       <select class="form-control">
+                       <option>თემა 1 - სათაური</option>
+                       <option>თემა 2 - სათაური</option>
+                       </select>
+                    </div>
+
+
+
+
+
+                  </div>
+
+
+
+
+
+              </div>
+
+
               <ul class="nav nav-tabs" id="languages" role="tablist">
                 <li class="nav-item" role="presentation">
                   <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button"
@@ -179,82 +209,86 @@
                   <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab"
                     aria-controls="english" aria-selected="false">ინგლისური</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab"
-                    aria-controls="Russian" aria-selected="false">რუსული</a>
-                </li>
+
               </ul>
               <div class="tab-content" id="languagesContent">
                 <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
                   <div class="card card-primary">
-                    <form>
+
                       <div class="card-body">
 
                         <div class="form-group">
-                          <label for="resourceTitle">ნომერი</label>
-                          <input type="number" class="form-control">
-                        </div>
-
-
-                        <div class="form-group">
-                          <label for="resourceTitle">სათაური</label>
+                          <label for="resourceTitle">სათაური (ka)</label><span style="color:red;"> *</span>
                           <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
                         </div>
 
-
-
                         <div class="form-group">
-                          <label for="resourceDescription">აღწერა</label>
+                          <label for="resourceDescription">აღწერა (ka)</label><span style="color:red;"> *</span>
                           <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
                         </div>
 
 
-
-
                         <div class="form-group">
-                          <label for="resourceTitle">ვიდეოს youtube ლინკი</label>
+                          <label for="resourceTitle">ვიდეოს youtube ლინკი (ka)</label><span style="color:red;"> *</span>
                           <input type="text" class="form-control" placeholder="შეიყვანეთ ვიდეოს ლინკი">
                         </div>
 
+                        <div class="form-group">
+                          <label for="resourceDescription">ვიდეოს ტრანსკრიპტი (ka)</label>
+                          <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
+                        </div>
 
+                        <p style="color: red;">ტესტები იგივე გვექნება, მაგრამ მაინც დაველოდოთ მასწავლებლის რესურსის ინსტრუქციებს და მერე დავამატოთ ეს </p>
+
+                      </div>
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
+
+
+                  <div class="card card-primary">
+
+                      <div class="card-body">
 
                         <div class="form-group">
-                          <label for="resourceDescription">ვიდეოს ტრანსკრიპტი</label>
+                          <label for="resourceTitle">სათაური (en)</label><span style="color:red;"> *</span>
+                          <input type="text" class="form-control" id="resourceTitle" placeholder="შეიყვანეთ სათაური">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="resourceDescription">აღწერა (en)</label><span style="color:red;"> *</span>
                           <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
                         </div>
 
 
+                        <div class="form-group">
+                          <label for="resourceTitle">ვიდეოს youtube ლინკი (en)</label><span style="color:red;"> *</span>
+                          <input type="text" class="form-control" placeholder="შეიყვანეთ ვიდეოს ლინკი">
+                        </div>
 
+                        <div class="form-group">
+                          <label for="resourceDescription">ვიდეოს ტრანსკრიპტი (en)</label>
+                          <textarea id="summernote" name="name" rows="8" cols="80"></textarea>
+                        </div>
 
-                        <p style="color: red;">დამატებითი რესურსები როგორ დავამატებინოთ?</p>
-
-
-                        <p style="color: red;">ტესტები როგორ დავამატებინოთ?</p>
-
-
-
-
-
-
+                        <p style="color: red;">ტესტები იგივე გვექნება, მაგრამ მაინც დაველოდოთ მასწავლებლის რესურსის ინსტრუქციებს და მერე დავამატოთ ეს </p>
 
                       </div>
 
-
-
-
-
-
-
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">დამატება</button>
-                      </div>
-                    </form>
                   </div>
+
+
                 </div>
-                <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-                  English
+
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">დამატება</button>
                 </div>
-                <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
+
+
+              </form>
+
               </div>
             </div>
           </div>

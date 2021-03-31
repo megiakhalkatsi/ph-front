@@ -159,8 +159,8 @@
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-12">
-              <h1 class="m-0">თემის რედაქტირება</h1>
+            <div class="col-12 col-md-10 m-auto">
+              <h4 class="m-0">თემის რედაქტირება</h4>
             </div>
           </div>
         </div>
@@ -170,38 +170,84 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12 col-md-10 m-auto">
-              <div class="card card-primary">
 
                 <form>
+
+
+              <ul class="nav nav-tabs" id="languages" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="georgian-tab" data-toggle="tab" data-target="#georgian" type="button"
+                    role="tab" aria-controls="georgian" aria-selected="true">ქართული</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab"
+                    aria-controls="english" aria-selected="false">ინგლისური</a>
+                </li>
+
+              </ul>
+              <div class="tab-content" id="languagesContent">
+                <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
+                  <div class="card card-primary">
+
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="themeName">თემის სახელი (ka)</label><span style="color:red;"> *</span>
+                          <input type="text" class="form-control" id="themeName" name="themeName" value="თემის სახელი (ka)" placeholder="შეიყვანეთ თემის სახელი">
+                        </div>
+                        <div class="form-group">
+                          <label for="themeTags">თეგები (ka)</label><span style="color:red;"> *</span>
+                          <input type="text" class="form-control" id="themeTags" name="themeTags" value="თეგები (ka)" placeholder="შეიყვანეთ მძიმეებით გამოყოფილი თეგები">
+                        </div>
+
+                      </div>
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
+                  <div class="card card-primary">
+
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="themeName-en">თემის სახელი (en)</label>
+                          <input type="text" class="form-control" id="themeName-en" name="themeName-en" value="თემის სახელი (en)" placeholder="შეიყვანეთ თემის სახელი">
+                        </div>
+                        <div class="form-group">
+                          <label for="themeTags-en">თეგები (en)</label>
+                          <input type="text" class="form-control" id="themeTags-en" name="themeTags-en" value="თეგები (en)" placeholder="შეიყვანეთ მძიმეებით გამოყოფილი თეგები">
+                        </div>
+
+                      </div>
+
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card card-primary">
+
                   <div class="card-body">
+
                     <div class="form-group">
-                      <label for="themeName">თემის სახელი</label>
-                      <input type="text" class="form-control" id="themeName" placeholder="შეიყვანეთ თემის სახელი"
-                        value="სამართლებრივი კულტურა">
-                    </div>
-                    <div class="form-group">
-                      <label for="themeTags">თეგები</label>
-                      <input type="text" class="form-control" id="themeTags" placeholder="შეიყვანეთ თეგები"
-                        value="სამართალი, კულტურა">
-                    </div>
-                    <div class="form-group">
-                      <label for="illustrationFile">ილუსტრაცია</label>
+                      <label for="illustrationFile">ილუსტრაცია</label><span style="color:red;"> *</span>
                       <div class="input-group">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="illustrationFile" name="image"
-                            onchange="loadFile(event)" style="display: none;">
-                          <label class="custom-file-label" for="illustrationFile" style="cursor: pointer;">ატვირთეთ
-                            ილუსტრაცია</label>
+                          <input type="file" accept="image/*" class="custom-file-input" id="illustrationFile" name="illustrationFile" onchange="loadFile(event)"
+                            style="display: none;">
+                          <label class="custom-file-label" for="illustrationFile" style="cursor: pointer;">ატვირთეთ ილუსტრაცია</label>
                         </div>
                       </div>
-                      <img id="output" class="output-img" />
+                      <img id="output" class="output-img" src="https://i0.wp.com/churchillwild.com/wp-content/uploads/2019/04/Wildlife_1st-Place_Gordon-Fox_PBPS_2018.jpg?fit=1024%2C544&ssl=1" />
                     </div>
                   </div>
+
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">შენახვა</button>
+                    <button type="submit" class="btn btn-primary">დამატება</button>
                   </div>
-                </form>
+
               </div>
+
+              </form>
+
             </div>
           </div>
         </div>

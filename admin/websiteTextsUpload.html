@@ -159,8 +159,8 @@
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-12">
-              <h1 class="m-0">ტექსტის დამატება</h1>
+            <div class="col-12 col-md-10 m-auto">
+              <h4 class="m-0">ტექსტის დამატება</h4>
             </div>
           </div>
         </div>
@@ -179,37 +179,50 @@
                   <a class="nav-link" id="english-tab" data-toggle="tab" data-target="#english" type="button" role="tab"
                     aria-controls="english" aria-selected="false">ინგლისური</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="Russian-tab" data-toggle="tab" data-target="#Russian" type="button" role="tab"
-                    aria-controls="Russian" aria-selected="false">რუსული</a>
-                </li>
+
               </ul>
+
+              <form class="" action="" method="post">
+
               <div class="tab-content" id="languagesContent">
                 <div class="tab-pane fade show active" id="georgian" role="tabpanel" aria-labelledby="georgian-tab">
                   <div class="card card-primary">
-                    <form>
+
                       <div class="card-body">
+
                         <div class="form-group">
-                          <label for="textTitle">სათაური</label>
-                          <input type="text" class="form-control" id="textTitle" placeholder="შეიყვანეთ სათაური">
-                        </div>
-                        <div class="form-group">
-                          <label for="text">ტექსტი</label>
-                          <textarea class="form-control" id="text" placeholder="შეიყვანეთ ტექსტი" rows="4"
-                            cols="50"> </textarea>
+                          <label for="text">ტექსტი (ka)</label><span style="color:red;"> *</span>
+                          <textarea name="text-ka" rows="8" cols="80"></textarea>
                         </div>
                       </div>
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">დამატება</button>
-                      </div>
-                    </form>
+
+
                   </div>
                 </div>
                 <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-                  English
+                  <div class="card card-primary">
+
+                      <div class="card-body">
+
+                        <div class="form-group">
+                          <label for="text">ტექსტი (en)</label>
+                          <textarea name="text-en" rows="8" cols="80"></textarea>
+                        </div>
+                      </div>
+
+
+                  </div>
                 </div>
-                <div class="tab-pane fade" id="Russian" role="tabpanel" aria-labelledby="Russian-tab">Russian</div>
               </div>
+              <div class="card">
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">დამატება</button>
+                </div>
+              </div>
+
+
+              </form>
+
             </div>
           </div>
         </div>
