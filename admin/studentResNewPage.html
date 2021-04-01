@@ -159,7 +159,7 @@
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-12">
+            <div class="col-12 col-md-10 m-auto">
               <h4 class="m-0">გვერდის დამატება</h4>
             </div>
           </div>
@@ -175,10 +175,24 @@
                   <div class="card card-primary">
                     <form>
                       <div class="card-body">
+
                         <div class="form-group">
-                          <label>გვერდის ნომერი</label>
-                          <input type="number" class="form-control">
+                          <label>მშობელი ნაბიჯი</label>
+                          <select class="form-control" id="pageParent">
+                            <option value="1">არ აქვს</option>
+                            <option value="2">ნაბიჯი1</option>
+                            <option value="3">ნაბიჯი2</option>
+                          </select>
                         </div>
+
+                        <div class="form-group">
+                          <label>რომელი გვერდის შემდეგ იყოს?</label>
+                          <select class="form-control" id="prevPageSelect">
+                            <option value="1">მსჯელობა - სათაური</option>
+                            <option value="2">სავარჯიშო - სათაური</option>
+                          </select>
+                        </div>
+
                         <div class="form-group">
                           <label>გვერდის ტიპი</label>
                           <select class="form-control" id="pageTypeSelect">
@@ -186,7 +200,6 @@
                             <option value="2">კომპლექსური დავალება</option>
                             <option value="3">ნაბიჯი</option>
                             <option value="4">მსჯელობა</option>
-                            <option value="5">განმარტება</option>
                             <option value="6">სავარჯიშო</option>
                             <option value="7">ტიპის გარეშე</option>
                           </select>
@@ -202,11 +215,7 @@
                     <a href="studentResAddFirstPage.html">პირველი გვერდის დამატება</a>
                     <a href="studentResAddStepPage.html">ნაბიჯის დამატება</a>
                     <a href="studentResAddGamePage.html">სავარჯიშოს დამატება</a>
-                    <a href="studentResAddOtherPage.html">სხვა ყველა ტიპის გვერდის დამატება (კომპლექსური დავალება, მსჯელობა, განმარტება, სავარჯიშო და გვერდი ტიპის გარეშე)</a>
-
-                    განმარტებები და კომპლექსურის დამატებითი გვერდები იქვე გამოჩნდეს გვერდებში?
-                    კომპლექსურის გვერდები ზუსტად განმარტებასავით შეიძლება გაკეთდეს.
-                    უბრალოდ, ჩამონათვალი სხვანაირი იქნება
+                    <a href="studentResAddOtherPage.html">სხვა ყველა ტიპის გვერდის დამატება (კომპლექსური დავალება, მსჯელობა და გვერდი ტიპის გარეშე)</a>
 
                   </div>
                 </div>
