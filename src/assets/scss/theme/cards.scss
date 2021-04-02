@@ -29,9 +29,14 @@
     &__item {
         display: block;
         width: 100%;
-        margin-bottom: 30px;
+        height: 100%;
+        border: 1px solid $component-color1;
+        border-radius: 8px;
         &:hover {
             text-decoration: none;
+        }
+        &__container{
+            margin-bottom: 30px;
         }
         &-relative {
             position: relative;
@@ -89,6 +94,8 @@
             }
         }
         &-link {
+            display: inline-block;
+            margin-left: 20px;
             &:hover {
                 text-decoration: none;
             }

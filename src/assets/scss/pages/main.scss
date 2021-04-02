@@ -6,12 +6,13 @@ body {
     padding: 0;
 }
 // button styles
-.bt-blue{
+.bt-blue {
     color: $white;
     background-color: $component-color2;
-    transition: .3s;
-    &:hover{
-        background-color: darken($component-color2,3%);
+    transition: 0.3s;
+    &:hover {
+        // background-color: darken($component-color2,3%);
+        background-color: $component-color2-darken;
         text-decoration: none;
         color: $white;
     }
@@ -23,22 +24,22 @@ body {
     }
     // page navigation
     &__nav {
-        &__list{
+        &__list {
             display: flex;
             align-items: center;
             margin-bottom: 0;
-            &__item{
+            &__item {
                 list-style: none;
                 margin-right: 10px;
-                &-link{
+                &-link {
                     font-family: $firagoBold;
                     font-size: 12px;
                     color: $black;
-                    &:hover{
+                    &:hover {
                         color: $black;
                     }
                 }
-                .icon{
+                .icon {
                     width: 4px;
                     height: 7px;
                     fill: black;
@@ -67,8 +68,8 @@ body {
         &.active {
             transform: translateY(0);
         }
-        &.result__active{
-            .search__container__row{
+        &.result__active {
+            .search__container__row {
                 margin-top: 120px;
             }
         }
@@ -142,36 +143,36 @@ body {
         }
     }
     // search results
-    &__result{
+    &__result {
         margin-top: 55px;
         display: none;
-        &.active{
+        &.active {
             display: block;
         }
-        &__title{
+        &__title {
             font-family: $firagoRegular;
             font-size: 34px;
             color: $black;
-            &.margins{
+            &.margins {
                 margin-bottom: 34px;
-                &.mt{
+                &.mt {
                     margin-top: 45px;
                 }
             }
-            .purple{
+            .purple {
                 color: $component-color2;
                 font-family: $firagoBold;
             }
-        } 
-        &__word{
-           color: $component-color2; 
+        }
+        &__word {
+            color: $component-color2;
         }
     }
 }
 
 // successful registration
-.registration{
-    &__success{
+.registration {
+    &__success {
         min-height: 60vh;
         width: 100%;
         display: flex;
@@ -179,17 +180,17 @@ body {
         align-items: center;
         justify-content: center;
         text-align: center;
-        &.sm{
+        &.sm {
             max-width: 300px;
             width: 100%;
             margin: auto;
         }
-        &__icon{
+        &__icon {
             // margin-bottom: 55px;
             width: 40px;
             height: 40px;
         }
-        &__text{
+        &__text {
             font-size: 21px;
             font-family: $firagoBold;
             color: $black;
@@ -199,51 +200,87 @@ body {
 }
 
 // terms and privacy pages
-.document{
-    &__section{
+.document {
+    &__section {
         width: 100%;
         max-width: 1082px;
         margin: auto;
     }
-    &__title{
+    &__title {
         color: $black;
         font-size: 34px;
         font-family: $firagoBold;
         margin-bottom: 34px;
         text-align: center;
     }
-    &__text{
+    &__text {
         font-family: $firagoRegular;
         font-size: 16px;
         margin-bottom: 0;
         color: rgba($color: $black, $alpha: 0.6);
     }
-    &__line{
+    &__line {
         width: 100%;
         margin: 55px 0 85px;
         border-top: 2px dashed rgba($color: $component-color2, $alpha: 0.3);
-        &.mg-sm{
+        &.mg-sm {
             margin: 21px 0 34px;
         }
     }
-    &__btn{
-        &__container{
+    &__btn {
+        &__container {
             margin-bottom: 55px;
             display: flex;
             justify-content: center;
         }
         padding: 30px 103px;
         background-color: $white;
-        box-shadow: 0 0 30px #2026310D;
+        box-shadow: 0 0 30px #2026310d;
         color: $black;
         font-family: $firagoBold;
         font-size: 16px;
         line-height: 1.2;
-        transition: .3s;
-        &:hover{
+        transition: 0.3s;
+        &:hover {
             text-decoration: none;
             color: $black;
             box-shadow: none;
+        }
+    }
+}
+
+// pagination
+.paging {
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 50px;
+    }
+    &__item {
+        color: $black;
+        font-size: 21px;
+        font-family: $firagoMedium;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        &:last-child{
+            margin-right: 0;
+        }
+        &.active {
+            border: 2px solid $component-color2;
+            color: $component-color2;
+        }
+        .icon {
+            width: 5px;
+            fill: $white;
+            &.arrow-left{
+                transform: rotate(180deg);
+            }
         }
     }
 }
