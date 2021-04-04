@@ -17,6 +17,16 @@ body {
         color: $white;
     }
 }
+.bt-gray{
+    color: $black;
+    background-color: $component-color4;
+    transition: 0.3s;
+    &:hover {
+        background-color: darken($component-color4,3%);
+        text-decoration: none;
+        color: $black;
+    }
+}
 
 .page {
     &__content {
