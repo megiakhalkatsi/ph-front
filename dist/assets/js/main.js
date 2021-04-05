@@ -2,7 +2,7 @@
 
 var header = document.getElementById("header");
 function fixedHeaderFunction() {
-    if (window.pageYOffset > 400) {
+    if (window.pageYOffset > 50) {
         header.classList.add("sticky");
     } else {
         header.classList.remove("sticky");
