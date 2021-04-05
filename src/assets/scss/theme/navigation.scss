@@ -97,7 +97,10 @@
                 stroke: $black;
             }
             &:hover{
-                background-color: darken($component-color4,3%);
+                background-color: $component-color2;
+                .icon {
+                    stroke: $white;
+                }
             }
             &.active{
                 background-color: $component-color2;
