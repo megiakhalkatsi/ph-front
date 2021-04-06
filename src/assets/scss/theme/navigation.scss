@@ -4,7 +4,7 @@
     height: 80px;
     line-height: 80px;
     color: $black;
-    transition: .5s;
+    transition: .2s;
     position: fixed;
     left: 0;
     top: 20px;
@@ -25,7 +25,7 @@
         justify-content: space-between;
         width: 100%;
         // padding: 0 10px;
-        transition: .5s;
+        transition: .2s;
     }
     &__logo {
         color: $black;
