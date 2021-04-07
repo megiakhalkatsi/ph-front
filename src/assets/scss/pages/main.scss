@@ -18,8 +18,14 @@ body {
 .mb-55{
     margin-bottom: 55px;
 }
+.mb-135{
+    margin-bottom: 135px;
+}
 .mt-144{
-    margin-top: 144px;
+    margin-top: 89px;
+    @media #{$breakpoint-xl-ex} {
+        margin-top: 144px;
+    }
 }
 
 // button styles
@@ -368,6 +374,7 @@ body {
             font-family: $firagoBold;
             transition: .3s;
             border: 2px solid transparent;
+            padding: 20px;
             &:first-child{
                 margin-right: 30px;
             }
@@ -445,6 +452,23 @@ body {
                 object-fit: contain;
                 margin: auto;
             }
+        }
+        &__btn{
+            margin-right: 0;
+            margin-bottom: 135px;
+            &__container{
+                display: flex;
+                justify-content: center;
+                margin-top: 60px;
+            }
+        }
+    }
+    &__five{
+        &__content{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
         }
     }
 }
