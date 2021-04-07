@@ -1,0 +1,36 @@
+.game__modal {
+    padding-right: 0!important;
+    &-dialog {
+        max-width: 100%;
+        margin: 20px;
+    }
+    &-content{
+        min-height: calc(100vh - 40px);
+    }
+    &-header{
+        display: flex;
+        justify-content: flex-end;
+        padding: 34px;
+    }
+    &-close{
+        width: 40px;
+        height: 40px;
+        border: 1px solid $component-color2;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+        .icon{
+            width: 8px;
+            height: 8px;
+            transition: .3s;
+        }
+        &:hover{
+            background-color: $component-color2;
+            .icon{
+                fill: $white;
+            }
+        }
+    }
+}
