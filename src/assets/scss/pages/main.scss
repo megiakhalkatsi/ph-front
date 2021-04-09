@@ -471,4 +471,25 @@ body {
             justify-content: center;
         }
     }
+    &__six{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        &__row{
+            display: flex;
+            justify-content: space-evenly;
+            margin: 115px 0;
+            &__item{
+                display: flex;
+                justify-content: center;
+                &__img{
+                    height: 80px;
+                    object-fit: contain;
+                    &.mr{
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+    }
 }
