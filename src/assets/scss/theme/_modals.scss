@@ -5,3 +5,18 @@
   z-index: 2;
 }
 
+.notificationModal {
+  background-color: rgba($color: $component-color2, $alpha: 0.8);
+  &-body {
+    padding: 41px 15px;
+    text-align: center;
+    @media #{$breakpoint-lg} {
+      padding: 81px 60px;
+    }
+  }
+  &-xl {
+    @media #{$breakpoint-xl} {
+      max-width: 1082px;
+    }
+  }
+}
