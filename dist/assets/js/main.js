@@ -22,6 +22,7 @@ function clickers() {
         $('.search__container').toggleClass('active');
     })
     $('.search__close').click(function () {
+        $('.search__result').removeClass('active');
         $('.search__container').removeClass('active');
     })
     $('.search__icon').click(function () {
