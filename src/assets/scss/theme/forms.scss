@@ -5,21 +5,45 @@
         margin: 20px auto 60px;
         text-align: center;
         width: 100%;
-        max-width: 526px;
+        max-width: 434px;
+        @media #{$breakpoint-lg} {
+            max-width: 444px;
+        }
+        @media #{$breakpoint-xl} {
+            max-width: 564px;
+        }
+        @media #{$breakpoint-xl-ex} {
+            max-width: 526px;
+        }
         &__title {
-            font-size: 55px;
             color: $black;
             font-family: $firagoBold;
-            margin-bottom: 34px;
+            margin-bottom: 21px;
+            font-size: 21px;
+            @media #{$breakpoint-md} {
+                font-size: 34px;
+                margin-bottom: 34px;
+            }
+            @media #{$breakpoint-xl} {
+                font-size: 55px;
+            }
         }
         &__text {
             font-family: $firagoRegular;
-            font-size: 21px;
+            font-size: 16px;
             color: $component-color2;
+            margin-bottom: 34px;
+            @media #{$breakpoint-md} {
+                font-size: 21px;
+                margin-bottom: 55px;
+            }
             &__line {
                 border-bottom: 2px dashed $component-color2;
                 line-height: 0.1em;
-                margin: 55px auto;
+                margin: 34px auto;
+                @media #{$breakpoint-md} {
+                    margin: 55px auto;
+                }
                 span {
                     background-color: $white;
                     padding: 0 50px;
@@ -32,6 +56,10 @@
                 &-link {
                     color: $component-color2;
                     text-decoration: underline;
+                    display: block;
+                    @media #{$breakpoint-md} {
+                        display: inline-block;
+                    }
                     .icon {
                         stroke: $component-color2;
                         width: 12px;
@@ -158,6 +186,14 @@
             text-align: center;
             &:focus {
                 outline: none;
+            }
+            &-login{
+                &.mobile{
+                    padding: 10px 45px;
+                    @media #{$breakpoint-md} {
+                        padding: 10px 100px;
+                    }
+                }
             }
             &-sm {
                 max-width: 200px;

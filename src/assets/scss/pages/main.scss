@@ -237,17 +237,30 @@ body {
 // successful registration
 .registration {
     &__success {
-        min-height: 60vh;
+        // min-height: calc(100vh - 100px - 240px);
+        min-height: 45vh;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
+        max-width: 804px;
+        margin: 50px auto;
+        @media #{$breakpoint-md} {
+            min-height: 65vh;
+            margin: auto;
+        }
+        @media #{$breakpoint-xl-ex} {
+            min-height: calc(100vh - 100px - 286px);
+        }
         &.sm {
             max-width: 300px;
             width: 100%;
-            margin: auto;
+            margin: 50px auto;
+            @media #{$breakpoint-md} {
+                margin: auto;
+            }
         }
         &__icon {
             // margin-bottom: 55px;
@@ -258,7 +271,10 @@ body {
             font-size: 21px;
             font-family: $firagoBold;
             color: $black;
-            margin: 55px auto 50px;
+            margin: 34px auto 50px;
+            @media #{$breakpoint-lg} {
+                margin: 55px auto 50px;
+            }
         }
     }
 }

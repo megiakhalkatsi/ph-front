@@ -47,11 +47,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            @media #{$breakpoint-xxl} {
-                height: 200px;
-            }
             @media #{$breakpoint-xl-ex} {
                 height: 180px;
+            }
+            @media #{$breakpoint-xxl} {
+                height: 200px;
             }
         }
         &__img {
