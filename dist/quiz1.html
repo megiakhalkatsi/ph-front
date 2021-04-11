@@ -147,7 +147,7 @@
 
 <!-- Modal -->
 <div class="modal fade game__modal" id="Quiz1" tabindex="-1" aria-labelledby="Quiz1Label" aria-hidden="true">
-  <div class="modal-dialog game__modal-dialog modal-dialog-scrollable">
+  <div class="modal-dialog game__modal-dialog">
     <div class="modal-content game__modal-content">
       <div class="game__modal-header">
         <a href="#" class="game__modal-close" data-bs-dismiss="modal" aria-label="Close">
@@ -164,7 +164,7 @@
         </button>
 
         <div class="row">
-          <div class="col-12 col-md-10 offset-md-2 col-lg-8">
+          <div class="col-12 col-lg-8 game__content-col m-auto">
             <h2 class="game__text lg mb-34">3. საქართველო არის სამართლებრივი სახელმწიფო, რაც ნიშნავს, რომ ხელისუფლება
               ხორციელდება....</h2>
             <div class="game__answer__drop__container">
@@ -199,7 +199,7 @@
             </div>
             <div class="game__line"></div>
           </div>
-          <div class="col-12">
+          <div class="col-12 game__content-col-bottom">
             <div class="row game__img__btn__row">
               <div class="col-12 col-md-2 game__img__col-relative">
                 <picture class="game__img__picutre">
@@ -210,17 +210,17 @@
               </div>
               <div class="col-12 col-md-10 col-lg-8">
                 <div class="game__button__container">
-                  <a href="themes.html" class="about__page__btn game__button mr bt-gray">წინა კითხვა</a>
-                  <a href="themes.html" class="about__page__btn game__button bt-blue">შემდეგი კითხვა</a>
+                  <a href="#" class="about__page__btn game__button mr bt-gray">წინა კითხვა</a>
+                  <a href="#" class="about__page__btn game__button bt-blue">შემდეგი კითხვა</a>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-12">
-                <div class="game__paging__cont-align">
-                  <div class="game__paging__cont">
-                    <h3 class="game__paging__text">კითხვა <span class="purple">1</span> / 5 დან</h3>
-                    <div class="game__paging__circle" style="--v:-45deg"></div>
+                <div class="game__progress__cont-align">
+                  <div class="game__progress__cont">
+                    <h3 class="game__progress__text">კითხვა <span class="purple">1</span> / 5 დან</h3>
+                    <div class="game__progress__circle" style="--v:-45deg"></div>
                   </div>
                 </div>
               </div>
@@ -234,17 +234,19 @@
 
 <!-- Notification popup -->
 
-<div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+<div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
     <div class="modal-content radius-16">
-        <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
-          <svg class="icon">
-            <use xlink:href="#cancel-icon"></use>
-          </svg>
-        </button>
+      <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+        <svg class="icon">
+          <use xlink:href="#cancel-icon"></use>
+        </svg>
+      </button>
       <div class="modal-body notificationModal-body">
         <p class="section__main__text mb-0">
-          გთხოვთ, კიდევ ერთხელ გაეცნოთ სამართლებრივი კულტურის სახელმძღვანელოს მე-13 გვერდზე მოცემულ <a href="#" class="section__main__text-link">ინფორმაციას</a> პოლიციის ძირითადი უფლებამოსილების შესახებ.
+          გთხოვთ, კიდევ ერთხელ გაეცნოთ სამართლებრივი კულტურის სახელმძღვანელოს მე-13 გვერდზე მოცემულ <a href="#"
+            class="section__main__text-link">ინფორმაციას</a> პოლიციის ძირითადი უფლებამოსილების შესახებ.
         </p>
       </div>
     </div>
@@ -270,13 +272,13 @@
                     <div class="footer__contact">
                         <div class="footer__contact left">
                             <div class="d-flex">
-                                <a href="termsOfUse.html" class="footer__item footer__text black">
+                                <a href="../termsOfUse.html" class="footer__item footer__text black">
                                     მოხმარების პირობები
                                 </a>
                                 <div class="footer__line footer__item"></div>
                             </div>
                             <div class="d-flex">
-                                <a href="privacy.html" class="footer__item footer__text black">
+                                <a href="../privacy.html" class="footer__item footer__text black">
                                     კონფიდენციალურობა
                                 </a>
                                 <div class="footer__line footer__item"></div>
