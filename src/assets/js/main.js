@@ -40,8 +40,23 @@ function clickers() {
         $('iframe', this)[0].src += "&amp;autoplay=1";
         $(this).addClass('open');
     });
+    //burger menu
+    $('.header__nav__menuIcon').click(function(){
+        $(this).toggleClass('open');
+        $('.header__nav__list').toggleClass('active');
+    });
 }
 clickers();
+
+function burgerMenuResponsive(x) {
+    if (x.matches) { // If media query matches
+        $('.header__nav__menuIcon').removeClass('open');
+        $('.header__nav__list').removeClass('active');
+    }
+  }
+  var x = window.matchMedia("(min-width: 991px)")
+  burgerMenuResponsive(x) // Call listener function at run time
+  x.addListener(burgerMenuResponsive) // Attach listener function on state changes
 
 //full size images
 var imgs = document.getElementsByClassName("resource__item__img");

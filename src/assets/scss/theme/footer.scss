@@ -1,47 +1,94 @@
-.footer{
+.footer {
     background-color: $component-color1;
     padding: 34px 0;
-    &__bottom{
+    &__top__img {
+        margin: auto;
+        display: block;
+        @media #{$breakpoint-md} {
+            margin: 0;
+        }
+    }
+    &__bottom {
         margin-top: 30px;
     }
-    &__text{
+    &__text {
         font-family: $firagoRegular;
         font-size: 12px;
         color: rgba($color: $black, $alpha: 0.6);
         margin-bottom: 0;
-        &.black{
+        &.black {
             color: $black;
             @media #{$breakpoint-xxl} {
                 font-size: 14px;
             }
         }
     }
-    &__contact{
+    &__contact {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: flex-end;
-        &__icon{
+        width: 100%;
+        &.center {
+            align-items: center;
+        }
+        // &.left {
+        //     flex-direction: column;
+        //     @media #{$breakpoint-xl-ex} {
+        //         flex-direction: row;
+        //     }
+        // }
+        &__icon {
             display: flex;
             align-items: center;
-            .icon{
+            .icon {
                 height: 16px;
                 width: 18px;
                 fill: $black;
             }
         }
     }
-    &__item{
+    &__item {
         margin-left: 20px;
         @media #{$breakpoint-xxl} {
             margin-left: 30px;
         }
+        // &-flex {
+        //     display: flex;
+        //     position: relative;
+        //     &.row-reverse {
+        //         flex-direction: row-reverse;
+        //         @media #{$breakpoint-xl-ex} {
+        //             flex-direction: row;
+        //         }
+        //     }
+        //     .footer__item {
+        //         margin: 0;
+        //         @media #{$breakpoint-xl-ex} {
+        //             margin: 0 0 0 20px;
+        //         }
+        //         &.footer__text{
+        //             margin: 0 20px;
+        //             @media #{$breakpoint-xl-ex} {
+        //                 margin: 0 0 0 20px;
+        //             }
+        //         }
+        //     }
+        //     .footer__line{
+        //         position: absolute;
+        //         height: 200px;
+        //         top: 0;
+        //         @media #{$breakpoint-xl-ex} {
+        //             height: 20px;
+        //         }
+        //     }
+        // }
     }
-    &__link{
+    &__link {
         color: $black;
         font-family: $firagoRegular;
         font-size: 16px;
     }
-    &__line{
+    &__line {
         width: 2px;
         height: 20px;
         background: rgba($color: $black, $alpha: 0.3);
