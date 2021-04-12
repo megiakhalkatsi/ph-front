@@ -3,6 +3,31 @@ layout: gamesLayout
 title: მოსწავლეების რესურსი
 ---
 
+<!-- Notification popup -->
+<div class="container">
+  <button type="button" class="btn btn-primary mt-5 mb-3" data-bs-toggle="modal" data-bs-target="#notificationModal">
+    სატესტო პოპაპი
+  </button>
+</div>
+
+<div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
+    <div class="modal-content radius-16">
+      <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+        <svg class="icon">
+          <use xlink:href="#cancel-icon"></use>
+        </svg>
+      </button>
+      <div class="modal-body notificationModal-body">
+        <p class="section__main__text mb-0">
+          გთხოვთ, კიდევ ერთხელ გაეცნოთ სამართლებრივი კულტურის სახელმძღვანელოს მე-13 გვერდზე მოცემულ <a href="#"
+            class="section__main__text-link">ინფორმაციას</a> პოლიციის ძირითადი უფლებამოსილების შესახებ.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="modal-body game__modal-body">
   <div class="row">
