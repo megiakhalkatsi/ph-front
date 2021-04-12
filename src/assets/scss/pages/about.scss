@@ -4,10 +4,19 @@
         flex-wrap: nowrap;
         border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
         &-bg{
-            padding: 45px;
-            border-radius: 12px;
+            border-radius: 0;
             background-color: $component-color1;
             overflow-x: auto;
+            padding: 34px 0;
+            @media #{$breakpoint-md} {
+                border-radius: 12px;
+            }
+            @media #{$breakpoint-lg} {
+                padding: 34px 29px;
+            }
+            @media #{$breakpoint-xl-ex} {
+                padding: 45px;
+            }
         }
         &__content{
             width: 100%;
@@ -28,12 +37,19 @@
     &__item {
         width: 100%;
         text-align: center;
+        white-space: nowrap;
     }
     &__link{
         color: $black;
         font-style: 16px;
         font-family: $firagoBold;
-        padding-bottom: 30px;
+        padding: 0 20px 20px 20px;
+        @media #{$breakpoint-lg} {
+            padding: 0 0 21px 0;
+        }
+        @media #{$breakpoint-lg} {
+            padding: 0 0 34px 0;
+        }
         &:hover{
             border:none;
             border-color: transparent!important;
