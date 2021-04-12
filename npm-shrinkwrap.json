@@ -3903,6 +3903,15 @@
                 "logalot": "^2.0.0"
             }
         },
+        "gift": {
+            "version": "0.6.1",
+            "resolved": "https://registry.npmjs.org/gift/-/gift-0.6.1.tgz",
+            "integrity": "sha1-wWmOa2iHFk7ZeKAQlUI8/2W4558=",
+            "dev": true,
+            "requires": {
+                "underscore": "1.x.x"
+            }
+        },
         "glob": {
             "version": "7.1.6",
             "resolved": "https://registry.npmjs.org/glob/-/glob-7.1.6.tgz",
@@ -5401,6 +5410,52 @@
             "requires": {
                 "rewrite-ext": "^0.2.0",
                 "through2": "^2.0.0"
+            }
+        },
+        "gulp-gh-pages": {
+            "version": "0.5.4",
+            "resolved": "https://registry.npmjs.org/gulp-gh-pages/-/gulp-gh-pages-0.5.4.tgz",
+            "integrity": "sha1-pnMspHWrm1pTJTwcJHNMQMIbZUY=",
+            "dev": true,
+            "requires": {
+                "gift": "^0.6.1",
+                "gulp-util": "^3.0.7",
+                "readable-stream": "^2.0.2",
+                "rimraf": "^2.4.3",
+                "vinyl-fs": "^2.2.1",
+                "wrap-promise": "^1.0.1"
+            },
+            "dependencies": {
+                "isarray": {
+                    "version": "1.0.0",
+                    "resolved": "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz",
+                    "integrity": "sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=",
+                    "dev": true
+                },
+                "readable-stream": {
+                    "version": "2.3.7",
+                    "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.7.tgz",
+                    "integrity": "sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==",
+                    "dev": true,
+                    "requires": {
+                        "core-util-is": "~1.0.0",
+                        "inherits": "~2.0.3",
+                        "isarray": "~1.0.0",
+                        "process-nextick-args": "~2.0.0",
+                        "safe-buffer": "~5.1.1",
+                        "string_decoder": "~1.1.1",
+                        "util-deprecate": "~1.0.1"
+                    }
+                },
+                "string_decoder": {
+                    "version": "1.1.1",
+                    "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz",
+                    "integrity": "sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==",
+                    "dev": true,
+                    "requires": {
+                        "safe-buffer": "~5.1.0"
+                    }
+                }
             }
         },
         "gulp-if": {
@@ -14168,6 +14223,12 @@
                 }
             }
         },
+        "underscore": {
+            "version": "1.13.0",
+            "resolved": "https://registry.npmjs.org/underscore/-/underscore-1.13.0.tgz",
+            "integrity": "sha512-sCs4H3pCytsb5K7i072FAEC9YlSYFIbosvM0tAKAlpSSUgD7yC1iXSEGdl5XrDKQ1YUB+p/HDzYrSG2H2Vl36g==",
+            "dev": true
+        },
         "union-value": {
             "version": "1.0.1",
             "resolved": "https://registry.npmjs.org/union-value/-/union-value-1.0.1.tgz",
@@ -14748,6 +14809,23 @@
             "integrity": "sha1-8htuQQFv9KfjFyDbxjoJAWvfmEU=",
             "requires": {
                 "co": "3.1.0"
+            }
+        },
+        "wrap-promise": {
+            "version": "1.0.1",
+            "resolved": "https://registry.npmjs.org/wrap-promise/-/wrap-promise-1.0.1.tgz",
+            "integrity": "sha1-sBn0I2zL8ftWCSG0tIcLe9ovUlU=",
+            "dev": true,
+            "requires": {
+                "es6-promise": "^2.3.0"
+            },
+            "dependencies": {
+                "es6-promise": {
+                    "version": "2.3.0",
+                    "resolved": "https://registry.npmjs.org/es6-promise/-/es6-promise-2.3.0.tgz",
+                    "integrity": "sha1-lu258v2wGZWCKyY92KratnSBgbw=",
+                    "dev": true
+                }
             }
         },
         "wrappy": {

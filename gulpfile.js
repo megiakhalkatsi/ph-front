@@ -132,3 +132,16 @@ gulp.task('build', function() {
     console.log('Building production ready assets');
     runSequence('clean:dist', 'sass', ['scripts', 'images', 'font', 'copy', 'compile-html'])
 });
+
+
+// github pages deploy
+
+var deploy = require('gulp-gh-pages');
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
+});
