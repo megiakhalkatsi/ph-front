@@ -7,6 +7,22 @@
             padding: 45px;
             border-radius: 12px;
             background-color: $component-color1;
+            overflow-x: auto;
+        }
+        &__content{
+            width: 100%;
+            @media #{$breakpoint-md} {
+                max-width: 666px;
+            }
+            @media #{$breakpoint-lg} {
+                max-width: 760px;
+            }
+            @media #{$breakpoint-xl} {
+                max-width: 776px;
+            }
+            @media #{$breakpoint-xl-ex} {
+                max-width: 1082px;
+            }
         }
     }
     &__item {
