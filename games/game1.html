@@ -8,7 +8,7 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1.0,user-scalable=0, shrink-to-fit=no">
   <title>მოსწავლეების რესურსი</title>
-  <link rel="icon" href="assets/img/icons/logo1.ico" />
+  <link rel="icon" href="../assets/img/icons/logo1.ico" />
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
@@ -84,60 +84,32 @@
       </div>
     </div>    <!--******-->
     <div class="page__main">
-      <header class="header" id="header">
-          <div class="container">
-            <div class="header__container">
-              <a href="../index.html" class="header__logo__container">
-                <img src="../assets/img/icons/logo.svg" alt="სამართლებრივი კულტურა" class="header__logo__img">
-                <h1 class="header__logo">სამართლებრივი კულტურა</h1>
-              </a>
-              <nav class="header__nav">
-                <div class="header__nav__menuIcon">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                <ul class="header__nav__list">
-                  <li class="header__nav__item"><a href="../about.html" class="header__nav__item-link active">ჩვენზე</a></li>
-                  <li class="header__nav__item"><a href="../themes.html" class="header__nav__item-link">თემები</a></li>
-                  <li class="header__nav__item"><a href="../resources.html" class="header__nav__item-link">რესურსები</a></li>
-                </ul>
-                <div class="header__nav__item">
-                  <a href="../login.html" class="header__nav__btn bt-blue">
-                    <svg class="icon">
-                      <use xlink:href="#metro-user"></use>
-                    </svg>
-                    შესვლა
-                  </a>
-                </div>
-                <div class="header__nav__item">
-                  <a href="#" class="header__nav__search">
-                    <svg class="icon">
-                      <use xlink:href="#ico-search"></use>
-                    </svg>
-                  </a>
-                </div>
-                <div class="dropdown__elem" id="1">
-                  <div class="dropdown__elem--inner dropdown--toggler">
-                    <span class="text--active dropdown--selected">
-                      En
-                    </span>
-                    <svg class="icon">
-                      <use xlink:href="#arrow-dropdown"></use>
-                    </svg>
-                  </div>
-                  <div class="dropdown" data-for="1">
-                    <nav class="dropdown__nav">
-                      <li class="dropdown__item dropdown__item--active">En</li>
-                      <li class="dropdown__item">ქა</li>
-                    </nav>
-                  </div>
-                </div>
-              </nav>
-            </div>
-          </div>
-        </header>      <div class="page__content">
+      <div>
+<!-- Notification popup -->
+<div class="container">
+  <button type="button" class="btn btn-primary mt-5 mb-3" data-bs-toggle="modal" data-bs-target="#notificationModal">
+    სატესტო პოპაპი
+  </button>
+</div>
+
+<div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
+    <div class="modal-content radius-16">
+      <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+        <svg class="icon">
+          <use xlink:href="#cancel-icon"></use>
+        </svg>
+      </button>
+      <div class="modal-body notificationModal-body">
+        <p class="section__main__text mb-0">
+          გთხოვთ, კიდევ ერთხელ გაეცნოთ სამართლებრივი კულტურის სახელმძღვანელოს მე-13 გვერდზე მოცემულ <a href="#"
+            class="section__main__text-link">ინფორმაციას</a> პოლიციის ძირითადი უფლებამოსილების შესახებ.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="modal-body game__modal-body">
   <div class="row">
@@ -206,268 +178,14 @@
     </div>
   </div>
 </div>
- <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <img src="../assets/img/phinternational.svg" alt="ph-international" class="footer__top__img">
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <div class="row">
-                <div class="col-12 col-lg-5 d-flex align-items-end">
-                    <p class="footer__text">
-                        ვებ-გვერდზე განთავსებული ინფორმაცია არ წარმოადგენს ამერიკის შეერთებული შტატების მთავრობის ოფიციალურ ინფორმაციას და არ ასახავს ამერიკის შეერთებული შტატების სახელმწიფო დეპარტამენტისა და ამერიკის შეერთებული შტატების მთავრობის შეხედულებებს
-                    </p>
-                </div>
-
-
-                <div class="col-12 col-lg-6 offset-lg-1 d-flex align-items-end">
-                    <div class="footer__contact">
-                        <div class="footer__contact left">
-                            <div class="d-flex">
-                                <a href="termsOfUse.html" class="footer__item footer__text black">
-                                    მოხმარების პირობები
-                                </a>
-                                <div class="footer__line footer__item"></div>
-                            </div>
-                            <div class="d-flex">
-                                <a href="privacy.html" class="footer__item footer__text black">
-                                    კონფიდენციალურობა
-                                </a>
-                                <div class="footer__line footer__item"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="footer__contact center">
-                                <a href="mailto:info@school.ge" class="footer__link footer__item">info@school.ge</a>
-                            <div class="footer__line footer__item"></div>
-                            <a href="#" class="footer__item footer__contact__icon">
-                                <svg class="icon">
-                                    <use xlink:href="#icon-fb"></use>
-                                </svg>
-                            </a>
-                            <a href="#" class="footer__item footer__contact__icon">
-                                <svg class="icon">
-                                    <use xlink:href="#youtube"></use>
-                                </svg>
-                            </a>
-                            </div>
-                            <p class="footer__item footer__text black mt-4">© 2021 ყველა უფლება დაცულია</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-</footer></div>
-    </div>
-
-    <div class="search__container">
-      <div class="search__container__content">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-xxl-10 m-auto">
-              <div class="search__container__row">
-                <h3 class="search__container__title">ჩაწერეთ საძიებო სიტყვა ან ფრაზა</h3>
-                <div class="search__close">
-                  <svg class="icon">
-                    <use xlink:href="#close"></use>
-                  </svg>
-                </div>
-              </div>
-              <form action="" class="search__container__form">
-                <input type="search" class="search__container__form__input" placeholder="ძიება">
-                <svg class="icon search__icon">
-                  <use xlink:href="#ico-search"></use>
-                </svg>
-              </form>
-              <section class="search__result">
-                <h1 class="search__result__title">ნაპოვნია (<span class="purple">7</span>) შედეგი</h1>
-                <div class="document__line mg-sm"></div>
-                <div class="search__result__section">
-                  <div>
-                    <h2 class="search__result__title margins">თემები</h2>
-                    <div class="row">
-                      <div class="col-12 col-md-6 col-lg-4 col-xl-3 resource__item__container">
-                        <a href="#" class="theme__item">
-                          <picture>
-                            <source srcset="../assets/img/themes/theme1.webp" type="image/webp">
-                            <source srcset="../assets/img/themes/theme1.png" type="image/png">
-                            <img src="../assets/img/themes/theme1.png" alt="theme image" class="theme__item__img" />
-                          </picture>
-                          <h2 class="theme__item__title">ბავშთა უფლებები</h2>
-                        </a>
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-4 col-xl-3 resource__item__container">
-                        <a href="#" class="theme__item">
-                          <picture>
-                            <source srcset="../assets/img/themes/theme2.webp" type="image/webp">
-                            <source srcset="../assets/img/themes/theme2.png" type="image/png">
-                            <img src="../assets/img/themes/theme2.png" alt="theme image" class="theme__item__img" />
-                          </picture>
-                          <h2 class="theme__item__title">ცხოვრების ჯანსაღი წესი</h2>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h2 class="search__result__title margins mt">რესურსი და სხვა</h2>
-                    <div class="row">
-                      <div class="col-12 col-md-6 col-lg-4 col-xl-3 resource__item__container">
-                        <div class="resource__item">
-                          <div class="resource__item-relative">
-                            <img src="../assets/img/resource-img.png" alt="resource image" class="resource__item__img"
-                              data-toggle="modal" data-target="#fullscreenImgModal" />
-                            <div class="resource__item__icon__position">
-                              <div class="resource__item__icon__container">
-                                <div class="resource__item__icon__bg">
-                                  <img src="../assets/img/icons/image.svg" alt="icon" class="resource__item__icon">
-                                </div>
-                                <div class="resource__item__icon__bg">
-                                  <a href="../assets/img/resource-img.png" download>
-                                    <img src="../assets/img/icons/feather-download.svg" alt="icon"
-                                      class="resource__item__icon">
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <a href="#" class="resource__item-link">
-                            <h2 class="resource__item__title"><span
-                                class="search__result__word">სამართ</span>ლებრივი-კულტურა.jpg</h2>
-                            <p class="resource__item__description">ვინ არის <span
-                                class="search__result__word">სამართ</span>ალდამცავი</p>
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-4 col-xl-3 resource__item__container">
-                        <div class="resource__item">
-                          <div class="resource__item-relative">
-                            <img src="../assets/img/icons/file.svg" alt="resource image" class="resource__item__img file"
-                              data-toggle="modal" data-target="#fullscreenImgModal" />
-                            <div class="resource__item__icon__position">
-                              <div class="resource__item__icon__container">
-                                <div class="resource__item__icon__bg">
-                                  <img src="../assets/img/icons/file.svg" alt="icon" class="resource__item__icon">
-                                </div>
-                                <div class="resource__item__icon__bg">
-                                  <a href="../assets/img/test.pdf" download>
-                                    <img src="../assets/img/icons/feather-download.svg" alt="icon"
-                                      class="resource__item__icon">
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <a href="#" class="resource__item-link">
-                            <h2 class="resource__item__title">ახალი წიგნი.pdf</h2>
-                            <p class="resource__item__description"><span
-                                class="search__result__word">სამართ</span>ლებრივი კულტურა</p>
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-4 col-xl-3 resource__item__container">
-                        <div class="resource__item">
-                          <div class="resource__item-relative">
-                            <img src="../assets/img/icons/feather-arrow-up-right.svg" alt="resource image"
-                              class="resource__item__img file" data-toggle="modal" data-target="#fullscreenImgModal" />
-                            <div class="resource__item__icon__position">
-                              <div class="resource__item__icon__container">
-                                <div class="resource__item__icon__bg">
-                                  <img src="../assets/img/icons/feather-arrow-up-right.svg" alt="icon"
-                                    class="resource__item__icon">
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <a href="#" class="resource__item-link">
-                            <h2 class="resource__item__title underline">მოძრაობის წესები და ქვეითები</h2>
-                            <p class="resource__item__description"><span
-                                class="search__result__word">სამართ</span>ლებრივი კულტურა</p>
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-4 col-xl-3 resource__item__container">
-                        <div class="resource__item">
-                          <div class="resource__item-relative">
-                            <div class="resource__item__video">
-                              <div class="bg-video" style="background-image: url(../assets/img/resource-img.png);">
-                                <div class="bt-play"></div>
-                              </div>
-                              <div class="video-container">
-                                <iframe width="100%" height="100%"
-                                  src="https://www.youtube.com/embed/qIjZqxqDTNM?rel=0&amp;showinfo=0" frameborder="0"
-                                  allowfullscreen="allowfullscreen"></iframe>
-                              </div>
-                            </div>
-                            <div class="resource__item__icon__position">
-                              <div class="resource__item__icon__container">
-                                <div class="resource__item__icon__bg">
-                                  <img src="../assets/img/icons/awesome-play-circle.svg" alt="icon"
-                                    class="resource__item__icon">
-                                </div>
-                                <div class="resource__item__icon__bg">
-                                  <img src="../assets/img/icons/feather-download.svg" alt="icon"
-                                    class="resource__item__icon">
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <a href="#" class="resource__item-link">
-                            <h2 class="resource__item__title">პოლიციელი ჩემი მეგობარია.mov</h2>
-                            <p class="resource__item__description"><span
-                                class="search__result__word">სამართ</span>ლებრივი კულტურა</p>
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6 col-lg-4 col-xl-3 resource__item__container">
-                        <div class="resource__item">
-                          <div class="resource__item-relative">
-                            <img src="../assets/img/resource-img.png" alt="resource image" class="resource__item__img"
-                              data-toggle="modal" data-target="#fullscreenImgModal" />
-                            <div class="resource__item__icon__position">
-                              <div class="resource__item__icon__container">
-                                <div class="resource__item__icon__bg">
-                                  <img src="../assets/img/icons/image.svg" alt="icon" class="resource__item__icon">
-                                </div>
-                                <div class="resource__item__icon__bg">
-                                  <a href="../assets/img/resource-img.png" download>
-                                    <img src="../assets/img/icons/feather-download.svg" alt="icon"
-                                      class="resource__item__icon">
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <a href="#" class="resource__item-link">
-                            <h2 class="resource__item__title"><span
-                                class="search__result__word">სამართ</span>ლებრივი-კულტურა.jpg</h2>
-                            <p class="resource__item__description">ვინ არის <span
-                                class="search__result__word">სამართ</span>ალდამცავი</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
+</div>
     </div>
 
   </div>
   <script src="../assets/vendors/js/jquery.min.js"></script>
   <script src="../assets/vendors/js/bootstrap.min.js"></script>
   <script src="../assets/vendors/js/swiper-bundle.min.js"></script>
-  <script src="../assets/js/main.js"></script>
+  <!-- <script src="../assets/js/main.js"></script> -->
 </body>
 
 </html>
