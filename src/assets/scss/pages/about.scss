@@ -3,22 +3,30 @@
         justify-content: space-between;
         flex-wrap: nowrap;
         border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
-        &-bg{
+        &-bg {
             border-radius: 0;
             background-color: $component-color1;
             overflow-x: auto;
             padding: 34px 0;
-            @media #{$breakpoint-md} {
-                border-radius: 12px;
-            }
+            margin: auto;
+            width: 100%;
             @media #{$breakpoint-lg} {
+                border-radius: 12px;
+                max-width: 960px;
+            }
+            @media #{$breakpoint-xl} {
                 padding: 34px 29px;
+                max-width: 1140px;
             }
             @media #{$breakpoint-xl-ex} {
                 padding: 45px;
+                max-width: calc(100% - 30px);
+            }
+            @media #{$breakpoint-xxl} {
+                max-width: 1700px;
             }
         }
-        &__content{
+        &__content {
             width: 100%;
             @media #{$breakpoint-md} {
                 max-width: 666px;
@@ -39,7 +47,7 @@
         text-align: center;
         white-space: nowrap;
     }
-    &__link{
+    &__link {
         color: $black;
         font-style: 16px;
         font-family: $firagoBold;
@@ -50,41 +58,41 @@
         @media #{$breakpoint-lg} {
             padding: 0 0 34px 0;
         }
-        &:hover{
-            border:none;
-            border-color: transparent!important;
-        }
-        &.active{
-            color: $component-color2!important;
-            background-color: transparent!important;
+        &:hover {
             border: none;
-            border-bottom: 2px solid $component-color2!important;
+            border-color: transparent !important;
+        }
+        &.active {
+            color: $component-color2 !important;
+            background-color: transparent !important;
+            border: none;
+            border-bottom: 2px solid $component-color2 !important;
         }
     }
-    &__article{
+    &__article {
         margin-top: 50px;
-        &__p{
-           font-family: $firagoRegular;
-           font-size: 16px; 
-           color: $component-color5;
-           margin: 0;
+        &__p {
+            font-family: $firagoRegular;
+            font-size: 16px;
+            color: $component-color5;
+            margin: 0;
         }
-        &-link{
-           color: $component-color2; 
-           text-decoration: underline;
+        &-link {
+            color: $component-color2;
+            text-decoration: underline;
         }
-        &__h3{
+        &__h3 {
             font-family: $firagoSemiBold;
             font-size: 16px;
-            color: $component-color2; 
+            color: $component-color2;
             margin-bottom: 5px;
         }
     }
-    &__photos__section{
+    &__photos__section {
         margin-top: 70px;
         margin-bottom: 70px;
     }
-    &__video__section{
+    &__video__section {
         margin-top: 55px;
         width: 100%;
         max-width: 290px;
@@ -105,13 +113,13 @@
             max-width: 1082px;
             height: 609px;
         }
-        &.mb-lg{
+        &.mb-lg {
             margin-bottom: 100px;
         }
-        &.mb-md{
+        &.mb-md {
             margin-bottom: 50px;
         }
-        &__bg{
+        &__bg {
             width: 100%;
             height: 100%;
             background-color: rgba($color: $component-color2, $alpha: 0.3);
@@ -121,34 +129,34 @@
             top: 0;
         }
     }
-    &__faq{
-        &__section{
+    &__faq {
+        &__section {
             margin-top: 50px;
         }
-        &__title{
+        &__title {
             font-family: $firagoSemiBold;
             font-size: 16px;
             color: $component-color2;
             margin-bottom: 30px;
         }
-        &__text{
+        &__text {
             color: $black;
             font-size: 16px;
             font-family: $firagoRegular;
             display: flex;
             margin-bottom: 1rem;
-            &-light{
+            &-light {
                 font-family: $firagoRegular;
                 font-size: 16px;
                 color: $component-color5;
                 margin-bottom: 1rem;
-                .purple{
+                .purple {
                     font-family: $firagoSemiBold;
                     color: $component-color2;
                 }
             }
         }
-        &__dot{
+        &__dot {
             width: 12px;
             height: 12px;
             display: block;
@@ -159,7 +167,7 @@
             margin-top: 6px;
         }
     }
-    &__page__btn{
+    &__page__btn {
         min-width: 248px;
         height: 40px;
         display: flex;
@@ -168,12 +176,12 @@
         border-radius: 8px;
         font-family: $firagoMedium;
         font-size: 16px;
-        &.bt-blue{
+        &.bt-blue {
             margin-right: 30px;
         }
-        &__container{
+        &__container {
             display: flex;
-            justify-content: center; 
+            justify-content: center;
             margin-bottom: 100px;
         }
     }
