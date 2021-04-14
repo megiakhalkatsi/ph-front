@@ -52,7 +52,11 @@
         font-style: 16px;
         font-family: $firagoBold;
         padding: 0 20px 20px 20px;
-        @media #{$breakpoint-lg} {
+        background: transparent!important;
+        border-top-left-radius: 0px!important;
+        border-top-right-radius: 0px!important;
+        border: none!important;
+        @media #{$breakpoint-md} {
             padding: 0 0 21px 0;
         }
         @media #{$breakpoint-lg} {
@@ -66,6 +70,7 @@
             color: $component-color2 !important;
             background-color: transparent !important;
             border: none;
+            border-color: transparent!important;
             border-bottom: 2px solid $component-color2 !important;
         }
     }
@@ -176,13 +181,25 @@
         border-radius: 8px;
         font-family: $firagoMedium;
         font-size: 16px;
+        margin-bottom: 10px;
+        @media #{$breakpoint-md} {
+            margin-bottom: 0;
+        }
         &.bt-blue {
-            margin-right: 30px;
+            
+            @media #{$breakpoint-md} {
+                margin-right: 30px;
+            }
         }
         &__container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             margin-bottom: 100px;
+            @media #{$breakpoint-md} {
+                flex-direction: row;
+            }
         }
     }
 }
