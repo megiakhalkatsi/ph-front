@@ -283,15 +283,20 @@ body {
 .document {
     &__section {
         width: 100%;
-        max-width: 1082px;
         margin: auto;
     }
     &__title {
         color: $black;
-        font-size: 34px;
+        font-size: 21px;
         font-family: $firagoBold;
         margin-bottom: 34px;
-        text-align: center;
+        margin-top: 21px;
+        @media #{$breakpoint-sm} {
+            font-size: 34px;
+        }
+        @media #{$breakpoint-lg} {
+            text-align: center;
+        }
     }
     &__text {
         font-family: $firagoRegular;
@@ -313,7 +318,14 @@ body {
             display: flex;
             justify-content: center;
         }
-        padding: 30px 103px;
+        // padding: 30px 103px;
+        padding: 10px;
+        width: 100%;
+        max-width: 290px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: $white;
         box-shadow: 0 0 30px #2026310d;
         color: $black;
@@ -321,6 +333,11 @@ body {
         font-size: 16px;
         line-height: 1.2;
         transition: 0.3s;
+        @media #{$breakpoint-md} {
+            min-width: 387px;
+            max-width: auto;
+            width: auto;
+        }
         &:hover {
             text-decoration: none;
             color: $black;
