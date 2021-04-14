@@ -295,13 +295,6 @@
     }
   }
   &__content-col {
-    max-width: 666px;
-    @media #{$breakpoint-lg} {
-      max-width: 762px;
-    }
-    @media #{$breakpoint-xl-ex} {
-      max-width: 1082px;
-    }
     &-bottom {
       max-width: 666px;
       margin: auto;
