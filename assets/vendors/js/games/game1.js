@@ -95,13 +95,9 @@ var questions = [
   ]
   
   var index = 0;
-  
-  
-  
+
   
   function getCorrectAnsweersMarkup(correctAnswer){
-    console.log(correctAnswer)
-  
     if(correctAnswer !== 0) {
       $('#ProgressLine').removeClass(`line__${correctAnswer - 1}`)
       $('#ProgressLine').addClass(`line__${correctAnswer}`)
@@ -110,9 +106,8 @@ var questions = [
   
   }
   
-  
   function getQuestionsMarkup(index){
-  
+
     const questionMarkup = questions.map((q, i) => (
       `<div class="col-12 col-lg-8 page__content-col m-auto ${q.number} questionContainer" style="display: ${index + 1 === q.number ? "block" : "none"}">
         <h2 class="game__text lg mb-34 GameQuestion">${q.number}. ${q.question}</h2>
@@ -168,10 +163,7 @@ var questions = [
     const items = getQuestionsMarkup(index)
   
     $('#GameWrapper').append(items)
-  
-    console.log(questions)
   });
-  
   
   
   $( "#nextStep" ).click(function() {
@@ -180,12 +172,10 @@ var questions = [
     if(index === questions.length || index > 4 ) {
       index = 0
     } 
-    
-    console.log(index)
   
     $('.questionContainer').attr('style', 'display: none');
     $('.questionContainer')[index].removeAttribute('style');
-  
+    $('#DogImage').attr('src', '../assets/img/illustrations/fiqrobs-image.gif')
   });
   
   
@@ -196,13 +186,10 @@ var questions = [
       index = questions.length -1
     }
   
-    console.log(index)
-    console.log(questions)
-  
     $('.questionContainer').attr('style', 'display: none');
     $('.questionContainer')[index].removeAttribute('style');
+    $('#DogImage').attr('src', '../assets/img/illustrations/fiqrobs-image.gif')
   });
-  
   
   
   $( function() {
@@ -236,7 +223,6 @@ var questions = [
                 // $('#myModal').modal('toggle');
                 // $('#myModal').modal('hide');
               }
-              // console.log(incorrect)
   
               ui.draggable.attr('style', "position: relative")
           }
