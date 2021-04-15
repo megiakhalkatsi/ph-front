@@ -1,6 +1,6 @@
 .filter {
   &__container {
-    background-color: $component-color1;
+    background-color: $component-color2;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 34px;
@@ -8,6 +8,7 @@
     width: 100%;
     @media #{$breakpoint-xl} {
       max-width: 267px;
+      background-color: $component-color1;
     }
     @media #{$breakpoint-xxl} {
       max-width: 387px;
@@ -23,13 +24,19 @@
     }
   }
   &__title {
-    color: $black;
+    color: $white;
     font-family: $firagoMedium;
     font-size: 21px;
     margin-bottom: 0;
+    @media #{$breakpoint-xl} {
+      color: $black;
+    }
   }
   &__icon {
     height: 22px;
+    @media #{$breakpoint-xl} {
+      content:url("../img/icons/filter.svg");
+    }
   }
   &__line {
     width: 100%;
@@ -44,8 +51,14 @@
     font-family: $firagoMedium;
     font-size: 16px;
     display: none;
+    &.active{
+      display: block;
+    }
     @media #{$breakpoint-xl} {
       display: block;
+      &.active{
+        display:none;
+      }
     }
     &__section {
       margin-top: 34px;
