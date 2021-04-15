@@ -13,10 +13,48 @@
     @media #{$breakpoint-lg} {
       padding: 81px 60px;
     }
+    &.padding-sm{
+      padding: 41px 20px;
+      @media #{$breakpoint-lg} {
+        padding: 50px 60px;
+      }
+    }
   }
   &-xl {
     @media #{$breakpoint-xl} {
       max-width: 1082px;
+    }
+  }
+}
+
+.chooseRoleModal{
+  &__radiobuttons{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media #{$breakpoint-md} {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__bottom{
+    display: none;
+    &.active{
+      display: block;
+    }
+    &__text{
+      text-align: left;
+      @media #{$breakpoint-md} {
+        text-align: center;
+      }
+    }
+  }
+  .document__line{
+    max-width: 526px;
+    margin: 18px auto 30px;
+    @media #{$breakpoint-md} {
+      margin: 22px auto 34px;
     }
   }
 }

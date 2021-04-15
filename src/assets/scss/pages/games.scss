@@ -138,7 +138,7 @@
       padding: 10px;
       cursor: pointer;
       margin-bottom: 10px;
-      transition: 0.3s;
+      transition: background-color 0.3s;
       background-color: $component-color1;
       @media #{$breakpoint-lg} {
         margin-bottom: 20px;
@@ -285,12 +285,38 @@
       border-radius: 50%;
       display: inline-block;
       padding: 4px;
+      --v: 0deg;
       background: linear-gradient($white, $white) content-box,
         linear-gradient(var(--v), $component-color4 50%, transparent 0),
         linear-gradient(to right, $component-color4 50%, $component-color2 0);
+      transition: .3s;
       @media #{$breakpoint-xl} {
         width: 55px;
         height: 55px;
+      }
+      &.line__1 {
+        transition: .3s;
+        background: linear-gradient($white, $white) content-box,
+          linear-gradient(var(--v), $component-color4 50%, transparent 0),
+          linear-gradient(to right, $component-color4 50%, $component-color2 0);
+      }
+      &.line__2 {
+        transition: .3s;
+        background: linear-gradient($white, $white) content-box,
+          linear-gradient(var(--v), $component-color4 0%, transparent 0),
+          linear-gradient(to right, $component-color4 50%, $component-color2 0);
+      }
+      &.line__3 {
+        transition: .3s;
+        background: linear-gradient($white, $white) content-box, 
+        linear-gradient(var(--v), $component-color4 0%, transparent 0),
+          linear-gradient(135deg, $component-color4 25%, #7279ff 0);
+      }
+      &.line__4 {
+        transition: .3s;
+        background: linear-gradient($white, $white) content-box,
+          linear-gradient(var(--v), $component-color4 0%, transparent 0),
+          linear-gradient(to right, $component-color4 0%, $component-color2 0);
       }
     }
   }
@@ -335,13 +361,6 @@
       @media #{$breakpoint-xl-ex} {
         max-width: 1360px;
       }
-      // &-bottom {
-      //     max-width: 666px;
-      //     margin: auto;
-      //     @media #{$breakpoint-lg} {
-      //         max-width: 100%;
-      //     }
-      // }
     }
   }
   &__instruction {

@@ -224,8 +224,11 @@ body {
     }
     &__title {
       font-family: $firagoRegular;
-      font-size: 34px;
+      font-size: 21px;
       color: $black;
+      @media #{$breakpoint-xl-ex} {
+        font-size: 34px;
+      }
       &.margins {
         margin-bottom: 34px;
         &.mt {

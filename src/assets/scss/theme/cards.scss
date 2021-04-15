@@ -5,6 +5,9 @@
         align-items: center;
         width: 100%;
         margin-bottom: 10px;
+        @media #{$breakpoint-md} {
+            align-items: flex-start;
+        }
         &:hover {
             text-decoration: none;
         }
