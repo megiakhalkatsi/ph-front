@@ -9,6 +9,7 @@
     content="width=device-width, initial-scale=1, maximum-scale=1.0,user-scalable=0, shrink-to-fit=no">
   <title>მოსწავლეების რესურსი</title>
   <link rel="icon" href="../assets/img/icons/logo1.ico" />
+  <link rel="stylesheet" href="../assets/vendors/css/jquery-ui.min.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
@@ -153,57 +154,24 @@
   </div>
 </div>
 
+
 <div class="modal-body game__modal-body">
   <div class="row">
-    <div class="col-12 col-lg-8 page__content-col m-auto">
-      <h2 class="game__text lg mb-34">3. საქართველო არის სამართლებრივი სახელმწიფო, რაც ნიშნავს, რომ
-        ხელისუფლება
-        ხორციელდება....</h2>
-      <div class="game__answer__drop__container">
-        <p class="game__answer__drop__container__placeholder">ჩააგდეთ სწორი პასუხი</p>
-        <div class="game__answer__container">
-          <p class="game__text md">საქართველოს კონსტიტუციითა და კანონით დადგენილ ფარგლებში</p>
-        </div>
-      </div>
-      <div class="game__line"></div>
-      <h2 class="game__title mb-34">სავარაუდო პასუხები</h2>
-      <div class="row">
-        <div class="col-12 col-lg-6">
-          <div class="game__answer__container">
-            <p class="game__text md">საქართველოს კონსტიტუციითა და კანონით დადგენილ ფარგლებში</p>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6">
-          <div class="game__answer__container">
-            <p class="game__text md">უძველესი ჩვეულებებისა და ადათ-წესების შესაბამისად </p>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6">
-          <div class="game__answer__container">
-            <p class="game__text md">გამორჩეული ადამიანების ნება-სურვილის მიხედვით</p>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6">
-          <div class="game__answer__container">
-            <p class="game__text md">უცხო ქვეყნების გადაწყვეტილებებით</p>
-          </div>
-        </div>
-      </div>
-      <div class="game__line"></div>
-    </div>
+    <div id="GameWrapper"></div>
+
     <div class="col-12 game__content-col-bottom">
       <div class="row game__img__btn__row">
         <div class="col-12 col-md-2 game__img__col-relative">
-          <picture class="game__img__picture">
+          <!-- <picture class="game__img__picture">
             <source srcset="../assets/img/illustrations/dog.webp" type="image/webp">
             <source srcset="../assets/img/illustrations/dog.png" type="image/png">
-            <img src="../assets/img/illustrations/dog.png" alt="dog" class="game__img-dog" />
-          </picture>
+          </picture> -->
+          <img src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog" class="game__img__picture game__img-dog" id="DogImage" />
         </div>
         <div class="col-12 col-md-10 col-lg-8">
           <div class="game__button__container">
-            <a href="#" class="about__page__btn game__button mr bt-gray">წინა კითხვა</a>
-            <a href="#" class="about__page__btn game__button bt-blue">შემდეგი კითხვა</a>
+            <button id='prevStep' class="about__page__btn game__button mr bt-gray">წინა კითხვა</button>
+            <button id='nextStep' class="about__page__btn game__button bt-blue">შემდეგი კითხვა</button>
           </div>
         </div>
       </div>
@@ -228,9 +196,10 @@
 
   </div>
   <script src="../assets/vendors/js/jquery.min.js"></script>
+  <script src="../assets/vendors/js/jquery-ui.min.js"></script>
   <script src="../assets/vendors/js/bootstrap.min.js"></script>
   <script src="../assets/vendors/js/swiper-bundle.min.js"></script>
-  <script src="../../assets/js/game1.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <!-- <script src=></script> -->
 </body>
-
 </html>
