@@ -45,14 +45,17 @@ function clickers() {
         $(this).toggleClass('open');
         $('.header__nav__list').toggleClass('active');
     });
-
+    //choose role notification
     $('.choose__teacher').click(function(){
         $('.chooseRoleModal__bottom').addClass('active');
     });
     $('.choose__student').click(function(){
         $('.chooseRoleModal__bottom').removeClass('active');
     });
-
+    //filter - responsive
+    $('.filter__row').click(function(){
+        $('.filter__form').toggleClass('active');
+    });
 }
 clickers();
 
