@@ -45,6 +45,14 @@ function clickers() {
         $(this).toggleClass('open');
         $('.header__nav__list').toggleClass('active');
     });
+
+    $('.choose__teacher').click(function(){
+        $('.chooseRoleModal__bottom').addClass('active');
+    });
+    $('.choose__student').click(function(){
+        $('.chooseRoleModal__bottom').removeClass('active');
+    });
+
 }
 clickers();
 
