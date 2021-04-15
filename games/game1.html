@@ -128,12 +128,6 @@
     </div>    <!--******-->
     <div class="page__main">
       <div>
-<!-- Notification popup -->
-<div class="container">
-  <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#notificationModal">
-    სატესტო პოპაპი
-  </button>
-</div>
 
 <div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
   aria-hidden="true">
@@ -162,10 +156,6 @@
     <div class="col-12 game__content-col-bottom">
       <div class="row game__img__btn__row">
         <div class="col-12 col-md-2 game__img__col-relative">
-          <!-- <picture class="game__img__picture">
-            <source srcset="../assets/img/illustrations/dog.webp" type="image/webp">
-            <source srcset="../assets/img/illustrations/dog.png" type="image/png">
-          </picture> -->
           <img src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog" class="game__img__picture game__img-dog" id="DogImage" />
         </div>
         <div class="col-12 col-md-10 col-lg-8">
@@ -178,9 +168,9 @@
       <div class="row">
         <div class="col-12">
           <div class="game__progress__cont-align">
-            <div class="game__progress__cont">
-              <h3 class="game__progress__text">კითხვა <span class="purple">1</span> / 5 დან</h3>
-              <div class="game__progress__circle line__1"></div>
+            <div class="game__progress__cont" id="ProgressBar">
+              <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">1</span> / 5 დან</h3>
+              <div class="game__progress__circle line__0" id="ProgressLine"></div>
             </div>
           </div>
         </div>
@@ -199,7 +189,6 @@
   <script src="../assets/vendors/js/jquery-ui.min.js"></script>
   <script src="../assets/vendors/js/bootstrap.min.js"></script>
   <script src="../assets/vendors/js/swiper-bundle.min.js"></script>
-  <script src="../assets/js/main.js"></script>
-  <!-- <script src=></script> -->
+  <script src=../../assets/vendors/js/games/game1.js></script>
 </body>
 </html>
