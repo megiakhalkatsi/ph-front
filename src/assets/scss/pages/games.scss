@@ -294,6 +294,10 @@
         width: 55px;
         height: 55px;
       }
+      &.line__0 {
+        transition: .3s;
+        background: linear-gradient(#fff,#fff) content-box,linear-gradient(var(--v),#f1f2f4 50%,transparent 0),linear-gradient(90deg,#f1f2f4 100%,#7279ff 0)
+      }
       &.line__1 {
         transition: .3s;
         background: linear-gradient($white, $white) content-box,

@@ -1,14 +1,9 @@
 ---
 layout: gamesLayout
 title: მოსწავლეების რესურსი
+gameScripts: ../../assets/vendors/js/games/game1.js
 ---
 
-<!-- Notification popup -->
-<div class="container">
-  <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#notificationModal">
-    სატესტო პოპაპი
-  </button>
-</div>
 
 <div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
   aria-hidden="true">
@@ -53,9 +48,9 @@ title: მოსწავლეების რესურსი
       <div class="row">
         <div class="col-12">
           <div class="game__progress__cont-align">
-            <div class="game__progress__cont">
-              <h3 class="game__progress__text">კითხვა <span class="purple">1</span> / 5 დან</h3>
-              <div class="game__progress__circle line__1"></div>
+            <div class="game__progress__cont" id="ProgressBar">
+              <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">1</span> / 5 დან</h3>
+              <div class="game__progress__circle line__0" id="ProgressLine"></div>
             </div>
           </div>
         </div>
