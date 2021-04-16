@@ -2,13 +2,14 @@
   &__container {
     background-color: transparent;
     border-radius: 8px;
-    margin-bottom: 34px;
+    margin-bottom: 10px;
     flex: 0 0 auto;
     width: 100%;
     @media #{$breakpoint-xl} {
       max-width: 267px;
       background-color: $component-color1;
       padding: 20px;
+      margin-bottom: 34px;
     }
     @media #{$breakpoint-xxl} {
       max-width: 387px;
@@ -93,6 +94,7 @@
 
 .section__resources {
   width: 100%;
+  max-width: 1082px;
   @media #{$breakpoint-xl} {
     margin-left: 100px;
   }
