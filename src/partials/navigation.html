@@ -13,6 +13,24 @@
           <span></span>
         </div>
         <ul class="header__nav__list">
+          <div class="dropdown__elem language__mobile" id="language__mobile">
+            <div class="dropdown__elem--inner dropdown--toggler">
+              
+              <span class="text--active dropdown--selected">
+                <span class="dropdown__elem--gray">ენის არჩევა</span>
+                En
+              </span>
+              <svg class="icon">
+                <use xlink:href="#arrow-dropdown"></use>
+              </svg>
+            </div>
+            <div class="dropdown" data-for="language__mobile">
+              <nav class="dropdown__nav">
+                <li class="dropdown__item dropdown__item--active">En</li>
+                <li class="dropdown__item">ქა</li>
+              </nav>
+            </div>
+          </div>
           <li class="header__nav__item"><a href="about.html" class="header__nav__item-link active">ჩვენზე</a></li>
           <li class="header__nav__item"><a href="themes.html" class="header__nav__item-link">თემები</a></li>
           <li class="header__nav__item"><a href="resources.html" class="header__nav__item-link">რესურსები</a></li>
@@ -32,7 +50,7 @@
             </svg>
           </a>
         </div>
-        <div class="dropdown__elem" id="1">
+        <div class="dropdown__elem language__desktop" id="1">
           <div class="dropdown__elem--inner dropdown--toggler">
             <span class="text--active dropdown--selected">
               En

@@ -234,6 +234,29 @@
     border: 2px solid transparent;
     background: $white;
     border-bottom: 0;
+    &.language__mobile{
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        .dropdown__elem--gray{
+            color: rgba($color: $black, $alpha: 0.3);
+        }
+        .dropdown{
+            width: 101.2%;
+            @media #{$breakpoint-xs} {
+                width: 100.8%;
+            }
+        }
+        @media #{$breakpoint-sm} {
+            display: none;
+        }
+    }
+    &.language__desktop{
+        display: none;
+        @media #{$breakpoint-sm} {
+            display: block;
+        }
+    }
     &.form-select {
         width: 100%;
         border-radius: 8px;
