@@ -1,14 +1,14 @@
 .filter {
   &__container {
-    background-color: $component-color2;
+    background-color: transparent;
     border-radius: 8px;
-    padding: 20px;
     margin-bottom: 34px;
     flex: 0 0 auto;
     width: 100%;
     @media #{$breakpoint-xl} {
       max-width: 267px;
       background-color: $component-color1;
+      padding: 20px;
     }
     @media #{$breakpoint-xxl} {
       max-width: 387px;
@@ -19,8 +19,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
+    background-color: $component-color2;
+    border-radius: 8px;
     @media #{$breakpoint-xl} {
+      background-color: transparent;
       margin-bottom: 34px;
+      padding: 0;
+      border-radius: 0;
     }
   }
   &__title {
@@ -51,20 +57,31 @@
     font-family: $firagoMedium;
     font-size: 16px;
     display: none;
+    background-color: $white;
+    border: 2px solid $component-color2;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 0 20px;
     &.active{
       display: block;
     }
     @media #{$breakpoint-xl} {
       display: block;
-      &.active{
-        display:none;
-      }
+      background-color: $component-color1;
+      border: none;
+      border-radius: 0;
+      margin-top: 0;
+      padding: 0;
     }
     &__section {
-      margin-top: 34px;
+      margin-top: 20px;
+      @media #{$breakpoint-xl} {
+        margin-top: 34px;
+      }
       &__title {
         color: $black;
         margin-bottom: 20px;
+        font-size: 16px;
       }
       .checkbox-container {
         color: rgba($color: $black, $alpha: 0.6);
@@ -85,9 +102,12 @@
     margin-top: 55px;
   }
   &__title {
-    font-size: 34px;
+    font-size: 21px;
     font-family: $firagoRegular;
     color: $black;
+    @media #{$breakpoint-xl-ex} {
+      font-size: 34px;
+    }
   }
   .document__line {
     margin: 21px 0 55px;
