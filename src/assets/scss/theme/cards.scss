@@ -5,14 +5,17 @@
         align-items: center;
         width: 100%;
         margin-bottom: 10px;
-        @media #{$breakpoint-md} {
-            align-items: flex-start;
-        }
+        // @media #{$breakpoint-md} {
+        //     align-items: flex-start;
+        // }
         &:hover {
             text-decoration: none;
         }
         &.mb{
-            margin-bottom: 80px;
+            margin-bottom: 55px;
+            @media #{$breakpoint-xl-ex} {
+                margin-bottom: 89px;
+            }
         }
         &__img {
             height: 248px;
@@ -20,10 +23,20 @@
             border-radius: 16px;
         }
         &__title {
-            font-size: 21px;
+            font-size: 16px;
             font-family: $firagoMedium;
             color: $black;
             margin-top: 14px;
+            margin-bottom: 0;
+            @media #{$breakpoint-xl-ex} {
+                font-size: 21px;
+            }
+            &.mb{
+                margin-bottom: 13px;
+            }
+            &.mt{
+                margin-top: 34px;
+            }
         }
     }
 }
