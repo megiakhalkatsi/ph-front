@@ -54,6 +54,7 @@
                 font-size: 16px;
                 font-family: $firagoRegular;
                 &-link {
+                    font-family: $firagoRegular;
                     color: $component-color2;
                     text-decoration: underline;
                     display: block;
@@ -179,16 +180,24 @@
         }
         &__btn {
             border-radius: 8px;
-            padding: 10px 100px;
             height: 40px;
             line-height: 1;
-            display: block;
+            // display: block;
             text-align: center;
+            font-family: $firagoMedium;
+            font-size: 16px;
+            padding: 10px 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media #{$breakpoint-md} {
+                padding: 10px 100px;
+            }
             &:focus {
                 outline: none;
             }
-            &-login{
-                &.mobile{
+            &-login {
+                &.mobile {
                     padding: 10px 45px;
                     @media #{$breakpoint-md} {
                         padding: 10px 100px;
@@ -234,16 +243,16 @@
     border: 2px solid transparent;
     background: $white;
     border-bottom: 0;
-    &.language__mobile{
+    &.language__mobile {
         display: block;
         margin: 0 auto;
         width: 100%;
         padding: 15px 0;
         border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
-        .dropdown__elem--gray{
+        .dropdown__elem--gray {
             color: rgba($color: $black, $alpha: 0.3);
         }
-        .dropdown{
+        .dropdown {
             width: 101.2%;
             @media #{$breakpoint-xs} {
                 width: 100.8%;
@@ -253,7 +262,7 @@
             display: none;
         }
     }
-    &.language__desktop{
+    &.language__desktop {
         display: none;
         @media #{$breakpoint-sm} {
             display: block;
