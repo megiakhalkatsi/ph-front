@@ -43,7 +43,7 @@ function clickers() {
     //burger menu
     $('.header__nav__menuIcon').click(function(){
         $(this).toggleClass('open');
-        $('.header__nav__list').toggleClass('active');
+        $('.header__nav__list__container').toggleClass('active');
     });
     //choose role notification
     $('.choose__teacher').click(function(){
@@ -62,7 +62,7 @@ clickers();
 function burgerMenuResponsive(x) {
     if (x.matches) { // If media query matches
         $('.header__nav__menuIcon').removeClass('open');
-        $('.header__nav__list').removeClass('active');
+        $('.header__nav__list__container').removeClass('active');
     }
   }
   var x = window.matchMedia("(min-width: 991px)")

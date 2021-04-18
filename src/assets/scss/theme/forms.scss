@@ -238,6 +238,8 @@
         display: block;
         margin: 0 auto;
         width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
         .dropdown__elem--gray{
             color: rgba($color: $black, $alpha: 0.3);
         }
