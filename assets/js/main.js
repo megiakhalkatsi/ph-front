@@ -76,7 +76,7 @@ for (var i = 0; i < imgs.length; i++) {
     imgs[i].onclick = function () { imageZoom(this); }
 }
 function imageZoom(ele) {
-    document.getElementById("image-fullscreen").style.background = 'black url(' + ele.src + ') no-repeat fixed center center';
+    document.getElementById("image-fullscreen").style.background = 'black url(' + ele.src + ') no-repeat center center';
     document.getElementById("image-fullscreen").style.backgroundSize = 'contain';
     console.log(document.getElementById("image-fullscreen").style);
 }
