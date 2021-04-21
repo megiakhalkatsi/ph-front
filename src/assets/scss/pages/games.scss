@@ -240,7 +240,7 @@
           width: 100%;
         }
         @media #{$breakpoint-xl-ex} {
-          min-width: 242px;
+          min-width: 262px;
           left: -90px;
           position: absolute;
         }
@@ -250,9 +250,8 @@
       }
     }
     &-dog {
-      width: 100%;
       margin-right: 10px;
-      max-width: 308px;
+      width: 338px;
       object-fit: contain;
       margin-bottom: 34px;
       @media #{$breakpoint-md} {
