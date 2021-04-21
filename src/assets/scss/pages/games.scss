@@ -149,13 +149,55 @@
           color: $white;
         }
       }
-      &.mr{
+      &.mr {
         margin-right: 20px;
       }
-      &.blue{
+      &.blue {
         border: 2px solid $component-color6;
         &:hover {
           background-color: $component-color6;
+        }
+      }
+      &.definition {
+        position: relative;
+        .definition__content {
+          display: none;
+          background-color: $component-color2;
+          position: absolute;
+          width: 100%;
+          box-shadow: 0px 10px 20px #7279FF1A;
+          font-family: $firagoRegular;
+          color: $white;
+          font-size: 13px;
+          padding: 10px;
+          z-index: 1;
+          border-radius: 5px;
+          top: 56px;
+          left: 0;
+          &::after {
+            content: "";
+            background-color: $component-color2;
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            left: 15px;
+            top: -5px;
+            transform: rotate(45deg);
+          }
+          .bold{
+            font-family: $firagoBold;
+          }
+        }
+        .game__text{
+          color: $component-color2;
+        }
+        &:hover {
+          .definition__content {
+            display: block;
+          }
+          .game__text{
+            color: $white;
+          }
         }
       }
     }
@@ -183,24 +225,42 @@
       @media #{$breakpoint-xl} {
         position: absolute;
         bottom: 32px;
+        left: -40px;
         &.bt-120 {
           bottom: -120px;
         }
       }
+      @media #{$breakpoint-xxl} {
+        left: 0;
+      }
+      &.bottom {
+        position: static;
+        @media #{$breakpoint-xl} {
+          min-width: 300px;
+          width: 100%;
+        }
+        @media #{$breakpoint-xl-ex} {
+          min-width: 242px;
+          left: -90px;
+          position: absolute;
+        }
+        @media #{$breakpoint-xxl} {
+          left: 0;
+        }
+      }
     }
     &-dog {
-      width: 170px;
+      width: 100%;
       margin-right: 10px;
       max-width: 308px;
       object-fit: contain;
       margin-bottom: 34px;
       @media #{$breakpoint-md} {
+        width: 200px;
         margin-bottom: 0;
       }
-      @media #{$breakpoint-lg} {
-        width: 180px;
-      }
       @media #{$breakpoint-xl} {
+        min-width: 242px;
         width: 100%;
         margin-right: 0;
       }
@@ -213,6 +273,12 @@
       }
       &.align-center {
         align-items: center;
+        &-xl-ex {
+          align-items: center;
+          @media #{$breakpoint-xl-ex} {
+            align-items: flex-end;
+          }
+        }
       }
     }
   }
@@ -298,35 +364,36 @@
       background: linear-gradient($white, $white) content-box,
         linear-gradient(var(--v), $component-color4 50%, transparent 0),
         linear-gradient(to right, $component-color4 50%, $component-color2 0);
-      transition: .3s;
+      transition: 0.3s;
       @media #{$breakpoint-xl} {
         width: 55px;
         height: 55px;
       }
       &.line__0 {
-        transition: .3s;
-        background: linear-gradient(#fff,#fff) content-box,linear-gradient(var(--v),#f1f2f4 50%,transparent 0),linear-gradient(90deg,#f1f2f4 100%,#7279ff 0)
+        transition: 0.3s;
+        background: linear-gradient(#fff, #fff) content-box, linear-gradient(var(--v), #f1f2f4 50%, transparent 0),
+          linear-gradient(90deg, #f1f2f4 100%, #7279ff 0);
       }
       &.line__1 {
-        transition: .3s;
+        transition: 0.3s;
         background: linear-gradient($white, $white) content-box,
           linear-gradient(var(--v), $component-color4 50%, transparent 0),
           linear-gradient(to right, $component-color4 50%, $component-color2 0);
       }
       &.line__2 {
-        transition: .3s;
+        transition: 0.3s;
         background: linear-gradient($white, $white) content-box,
           linear-gradient(var(--v), $component-color4 0%, transparent 0),
           linear-gradient(to right, $component-color4 50%, $component-color2 0);
       }
       &.line__3 {
-        transition: .3s;
-        background: linear-gradient($white, $white) content-box, 
-        linear-gradient(var(--v), $component-color4 0%, transparent 0),
+        transition: 0.3s;
+        background: linear-gradient($white, $white) content-box,
+          linear-gradient(var(--v), $component-color4 0%, transparent 0),
           linear-gradient(135deg, $component-color4 25%, #7279ff 0);
       }
       &.line__4 {
-        transition: .3s;
+        transition: 0.3s;
         background: linear-gradient($white, $white) content-box,
           linear-gradient(var(--v), $component-color4 0%, transparent 0),
           linear-gradient(to right, $component-color4 0%, $component-color2 0);
@@ -431,49 +498,104 @@
       }
     }
   }
-  &__dragAndDrop{
-    &__container{
+  &__dragAndDrop {
+    &__container {
       display: flex;
       flex-wrap: wrap;
     }
   }
-  &__table{
-    &__thead{
-      background-color: $component-color8;
+  &__table {
+    background-color: $component-color8;
+    border-radius: 10px;
+    border-collapse: inherit;
+    border-spacing: 0px;
+    border: 1px solid $component-color5;
+    &__thead {
+      box-shadow: 0 0 0 1px $component-color8;
+      border-radius: 10px 10px 0 0;
+      &__tr {
+        vertical-align: middle;
+      }
+    }
+    &__th {
+      position: relative;
+      border-bottom: none;
+      padding: 19px !important;
+      width: calc(100% / 3);
+      font-family: $firagoSemiBold;
+      color: $white;
+      font-size: 13px;
+      @media #{$breakpoint-lg} {
+        font-size: 16px;
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 50px;
+        background-color: $white;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:first-child {
+        width: auto;
+      }
+      &:last-child {
+        &::after {
+          content: none;
+        }
+      }
+    }
+    &__td {
+      border-left: 1px solid rgba($color: $component-color5, $alpha: 0.4);
+      vertical-align: bottom;
+    }
+    &__body {
+      background-color: $white;
+      &__tr {
+        border-bottom: 1px solid rgba($color: $component-color5, $alpha: 0.4);
+        &:last-child {
+          border-bottom: 1px solid transparent;
+          border-bottom-style: hidden;
+          border-radius: 0 0 10px 10px;
+          .game__table__body__th {
+            border-bottom-left-radius: 10px;
+          }
+          .game__table__td:last-child {
+            border-bottom-right-radius: 10px;
+          }
+        }
+      }
+      &__th {
+        color: $component-color5;
+        text-align: center;
+        vertical-align: middle;
+        padding: 28px !important;
+      }
+    }
+    .game__answer__container {
+      background-color: $component-color6;
+      margin-bottom: 10px;
+      .game__text {
+        color: $white;
+        font-size: 13px;
+        @media #{$breakpoint-lg} {
+          font-size: 16px;
+        }
+      }
+      &.mr {
+        margin-right: 0;
+      }
+      &.error {
+        background-color: $error-red;
+        border: 2px solid $error-red;
+      }
+      &.success {
+        background-color: $component-color9;
+        border: 2px solid $component-color9;
+      }
     }
   }
 }
-
-
-// რამდენიმე თამაშის მარქაფს გიწერ:
-
-// drag and drop ცხრილში: https://xd.adobe.com/view/e310587e-c300-46db-832d-7a39767c1f07-b643/screen/a5d8116e-95e9-4a72-baf4-1f3299213f16/?fbclid=IwAR2LuyqD1Fu8YL0DlNQRU6NlZ7rMxL0Vuxh234ngwBKb4S0kvYnq349Dp7I -
-// ამ გვერდზეა დიდ ეკრანზე, შემდეგ გვერდზეა სწორი და არასწორი პასუხების გამოჩენა. 1 ცისფერი გააკეთე, ერთი წითელი და 1 მწვანე ცხრილში. კლასებით იყოს წითელი და მწვანე და მერე ჯეკო დაადებს სტილებს. 
-// პირდაპირ "სავარაუდო პასუხები" რომაა, იქიდან დაიწყე და ზემოთ სტანდარტული დაშორება რაც ავიღეთ, ის ქონდეს
-// ვარიანტებზე ჰოვერი მსგავსია, რაც წინა თამაშში იყო, ოღონდ აქ ცისფერ ფერებშია
-// პერსონაჟად პირდაპირ გიფი ჩასვი: https://drive.google.com/drive/folders/1tQWCU8hl48zqULSxMn2YgnNDdqJsXNaI?usp=sharing
-// რესფონსივები ჩანს შემდეგ გვერდებზე
-// მობილურებზე ცხრილი ბოლომდე არ ჩანს და ჰორიზონტალურად სქროლვადი უნდა იყოს
-// სულ ბოლო ვარიანტი (პირადი ცხოვრების... რომ წერია), უნდა იყოს განმარტება. ტექსტს ქონდეს ეს ფერი (#7279FF) და მაუსის მიტანისას ასე გამოდიოდეს განმარტება: https://xd.adobe.com/view/e310587e-c300-46db-832d-7a39767c1f07-b643/screen/9fbe02b3-c40e-4e96-8f87-c747c89a4878/?fbclid=IwAR2LuyqD1Fu8YL0DlNQRU6NlZ7rMxL0Vuxh234ngwBKb4S0kvYnq349Dp7I - 
-//განმარტების ტექსტი: "პირადი ცხოვრების ამსახველი ინფორმაცია შეიძლება იყოს სურათი, აუდიო/ვიდეო- ჩანაწერი, მიმოწერა, პირადი ჩანაწერები ან სხვა, რომელიც შეიცავს ადამიანის პირადი ცხოვრების ამსახველ ცნობებს."
-
-
-// drag and drop ჩასაწერი ტექსტში:
-// დიზაინი: https://xd.adobe.com/view/e310587e-c300-46db-832d-7a39767c1f07-b643/screen/844461f1-b8db-4d9a-8652-0f9374777b58/?fbclid=IwAR2LuyqD1Fu8YL0DlNQRU6NlZ7rMxL0Vuxh234ngwBKb4S0kvYnq349Dp7I
-// ზემოთ, პაროლის ნიმუშები რო წერია, შეცდომაა - "სავარაუდო პასუხები" ეწეროს. და პირდაპირ აქედან დაიწყე, ზემოთ რამხელა ჰაერზეც წინა თამაშებზე შევთანხმდით, ის იყოს
-// ვარიანტებზე ჰოვერი იგივენაირად, როგორც ზედა თამაშში
-// შემდეგ გვერდებზეა რესფონსივი
-// რესფონსივის მერე არის ჩასმული პასუხი მწვანედ და წითლად - სწორი და არასწორი შემთხვევები. ესეც კლასებად დაადე ფერები და ჯეკო გამოიყენებს
-// პერსონაჟი აქაც გიფი
-// ასევე, მწვანე/წითელი ვარიანტები სადაცაა, იქ არის  კიდევ, რომ ვარიანტთან მაუსის მიტანისას გამოდის მისი განმარტება. განმარტებების სია არის აქ: https://docs.google.com/presentation/d/17nzP4_2N8F_Pv5irNhWckyPD2RkTDOXJ/edit#slide=id.p18 - ეს და შემდეგი გვერდი
-// რესფონსივი შემდეგ გვერდებზეა
-
-
-// შესავსები:
-// დიზაინი: https://xd.adobe.com/view/e310587e-c300-46db-832d-7a39767c1f07-b643/screen/a6263700-94fd-48ce-8d50-d792fd54a0e7/specs/?fbclid=IwAR2LuyqD1Fu8YL0DlNQRU6NlZ7rMxL0Vuxh234ngwBKb4S0kvYnq349Dp7I
-// პირდაპირ სტაფილოსფერი რომაა, იქიდან დაიწყე და ზემოთ სტანდარტული დაშორება რაც ავიღეთ, ის ქონდეს
-// ღილაკი წერია გადმოწერა და გვერდზე "დასრულებაც" მიუსვი, რა. დაშორება ქონდეს, როგორც სხვა თამაშებში არის 2 ღილაკს შორის
-// თამაშის იდეაა, რო თითოეულ ყუთში შეუძლიათ რაღაცეების ჩაწერა
-// + ჩაწერაზე კლიკისას ხდება ის, რაც ჩანს ცისფერ ყუთში - კეთდება ბულეთი და იწყება წერა ენტერზე ან გვერდით + ღილაკზე კლიკისას ტექსტი ჩაწერილია
-// თითოეული ჩანაწერი ხდება ბულეთი
-// ჩაწერის დროს დროებით ქრება + ჩაწერა ტექსტი 
