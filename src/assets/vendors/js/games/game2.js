@@ -1,4 +1,61 @@
 
+var isiPad = (navigator.userAgent.match(/iPad/i) != null);
+
+// is this an iPhone ?
+var isiPhone = (navigator.userAgent.match(/iPhone/i) != null);
+
+// is this an android ?
+var isAndroid = (navigator.userAgent.match(/Android/i) != null);
+
+
+
+$(function() {
+    if((isiPad || isiPhone || isAndroid) && window.innerWidth <= 788 ) {
+        $('.game__rotate__notification').attr('style', 'display: flex')
+
+    } else if((isiPad || isiPhone || isAndroid) && window.innerWidth > 788) {
+        $('.game__rotate__notification').attr('style', 'display: none')
+    }
+
+    $( ".clickableItem2" ).addClass('cursor-pointer')
+});
+
+$( window ).resize(function() {
+    if((isiPad || isiPhone || isAndroid) && window.innerWidth <= 788 ) {
+        $('.game__rotate__notification').attr('style', 'display: flex')
+
+    } else if((isiPad || isiPhone || isAndroid) && window.innerWidth > 788) {
+        $('.game__rotate__notification').attr('style', 'display: none')
+    }
+  });
+
+
+
+
+
+$(function() {
+    $( ".clickableItem2" ).addClass('cursor-pointer')
+});
+
+
+$( ".clickableItem2" ).click(function() {
+    if(atampt <= 5) {
+        if($(this).attr('style') == "opacity: 0" && atampt < 5) {
+            $(this).attr('style', 'opacity: 1')
+            atampt++
+            
+        } else if($(this).attr('style') == "opacity: 1") {
+            $(this).attr('style', 'opacity: 0')
+            atampt--
+
+        } else {
+            $('#notificationModal').modal('show');
+        }
+    } else {
+        $('#notificationModal').modal('show');
+    }
+});
+
 
 let atampt = 0;
 
