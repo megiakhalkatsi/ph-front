@@ -137,6 +137,22 @@
               border-color: darken($component-color6,5%)
             }
           }
+          &.error {
+            background-color: $error-red;
+            border: 2px solid $error-red;
+            &:hover{
+              background-color: darken($error-red,5%);
+              border-color: darken($error-red,5%)
+            }
+          }
+          &.success {
+            background-color: $component-color9;
+            border: 2px solid $component-color9;
+            &:hover{
+              background-color: darken($component-color9,5%);
+              border-color: darken($component-color9,5%)
+            }
+          }
         }
       }
     }
@@ -173,6 +189,7 @@
           background-color: $component-color2;
           position: absolute;
           width: 100%;
+          min-width: 200px;
           box-shadow: 0px 10px 20px #7279FF1A;
           font-family: $firagoRegular;
           color: $white;
@@ -192,13 +209,19 @@
             top: -5px;
             transform: rotate(45deg);
           }
+          @media #{$breakpoint-xxs} {
+            min-width: 280px;
+          }
+          @media #{$breakpoint-md} {
+            min-width: 500px;
+          }
           .bold{
             font-family: $firagoBold;
           }
         }
-        .game__text{
-          color: $component-color2;
-        }
+        // .game__text{
+        //   color: $component-color2;
+        // }
         &:hover {
           .definition__content {
             display: block;
