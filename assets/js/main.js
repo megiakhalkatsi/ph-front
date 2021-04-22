@@ -210,4 +210,7 @@ togglePassword.addEventListener('click', function (e) {
 })()
 
 
+
+// $( "#DogImage" ).draggable({ revert: "invalid" });
+
 //# sourceMappingURL=main.js.map
