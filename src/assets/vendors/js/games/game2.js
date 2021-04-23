@@ -20,6 +20,8 @@ $(function() {
     $( ".clickableItem2" ).addClass('cursor-pointer')
 });
 
+
+
 $( window ).resize(function() {
     if((isiPad || isiPhone || isAndroid) && window.innerWidth <= 788 ) {
         $('.game__rotate__notification').attr('style', 'display: flex')
