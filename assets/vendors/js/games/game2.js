@@ -9,27 +9,39 @@ var isAndroid = (navigator.userAgent.match(/Android/i) != null);
 
 
 
-$(function() {
-    if((isiPad || isiPhone || isAndroid) && window.innerWidth <= 788 ) {
-        $('.game__rotate__notification').attr('style', 'display: flex')
+// $(function() {
+//     if(isiPad || isiPhone || isAndroid) {
+//         $('.game__rotate__notification').attr('style', 'display: flex')
 
-    } else if((isiPad || isiPhone || isAndroid) && window.innerWidth > 788) {
-        $('.game__rotate__notification').attr('style', 'display: none')
-    }
+//     } else if(isiPad || isiPhone || isAndroid) {
+//         $('.game__rotate__notification').attr('style', 'display: none')
+//     }
 
-    $( ".clickableItem2" ).addClass('cursor-pointer')
-});
+//     $( ".clickableItem2" ).addClass('cursor-pointer')
+// });
 
 
+// window.addEventListener("deviceorientation", handleOrientation, true);
 
-$( window ).resize(function() {
-    if((isiPad || isiPhone || isAndroid) && window.innerWidth <= 788 ) {
-        $('.game__rotate__notification').attr('style', 'display: flex')
 
-    } else if((isiPad || isiPhone || isAndroid) && window.innerWidth > 788) {
-        $('.game__rotate__notification').attr('style', 'display: none')
-    }
-  });
+// function handleOrientatio() {
+//     if(isiPad || isiPhone || isAndroid) {
+//         $('.game__rotate__notification').attr('style', 'display: flex')
+
+//     } else if(isiPad || isiPhone || isAndroid) {
+//         $('.game__rotate__notification').attr('style', 'display: none')
+//     }
+// }
+
+
+// $( window ).resize(function() {
+//     if(isiPad || isiPhone || isAndroid) {
+//         $('.game__rotate__notification').attr('style', 'display: flex')
+
+//     } else if(isiPad || isiPhone || isAndroid) {
+//         $('.game__rotate__notification').attr('style', 'display: none')
+//     }
+// });
 
 
 
