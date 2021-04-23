@@ -642,3 +642,19 @@
     }
   }
 }
+
+
+/* portrait */
+@media screen and (orientation:portrait) {
+	/* portrait-specific styles */
+  #rightsMarketGameModal {
+    display: flex !important;
+  }
+}
+/* landscape */
+@media screen and (orientation:landscape) {
+	/* landscape-specific styles */
+  #rightsMarketGameModal {
+    display: none;
+  }
+}
