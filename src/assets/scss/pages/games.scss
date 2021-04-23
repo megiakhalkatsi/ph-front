@@ -260,10 +260,14 @@
       @media #{$breakpoint-xl} {
         position: absolute;
         bottom: 32px;
-        left: -11px;
+        // left: -11px;
+        left: -77px;
         &.bt-120 {
           bottom: -200px;
         }
+      }
+      @media #{$breakpoint-xl-ex} {
+        left: -55px;
       }
       @media #{$breakpoint-xxl} {
         left: 0;
