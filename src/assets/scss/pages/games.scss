@@ -129,28 +129,28 @@
           .game__text {
             color: $white;
           }
-          &.blue{
+          &.blue {
             margin: 0;
             background-color: $component-color6;
-            &:hover{
-              background-color: darken($component-color6,5%);
-              border-color: darken($component-color6,5%)
+            &:hover {
+              background-color: darken($component-color6, 5%);
+              border-color: darken($component-color6, 5%);
             }
           }
           &.error {
             background-color: $error-red;
             border: 2px solid $error-red;
-            &:hover{
-              background-color: darken($error-red,5%);
-              border-color: darken($error-red,5%)
+            &:hover {
+              background-color: darken($error-red, 5%);
+              border-color: darken($error-red, 5%);
             }
           }
           &.success {
             background-color: $component-color9;
             border: 2px solid $component-color9;
-            &:hover{
-              background-color: darken($component-color9,5%);
-              border-color: darken($component-color9,5%)
+            &:hover {
+              background-color: darken($component-color9, 5%);
+              border-color: darken($component-color9, 5%);
             }
           }
         }
@@ -190,7 +190,7 @@
           position: absolute;
           width: 100%;
           min-width: 200px;
-          box-shadow: 0px 10px 20px #7279FF1A;
+          box-shadow: 0px 10px 20px #7279ff1a;
           font-family: $firagoRegular;
           color: $white;
           font-size: 13px;
@@ -219,7 +219,7 @@
           @media #{$breakpoint-xl-ex} {
             min-width: 500px;
           }
-          .bold{
+          .bold {
             font-family: $firagoBold;
           }
         }
@@ -230,7 +230,7 @@
           .definition__content {
             display: block;
           }
-          .game__text{
+          .game__text {
             color: $white;
           }
         }
@@ -542,7 +542,7 @@
       display: flex;
       flex-wrap: wrap;
     }
-    &__text{
+    &__text {
       font-size: 21px;
       font-family: $firagoMedium;
       color: $black;
@@ -552,7 +552,7 @@
         line-height: 2;
         margin-bottom: 0;
       }
-      .game__answer__drop__container{
+      .game__answer__drop__container {
         display: inline-block;
         width: auto;
         min-width: 218px;
@@ -659,19 +659,146 @@
       }
     }
   }
+  &__box {
+    &__container {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 55px;
+    }
+    &__header {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &.orange {
+        background-color: $component-color8;
+      }
+      &.green {
+        background-color: $component-color9;
+      }
+      &.blue {
+        background-color: $component-color6;
+      }
+    }
+    &__title {
+      font-family: $firagoSemiBold;
+      font-size: 16px;
+      color: $white;
+      margin: 0;
+    }
+    &__body {
+      padding: 20px;
+      border: 1px solid $component-color5;
+      border-radius: 0 0 10px 10px;
+      border-top-color: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 190px;
+      &.active {
+        justify-content: flex-start;
+      }
+      &.orange {
+        .game__box__list__item::marker {
+          color: $component-color8;
+        }
+      }
+      &.green {
+        .game__box__list__item::marker {
+          color: $component-color9;
+        }
+      }
+      &.blue {
+        .game__box__list__item::marker {
+          color: $component-color6;
+        }
+      }
+    }
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      width: 100%;
+      &__text {
+        color: rgba($color: $black, $alpha: 0.6);
+        font-size: 16px;
+        font-family: $firagoRegular;
+        margin: 0;
+      }
+    }
+    &__bullet {
+      width: 10px;
+      height: 10px;
+      background-color: $component-color8;
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-top: 7px;
+      flex: none;
+    }
+    &__btn {
+      font-family: $firagoRegular;
+      font-size: 21px;
+      color: $component-color12;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .plus {
+        margin-right: 10px;
+      }
+      &.hide {
+        display: none;
+      }
+    }
+    &__form {
+      width: 100%;
+    }
+    &__bulletsList {
+      width: 100%;
+    }
+    &__list {
+      list-style: disc;
+      padding-left: 25px;
+      &__container {
+        width: 100%;
+        display: none;
+        outline: none;
+        &.active {
+          display: block;
+        }
+      }
+      &__item {
+        width: 100%;
+        .icon {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          fill: $component-color12;
+        }
+        &::marker {
+          font-size: 30px;
+        }
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
 }
 
-
 /* portrait */
-@media screen and (orientation:portrait) {
-	/* portrait-specific styles */
+@media screen and (orientation: portrait) {
+  /* portrait-specific styles */
   #rightsMarketGameModal {
     display: flex !important;
   }
 }
 /* landscape */
-@media screen and (orientation:landscape) {
-	/* landscape-specific styles */
+@media screen and (orientation: landscape) {
+  /* landscape-specific styles */
   #rightsMarketGameModal {
     display: none;
   }
