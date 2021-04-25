@@ -4,26 +4,39 @@
   height: 80px;
   line-height: 80px;
   color: $black;
-  // transition: 0.2s;
   position: fixed;
-  left: 0;
   top: 20px;
   background: $white;
-  border-radius: 8px;
+  border-radius: 16px;
   box-shadow: 0px 0px 30px #2026311a;
   z-index: 3;
   display: flex;
   align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  @media #{$breakpoint-sm} {
+    max-width: 726px;
+  }
+  @media #{$breakpoint-lg} {
+    max-width: 978px;
+  }
+  @media #{$breakpoint-xl} {
+    max-width: 1218px;
+  }
+  @media #{$breakpoint-xl-ex} {
+    max-width: 1700px;
+  }
   &.sticky {
-    height: 60px;
+    height: 70px;
     border-radius: 0px 0px 8px 8px;
     top: 0;
     .header__container {
-      height: 60px;
+      height: 70px;
     }
     .header__nav__list__container.active {
-      top: 60px;
-      min-height: calc(100vh - 60px);
+      top: 70px;
+      min-height: calc(100vh - 70px);
     }
   }
   &__container {

@@ -3,19 +3,20 @@
       font-family: '#{$font-family}';
       src: url('#{$url}.eot');
       src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
-      url('#{$url}.ttf') format('truetype');
+      url('#{$url}.svg') format('svg'),
+      url('#{$url}.ttf') format('truetype'),
+      url('#{$url}.woff') format('woff'),
+      url('#{$url}.woff2') format('woff2');
       font-weight: normal;
       font-style: normal;
     }
   }
-  
+
   @include font-face('firagoBold', '../fonts/FiraGO-Bold');
   @include font-face('firagoSemiBold', '../fonts/FiraGO-SemiBold');
   @include font-face('firagoMedium', '../fonts/FiraGO-Medium');
   @include font-face('firagoRegular', '../fonts/FiraGO-Regular');
   @include font-face('firagoExtraBold', '../fonts/FiraGO-ExtraBold');
-    // @include font-face('firagoBlack', '../fonts/FiraGO-Black');
-  // @include font-face('firagoItalic', '../fonts/FiraGO-Italic');
   
   // Fonts
   $fonts: 'firagoRegular';
@@ -25,8 +26,6 @@
   $firagoMedium: 'firagoMedium';
   $firagoRegular: 'firagoRegular';
   $firagoExtraBold: 'firagoExtraBold';
-  // $firagoItalic: 'firagoItalic';
-  // $firagoBlack: 'firagoBlack';
   
   .firagoSemiBold{
     font-family: $firagoSemiBold;
@@ -43,12 +42,6 @@
   .firagoExtraBold{
     font-family: $firagoExtraBold;
   }
-  // .firagoItalic{
-  //   font-family: $firagoItalic;
-  // }
-  // .firagoBlack{
-  //   font-family: $firagoBlack;
-  // }
   
   
   
