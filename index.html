@@ -145,23 +145,27 @@
                 <span></span>
               </div>
               <div class="header__nav__list__container">
-                <div class="dropdown__elem language__mobile" id="language__mobile">
-                  <div class="dropdown__elem--inner dropdown--toggler">
-                    <span class="text--active dropdown--selected">
-                      <span class="dropdown__elem--gray">ენის არჩევა</span>
-                      En
-                    </span>
-                    <svg class="icon">
-                      <use xlink:href="#arrow-dropdown"></use>
-                    </svg>
-                  </div>
-                  <div class="dropdown" data-for="language__mobile">
-                    <nav class="dropdown__nav">
-                      <li class="dropdown__item dropdown__item--active">En</li>
-                      <li class="dropdown__item">ქა</li>
-                    </nav>
+                <div class="language__mobile">
+                  <span class="dropdown__elem--gray">ენის არჩევა: </span>
+                  <div class="dropdown__elem" id="language__mobile">
+                    <div class="dropdown__elem--inner dropdown--toggler">
+                      <span class="text--active dropdown--selected">
+                        <!-- <span class="dropdown__elem--gray">ენის არჩევა: </span> -->
+                        En
+                      </span>
+                      <svg class="icon">
+                        <use xlink:href="#arrow-dropdown"></use>
+                      </svg>
+                    </div>
+                    <div class="dropdown" data-for="language__mobile">
+                      <nav class="dropdown__nav">
+                        <li class="dropdown__item dropdown__item--active">En</li>
+                        <li class="dropdown__item">ქა</li>
+                      </nav>
+                    </div>
                   </div>
                 </div>
+                
                 <ul class="header__nav__list">
                   <li class="header__nav__item"><a href="about.html" class="header__nav__item-link active">ჩვენზე</a></li>
                   <li class="header__nav__item"><a href="themes.html" class="header__nav__item-link">თემები</a></li>
@@ -219,268 +223,270 @@
           </div>
         </div>
       </header>      <div class="page__content">
-<section class="section__main section__one dark">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
-        <h2 class="section__main__title">ისწავლე, <span class="d-block"></span> განვითარდი</h2>
-        <p class="section__main__text">ინტერაქტიული, სახალისო, მრავალფეროვანი ონლაინ რესურსი უფლებებსა და
-          სამართლებრივ რეგულაციებზე</p>
-        <div class="section__one__btn__container">
-          <a href="#" class="section__one__btn green">
-            <div class="section__one__btn__icon-bg">
-              <img src="assets/img/icons/computer.svg" alt="ისწავლე" class="section__one__btn__icon">
+<div class="section__main__bg">
+  <section class="section__main section__one dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+          <h2 class="section__main__title mt-xl">ისწავლე, <span class="d-block"></span> განვითარდი</h2>
+          <p class="section__main__text">ინტერაქტიული, სახალისო, მრავალფეროვანი ონლაინ რესურსი უფლებებსა და
+            სამართლებრივ რეგულაციებზე</p>
+          <div class="section__one__btn__container mb-xl">
+            <a href="#" class="section__one__btn green">
+              <div class="section__one__btn__icon-bg">
+                <img src="assets/img/icons/computer.svg" alt="ისწავლე" class="section__one__btn__icon">
+              </div>
+              ისწავლე
+            </a>
+            <a href="#" class="section__one__btn yellow">
+              <div class="section__one__btn__icon-bg">
+                <img src="assets/img/icons/book-open.svg" alt="ასწავლე" class="section__one__btn__icon">
+              </div>
+              ასწავლე
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+          <picture>
+            <source srcset="assets/img/illustrations/illustration1.webp" type="image/webp">
+            <source srcset="assets/img/illustrations/illustration1.png" type="image/png">
+            <img src="assets/img/illustrations/illustration1.png" alt="img" class="section__one__img" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section__main section__two light">
+    <div class="container">
+      <div class="row">
+        <div class="col-11 col-lg-10 col-xl-8 col-xxl-6 m-auto">
+          <h2 class="section__main__title mt">პროექტის შესახებ</h2>
+          <p class="section__main__text mt">ონლაინ რესურსი განკუთვნილია სკოლის მოსწავლეებისთვის, რათა სახალისო
+            სავარჯიშოებისა და თამაშების გზით
+            შეისწავლონ
+            სამართლებრივი საკითხები. ასევე, რესუსი საშუალებას აძლევს განმანათლებლებს, მიიღონ დეტალური ინსტრუქცია, თუ
+            როგორ
+            შეუძლიათ აღნიშნული რესურსით ასწავლონ მოსწავლეებს.</p>
+          <a href="#" class="bt-blue section__two__btn mt">ვრცლად</a>
+        </div>
+        <div class="col-12 m-auto">
+          <div class="about__video__section margins">
+            <div class="resource__item__video rd-16">
+              <div class="bg-video" style="background-image: url(assets/img/videoScreen1.png);">
+                <div class="about__video__section__bg"></div>
+                <div class="bt-play"></div>
+              </div>
+              <div class="video-container">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/i-80SGWfEjM?rel=0&amp;showinfo=0"
+                  frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay"></iframe>
+              </div>
             </div>
-            ისწავლე
-          </a>
-          <a href="#" class="section__one__btn yellow">
-            <div class="section__one__btn__icon-bg">
-              <img src="assets/img/icons/book-open.svg" alt="ასწავლე" class="section__one__btn__icon">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section__main section__three dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-11 m-auto">
+          <h2 class="section__main__title mt">თემები</h2>
+          <p class="section__main__text mt mb">აირჩიე შენთვის საინტერესო თემა.</p>
+        </div>
+        <div class="col-12 m-auto">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <a href="#" class="theme__item mb">
+                <picture>
+                  <source srcset="assets/img/themes/theme1.webp" type="image/webp">
+                  <source srcset="assets/img/themes/theme1.png" type="image/png">
+                  <img src="assets/img/themes/theme1.png" alt="theme image" class="theme__item__img" />
+                </picture>
+                <h2 class="theme__item__title mt">სამართლებრივი კულტურა</h2>
+              </a>
             </div>
-            ასწავლე
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
-        <picture>
-          <source srcset="assets/img/illustrations/illustration1.webp" type="image/webp">
-          <source srcset="assets/img/illustrations/illustration1.png" type="image/png">
-          <img src="assets/img/illustrations/illustration1.png" alt="img" class="section__one__img" />
-        </picture>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section__main section__two light">
-  <div class="container">
-    <div class="row">
-      <div class="col-11 col-lg-10 col-xl-8 col-xxl-6 m-auto">
-        <h2 class="section__main__title mt">პროექტის შესახებ</h2>
-        <p class="section__main__text mt">ონლაინ რესურსი განკუთვნილია სკოლის მოსწავლეებისთვის, რათა სახალისო
-          სავარჯიშოებისა და თამაშების გზით
-          შეისწავლონ
-          სამართლებრივი საკითხები. ასევე, რესუსი საშუალებას აძლევს განმანათლებლებს, მიიღონ დეტალური ინსტრუქცია, თუ
-          როგორ
-          შეუძლიათ აღნიშნული რესურსით ასწავლონ მოსწავლეებს.</p>
-        <a href="#" class="bt-blue section__two__btn mt">ვრცლად</a>
-      </div>
-      <div class="col-12 m-auto">
-        <div class="about__video__section margins">
-          <div class="resource__item__video rd-16">
-            <div class="bg-video" style="background-image: url(assets/img/videoScreen1.png);">
-              <div class="about__video__section__bg"></div>
-              <div class="bt-play"></div>
+            <div class="col-12 col-md-4">
+              <a href="#" class="theme__item mb">
+                <picture>
+                  <source srcset="assets/img/themes/theme2.webp" type="image/webp">
+                  <source srcset="assets/img/themes/theme2.png" type="image/png">
+                  <img src="assets/img/themes/theme2.png" alt="theme image" class="theme__item__img" />
+                </picture>
+                <h2 class="theme__item__title mt">ბავშთა უფლებები</h2>
+              </a>
             </div>
-            <div class="video-container">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qIjZqxqDTNM?rel=0&amp;showinfo=0"
-                frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+            <div class="col-12 col-md-4">
+              <a href="#" class="theme__item mb">
+                <picture>
+                  <source srcset="assets/img/themes/theme3.webp" type="image/webp">
+                  <source srcset="assets/img/themes/theme3.png" type="image/png">
+                  <img src="assets/img/themes/theme3.png" alt="theme image" class="theme__item__img" />
+                </picture>
+                <h2 class="theme__item__title mt">ცხოვრების ჯანსაღი წესი</h2>
+              </a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a href="#" class="theme__item mb">
+                <picture>
+                  <source srcset="assets/img/themes/theme4.webp" type="image/webp">
+                  <source srcset="assets/img/themes/theme4.png" type="image/png">
+                  <img src="assets/img/themes/theme4.png" alt="theme image" class="theme__item__img" />
+                </picture>
+                <h2 class="theme__item__title mt">სამართლის დაცვა საქართველოში</h2>
+              </a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a href="#" class="theme__item mb">
+                <picture>
+                  <source srcset="assets/img/themes/theme5.webp" type="image/webp">
+                  <source srcset="assets/img/themes/theme5.png" type="image/png">
+                  <img src="assets/img/themes/theme5.png" alt="theme image" class="theme__item__img" />
+                </picture>
+                <h2 class="theme__item__title mt">არასრულწოვანი და კანონი</h2>
+              </a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a href="#" class="theme__item mb">
+                <picture>
+                  <source srcset="assets/img/themes/theme6.webp" type="image/webp">
+                  <source srcset="assets/img/themes/theme6.png" type="image/png">
+                  <img src="assets/img/themes/theme6.png" alt="theme image" class="theme__item__img" />
+                </picture>
+                <h2 class="theme__item__title mt">კიბერდანაშაული</h2>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="bt-blue section__two__btn mb">ყველა თემა</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section__main section__four light">
+    <div class="container">
+      <div class="row">
+        <div class="col-11 m-auto">
+          <h2 class="section__main__title mt mb">რატომ უნდა ისწავლო აქ ?</h2>
+        </div>
+        <div class="col-12  m-auto">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <a href="#" class="section__four__item">
+                <picture>
+                  <source srcset="assets/img/illustrations/illustration7.webp" type="image/webp">
+                  <source srcset="assets/img/illustrations/illustration7.png" type="image/png">
+                  <img src="assets/img/illustrations/illustration7.png" alt="theme image"
+                    class="section__four__item__img" />
+                </picture>
+                <h2 class="theme__item__title mb mt">თამაშები, სავარჯიშოები</h2>
+                <p class="section__main__text">თითოეულ თემაში ნახავ მრავალფეროვან და სახალისო თამაშებს, სავარჯიშოებსა და
+                  ქვიზებს და შეიტყობ ბევრ საინტერესო ინფორმაციას</p>
+              </a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a href="#" class="section__four__item">
+                <picture>
+                  <source srcset="assets/img/illustrations/illustration8.webp" type="image/webp">
+                  <source srcset="assets/img/illustrations/illustration8.png" type="image/png">
+                  <img src="assets/img/illustrations/illustration8.png" alt="theme image"
+                    class="section__four__item__img" />
+                </picture>
+                <h2 class="theme__item__title mb mt">ინდივიდუალური სწავლება</h2>
+                <p class="section__main__text">შეგიძლია ისწავლო ინდივიდუალურად სახლში იმ ტემპით, როგორც გირჩევნია. ასევე,
+                  შეგიძლია, კურსი მასწავლებელთან ერთად გაიარო და მიუბრუნდე რესურს თავად, როცა მოგინდება.</p>
+              </a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a href="#" class="section__four__item">
+                <picture>
+                  <source srcset="assets/img/illustrations/illustration9.webp" type="image/webp">
+                  <source srcset="assets/img/illustrations/illustration9.png" type="image/png">
+                  <img src="assets/img/illustrations/illustration9.png" alt="theme image"
+                    class="section__four__item__img" />
+                </picture>
+                <h2 class="theme__item__title mb mt">სერტიფიკატი</h2>
+                <p class="section__main__text">მასწავლებელთან ერთად კურსის წარმატებით გავლის შემთვევაში, მიიღებ
+                  სერთიფიკატს, რომელიც დაადასტურებს შენს ცოდნას აღნიშნულ საკითხებზე.</p>
+              </a>
+            </div>
+          </div>
+          <div class="section__four__btn__container">
+            <a href="#" class="section__one__btn section__four__btn green">
+              <div class="section__one__btn__icon-bg">
+                <img src="assets/img/icons/computer.svg" alt="ისწავლე" class="section__one__btn__icon">
+              </div>
+              დაიწყე სწავლა
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section__main section__five dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-5 col-xxl-6  d-flex flex-column justify-content-center">
+          <picture>
+            <source srcset="assets/img/illustrations/illustration2.webp" type="image/webp">
+            <source srcset="assets/img/illustrations/illustration2.png" type="image/png">
+            <img src="assets/img/illustrations/illustration2.png" alt="img" class="section__five__img mb-0" />
+          </picture>
+        </div>
+        <div class="col-12 col-md-6 col-lg-7 col-xxl-6 d-flex flex-column justify-content-center">
+          <div class="section__five__content">
+            <h2 class="section__main__title mt-lg">გახდი განმანათლებელი</h2>
+            <p class="section__main__text mt-0">თუ გსურს, ასწავლო სკოლის მოსწავლეებს სამართლებრივი უფლებები და რეგულაციები,
+              გაამრავალფეროვნო სწავლების პროცესი განსხვავებული რესურსებით, მაშინ გახდი განმანათლებელი. ჩვენ გასწავლით,
+              როგორ უნდა გამოიყენო ეს რესურსი სწავლებაში განმანათლებლისთვის განკუთვნილი ონლაინ ტრენინგის საშუალებით,
+              რომლის დასრულების შემდეგ მიიღებ სერთიფიკატს.</p>
+            <a href="#" class="bt-blue section__two__btn mt mb">შემოგვიერთდი</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section__main section__six light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-10 col-xl-8 col-xxl-6 m-auto">
+          <h2 class="section__main__title mt">ჩვენი მხარდამჭერები</h2>
+          <p class="section__main__text mt">პროექტი დაფინანსებულია აშშ-ის სახელმწიფო დეპარტამენტის ანტინარკოტიკულ და
+            სამართალდამცავ ორგანოებთან თანამშრომლობის საერთაშორისო ბიურო, INL-ის მიერ. პარტნიორები არიან საქართველოს
+            შინაგან საქმეთა სამინისტრო და საქართველოს განათლების, მეცნიერების, კულტურისა და სპორტის სამინისტრო.</p>
+        </div>
+        <div class="col-12 m-auto">
+          <div class="section__six__row">
+            <div class="section__six__row__item">
+              <picture>
+                <source srcset="assets/img/us-flag.webp" type="image/webp">
+                <source srcset="assets/img/us-flag.png" type="image/png">
+                <img src="assets/img/us-flag.png" alt="supporter" class="section__six__row__item__img mr" />
+              </picture>
+              <picture>
+                <source srcset="assets/img/Embassy.webp" type="image/webp">
+                <source srcset="assets/img/Embassy.png" type="image/png">
+                <img src="assets/img/Embassy.png" alt="supporter" class="section__six__row__item__img" />
+              </picture>
+            </div>
+            <div class="section__six__row__item">
+              <picture>
+                <source srcset="assets/img/mes-gov.webp" type="image/webp">
+                <source srcset="assets/img/mes-gov.png" type="image/png">
+                <img src="assets/img/mes-gov.png" alt="supporter" class="section__six__row__item__img" />
+              </picture>
+            </div>
+            <div class="section__six__row__item">
+              <picture>
+                <source srcset="assets/img/shss.webp" type="image/webp">
+                <source srcset="assets/img/shss.png" type="image/png">
+                <img src="assets/img/shss.png" alt="supporter" class="section__six__row__item__img" />
+              </picture>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="section__main section__three dark">
-  <div class="container">
-    <div class="row">
-      <div class="col-11 m-auto">
-        <h2 class="section__main__title mt">თემები</h2>
-        <p class="section__main__text mt mb">აირჩიე შენთვის საინტერესო თემა.</p>
-      </div>
-      <div class="col-12 col-md-10 m-auto">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-4">
-            <a href="#" class="theme__item mb">
-              <picture>
-                <source srcset="assets/img/themes/theme1.webp" type="image/webp">
-                <source srcset="assets/img/themes/theme1.png" type="image/png">
-                <img src="assets/img/themes/theme1.png" alt="theme image" class="theme__item__img" />
-              </picture>
-              <h2 class="theme__item__title mt">სამართლებრივი კულტურა</h2>
-            </a>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <a href="#" class="theme__item mb">
-              <picture>
-                <source srcset="assets/img/themes/theme2.webp" type="image/webp">
-                <source srcset="assets/img/themes/theme2.png" type="image/png">
-                <img src="assets/img/themes/theme2.png" alt="theme image" class="theme__item__img" />
-              </picture>
-              <h2 class="theme__item__title mt">ბავშთა უფლებები</h2>
-            </a>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <a href="#" class="theme__item mb">
-              <picture>
-                <source srcset="assets/img/themes/theme3.webp" type="image/webp">
-                <source srcset="assets/img/themes/theme3.png" type="image/png">
-                <img src="assets/img/themes/theme3.png" alt="theme image" class="theme__item__img" />
-              </picture>
-              <h2 class="theme__item__title mt">ცხოვრების ჯანსაღი წესი</h2>
-            </a>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <a href="#" class="theme__item mb">
-              <picture>
-                <source srcset="assets/img/themes/theme4.webp" type="image/webp">
-                <source srcset="assets/img/themes/theme4.png" type="image/png">
-                <img src="assets/img/themes/theme4.png" alt="theme image" class="theme__item__img" />
-              </picture>
-              <h2 class="theme__item__title mt">სამართლის დაცვა საქართველოში</h2>
-            </a>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <a href="#" class="theme__item mb">
-              <picture>
-                <source srcset="assets/img/themes/theme5.webp" type="image/webp">
-                <source srcset="assets/img/themes/theme5.png" type="image/png">
-                <img src="assets/img/themes/theme5.png" alt="theme image" class="theme__item__img" />
-              </picture>
-              <h2 class="theme__item__title mt">არასრულწოვანი და კანონი</h2>
-            </a>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <a href="#" class="theme__item mb">
-              <picture>
-                <source srcset="assets/img/themes/theme6.webp" type="image/webp">
-                <source srcset="assets/img/themes/theme6.png" type="image/png">
-                <img src="assets/img/themes/theme6.png" alt="theme image" class="theme__item__img" />
-              </picture>
-              <h2 class="theme__item__title mt">კიბერდანაშაული</h2>
-            </a>
-          </div>
-        </div>
-        <a href="#" class="bt-blue section__two__btn mb">ყველა თემა</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section__main section__four light">
-  <div class="container">
-    <div class="row">
-      <div class="col-11 m-auto">
-        <h2 class="section__main__title mt mb">რატომ უნდა ისწავლო აქ ?</h2>
-      </div>
-      <div class="col-12  m-auto">
-        <div class="row">
-          <div class="col-12 col-lg-4">
-            <a href="#" class="section__four__item">
-              <picture>
-                <source srcset="assets/img/illustrations/illustration7.webp" type="image/webp">
-                <source srcset="assets/img/illustrations/illustration7.png" type="image/png">
-                <img src="assets/img/illustrations/illustration7.png" alt="theme image"
-                  class="section__four__item__img" />
-              </picture>
-              <h2 class="theme__item__title mb mt">თამაშები, სავარჯიშოები</h2>
-              <p class="section__main__text">თითოეულ თემაში ნახავ მრავალფეროვან და სახალისო თამაშებს, სავარჯიშოებსა და
-                ქვიზებს და შეიტყობ ბევრ საინტერესო ინფორმაციას</p>
-            </a>
-          </div>
-          <div class="col-12 col-lg-4">
-            <a href="#" class="section__four__item">
-              <picture>
-                <source srcset="assets/img/illustrations/illustration8.webp" type="image/webp">
-                <source srcset="assets/img/illustrations/illustration8.png" type="image/png">
-                <img src="assets/img/illustrations/illustration8.png" alt="theme image"
-                  class="section__four__item__img" />
-              </picture>
-              <h2 class="theme__item__title mb mt">ინდივიდუალური სწავლება</h2>
-              <p class="section__main__text">შეგიძლია ისწავლო ინდივიდუალურად სახლში იმ ტემპით, როგორც გირჩევნია. ასევე,
-                შეგიძლია, კურსი მასწავლებელთან ერთად გაიარო და მიუბრუნდე რესურს თავად, როცა მოგინდება.</p>
-            </a>
-          </div>
-          <div class="col-12 col-lg-4">
-            <a href="#" class="section__four__item">
-              <picture>
-                <source srcset="assets/img/illustrations/illustration9.webp" type="image/webp">
-                <source srcset="assets/img/illustrations/illustration9.png" type="image/png">
-                <img src="assets/img/illustrations/illustration9.png" alt="theme image"
-                  class="section__four__item__img" />
-              </picture>
-              <h2 class="theme__item__title mb mt">სერტიფიკატი</h2>
-              <p class="section__main__text">მასწავლებელთან ერთად კურსის წარმატებით გავლის შემთვევაში, მიიღებ
-                სერთიფიკატს, რომელიც დაადასტურებს შენს ცოდნას აღნიშნულ საკითხებზე.</p>
-            </a>
-          </div>
-        </div>
-        <div class="section__four__btn__container">
-          <a href="#" class="section__one__btn section__four__btn green">
-            <div class="section__one__btn__icon-bg">
-              <img src="assets/img/icons/computer.svg" alt="ისწავლე" class="section__one__btn__icon">
-            </div>
-            დაიწყე სწავლა
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section__main section__five dark">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-6">
-        <picture>
-          <source srcset="assets/img/illustrations/illustration2.webp" type="image/webp">
-          <source srcset="assets/img/illustrations/illustration2.png" type="image/png">
-          <img src="assets/img/illustrations/illustration2.png" alt="img" class="section__one__img mb-0" />
-        </picture>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="section__five__content">
-          <h2 class="section__main__title mt-sm">გახდი განმანათლებელი</h2>
-          <p class="section__main__text mt">თუ გსურს, ასწავლო სკოლის მოსწავლეებს სამართლებრივი უფლებები და რეგულაციები,
-            გაამრავალფეროვნო სწავლების პროცესი განსხვავებული რესურსებით, მაშინ გახდი განმანათლებელი. ჩვენ გასწავლით,
-            როგორ უნდა გამოიყენო ეს რესურსი სწავლებაში განმანათლებლისთვის განკუთვნილი ონლაინ ტრენინგის საშუალებით,
-            რომლის დასრულების შემდეგ მიიღებ სერთიფიკატს.</p>
-          <a href="#" class="bt-blue section__two__btn mt mb">შემოგვიერთდი</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section__main section__six light">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-lg-10 col-xl-8 col-xxl-6 m-auto">
-        <h2 class="section__main__title mt">ჩვენი მხარდამჭერები</h2>
-        <p class="section__main__text mt">პროექტი დაფინანსებულია აშშ-ის სახელმწიფო დეპარტამენტის ანტინარკოტიკულ და
-          სამართალდამცავ ორგანოებთან თანამშრომლობის საერთაშორისო ბიურო, INL-ის მიერ. პარტნიორები არიან საქართველოს
-          შინაგან საქმეთა სამინისტრო და საქართველოს განათლების, მეცნიერების, კულტურისა და სპორტის სამინისტრო.</p>
-      </div>
-      <div class="col-12 m-auto">
-        <div class="section__six__row">
-          <div class="section__six__row__item">
-            <picture>
-              <source srcset="assets/img/us-flag.webp" type="image/webp">
-              <source srcset="assets/img/us-flag.png" type="image/png">
-              <img src="assets/img/us-flag.png" alt="supporter" class="section__six__row__item__img mr" />
-            </picture>
-            <picture>
-              <source srcset="assets/img/Embassy.webp" type="image/webp">
-              <source srcset="assets/img/Embassy.png" type="image/png">
-              <img src="assets/img/Embassy.png" alt="supporter" class="section__six__row__item__img" />
-            </picture>
-          </div>
-          <div class="section__six__row__item">
-            <picture>
-              <source srcset="assets/img/mes-gov.webp" type="image/webp">
-              <source srcset="assets/img/mes-gov.png" type="image/png">
-              <img src="assets/img/mes-gov.png" alt="supporter" class="section__six__row__item__img" />
-            </picture>
-          </div>
-          <div class="section__six__row__item">
-            <picture>
-              <source srcset="assets/img/shss.webp" type="image/webp">
-              <source srcset="assets/img/shss.png" type="image/png">
-              <img src="assets/img/shss.png" alt="supporter" class="section__six__row__item__img" />
-            </picture>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+</div>
  <footer class="footer">
     <div class="container">
         <div class="row">
@@ -490,7 +496,7 @@
         </div>
         <div class="footer__bottom">
             <div class="row">
-                <div class="col-12 col-lg-5 d-flex align-items-end">
+                <div class="col-12 col-lg-5 d-flex align-items-end align-items-lg-start align-items-xxl-end">
                     <p class="footer__text">
                         ვებ-გვერდზე განთავსებული ინფორმაცია არ წარმოადგენს ამერიკის შეერთებული შტატების მთავრობის ოფიციალურ ინფორმაციას და არ ასახავს ამერიკის შეერთებული შტატების სახელმწიფო დეპარტამენტისა და ამერიკის შეერთებული შტატების მთავრობის შეხედულებებს
                     </p>
@@ -509,8 +515,8 @@
                     </svg>
                 </a>
                 </div>
-                <div class="col-12 col-lg-7 col-xl-6 offset-xl-1 d-flex align-items-end">
-                    <div class="footer__contact">
+                <div class="col-12 col-lg-7 col-xl-7 col-xxl-6 offset-xxl-1 d-flex align-items-end">
+                    <div class="footer__contact cont">
                         <div class="footer__contact left">
                             <div class="footer__item-flex">
                                 <a href="termsOfUse.html" class="footer__item footer__text black">
@@ -525,7 +531,7 @@
                                 <div class="footer__line second footer__item"></div>
                             </div>
                             <div class="footer__item-flex">
-                                <p class="footer__item footer__text black mobile-block">© 2021 ყველა უფლება დაცულია</p>
+                                <p class="footer__item footer__text black mobile-block hover-black">© 2021 ყველა უფლება დაცულია</p>
                             </div>
                         </div>
                         <div class="footer__contact-right">
@@ -543,15 +549,10 @@
                                 </svg>
                             </a>
                             </div>
-                            <p class="footer__item footer__text black mobile-none">© 2021 ყველა უფლება დაცულია</p>
+                            <p class="footer__item footer__text black mobile-none hover-black">© 2021 ყველა უფლება დაცულია</p>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
             </div>
         </div>
     </div>

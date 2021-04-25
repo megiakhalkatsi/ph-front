@@ -145,23 +145,27 @@
                 <span></span>
               </div>
               <div class="header__nav__list__container">
-                <div class="dropdown__elem language__mobile" id="language__mobile">
-                  <div class="dropdown__elem--inner dropdown--toggler">
-                    <span class="text--active dropdown--selected">
-                      <span class="dropdown__elem--gray">ენის არჩევა</span>
-                      En
-                    </span>
-                    <svg class="icon">
-                      <use xlink:href="#arrow-dropdown"></use>
-                    </svg>
-                  </div>
-                  <div class="dropdown" data-for="language__mobile">
-                    <nav class="dropdown__nav">
-                      <li class="dropdown__item dropdown__item--active">En</li>
-                      <li class="dropdown__item">ქა</li>
-                    </nav>
+                <div class="language__mobile">
+                  <span class="dropdown__elem--gray">ენის არჩევა: </span>
+                  <div class="dropdown__elem" id="language__mobile">
+                    <div class="dropdown__elem--inner dropdown--toggler">
+                      <span class="text--active dropdown--selected">
+                        <!-- <span class="dropdown__elem--gray">ენის არჩევა: </span> -->
+                        En
+                      </span>
+                      <svg class="icon">
+                        <use xlink:href="#arrow-dropdown"></use>
+                      </svg>
+                    </div>
+                    <div class="dropdown" data-for="language__mobile">
+                      <nav class="dropdown__nav">
+                        <li class="dropdown__item dropdown__item--active">En</li>
+                        <li class="dropdown__item">ქა</li>
+                      </nav>
+                    </div>
                   </div>
                 </div>
+                
                 <ul class="header__nav__list">
                   <li class="header__nav__item"><a href="about.html" class="header__nav__item-link active">ჩვენზე</a></li>
                   <li class="header__nav__item"><a href="themes.html" class="header__nav__item-link">თემები</a></li>
@@ -358,7 +362,7 @@
         </div>
         <div class="footer__bottom">
             <div class="row">
-                <div class="col-12 col-lg-5 d-flex align-items-end">
+                <div class="col-12 col-lg-5 d-flex align-items-end align-items-lg-start align-items-xxl-end">
                     <p class="footer__text">
                         ვებ-გვერდზე განთავსებული ინფორმაცია არ წარმოადგენს ამერიკის შეერთებული შტატების მთავრობის ოფიციალურ ინფორმაციას და არ ასახავს ამერიკის შეერთებული შტატების სახელმწიფო დეპარტამენტისა და ამერიკის შეერთებული შტატების მთავრობის შეხედულებებს
                     </p>
@@ -377,8 +381,8 @@
                     </svg>
                 </a>
                 </div>
-                <div class="col-12 col-lg-7 col-xl-6 offset-xl-1 d-flex align-items-end">
-                    <div class="footer__contact">
+                <div class="col-12 col-lg-7 col-xl-7 col-xxl-6 offset-xxl-1 d-flex align-items-end">
+                    <div class="footer__contact cont">
                         <div class="footer__contact left">
                             <div class="footer__item-flex">
                                 <a href="termsOfUse.html" class="footer__item footer__text black">
@@ -393,7 +397,7 @@
                                 <div class="footer__line second footer__item"></div>
                             </div>
                             <div class="footer__item-flex">
-                                <p class="footer__item footer__text black mobile-block">© 2021 ყველა უფლება დაცულია</p>
+                                <p class="footer__item footer__text black mobile-block hover-black">© 2021 ყველა უფლება დაცულია</p>
                             </div>
                         </div>
                         <div class="footer__contact-right">
@@ -411,15 +415,10 @@
                                 </svg>
                             </a>
                             </div>
-                            <p class="footer__item footer__text black mobile-none">© 2021 ყველა უფლება დაცულია</p>
+                            <p class="footer__item footer__text black mobile-none hover-black">© 2021 ყველა უფლება დაცულია</p>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
             </div>
         </div>
     </div>
