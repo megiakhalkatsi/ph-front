@@ -5,11 +5,11 @@
         align-items: center;
         width: 100%;
         margin-bottom: 10px;
-        // @media #{$breakpoint-md} {
-        //     align-items: flex-start;
-        // }
         &:hover {
             text-decoration: none;
+            .theme__item__title{
+                color: $component-color2;
+            }
         }
         &.mb{
             margin-bottom: 55px;
@@ -18,9 +18,24 @@
             }
         }
         &__img {
-            height: 248px;
+            height: 270px;
             object-fit: contain;
             border-radius: 16px;
+            @media #{$breakpoint-xxs} {
+                height: 290px;
+            }
+            @media #{$breakpoint-md} {
+                height: 202px;
+            }
+            @media #{$breakpoint-lg} {
+                height: 233px;
+            }
+            @media #{$breakpoint-xl} {
+                height: 168px;
+            }
+            @media #{$breakpoint-xl-ex} {
+                height: 248px;
+            }
         }
         &__title {
             font-size: 16px;

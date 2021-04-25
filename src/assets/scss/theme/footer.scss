@@ -14,7 +14,7 @@
     }
     &__text {
         font-family: $firagoRegular;
-        font-size: 12px;
+        font-size: 14px;
         color: rgba($color: $black, $alpha: 0.6);
         margin-bottom: 34px;
         @media #{$breakpoint-lg} {
@@ -24,14 +24,26 @@
             color: $black;
             margin-bottom: 21px;
             white-space: nowrap;
+            transition: .3s;
+            &:hover{
+                color: $component-color2;
+            }
             @media #{$breakpoint-md} {
                 margin-bottom: 0;
             }
             @media #{$breakpoint-lg} {
                 margin-bottom: 30px;
             }
+            @media #{$breakpoint-xl-ex} {
+                margin-bottom: 0;
+            }
             @media #{$breakpoint-xxl} {
                 font-size: 14px;
+            }
+            &.hover-black{
+                &:hover{
+                    color: $black;
+                }
             }
         }
     }
@@ -43,6 +55,16 @@
             flex-direction: row;
             align-items: flex-end;
             justify-content: flex-end;
+        }
+        &.cont{
+            @media #{$breakpoint-xl} {
+                position: relative;
+                top: -30px;
+            }
+            @media #{$breakpoint-xl-ex} {
+                position: static;
+                top:auto;
+            }
         }
         &.center {
             align-items: center;
@@ -105,6 +127,10 @@
                 height: 16px;
                 width: 18px;
                 fill: $black;
+                transition: .3s;
+                &:hover{
+                    fill: $component-color2;
+                }
             }
         }
     }
@@ -159,11 +185,14 @@
         color: $black;
         font-family: $firagoRegular;
         font-size: 16px;
+        &:hover{
+            color: $black;
+        }
     }
     &__line {
         width: 2px;
         height: 20px;
-        background: rgba($color: $black, $alpha: 0.3);
+        background: rgba($color: $black, $alpha: 0.1);
         display: none;
         @media #{$breakpoint-md} {
             display: block;
@@ -173,10 +202,12 @@
                 position: absolute;
                 height: 143px;
                 bottom: -48px;
-                right: 15px;
+                right: 40px;
             }
             @media #{$breakpoint-xl} {
-                right: 30px;
+                height: 202px;
+                right: 50px;
+                bottom: -80px;
             }
             @media #{$breakpoint-xl-ex} {
                 position: static;
@@ -188,10 +219,12 @@
                 position: absolute;
                 height: 143px;
                 bottom: 0;
-                left: 15px;
+                left: 40px;
             }
             @media #{$breakpoint-xl} {
-                left: 30px;
+                height: 202px;
+                left: 50px;
+                bottom: -30px;
             }
             @media #{$breakpoint-xl-ex} {
                 position: static;

@@ -414,11 +414,19 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
+    &__bg{
+      background-color: $component-color1;
+    }
     &.dark {
       background-color: $component-color1;
     }
     &.light {
       background-color: $white;
+      @media #{$breakpoint-md} {
+        max-width: 98%;
+        margin: 0 auto;
+        border-radius: 30px;
+      }
     }
     &__title {
       font-family: $firagoBold;
@@ -460,6 +468,22 @@ body {
           margin-top: 55px;
         }
       }
+      &.mt-lg {
+        @media #{$breakpoint-xl} {
+          margin-top: 116px;
+        }
+      }
+      &.mt-xl {
+        @media #{$breakpoint-lg} {
+          margin-top: 168px;
+        }
+        @media #{$breakpoint-xl} {
+          margin-top: 138px;
+        }
+        @media #{$breakpoint-xxl} {
+          margin-top: 232px;
+        }
+      }
     }
     &__text {
       font-family: $firagoRegular;
@@ -485,9 +509,6 @@ body {
     }
   }
   &__one {
-    @media #{$breakpoint-xl} {
-      min-height: calc(100vh - 100px);
-    }
     &__btn {
       min-width: 190px;
       height: 80px;
@@ -529,6 +550,17 @@ body {
         @media #{$breakpoint-xl} {
           margin-top: 89px;
         }
+        &.mb-xl {
+          @media #{$breakpoint-lg} {
+            margin-bottom: 168px;
+          }
+          @media #{$breakpoint-xl} {
+            margin-bottom: 138px;
+          }
+          @media #{$breakpoint-xxl} {
+            margin-bottom: 232px;
+          }
+        }
       }
       &.green {
         .section__one__btn__icon-bg {
@@ -564,10 +596,6 @@ body {
       width: 100%;
       object-fit: contain;
       margin-bottom: 34px;
-      // max-height: 610px;
-      // @media #{$breakpoint-md} {
-      //   max-height: 63.8vh;
-      // }
       @media #{$breakpoint-lg} {
         margin-bottom: 0;
         max-height: 427px;
@@ -661,6 +689,18 @@ body {
       justify-content: center;
       height: 100%;
     }
+    &__img {
+      width: 100%;
+      object-fit: contain;
+      margin-bottom: 34px;
+      @media #{$breakpoint-lg} {
+        margin-bottom: 0;
+        max-height: 429px;
+      }
+      @media #{$breakpoint-xl-ex} {
+        max-height: 610px;
+      }
+    }
   }
   &__six {
     flex-direction: column;
@@ -696,12 +736,12 @@ body {
         &__img {
           height: 67px;
           object-fit: contain;
-          @media #{$breakpoint-md} {
+          @media #{$breakpoint-lg} {
             height: 80px;
           }
           &.mr {
             margin-right: 25px;
-            @media #{$breakpoint-md} {
+            @media #{$breakpoint-lg} {
               margin-right: 30px;
             }
           }
