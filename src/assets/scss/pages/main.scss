@@ -394,9 +394,24 @@ body {
     &:last-child {
       margin-right: 0;
     }
+    &:hover{
+      color: $component-color2;
+    }
     &.active {
       border: 2px solid $component-color2;
       color: $component-color2;
+      &:hover{
+        color: $component-color2-darken;
+        border: 2px solid $component-color2-darken;
+      }
+    }
+    &.bt-blue{
+      &:first-child{
+        margin-right: 15px;
+      }
+      &:last-child{
+        margin-left: 10px;
+      }
     }
     .icon {
       width: 5px;

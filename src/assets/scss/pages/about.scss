@@ -2,7 +2,15 @@
     &__tabs {
         justify-content: space-between;
         flex-wrap: nowrap;
-        border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+        &__border{
+            width: 100%;
+            height: 1px;
+            background-color: rgba($color: $black, $alpha: 0.1);
+            min-width: 870px;
+            @media #{$breakpoint-lg} {
+                min-width: auto;
+            }
+        }
         &-bg {
             border-radius: 0;
             background-color: $component-color1;
@@ -56,8 +64,9 @@
         border-top-left-radius: 0px!important;
         border-top-right-radius: 0px!important;
         border: none!important;
+        -webkit-appearance: inherit!important;
         @media #{$breakpoint-md} {
-            padding: 0 0 21px 0;
+            padding: 0 20px 21px 20px;
         }
         @media #{$breakpoint-lg} {
             padding: 0 0 34px 0;

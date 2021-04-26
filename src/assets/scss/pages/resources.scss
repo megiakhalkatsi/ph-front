@@ -99,6 +99,15 @@
   @media #{$breakpoint-xl} {
     margin-left: 100px;
   }
+  &__container{
+    @media #{$breakpoint-lg} {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    @media #{$breakpoint-xl} {
+      max-width: 100%;
+    }
+  }
   &__row {
     display: flex;
     justify-content: space-between;

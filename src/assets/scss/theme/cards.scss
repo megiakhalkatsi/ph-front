@@ -68,6 +68,7 @@
         margin: auto;
         @media #{$breakpoint-md} {
             width: 320px;
+            max-width:100%;
         }
         @media #{$breakpoint-lg} {
             width: 236px;
@@ -105,6 +106,7 @@
             @media #{$breakpoint-md} {
                 width: 318px;
                 height: 180px;
+                max-width: 100%;
             }
             @media #{$breakpoint-lg} {
                 width: 234px;
