@@ -65,6 +65,7 @@
         &:hover {
             border: none;
             border-color: transparent !important;
+            color: $component-color2 !important;
         }
         &.active {
             color: $component-color2 !important;
@@ -85,6 +86,9 @@
         &-link {
             color: $component-color2;
             text-decoration: underline;
+            &:hover{
+                color: $component-color2-darken;
+            }
         }
         &__h3 {
             font-family: $firagoSemiBold;

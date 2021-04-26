@@ -68,6 +68,12 @@
                         text-decoration: none;
                         margin-left: 10px;
                     }
+                    &:hover{
+                        color: $component-color2-darken;
+                        .icon{
+                            stroke: $component-color2-darken;
+                        }
+                    }
                 }
             }
         }
@@ -114,7 +120,7 @@
         }
     }
     &-group {
-        margin-bottom: 15px;
+        margin-bottom: 34px;
     }
     &__label {
         font-family: $firagoMedium;
@@ -487,6 +493,9 @@
     &-link {
         color: $component-color2;
         text-decoration: underline;
+        &:hover{
+            color: $component-color2-darken;
+        }
     }
 }
 

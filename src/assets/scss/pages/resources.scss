@@ -43,7 +43,7 @@
   &__icon {
     height: 22px;
     @media #{$breakpoint-xl} {
-      content:url("../img/icons/filter.svg");
+      content: url("../img/icons/filter.svg");
     }
   }
   &__line {
@@ -64,7 +64,7 @@
     border-radius: 8px;
     margin-top: 10px;
     padding: 0 20px;
-    &.active{
+    &.active {
       display: block;
     }
     @media #{$breakpoint-xl} {
@@ -155,6 +155,23 @@
     position: relative;
     margin: 0;
     z-index: 1;
+    &.paddings {
+      padding: 82px 0;
+      @media #{$breakpoint-md} {
+        padding: 90px 0;
+      }
+      @media #{$breakpoint-lg} {
+        padding: 66px 0;
+      }
+      @media #{$breakpoint-xl-ex} {
+        padding: 70px 0;
+      }
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
   }
   .bt-play {
     position: absolute;
@@ -184,7 +201,7 @@
       height: 0;
       width: 0;
       border: solid transparent;
-      border-left-color: #2026314D;
+      border-left-color: #2026314d;
       -webkit-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out;
       margin: -6px 0 0 -3px;
@@ -196,7 +213,7 @@
     }
   }
 }
-.resources__page{
+.resources__page {
   display: flex;
   flex-direction: column;
   @media #{$breakpoint-xl} {
