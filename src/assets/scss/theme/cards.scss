@@ -36,6 +36,24 @@
             @media #{$breakpoint-xl-ex} {
                 height: 248px;
             }
+            &.sm{
+                height: 270px;
+                @media #{$breakpoint-xxs} {
+                    height: 290px;
+                }
+                @media #{$breakpoint-md} {
+                    height: 202px;
+                }
+                @media #{$breakpoint-lg} {
+                    height: 168px;
+                }
+                @media #{$breakpoint-xl} {
+                    height: 168px;
+                }
+                @media #{$breakpoint-xl-ex} {
+                    height: 248px;
+                } 
+            }
         }
         &__title {
             font-size: 16px;
@@ -51,6 +69,17 @@
             }
             &.mt{
                 margin-top: 34px;
+            }
+            &.align-left{
+                text-align: left;
+                width: 270px;
+                @media #{$breakpoint-xxs} {
+                    width: 290px;
+                }
+                @media #{$breakpoint-md} {
+                    text-align: center;
+                    width: 100%;
+                }
             }
         }
     }
