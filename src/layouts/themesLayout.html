@@ -1,4 +1,4 @@
-{{!-- This is the layout for game pages. --}}
+{{!-- This is the base layout for your project, and will be used on every page. --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +9,8 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1.0,user-scalable=0, shrink-to-fit=no">
   <title>{{title}}</title>
-  <link rel="icon" href="../assets/img/icons/logo1.ico" />
-  <link rel="stylesheet" href="../assets/vendors/css/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="assets/img/icons/logo1.ico" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
@@ -91,16 +90,15 @@
     {{>modals}}
     <!--******-->
     <div class="page__main">
-      <div>{{>body}}</div>
+      {{>themes-navigation}}
+      <div class="page__content">{{>body}} {{>footer}}</div>
     </div>
 
   </div>
-  <script src="../assets/vendors/js/jquery.min.js"></script>
-  <script src="../assets/vendors/js/jquery-ui.min.js"></script>
-  <script src="../assets/vendors/js/jquery-ui-touch-punch.js"></script>
-  <script src="../assets/vendors/js/bootstrap.min.js"></script>
-  <script src="../assets/vendors/js/swiper-bundle.min.js"></script>
-  <!-- <script src="../assets/js/main.js"></script> -->
-  <script src={{gameScripts}}></script>
+  <script src="assets/vendors/js/jquery.min.js"></script>
+  <script src="assets/vendors/js/bootstrap.min.js"></script>
+  <script src="assets/vendors/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>

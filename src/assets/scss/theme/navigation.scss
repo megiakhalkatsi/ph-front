@@ -169,6 +169,10 @@
         width: 16px;
         height: 16px;
         margin-right: 6px;
+        &.feather-icon{
+          fill: none;
+          stroke: $component-color3;
+        }
       }
     }
     &__search {

@@ -294,6 +294,9 @@
                 }
                 span {
                     color: rgba($color: $black, $alpha: 0.3);
+                    &.active{
+                        color: $black;
+                    }
                 }
             }
         }
