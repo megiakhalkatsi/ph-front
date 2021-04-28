@@ -165,6 +165,7 @@ const selectDropdown = () => {
                     let selectedInfo = elem.children[0].children[0]
                     selectedInfo.innerHTML = e.target.innerHTML
                     selectedInfo.setAttribute('value', e.target.innerHTML)
+                    $(selectedInfo).addClass('active');
                     elem.classList.remove('open')
                     e.target.parentElement.parentElement.classList.remove('open')
                 }
