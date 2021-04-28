@@ -260,8 +260,7 @@
       @media #{$breakpoint-xl} {
         position: absolute;
         bottom: 32px;
-        // left: -11px;
-        left: -77px;
+        left: -44px;
         &.bt-120 {
           bottom: -200px;
         }
@@ -279,9 +278,13 @@
           width: 100%;
         }
         @media #{$breakpoint-xl-ex} {
-          min-width: 262px;
-          left: -109px;
           position: absolute;
+          min-width: auto;
+          width: 180px;
+        }
+        @media only screen and (min-width: 1530px) {
+          min-width: 262px;
+          width: auto;
         }
         @media #{$breakpoint-xxl} {
           left: 0;
@@ -702,18 +705,18 @@
         justify-content: flex-start;
       }
       &.orange {
-        .game__box__list__item::marker {
-          color: $component-color8;
+        .game__box__list__item::before {
+          background-color: $component-color8;
         }
       }
       &.green {
-        .game__box__list__item::marker {
-          color: $component-color9;
+        .game__box__list__item::before {
+          background-color: $component-color9;
         }
       }
       &.blue {
-        .game__box__list__item::marker {
-          color: $component-color6;
+        .game__box__list__item::before {
+          background-color: $component-color6;
         }
       }
     }
@@ -760,8 +763,7 @@
       width: 100%;
     }
     &__list {
-      list-style: disc;
-      padding-left: 25px;
+      padding: 0 20px;
       &__container {
         width: 100%;
         display: none;
@@ -771,15 +773,26 @@
         }
       }
       &__item {
+        list-style-type: none;
         width: 100%;
+        position: relative;
+        min-height: 25px;
+        &::before {
+          content: url("");
+          display: inline-block;
+          vertical-align: middle;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          position: absolute;
+          left: -20px;
+          top: 7px;
+        }
         .icon {
           width: 20px;
           height: 20px;
           cursor: pointer;
           fill: $component-color12;
-        }
-        &::marker {
-          font-size: 30px;
         }
         &.active {
           display: block;
