@@ -380,6 +380,13 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px 0 50px;
+    &.sm{
+      margin: 0 0 90px;
+      .paging__item{
+        font-size: 16px;
+        font-family: $firagoBold;
+      }
+    }
   }
   &__item {
     color: $black;
@@ -401,17 +408,25 @@ body {
     &.active {
       border: 2px solid $component-color2;
       color: $component-color2;
+      flex: none;
       &:hover{
         color: $component-color2-darken;
         border: 2px solid $component-color2-darken;
       }
     }
+    &.green{
+      color: $component-color9;
+      &:hover{
+        color: $component-color2;
+      }
+    }
     &.bt-blue{
+      flex: none;
       &:first-child{
-        margin-right: 15px;
+        margin-right: 20px;
       }
       &:last-child{
-        margin-left: 10px;
+        margin-left: 15px;
       }
     }
     .icon {
