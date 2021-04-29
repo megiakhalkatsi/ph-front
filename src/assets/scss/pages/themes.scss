@@ -1,136 +1,197 @@
 .section {
-    &__themes {
-        margin-top: 55px;
-        &__title {
-            font-size: 34px;
-            font-family: $firagoBold;
-            color: $black;
-        }
-        &__search {
-            &__container {
-                background-color: $component-color1;
-                border-radius: 16px;
-                margin: 34px 0;
-                padding: 30px;
-                @media #{$breakpoint-md} {
-                    margin: 34px 0 55px;
-                }
-                @media #{$breakpoint-lg} {
-                    padding: 34px;
-                }
-            }
-            &__title {
-                color: $firagoMedium;
-                font-size: 16px;
-                color: $black;
-                margin-bottom: 20px;
-            }
-            &__link {
-                font-size: 14px;
-                &__container {
-                    padding-bottom: 20px;
-                    @media #{$breakpoint-lg} {
-                        padding-bottom: 0;
-                        margin-top: 10px;
-                    }
-                }
-            }
-            &-relative {
-                position: relative;
-                width: 100%;
-            }
-            &__line {
-                width: 100%;
-                height: 1px;
-                background-color: rgba($color: $black, $alpha: 0.1);
-                position: absolute;
-                top: 100%;
-                transform: translateY(-50%);
-                right: 0;
-                @media #{$breakpoint-lg} {
-                    width: 1px;
-                    height: 100%;
-                    top: 50%;
-                    right: 15px;
-                }
-                @media #{$breakpoint-xl-ex} {
-                    right: 50px;
-                }
-                @media #{$breakpoint-xxl} {
-                    right: 65px;
-                }
-            }
-            &-align-center {
-                height: 100%;
-                display: flex;
-                align-items: center;
-                margin: 12px 0;
-                @media #{$breakpoint-lg} {
-                    margin: 0;
-                }
-            }
-        }
-        &__radiobutton__container {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 22px;
-            @media #{$breakpoint-md} {
-                flex-direction: row;
-            }
-            @media #{$breakpoint-md} {
-                margin-bottom: 12px;
-            }
-        }
+  &__themes {
+    margin-top: 55px;
+    &__title {
+      font-size: 34px;
+      font-family: $firagoBold;
+      color: $black;
     }
-    &__theme{
+    &__search {
+      &__container {
+        background-color: $component-color1;
+        border-radius: 16px;
+        margin: 34px 0;
+        padding: 30px;
+        @media #{$breakpoint-md} {
+          margin: 34px 0 55px;
+        }
+        @media #{$breakpoint-lg} {
+          padding: 34px;
+        }
+      }
+      &__title {
+        color: $firagoMedium;
+        font-size: 16px;
+        color: $black;
+        margin-bottom: 20px;
+      }
+      &__link {
+        font-size: 14px;
+        &__container {
+          padding-bottom: 20px;
+          @media #{$breakpoint-lg} {
+            padding-bottom: 0;
+            margin-top: 10px;
+          }
+        }
+      }
+      &-relative {
+        position: relative;
         width: 100%;
-        height: 100%;
-        min-height: 610px;
-        border-radius: 30px;
-        margin-top: 86px;
-        margin-bottom: 90px;
+      }
+      &__line {
+        width: 100%;
+        height: 1px;
+        background-color: rgba($color: $black, $alpha: 0.1);
+        position: absolute;
+        top: 100%;
+        transform: translateY(-50%);
+        right: 0;
+        @media #{$breakpoint-lg} {
+          width: 1px;
+          height: 100%;
+          top: 50%;
+          right: 15px;
+        }
+        @media #{$breakpoint-xl-ex} {
+          right: 50px;
+        }
         @media #{$breakpoint-xxl} {
-           max-width: 1638px;
+          right: 65px;
         }
-        &__content{
-            padding: 197px 60px 197px 109px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+      }
+      &-align-center {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin: 12px 0;
+        @media #{$breakpoint-lg} {
+          margin: 0;
         }
-        &__title{
-            font-family: $firagoBold;
-            font-size: 34px;
-            color: $black;
-            margin-bottom: 13px;
-        }
-        &__subtitle{
-            font-family: $firagoMedium;
-            font-size: 21px;
-            color: $black;
-            margin-bottom: 21px;
-        }
-        &__text{
-            font-family: $firagoRegular;
-            font-size: 16px;
-            color: rgba($color: $black, $alpha: 0.6);
-            margin-bottom: 0;
-        }
-        &__bg{
-            width: 100%;
-            height: 100%;
-            min-height: 610px;
-            border-radius: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $component-color13;
-        }
-        &__img{
-            width: 100%;
-            border-radius: 30px;
-            object-fit: contain;
-        }
+      }
     }
+    &__radiobutton__container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 22px;
+      @media #{$breakpoint-md} {
+        flex-direction: row;
+      }
+      @media #{$breakpoint-md} {
+        margin-bottom: 12px;
+      }
+    }
+  }
+  &__theme {
+    width: 100%;
+    height: 100%;
+    margin-top: 34px;
+    margin-bottom: 34px;
+    @media #{$breakpoint-md} {
+      border-radius: 30px;
+      margin-top: 55px;
+      margin-bottom: 89px;
+    }
+    @media #{$breakpoint-xl} {
+      margin-top: 86px;
+      margin-bottom: 90px;
+    }
+    &__container {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 666px;
+      padding-right: var(--bs-gutter-x,.75rem);
+      padding-left: var(--bs-gutter-x,.75rem);
+      @media #{$breakpoint-md} {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      @media #{$breakpoint-lg} {
+        max-width: 918px;
+        min-height: 610px;
+      }
+      @media #{$breakpoint-xl} {
+        max-width: 1158px;
+      }
+      @media #{$breakpoint-xl-ex} {
+        max-width: 1638px;
+        padding-right: var(--bs-gutter-x,.75rem);
+        padding-left: var(--bs-gutter-x,.75rem);
+      }
+      @media #{$breakpoint-xxl} {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+    &__content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 34px 15px;
+      @media #{$breakpoint-md} {
+        padding: 89px 58px;
+      }
+      @media #{$breakpoint-lg} {
+        padding: 141px 30px;
+      }
+      @media #{$breakpoint-xl} {
+        padding: 173px 47px;
+      }
+      @media #{$breakpoint-xl-ex} {
+        padding: 173px 60px;
+      }
+      @media #{$breakpoint-xxl} {
+        padding: 197px 60px 197px 109px;
+      }
+    }
+    &__title {
+      font-family: $firagoBold;
+      font-size: 21px;
+      color: $black;
+      margin-bottom: 13px;
+      @media #{$breakpoint-md} {
+        font-size: 34px;
+      }
+    }
+    &__subtitle {
+      font-family: $firagoMedium;
+      font-size: 16px;
+      color: $black;
+      margin-bottom: 21px;
+      @media #{$breakpoint-md} {
+        font-size: 21px;
+      }
+    }
+    &__text {
+      font-family: $firagoRegular;
+      font-size: 16px;
+      color: rgba($color: $black, $alpha: 0.6);
+      margin-bottom: 0;
+    }
+    &__bg {
+      width: 100%;
+      height: 100%;
+      min-height: 295px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $component-color13;
+      @media #{$breakpoint-md} {
+        min-height: 418px;
+        border-radius: 30px;
+      }
+      @media #{$breakpoint-lg} {
+        min-height: 610px;
+      }
+    }
+    &__img {
+      width: 100%;
+      object-fit: contain;
+      @media #{$breakpoint-md} {
+        border-radius: 30px;
+      }
+    }
+  }
 }
