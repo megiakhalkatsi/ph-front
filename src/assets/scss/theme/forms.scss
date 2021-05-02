@@ -74,6 +74,14 @@
                             stroke: $component-color2-darken;
                         }
                     }
+                    &.sm{
+                        font-size: 13px;
+                        .icon{
+                            width: 8px;
+                            height: 8px; 
+                            margin-left: 5px;
+                        }
+                    }
                 }
             }
         }
