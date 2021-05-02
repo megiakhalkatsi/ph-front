@@ -1,106 +1,53 @@
 
-var isiPad = (navigator.userAgent.match(/iPad/i) != null);
+$( function() {
+  $( ".DraggableItem" ).draggable({ revert: "invalid", helper : "clone" });
+  $( ".DroppableItem" ).droppable({
+    drop: function( event, ui ) {
+        if(event.target.classList.contains('game__table__td')) {
+          var new_signature = $(ui.helper).clone();
+          $(this).append(new_signature);
+          $(new_signature).removeAttr('style')
+          $('.game__table__td .game__text').attr('style', 'color: #202631')
 
-// is this an iPhone ?
-var isiPhone = (navigator.userAgent.match(/iPhone/i) != null);
-
-// is this an android ?
-var isAndroid = (navigator.userAgent.match(/Android/i) != null);
-
-
-
-// $(function() {
-//     if(isiPad || isiPhone || isAndroid) {
-//         $('.game__rotate__notification').attr('style', 'display: flex')
-
-//     } else if(isiPad || isiPhone || isAndroid) {
-//         $('.game__rotate__notification').attr('style', 'display: none')
-//     }
-
-//     $( ".clickableItem2" ).addClass('cursor-pointer')
-// });
+          let rowIndex = event.target.parentElement.getAttribute('data-row')
+          let DraggableItemRows = JSON.parse(ui.draggable[0].getAttribute('data-row'))
+          let DraggableItemCollumn = JSON.parse(ui.draggable[0].getAttribute('data-collumn'))
+          let parentIndex = event.target.getAttribute('data-index')
 
 
-// window.addEventListener("deviceorientation", handleOrientation, true);
-
-
-// function handleOrientatio() {
-//     if(isiPad || isiPhone || isAndroid) {
-//         $('.game__rotate__notification').attr('style', 'display: flex')
-
-//     } else if(isiPad || isiPhone || isAndroid) {
-//         $('.game__rotate__notification').attr('style', 'display: none')
-//     }
-// }
-
-
-// $( window ).resize(function() {
-//     if(isiPad || isiPhone || isAndroid) {
-//         $('.game__rotate__notification').attr('style', 'display: flex')
-
-//     } else if(isiPad || isiPhone || isAndroid) {
-//         $('.game__rotate__notification').attr('style', 'display: none')
-//     }
-// });
-
-
-
-
-
-$(function() {
-    $( ".clickableItem2" ).addClass('cursor-pointer')
-});
-
-
-$( ".clickableItem2" ).click(function() {
-    if(atampt <= 5) {
-        if($(this).attr('style') == "opacity: 0" && atampt < 5) {
-            $(this).attr('style', 'opacity: 1')
-            atampt++
-            
-        } else if($(this).attr('style') == "opacity: 1") {
-            $(this).attr('style', 'opacity: 0')
-            atampt--
-
-        } else {
-            $('#notificationModal').modal('show');
+          if(DraggableItemRows.includes(rowIndex) && DraggableItemCollumn == parentIndex) {
+              event.target.lastElementChild.setAttribute('data-correct', true)
+          } else {
+              event.target.lastElementChild.setAttribute('data-correct', false)
+          }
         }
-    } else {
-        $('#notificationModal').modal('show');
     }
+  });
 });
 
 
-let atampt = 0;
 
-function afterClick(element) {
-    if(atampt <= 5) {
-        $( ".clickableItem" ).each(function( index ) {
-            if(element == $( ".clickableItem2" )[index].getAttribute('data-clickable')) {
+$( "#finishButton" ).click(function() {
+let index = 0
 
-                if($( ".clickableItem2" )[index].getAttribute('style') == "opacity: 0" && atampt < 5) {
-                    $( ".clickableItem2" )[index].setAttribute('style', 'opacity: 1')
-                    atampt++
-                    
-                } else if($( ".clickableItem2" )[index].getAttribute('style') == "opacity: 1") {
-                    $( ".clickableItem2" )[index].setAttribute('style', 'opacity: 0')
-                    atampt--
-    
-                } else {
-                    $('#notificationModal').modal('show');
-                }
-            }
-        });
-    } else {
-        $('#notificationModal').modal('show');
-    }
-}
+$.each($('.DroppableItem .DraggableItem'), function( i, l ){
+  if($(l).attr('data-correct') == "true") {
+    index++
+    $(l).addClass('success')
+  } else {
+    $(l).addClass('error')
+  }
 
-$( ".clickableItem" ).click(function() {
-    afterClick($(this).attr('data-index'))
+  if(index === 16) {
+    $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
+  } else {
+    $('#DogImage').attr('src', '../assets/img/illustrations/incorrect-image.gif')
+  }
+});
 });
 
-$( "#resetBtn" ).click(function() {
-   atampt = 0
-   $('.clickableItem2').attr('style', 'opacity: 0')
-})
+
+
+$( "#resetButton" ).click(function() {
+$('.DroppableItem').html('')
+});

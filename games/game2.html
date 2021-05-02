@@ -284,27 +284,33 @@
     <div class="col-12 page__content-col-md m-auto">
       <h2 class="game__text lg mb-34">სავარაუდო პასუხები</h2>
       <div class="game__dragAndDrop__container">
-        <div class="game__answer__container blue mr">
+        <div class="game__answer__container blue mr DraggableItem" data-row='["4"]' data-collumn="1" data-correct='false'>
           <p class="game__text md">არ არის კიბერდანაშაული და, შესაბამისად, არ რეგულირდება 284-ე, 285-2 ან 286-ე მუხლით;</p>
         </div>
-        <div class="game__answer__container blue mr">
+        <div class="game__answer__container blue mr DraggableItem test" data-row='["1", "2", "3"]' data-collumn="1" data-correct='false'>
+          <p class="game__text md">კიბერდანაშაულია და სსსკ-ის 284-ე მუხლი;</p>
+        </div>
+        <div class="game__answer__container blue mr DraggableItem" data-row='["3"]' data-collumn="1" data-correct='false'>
           <p class="game__text md">კიბერდანაშაულია და სსსკ-ის 285-ე მუხლი;</p>
         </div>
-        <div class="game__answer__container blue mr">
-          <p class="game__text md">ვებგვერდზე თავდასხმა;</p>
+        <div class="game__answer__container blue mr DraggableItem" data-row='["1"]' data-collumn="1" data-correct='false'>
+          <p class="game__text md">კიბერდანაშაულია და სსსკ-ის 286-ე მუხლი;</p>
         </div>
-        <div class="game__answer__container blue mr">
-          <p class="game__text md">ფიშინგი;</p>
-        </div>
-        <div class="game__answer__container blue mr">
-          <p class="game__text md">იძულება;</p>
-        </div>
-        <div class="game__answer__container blue mr">
+        <div class="game__answer__container blue mr DraggableItem" data-row='["1", "2", "3"]' data-collumn="3" data-correct='false'>
           <p class="game__text md">პერსონალური მონაცემების დაცულობა;</p>
         </div>
-        <div class="game__answer__container blue mr definition">
+        <div class="game__answer__container blue mr definition DraggableItem" data-row='["2", "3", "4"]' data-collumn="3" data-correct='false'>
           <p class="game__text md">პირადი ცხოვრების ამსახველი ინფორმაციის უსაფრთხოება.</p>
           <div class="definition__content"><span class="bold">პირადი ცხოვრების ამსახველი ინფორმაცია </span> შეიძლება იყოს სურათი, აუდიო/ვიდეო- ჩანაწერი, მიმოწერა, პირადი ჩანაწერები ან სხვა, რომელიც შეიცავს ადამიანის პირადი ცხოვრების ამსახველ ცნობებს.</div>
+        </div>
+        <div class="game__answer__container blue mr DraggableItem" data-row='["1"]' data-collumn="2" data-correct='false'>
+          <p class="game__text md">ვებგვერდზე თავდასხმა;</p>
+        </div>
+        <div class="game__answer__container blue mr DraggableItem" data-row='["2", "3"]' data-collumn="2" data-correct='false'>
+          <p class="game__text md">ფიშინგი;</p>
+        </div>
+        <div class="game__answer__container blue mr DraggableItem" data-row='["4"]' data-collumn="2" data-correct='false'>
+          <p class="game__text md">იძულება;</p>
         </div>
       </div>
 
@@ -319,40 +325,29 @@
               </tr>
             </thead>
             <tbody class="game__table__body">
-              <tr class="game__table__body__tr">
+              <tr class="game__table__body__tr" data-row="1">
                 <th scope="row" class="game__table__body__th">1</th>
-                <td class="game__table__td">
-                  <div class="game__answer__container blue error mr">
-                    <p class="game__text md">კიბერდანაშაულია და სსსკ-ის 284-ე მუხლი;</p>
-                  </div>
-                  <div class="game__answer__container blue success mr">
-                    <p class="game__text md">ფიშინგი;</p>
-                  </div>
-                </td>
-                <td class="game__table__td">
-                  <div class="game__answer__container blue mr">
-                    <p class="game__text md">ვებგვერდზე თავდასხმა;</p>
-                  </div>
-                </td>
-                <td class="game__table__td"></td>
+                <td class="game__table__td DroppableItem" data-index="1"></td>
+                <td class="game__table__td DroppableItem" data-index="2"></td>
+                <td class="game__table__td DroppableItem" data-index="3"></td>
               </tr>
-              <tr class="game__table__body__tr">
+              <tr class="game__table__body__tr" data-row="2">
                 <th scope="row" class="game__table__body__th">2</th>
-                <td class="game__table__td"></td>
-                <td class="game__table__td"></td>
-                <td class="game__table__td"></td>
+                <td class="game__table__td DroppableItem" data-index="1"></td>
+                <td class="game__table__td DroppableItem" data-index="2"></td>
+                <td class="game__table__td DroppableItem" data-index="3"></td>
               </tr>
-              <tr class="game__table__body__tr">
+              <tr class="game__table__body__tr" data-row="3">
                 <th scope="row" class="game__table__body__th">3</th>
-                <td class="game__table__td"></td>
-                <td class="game__table__td"></td>
-                <td class="game__table__td"></td>
+                <td class="game__table__td DroppableItem" data-index="1"></td>
+                <td class="game__table__td DroppableItem" data-index="2"></td>
+                <td class="game__table__td DroppableItem" data-index="3"></td>
               </tr>
-              <tr class="game__table__body__tr">
+              <tr class="game__table__body__tr" data-row="4">
                 <th scope="row" class="game__table__body__th">4</th>
-                <td class="game__table__td"></td>
-                <td class="game__table__td"></td>
-                <td class="game__table__td"></td>
+                <td class="game__table__td DroppableItem" data-index="1"></td>
+                <td class="game__table__td DroppableItem" data-index="2"></td>
+                <td class="game__table__td DroppableItem" data-index="3"></td>
               </tr>
             </tbody>
           </table>
@@ -361,12 +356,12 @@
     <div class="col-12 game__content-col-bottom">
       <div class="row game__img__btn__row align-center-xl-ex">
         <div class="col-12 col-md-2 game__img__col-relative">
-          <img src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog" class="game__img__picture game__img-dog bottom">
+          <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog" class="game__img__picture game__img-dog bottom">
         </div>
         <div class="col-12 col-md-10 col-lg-8">
           <div class="game__button__container">
-            <a href="#" class="about__page__btn game__button mr bt-gray">თავიდან დაწყება</a>
-            <a href="#" class="about__page__btn game__button bt-blue">შემოწმება</a>
+            <button id="resetButton" class="about__page__btn game__button mr bt-gray">თავიდან დაწყება</button>
+            <button id="finishButton" class="about__page__btn game__button bt-blue">შემოწმება</button>
           </div>
         </div>
       </div>
@@ -383,6 +378,6 @@
   <script src="../assets/vendors/js/bootstrap.min.js"></script>
   <script src="../assets/vendors/js/swiper-bundle.min.js"></script>
   <!-- <script src="../assets/js/main.js"></script> -->
-  <script src=></script>
+  <script src=../assets/vendors/js/games/game2.js></script>
 </body>
 </html>
