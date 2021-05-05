@@ -68,6 +68,15 @@
         fill: $white;
       }
     }
+    &.dark{
+      background-color: $component-color2;
+      .icon {
+        fill: $white;
+      }
+      &:hover{
+        background-color: $component-color2-darken;
+      }
+    }
   }
 }
 
