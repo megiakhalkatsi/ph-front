@@ -432,6 +432,7 @@
     background-color: $component-color1;
     margin-top: 55px;
     margin-bottom: 55px;
+    border-radius: 10px;
     @media #{$breakpoint-xl-ex} {
       margin-top: 89px;
       margin-bottom: 164px;
@@ -442,6 +443,13 @@
     &.mt-mobile{
       margin-top: 34px;
       margin-bottom: 0;
+      @media #{$breakpoint-lg} {
+        margin: 0;
+      }
+    }
+    &.mb-mobile{
+      margin-bottom: 34px;
+      margin-top: 0;
       @media #{$breakpoint-lg} {
         margin: 0;
       }
