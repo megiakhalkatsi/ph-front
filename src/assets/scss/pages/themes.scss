@@ -424,6 +424,9 @@
       margin-top: 89px;
       margin-bottom: 164px;
     }
+    &.mg-sm{
+      margin-top: 34px;
+    }
     &__header {
       position: relative;
       @media #{$breakpoint-md} {
@@ -450,8 +453,12 @@
       @media #{$breakpoint-lg} {
         padding: 55px 0 125px;
       }
-      @media #{$breakpoint-xl-ex} {
-        padding: 149px 0 123px;
+      
+      &.pd-sm{
+        padding: 55px 0;
+        @media #{$breakpoint-xl-ex} {
+          padding: 89px 0;
+        }
       }
     }
   }
