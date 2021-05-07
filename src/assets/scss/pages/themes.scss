@@ -257,7 +257,10 @@
         padding-top: 55px;
       }
       &.mb {
-        margin-bottom: 89px;
+        margin-bottom: 55px;
+        @media #{$breakpoint-md} {
+          margin-bottom: 89px;
+        }
       }
       &__subtitle {
         font-family: $firagoMedium;
@@ -436,6 +439,13 @@
     &.mg-sm{
       margin-top: 34px;
     }
+    &.mt-mobile{
+      margin-top: 34px;
+      margin-bottom: 0;
+      @media #{$breakpoint-lg} {
+        margin: 0;
+      }
+    }
     &__header {
       position: relative;
       @media #{$breakpoint-md} {
@@ -467,6 +477,21 @@
         padding: 55px 0;
         @media #{$breakpoint-xl-ex} {
           padding: 89px 0;
+        }
+      }
+      &.paddings{
+        padding: 40px 20px 55px;
+        @media #{$breakpoint-md} {
+          padding: 8px 28px 55px;
+        }
+        @media #{$breakpoint-lg} {
+          padding: 0 30px 42px;
+        }
+        @media #{$breakpoint-xl} {
+          padding: 0 99px 63px;
+        }
+        @media #{$breakpoint-xl-ex} {
+          padding: 84px 139px 154px;
         }
       }
     }
