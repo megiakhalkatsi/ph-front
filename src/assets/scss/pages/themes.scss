@@ -272,6 +272,9 @@
           font-size: 16px;
           color: $black;
           margin-bottom: 0;
+          &.mb {
+            margin-bottom: 21px;
+          }
         }
       }
       &__img {
@@ -295,7 +298,7 @@
               margin: 55px 0;
             }
           }
-          &.mb-lg{
+          &.mb-lg {
             margin-bottom: 55px;
             @media #{$breakpoint-md} {
               margin-bottom: 89px;
@@ -437,17 +440,17 @@
       margin-top: 89px;
       margin-bottom: 164px;
     }
-    &.mg-sm{
+    &.mg-sm {
       margin-top: 34px;
     }
-    &.mt-mobile{
+    &.mt-mobile {
       margin-top: 34px;
       margin-bottom: 0;
       @media #{$breakpoint-lg} {
         margin: 0;
       }
     }
-    &.mb-mobile{
+    &.mb-mobile {
       margin-bottom: 34px;
       margin-top: 0;
       @media #{$breakpoint-lg} {
@@ -480,14 +483,14 @@
       @media #{$breakpoint-lg} {
         padding: 55px 0 125px;
       }
-      
-      &.pd-sm{
+
+      &.pd-sm {
         padding: 55px 0;
         @media #{$breakpoint-xl-ex} {
           padding: 89px 0;
         }
       }
-      &.paddings{
+      &.paddings {
         padding: 40px 20px 55px;
         @media #{$breakpoint-md} {
           padding: 8px 28px 55px;
@@ -501,6 +504,46 @@
         @media #{$breakpoint-xl-ex} {
           padding: 84px 139px 154px;
         }
+      }
+    }
+  }
+  &__step {
+    margin: 20px 0 55px;
+    @media #{$breakpoint-md} {
+      margin: 55px 0 89px;
+    }
+    @media #{$breakpoint-lg} {
+      margin: 67px 0 92px;
+    }
+    @media #{$breakpoint-xl} {
+      margin: 54px 0 92px;
+    }
+    @media #{$breakpoint-xl-ex} {
+      margin: 38px 0;
+    }
+    &__title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 45px;
+      @media #{$breakpoint-md} {
+        flex-direction: row;
+      }
+      .tableOfConents__item__img {
+        margin-bottom: 20px;
+        margin-right: 0;
+        @media #{$breakpoint-md} {
+          margin-bottom: 0;
+          margin-right: 20px;
+        }
+      }
+    }
+    &__img {
+      width: 100%;
+      object-fit: contain;
+      margin-top: 34px;
+      @media #{$breakpoint-lg} {
+        margin-top: 0;
       }
     }
   }
