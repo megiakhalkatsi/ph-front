@@ -1,0 +1,43 @@
+---
+layout: default
+title: მოსწავლეების რესურსი
+---
+
+<div class="container">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary mt-5 mb-5" data-bs-toggle="modal" data-bs-target="#Quiz1">
+    თამაში
+  </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade game__modal" id="Quiz1" tabindex="-1" aria-labelledby="Quiz1Label" aria-hidden="true">
+  <div class="modal-dialog game__modal-dialog">
+    <div class="modal-content game__modal-content">
+      <div class="game__modal-header between">
+        <div class="page__content-col m-auto w-100">
+          <h2 class="section__theme__page__subtitle lg">სავარჯიშოს სათაური</h2>
+          <div class="game__instruction" data-bs-toggle="collapse" data-bs-target="#gameInstruction" aria-expanded="false" aria-controls="gameInstruction">
+            <img src="assets/img/icons/info-circle.svg" alt="instruction" class="game__instruction__img">
+            <span class="game__instruction__text">თამაშის ინსტრუქცია</span>
+            <svg class="icon">
+              <use xlink:href="#arrow-dropdown"></use>
+            </svg>
+          </div>
+          <div class="collapse mt-3" id="gameInstruction">
+            <p class="section__theme__page__subtitle-sm">თამაშის ქვესათაური </p>
+            <p class="game__text md mb-0">
+              თამაშის ინსტრუქციის ტექსტი.
+            </p>
+          </div>
+        </div>
+        <a href="#" class="game__modal-close" data-bs-dismiss="modal" aria-label="Close">
+          <svg class="icon">
+            <use xlink:href="#cancel-icon"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="modal-body game__modal-body"></div>
+    </div>
+  </div>
+</div>

@@ -24,7 +24,13 @@
   &-header {
     display: flex;
     justify-content: flex-end;
-    padding: 34px;
+    padding: 10px 15px; 
+    @media #{$breakpoint-md} {
+      padding: 34px;
+    }
+    &.between{
+      justify-content: space-between;
+    }
   }
   &-body {
     max-width: 100%;
@@ -51,6 +57,7 @@
     justify-content: center;
     transition: 0.3s;
     z-index: 1;
+    flex: none;
     &.center {
       position: absolute;
       left: 50%;
