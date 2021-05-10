@@ -56,6 +56,10 @@ function clickers() {
     $('.filter__row').click(function(){
         $('.filter__form').toggleClass('active');
     });
+    //read more
+    $('.readMoreBtn').click(function(){
+        $('.moreText').toggleClass('inline');
+    });
 }
 clickers();
 
