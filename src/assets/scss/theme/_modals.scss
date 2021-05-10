@@ -211,18 +211,21 @@
       font-size: 13px;
       color: rgba($color: $black, $alpha: 0.6);
       margin-bottom: 0;
-      /* autoprefixer: off */
-      -webkit-box-orient: vertical;
-      /* autoprefixer: on */
+      width: 130px;
       display: block;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       overflow: hidden;
       text-overflow: ellipsis;
-      width: 130px;
+      /*! autoprefixer: off */
+      -webkit-box-orient: vertical;
       @media #{$breakpoint-md} {
         overflow: visible;
         width: auto;
+        text-overflow: inherit;
+        overflow: visible;
+        /*! autoprefixer: off */
+        -webkit-box-orient: horizontal;
       }
     }
     &__number {

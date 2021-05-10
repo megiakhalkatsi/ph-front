@@ -314,6 +314,18 @@
               margin-bottom: 144px;
             }
           }
+          &.mb-mobile {
+            margin-bottom: 34px;
+            @media #{$breakpoint-lg} {
+              margin-bottom: 0;
+            }
+          }
+          &.mt-mobile {
+            margin-top: 34px;
+            @media #{$breakpoint-lg} {
+              margin-top: 0;
+            }
+          }
         }
         &-hover {
           padding: 17.5px 30px;
@@ -481,6 +493,21 @@
           position: static;
         }
       }
+      &-align {
+        flex-direction: column-reverse;
+        @media #{$breakpoint-md} {
+          flex-direction: row;
+        }
+        .game__modal-close {
+          margin: 0 auto 21px;
+          @media #{$breakpoint-md} {
+            margin: 0;
+          }
+          @media #{$breakpoint-xl-ex} {
+            margin: 0 0 0 auto;
+          }
+        }
+      }
     }
     &__body {
       padding: 40px 20px 55px;
@@ -492,7 +519,10 @@
       }
 
       &.pd-sm {
-        padding: 55px 0;
+        padding: 40px 20px 55px;
+        @media #{$breakpoint-md} {
+          padding: 55px 0;
+        }
         @media #{$breakpoint-xl-ex} {
           padding: 89px 0;
         }
