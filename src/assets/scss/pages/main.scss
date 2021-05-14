@@ -4,9 +4,18 @@ body {
   color: $black;
   margin: 0;
   padding: 0;
+  &.modal-open {
+    overflow: hidden;
+    position: fixed;
+  }
 }
 .radius-16 {
   border-radius: 16px;
+}
+.container {
+  @media only screen and (max-width: 767px) {
+    max-width: 100%;
+  }
 }
 //margins
 .mb-34 {
@@ -89,6 +98,100 @@ body {
         @media #{$breakpoint-xl-ex} {
           max-width: 1082px;
         }
+      }
+    }
+    &__text {
+      &.padding {
+        padding: 31px 0 0;
+      }
+      &.mb-sm {
+        p {
+          margin-bottom: 1rem;
+        }
+        ol,
+        ul {
+          margin-top: 1rem;
+        }
+      }
+      p {
+        font-family: $firagoRegular;
+        font-size: 16px;
+        color: $component-color5;
+        margin-bottom: 31px;
+        span {
+          display: block;
+        }
+      }
+      a {
+        color: $component-color2;
+        text-decoration: underline;
+        &:hover {
+          color: $component-color2-darken;
+          svg {
+            stroke: $component-color2-darken;
+          }
+        }
+        svg {
+          stroke: $component-color2;
+          width: 12px;
+          height: 12px;
+          text-decoration: none;
+          margin-left: 10px;
+        }
+      }
+      ul {
+        margin-top: 55px;
+        li {
+          color: $black;
+          font-size: 16px;
+          font-family: $firagoRegular;
+          display: flex;
+          margin-bottom: 1rem;
+          &::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            display: block;
+            background-color: $component-color2;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex: none;
+            margin-top: 6px;
+          }
+        }
+      }
+      ol {
+        margin-top: 55px;
+        padding-left: 1rem;
+        li {
+          color: $black;
+          font-size: 16px;
+          font-family: $firagoRegular;
+          margin-bottom: 1rem;
+          &::marker {
+            font-family: $firagoSemiBold;
+            font-size: 16px;
+            margin-right: 10px;
+            flex: none;
+          }
+        }
+      }
+      strong {
+        font-family: $firagoSemiBold;
+        color: $component-color2;
+        li {
+          font-family: $firagoSemiBold;
+          font-size: 16px;
+          color: $component-color2;
+          margin-bottom: 5px;
+        }
+      }
+      h2 {
+        font-family: $firagoSemiBold;
+        font-size: 16px;
+        color: $component-color2;
+        margin-bottom: 30px;
+        margin-top: 50px;
       }
     }
   }
@@ -429,6 +532,12 @@ body {
       .paging__item {
         font-size: 16px;
         font-family: $firagoBold;
+      }
+      &.margins {
+        margin: 0 20px 34px;
+        @media #{$breakpoint-md} {
+          margin: 0 0 89px;
+        }
       }
     }
   }

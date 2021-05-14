@@ -63,6 +63,13 @@ function clickers() {
 }
 clickers();
 
+//not scrolling background while modal is active
+$("#tableOfConents").on("show", function () {
+    $("body").addClass("modal-open");
+  }).on("hidden", function () {
+    $("body").removeClass("modal-open")
+  });
+
 function burgerMenuResponsive(x) {
     if (x.matches) { // If media query matches
         $('.header__nav__menuIcon').removeClass('open');
