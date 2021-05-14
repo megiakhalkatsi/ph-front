@@ -2,7 +2,8 @@
     text-align: left;
     color: $black;
     &__section {
-        margin: 20px auto 60px;
+        padding: 20px 0 60px;
+        margin: 0 auto;
         text-align: center;
         width: 100%;
         max-width: 434px;
@@ -258,7 +259,6 @@
     align-items: center;
     margin: 0 auto;
     width: 100%;
-    // padding: 15px 0;
     border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
     .dropdown__elem--gray {
         color: rgba($color: $black, $alpha: 0.3);
