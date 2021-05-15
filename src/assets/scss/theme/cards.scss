@@ -93,7 +93,7 @@
         border: 1px solid $component-color1;
         border-radius: 8px;
         width: 100%;
-        max-width: 292px;
+        // max-width: 292px;
         margin: auto;
         @media #{$breakpoint-md} {
             width: 320px;
@@ -116,25 +116,19 @@
         }
         &-relative {
             position: relative;
-            // height: 140px;
             margin-bottom: 26px;
             background-color: $component-color4;
             border-radius: 8px 8px 0 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            // @media #{$breakpoint-xl-ex} {
-            //     height: 180px;
-            // }
-            // @media #{$breakpoint-xxl} {
-            //     height: 200px;
-            // }290 164
             width: 100%;
-            max-width: 290px;
-            height: 164px;
+            // max-width: 290px;
+            min-height: 164px;
             @media #{$breakpoint-md} {
                 width: 318px;
                 height: 180px;
+                min-height: auto;
                 max-width: 100%;
             }
             @media #{$breakpoint-lg} {
@@ -193,6 +187,10 @@
             margin-left: 20px;
             &:hover {
                 text-decoration: none;
+            }
+            &.form__section__text-sm-link{
+                padding-bottom: 10px;
+                display: block;
             }
         }
         &__title {

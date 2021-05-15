@@ -105,6 +105,7 @@
       padding-left: var(--bs-gutter-x, 0.75rem);
       @media #{$breakpoint-md} {
         max-width: 666px;
+        overflow: visible;
         padding-right: 0;
         padding-left: 0;
       }
@@ -239,8 +240,10 @@
       flex: none;
       &.mobile-none {
         display: flex;
+        margin-top: 20px;
         @media #{$breakpoint-md} {
           display: none;
+          margin-top: 0;
         }
         @media #{$breakpoint-lg} {
           display: flex;
@@ -517,7 +520,7 @@
     &__body {
       padding: 40px 20px 55px;
       @media #{$breakpoint-md} {
-        padding: 55px 0 77px;
+        padding: 55px 40px 77px;
       }
       @media #{$breakpoint-lg} {
         padding: 55px 0 125px;
@@ -532,10 +535,22 @@
           padding: 89px 0;
         }
       }
+      &.pd-md-sm {
+        padding: 40px 20px 55px;
+        @media #{$breakpoint-md} {
+          padding: 55px 40px;
+        }
+        @media #{$breakpoint-lg} {
+          padding: 55px 0;
+        }
+        @media #{$breakpoint-xl-ex} {
+          padding: 89px 0;
+        }
+      }
       &.paddings {
         padding: 40px 20px 55px;
         @media #{$breakpoint-md} {
-          padding: 8px 28px 55px;
+          padding: 8px 40px 55px;
         }
         @media #{$breakpoint-lg} {
           padding: 0 30px 42px;

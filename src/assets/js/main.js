@@ -59,6 +59,7 @@ function clickers() {
     //read more
     $('.readMoreBtn').click(function(){
         $('.moreText').toggleClass('inline');
+        $(this).hide();
     });
 }
 clickers();
