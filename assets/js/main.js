@@ -20,14 +20,11 @@ function clickers() {
     $('.header__nav__search').click(function () {
         $(this).toggleClass('active');
         $('.search__container').toggleClass('active');
+        $("body").addClass("modal-open");
     })
     $('.search__close').click(function () {
-        $('.search__result').removeClass('active');
         $('.search__container').removeClass('active');
-    })
-    $('.search__icon').click(function () {
-        $('.search__result').addClass('active');
-        $('.search__container').addClass('result__active');
+        $("body").removeClass("modal-open");
     })
     $('.dropdown__item').click(function () {
         $('#txtData').hide();
