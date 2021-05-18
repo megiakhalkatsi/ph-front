@@ -7,6 +7,17 @@ body {
   &.modal-open {
     overflow: hidden;
     position: fixed;
+    .page__content{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .footer{
+      opacity: 0;
+    }
   }
 }
 .radius-16 {
@@ -64,12 +75,18 @@ body {
 
 .page {
   &__content {
-    padding-top: 100px;
+    padding-top: 80px;
+    @media #{$breakpoint-md} {
+      padding-top: 100px;
+    }
     &.white {
       padding-top: 50px;
       background-color: $white;
       border-radius: 10px;
-      margin-top: 50px;
+      margin-top: 30px;
+      @media #{$breakpoint-md} {
+        margin-top: 50px;
+      }
       @media #{$breakpoint-xl} {
         margin-left: 20px;
         margin-right: 20px;
