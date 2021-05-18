@@ -44,6 +44,7 @@
     }
   }
   &-body {
+    background-color: $white;
     max-width: 100%;
     margin: auto;
     padding: 55px 30px 30px 30px;
@@ -888,6 +889,41 @@
       transition: .3s;
       &.active{
         transform: translateY(0);
+      }
+    }
+  }
+  &__finish{
+    &__text{
+      font-family: $firagoMedium;
+      font-size: 21px;
+      color: $black;
+      margin-bottom: 0;
+      text-align: center;
+      &.lg{
+        font-family: $firagoBold;
+        font-size: 34px;
+        margin-bottom: 13px;
+        &.green{
+          color: $component-color9;
+        }
+        &.orange{
+          color: $component-color8;
+        }
+      }
+      &.sm{
+        font-size: 16px;
+        font-family: $firagoRegular;
+        color: rgba($color: $black, $alpha: 0.6);
+        margin-top: 13px;
+      }
+    }
+    &__img{
+      width: 100%;
+      height: 372px;
+      object-fit: contain;
+      margin: 99px auto;
+      &.mg{
+        margin: 65px auto 99px;
       }
     }
   }
