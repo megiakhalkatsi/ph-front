@@ -20,7 +20,7 @@ function clickers() {
     $('.header__nav__search').click(function () {
         $(this).toggleClass('active');
         $('.search__container').toggleClass('active');
-        $("body").addClass("modal-open");
+        $("body").toggleClass("modal-open");
     })
     $('.search__close').click(function () {
         $('.search__container').removeClass('active');
