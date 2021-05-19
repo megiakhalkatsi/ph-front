@@ -784,11 +784,18 @@ body {
         }
       }
       &__icon {
+        width: 24px;
+        height: 24px;
+        &.lg{
+          width: 26px;
+          height: 26px;
+        }
         &-bg {
           width: 40px;
           height: 40px;
           border-radius: 8px;
           display: flex;
+          flex: none;
           justify-content: center;
           align-items: center;
           margin-right: 20px;

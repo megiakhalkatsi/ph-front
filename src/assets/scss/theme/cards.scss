@@ -108,6 +108,7 @@
         width: 100%;
         // max-width: 292px;
         margin: auto;
+        padding-bottom: 10px;
         @media #{$breakpoint-md} {
             width: 320px;
             max-width: 100%;
@@ -180,6 +181,8 @@
             }
         }
         &__icon {
+            width: 16px;
+            height: 18px;
             &__container {
                 display: flex;
             }
@@ -195,6 +198,7 @@
                 height: 30px;
                 border-radius: 8px;
                 display: flex;
+                flex: none;
                 justify-content: center;
                 align-items: center;
                 margin-right: 10px;
@@ -208,7 +212,7 @@
                 text-decoration: none;
             }
             &.form__section__text-sm-link {
-                padding-bottom: 10px;
+                // padding-bottom: 10px;
                 display: block;
             }
         }
