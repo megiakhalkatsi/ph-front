@@ -133,6 +133,12 @@ function tabsLink() {
 
 tabsLink();
 
+// onload page
+function onloadPage() {
+    $(".page__onload").addClass("active");
+}
+window.onload = onloadPage;
+
 // dropdown
 
 const dropdownToggler = () => {

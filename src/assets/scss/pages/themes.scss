@@ -672,62 +672,6 @@
   }
 }
 
-.data__table {
-  width: 100%;
-  margin-top: 54px;
-  &__header {
-    background-color: $component-color1;
-    border-radius: 10px 10px 0 0;
-    overflow: auto;
-  }
-  &__body {
-    border: 1px solid $component-color3;
-    border-radius: 0 0 10px 10px;
-    background-color: $white;
-    border-top-color: transparent;
-    overflow: auto;
-  }
-  &__row {
-    display: flex;
-  }
-  &__col {
-    flex: none;
-    width: 100%;
-    color: $component-color5;
-    font-family: $firagoRegular;
-    font-size: 16px;
-    margin: 0;
-    padding: 21px 30px 20px;
-    @media #{$breakpoint-md} {
-      flex: auto;
-    }
-    &.bold {
-      font-family: $firagoSemiBold;
-      font-size: 16px;
-      color: $black;
-      margin: 0;
-      &:first-child {
-        position: relative;
-        &::after {
-          content: "";
-          background-color: rgba($color: $black, $alpha: 0.3);
-          width: 1px;
-          height: 30px;
-          position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-      }
-    }
-    &.border-r {
-      border-right: 1px solid $component-color3;
-    }
-    &.border-b {
-      border-bottom: 1px solid $component-color3;
-    }
-  }
-}
 .readMoreBtn {
   display: block;
   margin: auto;
