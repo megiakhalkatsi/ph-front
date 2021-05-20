@@ -322,13 +322,16 @@ body {
     align-items: center;
     top: 0;
     left: 0;
-    // display: none;
+    right: 0;
+    bottom: 0;
+    z-index: 99999999999;
+    background-color: rgba($color: $component-color2, $alpha: 0.8);
     display: flex;
     &.active {
       display: none;
     }
     &__img {
-      height: 200px;
+      height: 300px;
       object-fit: contain;
     }
   }
