@@ -3,7 +3,6 @@ layout: gamesLayout
 title: მოსწავლეების რესურსი
 ---
 
-<div class="game__line"></div>
 <div class="modal-body game__modal-body">
   <div class="row">
     <div class="col-12 col-lg-8 page__content-col m-auto">
@@ -23,9 +22,7 @@ title: მოსწავლეების რესურსი
               უოლტერსი შეუსვენებლად ჩამოსული, დაბორიალობენ ვეჭიდებით, გატაცებულთა სთელავენ ზეიმობს.</span>
           </div>
           <div class="editable game__box__list__container" contenteditable="true">
-            <ul class="game__box__list">
-              <li class="game__box__list__item game__box__item__text"> </li>
-            </ul>
+            <ul class="game__box__list"> </ul>
           </div>
           <div class="game__box__btn">
             <span class="plus">+</span>
@@ -39,9 +36,7 @@ title: მოსწავლეების რესურსი
         </div>
         <div class="game__box__body green">
           <div class="editable game__box__list__container" contenteditable="true">
-            <ul class="game__box__list">
-              <li class="game__box__list__item game__box__item__text"> </li>
-            </ul>
+            <ul class="game__box__list"> </ul>
           </div>
           <div class="game__box__btn">
             <span class="plus">+</span>
@@ -56,7 +51,7 @@ title: მოსწავლეების რესურსი
         <div class="game__box__body blue">
           <div class="editable game__box__list__container" contenteditable="true">
             <ul class="game__box__list">
-              <li class="game__box__list__item game__box__item__text"> </li>
+              <!-- <li class="game__box__list__item game__box__item__text"> </li> -->
             </ul>
           </div>
           <div class="game__box__btn">
@@ -69,8 +64,7 @@ title: მოსწავლეების რესურსი
     <div class="col-12 game__content-col-bottom">
       <div class="row game__img__btn__row align-center-xl-ex">
         <div class="col-12 col-md-2 game__img__col-relative">
-          <img src="../assets/img/illustrations/police.png" alt="police"
-            class="game__img__picture game__img-dog">
+          <img src="../assets/img/illustrations/police1.png" alt="police" class="game__img-police">
         </div>
         <div class="col-12 col-md-10 col-lg-8">
           <div class="game__button__container">
@@ -82,12 +76,6 @@ title: მოსწავლეების რესურსი
     </div>
   </div>
 </div>
-
-
-
-
-
-
 
 
 
@@ -112,10 +100,12 @@ title: მოსწავლეების რესურსი
   });
 
 
+
   $('.game__box__btn').click(function (e) {
     $(this).addClass('hide');
     $(this).parent().addClass('active');
     $(this).prev('.game__box__list__container').addClass('active');
+    $(this).prev('.game__box__list__container').children(".game__box__list").append('<li class="game__box__list__item game__box__item__text"></li>');
     e.stopPropagation()
   });
   $(document).on("click", function (e) {

@@ -335,6 +335,44 @@
         margin-right: 0;
       }
     }
+    &-police {
+      height: 223px;
+      object-fit: contain;
+      // position: relative;
+      // left: -130px;
+
+      @media #{$breakpoint-md} {
+        height: 273px;
+        position: relative;
+        left: -90px;
+      }
+      @media #{$breakpoint-lg} {
+        left: -30px;
+        height: 210px;
+      }
+      @media #{$breakpoint-xl} {
+        height: 273px;
+        position: static;
+        left: auto;
+      }
+      @media #{$breakpoint-xl-ex} {
+        height: 323px;
+      }
+      @media #{$breakpoint-xxl} {
+        position: absolute;
+        height: 327px;
+        bottom: 100px;
+        left: -50px;
+      }
+      @media only screen and (min-width: 1800px) {
+        height: 345px;
+        left: -20px;
+      }
+      @media only screen and (min-width: 1900px) {
+        height: 400px;
+        left: -40px;
+      }
+    }
     &__btn__row {
       display: flex;
       flex-direction: column-reverse;
