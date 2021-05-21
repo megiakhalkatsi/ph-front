@@ -20,11 +20,11 @@ function clickers() {
     $('.header__nav__search').click(function () {
         $(this).toggleClass('active');
         $('.search__container').toggleClass('active');
-        $("body").toggleClass("modal-open");
+        $("body").toggleClass("open-modal");
     })
     $('.search__close').click(function () {
         $('.search__container').removeClass('active');
-        $("body").removeClass("modal-open");
+        $("body").removeClass("open-modal");
     })
     $('.dropdown__item').click(function () {
         $('#txtData').hide();
@@ -38,23 +38,23 @@ function clickers() {
         $(this).addClass('open');
     });
     //burger menu
-    $('.header__nav__menuIcon').click(function(){
+    $('.header__nav__menuIcon').click(function () {
         $(this).toggleClass('open');
         $('.header__nav__list__container').toggleClass('active');
     });
     //choose role notification
-    $('.choose__teacher').click(function(){
+    $('.choose__teacher').click(function () {
         $('.chooseRoleModal__bottom').addClass('active');
     });
-    $('.choose__student').click(function(){
+    $('.choose__student').click(function () {
         $('.chooseRoleModal__bottom').removeClass('active');
     });
     //filter - responsive
-    $('.filter__row').click(function(){
+    $('.filter__row').click(function () {
         $('.filter__form').toggleClass('active');
     });
     //read more
-    $('.readMoreBtn').click(function(){
+    $('.readMoreBtn').click(function () {
         $('.moreText').toggleClass('inline');
         $(this).hide();
     });
@@ -62,21 +62,23 @@ function clickers() {
 clickers();
 
 //not scrolling background while modal is active
-$("#tableOfConents").on("show", function () {
-    $("body").addClass("modal-open");
-  }).on("hidden", function () {
-    $("body").removeClass("modal-open")
-  });
+$('#tableOfConents').on('shown.bs.modal', function () {
+    $("body").addClass("open-modal");
+}).on("hidden.bs.modal", function () {
+    $("body").removeClass("open-modal")
+});
+
+
 
 function burgerMenuResponsive(x) {
     if (x.matches) { // If media query matches
         $('.header__nav__menuIcon').removeClass('open');
         $('.header__nav__list__container').removeClass('active');
     }
-  }
-  var x = window.matchMedia("(min-width: 991px)")
-  burgerMenuResponsive(x) // Call listener function at run time
-  x.addListener(burgerMenuResponsive) // Attach listener function on state changes
+}
+var x = window.matchMedia("(min-width: 991px)")
+burgerMenuResponsive(x) // Call listener function at run time
+x.addListener(burgerMenuResponsive) // Attach listener function on state changes
 
 //full size images
 var imgs = document.getElementsByClassName("resource__item__img");
@@ -111,7 +113,7 @@ function tabsLink() {
             }, 400);
         }
 
-        $('a[data-bs-toggle="tab"]').on("click", function() {
+        $('a[data-bs-toggle="tab"]').on("click", function () {
             let newUrl;
             const hash = $(this).attr("href");
             if (hash == "#about") {
@@ -126,7 +128,7 @@ function tabsLink() {
 
     tabLocation();
 
-    $(window).on('hashchange', function() {
+    $(window).on('hashchange', function () {
         tabLocation();
     });
 }
