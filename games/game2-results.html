@@ -442,11 +442,8 @@
 </div>
 <div class="game__result__container">
   <a href="#" class="game__result">
-    <div>
-      <p class="game__result__text sm">თქვენ დაასრულეთ თამაში</p>
-      <p class="game__result__text">შედეგების ნახვა</p>
-    </div>
-    <div class="game__result__btn">შედეგები</div>
+    <p class="game__result__text">თქვენ დაასრულეთ თამაში</p>
+    <div class="game__result__btn">შედეგების ნახვა</div>
   </a>
 </div>
 
@@ -455,6 +452,11 @@
    function showResults() {
     $('.gameResult__btn').click(function(){
         $('.game__result__container').addClass('active');
+        $("body").addClass("open-modal");
+    });
+    $('.game__result__container').click(function(){
+        $("body").removeClass("open-modal");
+        $('.game__result__container').removeClass('active');
     });
    }
   
