@@ -1,0 +1,60 @@
+---
+layout: gamesLayout
+title: მოსწავლეების რესურსი
+gameScripts: ../assets/vendors/js/games/game3.js
+---
+
+<div class="modal-body game__modal-body">
+  <div class="row">
+    <div class="col-12 game__difference__container m-auto">
+      <div class="row">
+        <div class="col-12 col-lg-6 mb-4">
+          <div class="game__difference__img__container">
+            <img src="../assets/img/diff.jpg" alt="img" class="game__difference__img">
+            <div class="game__difference__circle position success"></div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 mb-4">
+          <div class="game__difference__img__container">
+            <img src="../assets/img/diff.jpg" alt="img" class="game__difference__img">
+            <div class="game__difference__circle position error"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 game__difference__container m-auto">
+    <div class="row game__img__btn__row align-center">
+      <div class="col-12 col-md-2 game__img__col-relative">
+        <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+          class="game__img-dog">
+      </div>
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="game__button__container">
+          <button class="about__page__btn game__button mr bt-gray">თავიდან დაწყება</button>
+          <button class="about__page__btn game__button bt-blue">შემოწმება</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="../assets/vendors/js/jquery.min.js"></script>
+<script>
+  $('.game__difference__img__container').mousedown(function (event) {
+    if (!event) event = window.event;
+    var x = event.pageX;
+    var y = event.pageY;
+    var canvasPos = $(this).offset();
+    var styles = {
+      "left": x - canvasPos.left,
+      "top": y - canvasPos.top
+    };
+    var template = $('<div class="game__difference__circle"></div>');
+    $(template).css(styles)
+      .show();
+    $(template).remove();
+    $('.game__difference__img__container').append(template);
+  });
+</script>

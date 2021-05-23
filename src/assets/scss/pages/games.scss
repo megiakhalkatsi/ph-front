@@ -969,6 +969,84 @@
       }
     }
   }
+  &__difference {
+    &__container {
+      @media #{$breakpoint-xl} {
+        max-width: 1158px;
+      }
+      @media #{$breakpoint-xxl} {
+        max-width: 1638px;
+      }
+    }
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      &__container {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+    }
+    &__circle {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 2px solid $black;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      @media #{$breakpoint-lg} {
+        width: 80px;
+        height: 80px;
+      }
+      &.error {
+        border: 2px solid $error-red;
+        &::after {
+          content: url("../img/icons/close.svg");
+          background-color: $error-red;
+          border-radius: 50%;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          right: -5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @media #{$breakpoint-lg} {
+            right: 0px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      &.success {
+        border: 2px solid $component-color9;
+        &::after {
+          content: url("../img/icons/check.svg");
+          background-color: $component-color9;
+          border-radius: 50%;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          right: -5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @media #{$breakpoint-lg} {
+            right: 0px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      &.position {
+        left: 200px;
+        top: 100px;
+      }
+    }
+  }
 }
 
 .gameResult__btn {
