@@ -69,17 +69,17 @@
                         text-decoration: none;
                         margin-left: 10px;
                     }
-                    &:hover{
+                    &:hover {
                         color: $component-color2-darken;
-                        .icon{
+                        .icon {
                             stroke: $component-color2-darken;
                         }
                     }
-                    &.sm{
+                    &.sm {
                         font-size: 13px;
-                        .icon{
+                        .icon {
                             width: 8px;
-                            height: 8px; 
+                            height: 8px;
                             margin-left: 5px;
                         }
                     }
@@ -192,7 +192,7 @@
             font-size: 16px;
             color: $black;
             text-decoration: underline;
-            &:hover{
+            &:hover {
                 color: $component-color2;
             }
         }
@@ -302,7 +302,7 @@
                 }
                 span {
                     color: rgba($color: $black, $alpha: 0.3);
-                    &.active{
+                    &.active {
                         color: $black;
                     }
                 }
@@ -504,7 +504,7 @@
     &-link {
         color: $component-color2;
         text-decoration: underline;
-        &:hover{
+        &:hover {
             color: $component-color2-darken;
         }
     }
@@ -560,5 +560,106 @@
             border-radius: 50%;
             background: $component-color2;
         }
+    }
+}
+
+/** Custom Select **/
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    &-wrapper {
+        position: relative;
+        display: inline-block;
+        user-select: none;
+        select {
+            display: none;
+        }
+    }
+    &-trigger {
+        width: 125px;
+        position: relative;
+        transition: 0.3s;
+        cursor: pointer;
+        font-family: $firagoMedium;
+        color: $black;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px 0 20px;
+        @media #{$breakpoint-xxs} {
+            width: 165px;
+        }
+        &:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-image: url("../img/icons/arrow-drop-down.svg");
+            background-size: contain;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            transition: all 0.4s ease-in-out;
+        }
+    }
+    &.opened .custom-select-trigger:after {
+        transform: rotate(180deg);
+        top: 0;
+    }
+    &.opened .custom-options {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        transform: translateY(10px);
+        border: 2px solid $component-color2;
+        border-radius: 8px;
+    }
+}
+
+.custom-options {
+    position: absolute;
+    z-index: 1;
+    background: $white;
+    top: 100%;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.26);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: 2px solid transparent;
+    pointer-events: none;
+    transform: translateY(-15px);
+}
+
+// .option-hover:before {
+//     background: #f9f9f9;
+// }
+.custom-option {
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    line-height: 2;
+    color: rgba($color: $black, $alpha: 0.6);
+    transition: 0.3s;
+    margin: 5px 10px;
+    text-align: left;
+    padding: 0 10px;
+    font-family: $firagoMedium;
+    font-size: 13px;
+    &:hover {
+        color: $black;
+        border-radius: 8px;
+        background-color: $component-color4;
     }
 }
