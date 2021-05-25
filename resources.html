@@ -544,24 +544,14 @@
         <div class="section__resources__container">
           <div class="section__resources__row">
             <h2 class="section__resources__title">დამატებითი რესურსები</h2>
-            <div class="dropdown__elem sort form-control form-select" id="sort">
-              <div class="dropdown__elem--inner dropdown--toggler">
-                <span class="text--active dropdown--selected">
-                  სორტირება
-                </span>
-                <svg class="icon">
-                  <use xlink:href="#arrow-dropdown"></use>
-                </svg>
-              </div>
-              <div class="dropdown" data-for="sort">
-                <nav class="dropdown__nav">
-                  <li class="dropdown__item dropdown__item--active" value="0">თარიღი კლებადი</li>
-                  <li class="dropdown__item" value="1">თარიღი ზრდადი</li>
-                  <li class="dropdown__item" value="2">ანბანი კლებადი</li>
-                  <li class="dropdown__item" value="3">ანბანი ზრდადი</li>
-                </nav>
-              </div>
-            </div>
+            <form>
+              <select class="custom-select" placeholder="სორტირება">
+                <option value="1">თარიღი კლებადი</option>
+                <option value="2">თარიღი ზრდადი</option>
+                <option value="3">ანბანი კლებადი</option>
+                <option value="4">ანბანი ზრდადი</option>
+              </select>
+            </form>
           </div>
           <div class="document__line"></div>
           <div class="row">
