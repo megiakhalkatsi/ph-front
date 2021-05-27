@@ -287,9 +287,9 @@
         position: absolute;
         bottom: 32px;
         left: -44px;
-        &.bt-120 {
-          bottom: -200px;
-        }
+        // &.bt-120 {
+        //   bottom: -200px;
+        // }
       }
       @media #{$breakpoint-xl-ex} {
         left: -30px;
@@ -332,13 +332,54 @@
         width: 100%;
         margin-right: 0;
       }
+      &.lg {
+        @media only screen and (min-width: 1300px) {
+          height: 242px;
+          left: -5px;
+          bottom: 55px;
+        }
+        @media #{$breakpoint-xl-ex} {
+          left: -30px;
+        }
+        @media #{$breakpoint-xxl} {
+          height: 310px;
+          left: 10px;
+        }
+        @media only screen and (min-width: 1800px) {
+          height: 345px;
+        }
+        @media only screen and (min-width: 1900px) {
+          height: 357px;
+          left: 30px;
+          bottom: 60px;
+        }
+        &.pos {
+          @media #{$breakpoint-xxl} {
+            bottom: -110px;
+          }
+          @media only screen and (min-width: 1900px) {
+            bottom: -90px;
+          }
+        }
+      }
+      &.bt-120 {
+        // bottom: -200px;
+        height: 226px;
+        @media #{$breakpoint-xl} {
+          height: 280px;
+          bottom: -160px;
+          left: 10px;
+        }
+        @media #{$breakpoint-xl-ex} {
+          height: 286px;
+          bottom: -120px;
+          left: 10px;
+        }
+      }
     }
     &-police {
       height: 223px;
       object-fit: contain;
-      // position: relative;
-      // left: -130px;
-
       @media #{$breakpoint-md} {
         height: 273px;
         position: relative;
@@ -614,9 +655,15 @@
       font-family: $firagoMedium;
       color: $black;
       line-height: 1.8;
-      margin-bottom: 20px;
-      @media #{$breakpoint-md} {
-        line-height: 2;
+      // margin-bottom: 20px;
+      margin-bottom: 55px;
+      @media #{$breakpoint-sm} {
+        line-height: 2.5;
+      }
+      @media #{$breakpoint-lg} {
+        margin-bottom: 33px;
+      }
+      @media #{$breakpoint-xl-ex} {
         margin-bottom: 0;
       }
       .game__answer__drop__container {
@@ -638,6 +685,10 @@
     border-collapse: inherit;
     border-spacing: 0px;
     border: 1px solid $component-color5;
+    margin-top: 25px;
+    @media #{$breakpoint-md} {
+      margin-top: 35px;
+    }
     &__thead {
       box-shadow: 0 0 0 1px $component-color8;
       border-radius: 10px 10px 0 0;
@@ -678,7 +729,8 @@
     }
     &__td {
       border-left: 1px solid rgba($color: $component-color5, $alpha: 0.4);
-      vertical-align: bottom;
+      // vertical-align: bottom;
+      vertical-align: middle;
     }
     &__body {
       background-color: $white;
@@ -705,7 +757,7 @@
     }
     .game__answer__container {
       background-color: #fff;
-      margin-bottom: 10px;
+      margin: 10px 0;
       .game__text {
         color: $white;
         font-size: 13px;
@@ -1043,6 +1095,120 @@
       &.position {
         left: 200px;
         top: 100px;
+      }
+    }
+  }
+  &__list {
+    &__header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 39px;
+      @media #{$breakpoint-md} {
+        margin-bottom: 75px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media #{$breakpoint-xl-ex} {
+        margin-bottom: 89px;
+      }
+      &__title {
+        font-family: $firagoBold;
+        font-size: 21px;
+        margin-bottom: 34px;
+        @media #{$breakpoint-md} {
+          font-size: 34px;
+          margin-bottom: 0;
+        }
+      }
+      .game__progress__cont{
+        justify-content: center;
+      }
+    }
+    &-top {
+      background-color: $component-color8;
+      border-radius: 10px;
+      padding: 30px 20px;
+      @media #{$breakpoint-md} {
+        padding: 20px 30px;
+      }
+    }
+    &__title {
+      font-family: $firagoSemiBold;
+      font-size: 16px;
+      color: $white;
+      margin-bottom: 0;
+    }
+    &__content {
+      border: 1px solid $component-color3;
+      border-right: 1px solid transparent;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: 55px;
+      padding: 30px;
+      height: 446px;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 10px;
+        &-track {
+          background-color: #e9e9e9;
+          border-radius: 30px;
+        }
+        &-thumb {
+          background: $component-color2;
+          border-radius: 30px;
+          &:hover {
+            background: $component-color2;
+          }
+        }
+      }
+      .checkbox {
+        &-container {
+          color: rgba($color: $black, $alpha: 0.6);
+          margin-bottom: 34px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          input {
+            &:checked ~ .checkmark {
+              background-color: $component-color2;
+              &:after {
+                display: block;
+              }
+            }
+            &:checked ~ .text {
+              color: $component-color2;
+            }
+          }
+          &.correct {
+            input {
+              &:checked ~ .checkmark {
+                background-color: $component-color9;
+                border: 1px solid $component-color9;
+                &:after {
+                  display: block;
+                }
+              }
+              &:checked ~ .text {
+                color: $component-color9;
+              }
+            }
+          }
+          &.incorrect {
+            input {
+              &:checked ~ .checkmark {
+                background-color: $error-red;
+                border: 1px solid $error-red;
+                &:after {
+                  display: block;
+                }
+              }
+              &:checked ~ .text {
+                color: $error-red;
+              }
+            }
+          }
+        }
       }
     }
   }
