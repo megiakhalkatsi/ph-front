@@ -1,7 +1,11 @@
 
+
+
+
 $( function() {
   $('.game__answer__container').addClass('zIndex')
 });
+
 
 $( function() {
   $( ".DraggableItem" ).draggable({ revert: "invalid", helper : "clone", 
@@ -44,27 +48,84 @@ $( ".game__answer__container" ).mouseleave(function() {
 });
 
 
+var correct = 0;
+var incorrect = 0;
+
 $( "#finishButton" ).click(function() {
-let index = 0
+  let index = 0
 
-$.each($('.DroppableItem .DraggableItem'), function( i, l ){
-  if($(l).attr('data-correct') == "true") {
-    index++
-    $(l).addClass('success')
-  } else {
-    $(l).addClass('error')
-  }
 
-  if(index === 16) {
-    $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
-  } else {
-    $('#DogImage').attr('src', '../assets/img/illustrations/incorrect-image.gif')
-  }
-});
-});
+  $.each($('.DroppableItem .DraggableItem'), function( i, l ){
+          if($(l).attr('data-correct') == "true") {
+              index++
+              $(l).addClass('success')
+              correct++
+          } else {
+              $(l).addClass('error')
+              incorrect++
+          }
+
+
+          if(index === 16) {
+              $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
+          } else {
+              $('#DogImage').attr('src', '../assets/img/illustrations/incorrect-image.gif')
+          }
+      });
+
+      $('#finishButton').attr('style', 'display: none')
+      $('#completBtn').attr('style', 'display: block')
+  
+  });
 
 
 
 $( "#resetButton" ).click(function() {
-$('.DroppableItem').html('')
+  $('.DroppableItem').html('')
+});
+
+
+$( "#completBtn" ).click(function() {
+  document.querySelector('.game__result__container').classList.add('active') 
+});
+
+
+
+
+
+$( "#successModalBtn" ).click(function() {
+  console.log(correct)
+
+  if(correct > 8) {
+      $('.successModal').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
+      document.querySelector('.successModal #correctAnswers').innerHTML = `${correct}/16 კითხვა`
+  }
+  
+  if(correct <= 8) {
+      $('.failModal').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
+      document.querySelector('.failModal #correctAnswers').innerHTML = `${correct}/16 კითხვა`
+  }
+});
+
+
+
+$( "#gameReset" ).click(function() {
+  document.querySelector('.failModal').setAttribute('style', 'display: none')
+  document.querySelector('.successModal').setAttribute('style', 'display: none')
+  document.querySelector('.game__result__container').classList.remove('active')
+  
+  $('#finishButton').attr('style', 'display: block')
+  $('#completBtn').attr('style', 'display: none')
+  
+  $('.game__table__td .game__answer__container').remove()
+
+  correct = 0;
+  incorrect = 0;
+});
+
+
+$( ".completGame" ).click(function() {
+  document.querySelector('.failModal').setAttribute('style', 'display: none')
+  document.querySelector('.successModal').setAttribute('style', 'display: none')
+  document.querySelector('.game__result__container').classList.remove('active')
 });
