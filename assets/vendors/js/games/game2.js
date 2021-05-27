@@ -1,9 +1,5 @@
-
-
-
-
 $( function() {
-  $('.game__dragAndDrop__container .game__answer__containe').setAttribute('style', 'z-index: 1111')
+  $('.game__dragAndDrop__container .game__answer__containe').attr('style', 'z-index: 1111')
   $('.game__answer__container').addClass('Z-index')
 });
 
@@ -38,8 +34,6 @@ $( function() {
 });
 
 
-
-
 $( ".game__answer__container" ).mouseenter(function() {
   $(this).children('.definition__content').attr('style', 'display: block')
 });
@@ -53,34 +47,44 @@ var correct = 0;
 var incorrect = 0;
 
 $( "#finishButton" ).click(function() {
-  let index = 0
 
-  $('.DroppableItem .DraggableItem').removeAttr('style')
+  let hasChild = 0;
 
-  $.each($('.DroppableItem .DraggableItem'), function( i, l ){
-          if($(l).attr('data-correct') == "true") {
-              index++
-              $(l).addClass('success')
-              correct++
-          } else {
-              $(l).addClass('error')
-              incorrect++
-          }
-
-
-          if(index === 16) {
-              $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
-          } else {
-              $('#DogImage').attr('src', '../assets/img/illustrations/incorrect-image.gif')
-          }
-      });
-
-      $('#finishButton').attr('style', 'display: none')
-      $('#completBtn').attr('style', 'display: block')
-  
+  $.each($('.game__table__td'), function( i, l ){
+      if(l.firstElementChild) {
+          hasChild++
+      }
   });
 
-
+  if(hasChild === 12) {
+      let index = 0
+    
+      $('.DroppableItem .DraggableItem').removeAttr('style')
+    
+      $.each($('.DroppableItem .DraggableItem'), function( i, l ){
+              if($(l).attr('data-correct') == "true") {
+                  index++
+                  $(l).addClass('success')
+                  correct++
+              } else {
+                  $(l).addClass('error')
+                  incorrect++
+              }
+    
+    
+              if(index === 16) {
+                  $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
+              } else {
+                  $('#DogImage').attr('src', '../assets/img/illustrations/incorrect-image.gif')
+              }
+          });
+    
+          $('#finishButton').attr('style', 'display: none')
+          $('#completBtn').attr('style', 'display: block')
+  } else {
+      $('#notificationModal').modal('show');
+  }  
+  });
 
 $( "#resetButton" ).click(function() {
   $('.DroppableItem').html('')
@@ -93,9 +97,6 @@ $( "#completBtn" ).click(function() {
   document.querySelector('.game__result__container').classList.add('active') 
   document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
 });
-
-
-
 
 
 $( "#successModalBtn" ).click(function() {
@@ -113,8 +114,6 @@ $( "#successModalBtn" ).click(function() {
   }
 });
 
-
-
 $( "#gameReset" ).click(function() {
   document.querySelector('.failModal').setAttribute('style', 'display: none')
   document.querySelector('.successModal').setAttribute('style', 'display: none')
@@ -131,7 +130,6 @@ $( "#gameReset" ).click(function() {
   correct = 0;
   incorrect = 0;
 });
-
 
 $( ".completGame" ).click(function() {
   document.querySelector('.mainBody').removeAttribute('style')
