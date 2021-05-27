@@ -3,6 +3,7 @@
 
 
 $( function() {
+  $('.game__dragAndDrop__container .game__answer__containe').setAttribute('style', 'z-index: 1111')
   $('.game__answer__container').addClass('Z-index')
 });
 
@@ -83,11 +84,14 @@ $( "#finishButton" ).click(function() {
 
 $( "#resetButton" ).click(function() {
   $('.DroppableItem').html('')
+  $('#completBtn').attr('style', 'display: none')
+  $('#finishButton').attr('style', 'display: block')
 });
 
 
 $( "#completBtn" ).click(function() {
   document.querySelector('.game__result__container').classList.add('active') 
+  document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
 });
 
 
@@ -115,6 +119,9 @@ $( "#gameReset" ).click(function() {
   document.querySelector('.failModal').setAttribute('style', 'display: none')
   document.querySelector('.successModal').setAttribute('style', 'display: none')
   document.querySelector('.game__result__container').classList.remove('active')
+
+  document.querySelector('.mainBody').removeAttribute('style')
+  document.querySelector('.game__result__container').removeAttribute('style')
   
   $('#finishButton').attr('style', 'display: block')
   $('#completBtn').attr('style', 'display: none')
@@ -127,6 +134,7 @@ $( "#gameReset" ).click(function() {
 
 
 $( ".completGame" ).click(function() {
+  document.querySelector('.mainBody').removeAttribute('style')
   document.querySelector('.failModal').setAttribute('style', 'display: none')
   document.querySelector('.successModal').setAttribute('style', 'display: none')
   document.querySelector('.game__result__container').classList.remove('active')
