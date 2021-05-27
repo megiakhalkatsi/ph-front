@@ -3,7 +3,7 @@
 
 
 $( function() {
-  $('.game__answer__container').addClass('zIndex')
+  $('.game__answer__container').addClass('Z-index')
 });
 
 
@@ -18,8 +18,8 @@ $( function() {
           var new_signature = $(ui.helper).clone();
           $(this).append(new_signature);
           $(new_signature).removeAttr('style')
-          $('.game__table__td .game__text').attr('style', 'color: #202631')
-          $('.game__table__td .game__answer__container').attr('style', 'background: #7fbcf3')
+          $('.game__table__td .game__text').attr('style', 'color: #fff')
+          $('.game__table__td .game__answer__container').attr('style', 'background: #7fbcf3;')
 
           let rowIndex = event.target.parentElement.getAttribute('data-row')
           let DraggableItemRows = JSON.parse(ui.draggable[0].getAttribute('data-row'))
@@ -54,6 +54,7 @@ var incorrect = 0;
 $( "#finishButton" ).click(function() {
   let index = 0
 
+  $('.DroppableItem .DraggableItem').removeAttr('style')
 
   $.each($('.DroppableItem .DraggableItem'), function( i, l ){
           if($(l).attr('data-correct') == "true") {
@@ -94,7 +95,8 @@ $( "#completBtn" ).click(function() {
 
 
 $( "#successModalBtn" ).click(function() {
-  console.log(correct)
+  document.querySelector('.mainBody').setAttribute('style', 'display: none')
+  document.querySelector('.game__result__container').setAttribute('style', 'display: none')
 
   if(correct > 8) {
       $('.successModal').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
