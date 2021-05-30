@@ -157,6 +157,7 @@
           .game__text {
             color: $white;
           }
+
           &.blue {
             margin: 0;
             background-color: $component-color6;
@@ -255,9 +256,6 @@
         //   color: $component-color2;
         // }
         &:hover {
-          .definition__content {
-            display: block;
-          }
           .game__text {
             color: $white;
           }
@@ -977,6 +975,7 @@
       min-height: 100vh;
       display: flex;
       align-items: flex-end;
+      z-index: 10;
       &.active {
         transform: translateY(0);
       }
@@ -1215,6 +1214,10 @@
     }
   }
 }
+
+.game__answer__container.zIndex {
+  z-index: 111111;
+} 
 
 .gameResult__btn {
   width: fit-content;

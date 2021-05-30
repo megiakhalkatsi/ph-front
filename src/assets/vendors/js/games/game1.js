@@ -1,3 +1,4 @@
+
 var questions = [
   {
     number: 1,
@@ -205,6 +206,11 @@ $( "#prevStep" ).click(function() {
 
 });
 
+$( "#successModalBtn" ).click(function() {
+  document.querySelector('.game__result__container').classList.remove('active')
+  document.querySelector('.game__result__container').setAttribute('style', 'z-index: 11')
+});
+
 
 $( function() {
     let incorrect = 0;
@@ -225,6 +231,12 @@ $( function() {
             $( this ).attr('data-append', true)
             $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
 
+            if(correctAnswer === 4) {
+              setTimeout(() => {
+                document.querySelector('.game__result__container').classList.add('active')
+                document.querySelector('.game__result__container').setAttribute('style', 'z-index: 11')
+            }, 2000)
+            }
         } else {
             attempt--
             if(incorrect < 2) {
