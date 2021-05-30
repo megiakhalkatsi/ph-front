@@ -158,11 +158,15 @@ $( "#prevStep" ).click(function() {
 
 $( "#successModalBtn" ).click(function() {
   if(parentCorrectNum > 5) {
+    $('.game__result__container').removeClass('active')
+    $('.mainBody').attr('style', 'display: none')
       $('.success').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
       document.querySelector('.fail #correctAnswers').innerHTML = `${parentCorrectNum}/10 კითხვა`
   }
   
   if(parentCorrectNum <= 5) {
+    $('.game__result__container').removeClass('active')
+    $('.mainBody').attr('style', 'display: none')
       $('.fail').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
       document.querySelector('.fail #correctAnswers').innerHTML = `${parentCorrectNum}/10 კითხვა`
   }
@@ -170,6 +174,7 @@ $( "#successModalBtn" ).click(function() {
 
 
 $( "#gameReset" ).click(function() {
+    $('.mainBody').removeAttr('style')
     document.querySelector('.fail').setAttribute('style', 'display: none')
     document.querySelector('.success').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').classList.remove('active')
@@ -193,6 +198,7 @@ $( "#gameReset" ).click(function() {
 
 
 $( ".completGame" ).click(function() {
+  $('.mainBody').removeAttr('style')
     document.querySelector('.fail').setAttribute('style', 'display: none')
     document.querySelector('.success').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').classList.remove('active')
@@ -218,8 +224,6 @@ $( function() {
 
     $( ".DroppableItem" ).droppable({
       drop: function( event, ui ) {
-          console.log(event)
-          console.log(ui)
            if($( this ).attr('data-append') == 'false' && ui.draggable.attr('data-correct') == event.target.getAttribute('data-correct')) {
             incorrect = 0
             correctAnswer++
@@ -231,7 +235,10 @@ $( function() {
             $(new_signature).removeAttr('style')
             $(new_signature).addClass('success')
             getCorrectAnsweersMarkup(correctAnswer)
+
+  
             $(this).find('.DraggableItem p').text($(this).find('.DraggableItem p').attr('modifierName'))
+
             $( this ).attr('data-append', true)
             $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
 
@@ -244,6 +251,7 @@ $( function() {
             $(this).append(new_signature);
             $(new_signature).removeAttr('style')
             $(new_signature).addClass('error')
+      
             $(this).find('.DraggableItem p').text($(this).find('.DraggableItem p').attr('modifierName'))
             $( this ).attr('data-append', true)
           $('#DogImage').attr('src', '../assets/img/illustrations/incorrect-image.gif')
@@ -251,12 +259,7 @@ $( function() {
             ui.draggable.attr('style', "position: relative")
         }
 
-        if(attampt === 1) {
-          setTimeout(() => {
-              document.querySelector('.game__result__container').classList.add('active')
-              document.querySelector('.game__result__container').setAttribute('style', 'z-index: 11')
-          }, 2000)
-        }
+        
       }
     });
 });
