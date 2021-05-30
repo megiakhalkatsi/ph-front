@@ -99,41 +99,19 @@ $(function () {
 
 // tabs links
 
-function tabsLink() {
-    function tabLocation() { //redirect url to current tab
-        let url = location.href.replace(/\/$/, "");
+// function tabsLink() {
+//     var hash = window.location.hash;
+//     hash && $('#aboutTabs a[href="' + hash + '"]').tab('show');
+  
+//     $('#aboutTabs a').click(function (e) {
+//       $(this).tab('show');
+//       var scrollmem = $('body').scrollTop();
+//       window.location.hash = this.hash;
+//       $('html,body').scrollTop(scrollmem);
+//     });
+//   };
 
-        if (location.hash) {
-            const hash = url.split("#");
-            $('#aboutTabs a[href="#' + hash[1] + '"]').tab("show");
-            url = location.href.replace(/\/#/, "#");
-            history.replaceState(null, null, url);
-            setTimeout(() => {
-                $(window).scrollTop(0);
-            }, 400);
-        }
-
-        $('a[data-bs-toggle="tab"]').on("click", function () {
-            let newUrl;
-            const hash = $(this).attr("href");
-            if (hash == "#about") {
-                newUrl = url.split("#")[0];
-            } else {
-                newUrl = url.split("#")[0] + hash;
-            }
-            newUrl += " ";
-            history.replaceState(null, null, newUrl);
-        });
-    };
-
-    tabLocation();
-
-    $(window).on('hashchange', function () {
-        tabLocation();
-    });
-}
-
-tabsLink();
+//   tabsLink();
 
 // onload page
 function onloadPage() {
@@ -263,3 +241,5 @@ togglePassword.addEventListener('click', function (e) {
             }, false)
         })
 })()
+
+
