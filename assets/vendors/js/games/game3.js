@@ -1,4 +1,5 @@
 
+
 var questions = [
   {
     correctAnswer: 5,
@@ -66,6 +67,8 @@ var questions = [
   },
 ]
 
+let arr;
+
 let incorrect = 0;
 let correctAnswer = 0;
 let attampt = 0;
@@ -84,9 +87,9 @@ function getCorrectAnsweersMarkup(correctAnswer){
 
 }
 
-function getQuestionsMarkup(index){
+function getQuestionsMarkup(index, array){
 
-  const questionMarkup = questions.map((q, i) => (
+  const questionMarkup = array.map((q, i) => (
     `<h2 class="game__dragAndDrop__text ${q.number} questionContainer ${index + 1 === q.number ? "active" : ""}" style="display: ${index + 1 === q.number ? "block" : "none"}">
       ${q.number}. ${q.question} 
         <div class="game__answer__drop__container DroppableItem ui-droppable" data-append="false" data-correct=${q.correctAnswer}>
@@ -97,20 +100,24 @@ function getQuestionsMarkup(index){
     </div>`}
     </h2>`
   ))
-
   return questionMarkup
-
 }
 
+
+$( ".DraggableItem" ).draggable({ revert: "invalid", helper : "clone",
+start: function( event, ui ) {
+  $('.definition__content').attr('style', 'display: none;')
+}});
 
 $( function() {
   const randomArray = questions.sort(function() {return 0.5 - Math.random()})
   const modifier = randomArray.map((q, i) => {
     return {...q, number: i + 1}
   })
+  arr = modifier
   questions = modifier
 
-  const items = getQuestionsMarkup(index)
+  const items = getQuestionsMarkup(index, questions)
 
   $('#GameWrapper').append(items)
 });
@@ -119,7 +126,7 @@ $( function() {
 $( "#nextStep" ).click(function() {
   index++
 
-  if(index === questions.length || index > 9 ) {
+  if(index === arr.length || index > 9 ) {
     index = 0
   } 
 
@@ -140,7 +147,7 @@ $( "#prevStep" ).click(function() {
   index--
   
   if(index < 0) {
-    index = questions.length -1
+    index = arr.length -1
   }
   
   $('.questionContainer').removeClass('active');
@@ -179,21 +186,14 @@ $( "#gameReset" ).click(function() {
     document.querySelector('.success').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').classList.remove('active')
     
-    $('.game__dragAndDrop__text').removeClass('active')
-    $('.game__dragAndDrop__text').attr('style','display: none')
+  //   $('.game__dragAndDrop__text').removeClass('active')
+  //   $('.game__dragAndDrop__text').attr('style','display: none')
 
-  incorrect = 0;
-  correctAnswer = 0;
-  attampt = 0;
-
-  index = 0;
-  parentCorrectNum = 0;
-  parentinCorrectNum = 0;
-
-  getCorrectAnsweersMarkup(0)
-  const items = getQuestionsMarkup(index)
+    const items = getQuestionsMarkup(1, arr)
   
-  $('#GameWrapper').append(items)
+    $('#GameWrapper').append(items)
+
+    $('.DroppableItem').attr('data-append', 'true')
 });
 
 
@@ -224,8 +224,8 @@ $( function() {
 
     $( ".DroppableItem" ).droppable({
       drop: function( event, ui ) {
-           if($( this ).attr('data-append') == 'false' && ui.draggable.attr('data-correct') == event.target.getAttribute('data-correct')) {
-            incorrect = 0
+        
+          if($( this ).attr('data-append') == 'false' && ui.draggable.attr('data-correct') == event.target.getAttribute('data-correct')) {
             correctAnswer++
             parentCorrectNum = correctAnswer;
             attampt++
@@ -236,7 +236,7 @@ $( function() {
             $(new_signature).addClass('success')
             getCorrectAnsweersMarkup(correctAnswer)
 
-  
+
             $(this).find('.DraggableItem p').text($(this).find('.DraggableItem p').attr('modifierName'))
 
             $( this ).attr('data-append', true)
@@ -259,7 +259,15 @@ $( function() {
             ui.draggable.attr('style', "position: relative")
         }
 
+        if(attampt === 1) {
+          setTimeout(() => {
+              document.querySelector('.game__result__container').classList.add('active')
+              document.querySelector('.game__result__container').setAttribute('style', 'z-index: 11')
+          }, 2000)
+        }
+
         
       }
-    });
+    });  
 });
+
