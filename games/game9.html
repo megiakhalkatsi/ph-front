@@ -8,11 +8,12 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1.0,user-scalable=0, shrink-to-fit=no">
   <title>მოსწავლეების რესურსი</title>
-  <link rel="icon" href="assets/img/icons/logo1.ico" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="../assets/img/icons/logo1.ico" />
+  <link rel="stylesheet" href="../assets/vendors/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
-<body>
+<body style="background-color: white;">
   <!--svg sprite all used icons-->
   <svg width="0" height="0" class="hidden d-none">
     <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.825 5" id="arrow-dropdown">
@@ -147,7 +148,7 @@
   <!--svg sprite all used icons end-->
   <!-- onload event -->
   <div class="page__onload">
-    <img src="assets/img/illustrations/run.gif" alt="loading" class="page__onload__img">
+    <img src="../assets/img/illustrations/run.gif" alt="loading" class="page__onload__img">
   </div>
   <!-- onload event end -->
   <div class="page active">
@@ -343,227 +344,139 @@
       </div>
     </div>    <!--******-->
     <div class="page__main">
-      <header class="header" id="header">
-        <div class="container">
-          <div class="header__container">
-            <a href="index.html" class="header__logo__container">
-              <img src="assets/img/icons/logo.svg" alt="სამართლებრივი კულტურა" class="header__logo__img">
-              <h1 class="header__logo">სამართლებრივი კულტურა</h1>
-            </a>
-            <nav class="header__nav">
-              <div class="header__nav__menuIcon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+      <div>
+<div class="modal-body game__modal-body mainBody">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <h2 class="game__mail__title">სასწრაფო შეტყობინება - დროულად გადაიხადეთ დავალიანება და მიიღეთ საჩუქარი!</h2>
+      <div class="game__mail">
+        <div class="game__mail__header">
+          <div class="game__mail__dot__cont">
+            <div class="game__mail__dot red"></div>
+            <div class="game__mail__dot yellow"></div>
+            <div class="game__mail__dot green"></div>
+          </div>
+          <div class="game__mail__tab">
+            <h3 class="game__mail__tab__text">http://e-mail.ge/ka</h3>
+            <svg class="icon">
+              <use xlink:href="#refresh"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="game__mail__body">
+          <div class="game__mail__address__tab">
+            <div class="game__mail__address">
+              <div class="game__mail__user">
+                <svg class="icon">
+                  <use xlink:href="#email-user"></use>
+                </svg>
               </div>
-              <div class="header__nav__list__container">
-                <div class="language__mobile">
-                  <span class="dropdown__elem--gray">ენის არჩევა: </span>
-                  <div class="dropdown__elem" id="language__mobile">
-                    <div class="dropdown__elem--inner dropdown--toggler">
-                      <span class="text--active dropdown--selected">
-                        En
-                      </span>
-                      <svg class="icon">
-                        <use xlink:href="#arrow-dropdown"></use>
-                      </svg>
-                    </div>
-                    <div class="dropdown" data-for="language__mobile">
-                      <nav class="dropdown__nav">
-                        <li class="dropdown__item dropdown__item--active">En</li>
-                        <li class="dropdown__item">ქა</li>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-                
-                <ul class="header__nav__list">
-                  <li class="header__nav__item"><a href="about.html" class="header__nav__item-link active">ჩვენზე</a></li>
-                  <li class="header__nav__item"><a href="themes.html" class="header__nav__item-link">თემები</a></li>
-                  <li class="header__nav__item"><a href="resources.html" class="header__nav__item-link">რესურსები</a></li>
-                </ul>
-                <div class="header__nav__item__footer">
-                  <div class="footer__contact center">
-                    <a href="mailto:info@school.ge" class="footer__link footer__item">info@school.ge</a>
-                    <div class="footer__line footer__item"></div>
-                    <a href="#" class="footer__item footer__contact__icon">
-                      <svg class="icon">
-                        <use xlink:href="#icon-fb"></use>
-                      </svg>
-                    </a>
-                    <a href="#" class="footer__item footer__contact__icon">
-                      <svg class="icon">
-                        <use xlink:href="#youtube"></use>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="header__nav__item">
-                <a href="login.html" class="header__nav__btn bt-blue">
-                  <svg class="icon">
-                    <use xlink:href="#metro-user"></use>
-                  </svg>
-                  შესვლა
-                </a>
-              </div>
-              <div class="header__nav__item">
-                <a href="#" class="header__nav__search">
-                  <svg class="icon">
-                    <use xlink:href="#ico-search"></use>
-                  </svg>
-                </a>
-              </div>
-              <div class="dropdown__elem language__desktop" id="1">
-                <div class="dropdown__elem--inner dropdown--toggler">
-                  <span class="text--active dropdown--selected">
-                    En
-                  </span>
+              <div>
+                <h4 class="game__mail__user__from">tansatsmeli@gmail.com</h4>
+                <div class="game__mail__user__to">
+                  <span>to me</span>
                   <svg class="icon">
                     <use xlink:href="#arrow-dropdown"></use>
                   </svg>
                 </div>
-                <div class="dropdown" data-for="1">
-                  <nav class="dropdown__nav">
-                    <li class="dropdown__item dropdown__item--active">En</li>
-                    <li class="dropdown__item">ქა</li>
-                  </nav>
-                </div>
               </div>
-            </nav>
-          </div>
-        </div>
-      </header>      <div class="page__content white">
-<div class="container">
-    <section class="page__nav">
-        <ul class="page__nav__list">
-            <li class="page__nav__list__item">
-                <a href="index.html" class="page__nav__list__item-link">მთავარი</a>
-            </li>
-            <li class="page__nav__list__item">
-                <svg class="icon">
-                    <use xlink:href="#ico-chevron-right"></use>
-                </svg>
-            </li>
-            <li class="page__nav__list__item">
-                <a href="register.html" class="page__nav__list__item-link">რეგისტრაცია</a>
-            </li>
-        </ul>
-    </section>
-    <div class="row">
-        <div class="col-12 m-auto">
-            <div class="registration__success">
-                <img src="assets/img/icons/awesome-check-circle.svg" alt="success" class="registration__success__icon">
-                <p class="registration__success__text">თქვენ მიერ მითითებულ ელ.ფოსტაზე მიიღებთ რეგისტრაციის დასრულებისთვის საჭირო ინსტრუქციას.</p>
             </div>
+            <div class="game__mail__date">
+              <span>Wed, Mar 6, 11:07 PM (1 hours ago)</span>
+            </div>
+          </div>
+          <p class="game__mail__text">
+            ძვირფასო მომხმარებელო,
+            <span class="game__mail__text__margin"></span>
+            როგორც იცით, ჩვენი ბრენდი საქართველოში უკვე 15 წელია არსებობს და
+            მაღაზიათა ქსელი დიდი წარმატებით სარგებლობს. ჩვენ ყოველთვის ვზრუნავთ ჩვენს მომხმარებლებზე და
+            ახლაც გაურკვევლობის თავიდან ასაცილებლად, გატყობინებთ: ჩვენთან ნივთის შეძენის შემდეგ თქვენ
+            დაგერიცხათ დავალიანება, რადგან ნივთი არ იყო ფასდაკლებაში. გადაიხადეთ დავალიანება დროულად და
+            <span class="bold">მიიღეთ საჩუქარი</span> ჩვენი მაღაზიების ქსელის ნებისმიერ ფილიალში.
+            <span class="game__mail__text__margin"></span>
+            დეტალების გასარკვევად ეწვიეთ
+            Tansatsmeli-ის ოფიციალურ გაყიდვების <a href="#" class="link">გვერდს</a>, შეიყვანეთ თქვენი საბანკო
+            მონაცემები, რითაც შეძლებთ
+            ავტომატურად გადაიხადოთ დავალიანება და მიიღეთ საჩუქრის კოდი თქვენ მიერ მითითებულ ტელეფონის
+            ნომერზე sms-ის სახით.
+            <span class="game__mail__text__margin"></span>
+            პატივისცემით,
+            <span class="d-block"></span>
+            Tansatsmeli-ს ადმინისტრაცია.
+          </p>
         </div>
+      </div>
     </div>
-</div>
-</div>
-      <footer class="footer">
-          <div class="container">
-              <div class="row">
-                  <div class="col-12">
-                      <img src="assets/img/phinternational.svg" alt="ph-international" class="footer__top__img">
-                  </div>
-              </div>
-              <div class="footer__bottom">
-                  <div class="row">
-                      <div class="col-12 col-lg-5 d-flex align-items-end align-items-lg-start align-items-xxl-end">
-                          <p class="footer__text">
-                              ვებ-გვერდზე განთავსებული ინფორმაცია არ წარმოადგენს ამერიკის შეერთებული შტატების მთავრობის ოფიციალურ ინფორმაციას და არ ასახავს ამერიკის შეერთებული შტატების სახელმწიფო დეპარტამენტისა და ამერიკის შეერთებული შტატების მთავრობის შეხედულებებს
-                          </p>
-                      </div>
-                      <div class="footer__contact center mobile-block">
-                          <a href="mailto:info@school.ge" class="footer__link footer__item">info@school.ge</a>
-                      <div class="footer__line footer__item"></div>
-                      <a href="#" class="footer__item footer__contact__icon">
-                          <svg class="icon">
-                              <use xlink:href="#icon-fb"></use>
-                          </svg>
-                      </a>
-                      <a href="#" class="footer__item footer__contact__icon">
-                          <svg class="icon">
-                              <use xlink:href="#youtube"></use>
-                          </svg>
-                      </a>
-                      </div>
-                      <div class="col-12 col-lg-7 col-xl-7 col-xxl-6 offset-xxl-1 d-flex align-items-end">
-                          <div class="footer__contact cont">
-                              <div class="footer__contact left">
-                                  <div class="footer__item-flex">
-                                      <a href="termsOfUse.html" class="footer__item footer__text black">
-                                          მოხმარების პირობები
-                                      </a>
-                                      <div class="footer__line first footer__item"></div>
-                                  </div>
-                                  <div class="footer__item-flex">
-                                      <a href="privacy.html" class="footer__item footer__text black">
-                                          კონფიდენციალურობა
-                                      </a>
-                                      <div class="footer__line second footer__item"></div>
-                                  </div>
-                                  <div class="footer__item-flex">
-                                      <p class="footer__item footer__text black mobile-block hover-black">© 2021 ყველა უფლება დაცულია</p>
-                                  </div>
-                              </div>
-                              <div class="footer__contact-right">
-                                  <div class="footer__contact center mobile-none">
-                                      <a href="mailto:info@school.ge" class="footer__link footer__item">info@school.ge</a>
-                                  <div class="footer__line footer__item"></div>
-                                  <a href="#" class="footer__item footer__contact__icon">
-                                      <svg class="icon">
-                                          <use xlink:href="#icon-fb"></use>
-                                      </svg>
-                                  </a>
-                                  <a href="#" class="footer__item footer__contact__icon">
-                                      <svg class="icon">
-                                          <use xlink:href="#youtube"></use>
-                                      </svg>
-                                  </a>
-                                  </div>
-                                  <p class="footer__item footer__text black mobile-none hover-black">© 2021 ყველა უფლება დაცულია</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </footer>    </div>
-
-    <div class="search__container">
-      <div class="search__container__content">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 page__content-col m-auto">
-              <div class="search__container__row">
-                <h3 class="search__container__title">ჩაწერეთ საძიებო სიტყვა ან ფრაზა</h3>
-                <div class="search__close">
-                  <svg class="icon">
-                    <use xlink:href="#close"></use>
-                  </svg>
-                </div>
-              </div>
-              <form action="" class="search__container__form">
-                <input type="search" class="search__container__form__input" placeholder="ძიება">
-                <a href="searchResult.html">
-                  <svg class="icon search__icon">
-                    <use xlink:href="#ico-search"></use>
-                  </svg>
-                </a>
-              </form>
-            </div>
+    <div class="col-12 game__content-col-bottom">
+      <div class="row game__img__btn__row align-center-xl-ex">
+        <div class="col-12 col-md-2 game__img__col-relative">
+          <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+            class="game__img__picture game__img-dog lg bottom">
+        </div>
+        <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
+          <div class="game__button__container">
+            <a href="#" class="about__page__btn game__button mr bt-gray">
+              გადამიყვანე გვერდზე</a>
+            <a href="#" class="about__page__btn game__button bt-gray">
+              არ მსურს გადასვლა</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+</div>
+    </div>
 
   </div>
-  <script src="assets/vendors/js/jquery.min.js"></script>
-  <script src="assets/vendors/js/bootstrap.min.js"></script>
-  <script src="assets/vendors/js/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/vendors/js/jquery.min.js"></script>
+  <script src="../assets/vendors/js/jquery-ui.min.js"></script>
+  <script src="../assets/vendors/js/jquery-ui-touch-punch.js"></script>
+  <script src="../assets/vendors/js/bootstrap.min.js"></script>
+  <script src="../assets/vendors/js/swiper-bundle.min.js"></script>
+  <!-- <script src="../assets/js/main.js"></script> -->
+  <script src=></script>
+  <script>
+    // onload page
+    function onloadPage() {
+      $(".page__onload").addClass("active");
+    }
+    window.onload = onloadPage;
+  </script>
+
+  <script>
+    $(document).ready(function() {
+  // Assign some jquery elements we'll need
+  var $swiper = $(".swiper-container");
+  var $bottomSlide = null; // Slide whose content gets 'extracted' and placed
+  // into a fixed position for animation purposes
+  var $bottomSlideContent = null; // Slide content that gets passed between the
+  // panning slide stack and the position 'behind'
+  // the stack, needed for correct animation style
+
+  var mySwiper = new Swiper(".swiper-container", {
+    spaceBetween: 1,
+    slidesPerView: 1,
+    centeredSlides: true,
+    roundLengths: true,
+    loop: true,
+    // loopAdditionalSlides: 30,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    breakpoints: {
+        767: {
+          slidesPerView: 2.7,
+        },
+        991: {
+          slidesPerView: 3,
+        }
+    }
+  });
+});
+
+  </script>
 </body>
 
 </html>
