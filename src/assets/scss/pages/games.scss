@@ -1251,6 +1251,133 @@
       }
     }
   }
+  &__mail{
+    border: 2px solid $component-color14;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    &__title{
+      font-family: $firagoMedium;
+      font-size: 21px;
+      color: $black;
+      margin-bottom: 34px;
+    }
+    &__header{
+      background-color: $component-color14;
+      height: 60px;
+      padding: 10px 40px 10px 30px;
+      display: flex;
+      align-items: center;
+    }
+    &__dot{
+      width: 18px;
+      height: 18px;
+      display: block;
+      border-radius: 50%;
+      margin-right: 10px;
+      &:last-child{
+        margin-right: 0;
+      }
+      &.red{
+        background-color: $error-red;
+      }
+      &.yellow{
+        background-color: $component-color7;
+      }
+      &.green{
+        background-color: $component-color9;
+      }
+      &__cont{
+        display: flex;
+        margin-right: 43px;
+      }
+    }
+    &__tab{
+      width: 100%;
+      height: 40px;
+      background-color: $white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .icon{
+        stroke: #AFB5B8;
+        height: 20px;
+        width: 18px;
+      }
+      &__text{
+        font-size: 16px;
+        margin-bottom: 0;
+        color: $component-color15;
+      }
+    }
+    &__body{
+      padding: 30px;
+    }
+    &__user{
+      width: 38px;
+      height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $component-color2;
+      border-radius: 50%;
+      margin-right: 10px;
+      .icon{
+        width: 25px;
+        fill: $white;
+      }
+      &__from{
+        font-family: $firagoMedium;
+        font-size: 16px;
+        color: $black;
+        margin-bottom: 5px;
+      }
+      &__to{
+        font-family: $firagoRegular;
+        font-size: 16px;
+        color: $component-color5;
+        .icon{
+          width: 7px;
+          height: 5px;
+          fill: $component-color5;
+          cursor: pointer;
+        }
+      }
+    }
+    &__address{
+      display: flex;
+      align-items: center;
+      &__tab{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 34px;
+      }
+    }
+    &__date{
+      font-family: $firagoRegular;
+      font-size: 16px;
+      color: $component-color5;
+    }
+    &__text{
+      font-family: $firagoRegular;
+      font-size: 16px;
+      color: $component-color5;
+      margin-bottom: 0;
+      .bold{
+        font-family: $firagoBold;
+        color: $black;
+      }
+      .link{
+        color: $component-color2;
+        text-decoration: underline;
+      }
+      &__margin{
+        display: block;
+        margin-bottom: 15px;
+      }
+    }
+  }
 }
 
 .game__answer__container.zIndex {
