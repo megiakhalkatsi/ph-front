@@ -124,6 +124,9 @@
           padding-left: var(--bs-gutter-x, 0.75rem);
         }
       }
+      &.pb{
+        padding-bottom: 50px;
+      }
     }
     &__content {
       height: 100%;
@@ -145,6 +148,30 @@
       }
       @media #{$breakpoint-xxl} {
         padding: 197px 60px 197px 109px;
+      }
+      h2 {
+        font-family: $firagoBold;
+        font-size: 21px;
+        color: $black;
+        margin-bottom: 13px;
+        @media #{$breakpoint-md} {
+          font-size: 34px;
+        }
+      }
+      h3 {
+        font-family: $firagoMedium;
+        font-size: 16px;
+        color: $black;
+        margin-bottom: 21px;
+        @media #{$breakpoint-md} {
+          font-size: 21px;
+        }
+      }
+      p {
+        font-family: $firagoRegular;
+        font-size: 16px;
+        color: rgba($color: $black, $alpha: 0.6);
+        margin-bottom: 0;
       }
     }
     &__title {
@@ -257,9 +284,9 @@
         padding-top: 55px;
       }
       &.mb {
-        margin-bottom: 55px;
+        margin-bottom: 34px;
         @media #{$breakpoint-md} {
-          margin-bottom: 89px;
+          margin-bottom: 55px;
         }
       }
       &__subtitle {
@@ -533,7 +560,7 @@
         padding: 55px 30px 77px;
       }
       @media #{$breakpoint-lg} {
-        padding: 55px 0 125px;
+        padding: 55px 0 89px;
       }
 
       &.pd-sm {
@@ -579,6 +606,90 @@
       }
       @media #{$breakpoint-xl-ex} {
         flex-direction: row;
+      }
+    }
+    &__content {
+      h2 {
+        font-family: $firagoMedium;
+        font-size: 21px;
+        color: $black;
+        margin-bottom: 13px;
+      }
+      h3 {
+        font-family: $firagoMedium;
+        font-size: 16px;
+        color: $black;
+        margin-bottom: 21px;
+      }
+      p {
+        font-family: $firagoRegular;
+        font-size: 16px;
+        color: $component-color5;
+        margin-bottom: 31px;
+      }
+      a {
+        color: $component-color2;
+        text-decoration: underline;
+        &:hover {
+          color: $component-color2-darken;
+          svg {
+            stroke: $component-color2-darken;
+          }
+        }
+        svg {
+          stroke: $component-color2;
+          width: 12px;
+          height: 12px;
+          text-decoration: none;
+          margin-left: 10px;
+        }
+      }
+      ul {
+        // margin-top: 55px;
+        li {
+          color: $black;
+          font-size: 16px;
+          font-family: $firagoRegular;
+          display: flex;
+          margin-bottom: 1rem;
+          &::before {
+            content: "";
+            width: 9px;
+            height: 9px;
+            display: block;
+            background-color: $component-color2;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex: none;
+            margin-top: 8px;
+          }
+        }
+      }
+      ol {
+        // margin-top: 55px;
+        padding-left: 1rem;
+        li {
+          color: $black;
+          font-size: 16px;
+          font-family: $firagoRegular;
+          margin-bottom: 1rem;
+          &::marker {
+            font-family: $firagoSemiBold;
+            font-size: 16px;
+            margin-right: 10px;
+            flex: none;
+          }
+        }
+      }
+      strong {
+        font-family: $firagoSemiBold;
+        color: $component-color2;
+        li {
+          font-family: $firagoSemiBold;
+          font-size: 16px;
+          color: $component-color2;
+          margin-bottom: 5px;
+        }
       }
     }
   }

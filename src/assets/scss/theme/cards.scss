@@ -179,6 +179,11 @@
             &.rd-16 {
                 border-radius: 16px;
             }
+            .bg-video,
+            .about__video__section__bg,
+            .video-container {
+                border-radius: 16px;
+            }
         }
         &__icon {
             width: 16px;
