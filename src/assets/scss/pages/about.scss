@@ -211,6 +211,7 @@
         }
     }
     &__page__btn {
+        width: 100%;
         min-width: 248px;
         height: 40px;
         display: flex;
@@ -221,6 +222,7 @@
         font-size: 16px;
         margin-bottom: 10px;
         @media #{$breakpoint-md} {
+            width: auto;
             margin-bottom: 0;
         }
         &.bt-blue {
