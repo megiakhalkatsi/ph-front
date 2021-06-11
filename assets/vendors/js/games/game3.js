@@ -1,7 +1,5 @@
 
 
-
-
 var questions = [
   {
     correctAnswer: 5,
@@ -80,12 +78,13 @@ var parentCorrectNum = 0;
 var parentinCorrectNum = 0;
 
 
-function getCorrectAnsweersMarkup(correct){
-  if(correct !== 0) {
-    $('#ProgressLine').removeClass(`line__${correct - 1}`)
-    $('#ProgressLine').addClass(`line__${correct}`)
+function getCorrectAnsweersMarkup(correctAnswer){
+  if(correctAnswer !== 0) {
+    $('#ProgressLine').removeClass(`line__${correctAnswer - 1}`)
+    $('#ProgressLine').addClass(`line__${correctAnswer}`)
   }
-  $('#ProgressText').html(`კითხვა <span class="purple">${correct}</span> / 10 დან`)
+  $('#ProgressText').html(`კითხვა <span class="purple">${correctAnswer}</span> / 10 დან`)
+
 }
 
 function getQuestionsMarkup(index, array){
@@ -120,7 +119,7 @@ $( function() {
 
   const items = getQuestionsMarkup(index, questions)
 
-  $('.questions').append(items)
+  $('#GameWrapper').append(items)
 });
 
 
@@ -169,14 +168,14 @@ $( "#successModalBtn" ).click(function() {
     $('.game__result__container').removeClass('active')
     $('.mainBody').attr('style', 'display: none')
       $('.success').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
-      $('#correctAnswers1').html(`${correctAnswer}/10 კითხვა`)
+      document.querySelector('.fail #correctAnswers').innerHTML = `${parentCorrectNum}/10 კითხვა`
   }
   
   if(parentCorrectNum <= 5) {
     $('.game__result__container').removeClass('active')
     $('.mainBody').attr('style', 'display: none')
       $('.fail').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
-      $('#correctAnswers2').html(`${correctAnswer}/10 კითხვა`)
+      document.querySelector('.fail #correctAnswers').innerHTML = `${parentCorrectNum}/10 კითხვა`
   }
 });
 
@@ -186,88 +185,22 @@ $( "#gameReset" ).click(function() {
     document.querySelector('.fail').setAttribute('style', 'display: none')
     document.querySelector('.success').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').classList.remove('active')
-    $('#DogImage').attr('src', '../assets/img/illustrations/fiqrobs-image.gif')
-
-  incorrect = 0;
-  correctAnswer = 0;
-  attampt = 0;
     
-  index = 0;
-  parentCorrectNum = 0;
-  parentinCorrectNum = 0;
+  //   $('.game__dragAndDrop__text').removeClass('active')
+  //   $('.game__dragAndDrop__text').attr('style','display: none')
 
-  getCorrectAnsweersMarkup(attampt)
-    $('.questions').html('')
+    const items = getQuestionsMarkup(1, arr)
   
-    const items = getQuestionsMarkup(0, arr)
-  
-    $('.questions').append(items)
+    $('#GameWrapper').append(items)
 
-    $('.DroppableItem').attr('data-append', false)
-
-    $( ".DroppableItem" ).droppable({
-      drop: function( event, ui ) {
-          console.log('11111111111111')
-          if($( this ).attr('data-append') == 'false' && ui.draggable.attr('data-correct') == event.target.getAttribute('data-correct')) {
-            correctAnswer++
-            parentCorrectNum = correctAnswer;
-            attampt++
-
-            var new_signature = $(ui.helper).clone();
-            $(this).append(new_signature);
-            $(new_signature).removeAttr('style')
-            $(new_signature).addClass('success')
-            getCorrectAnsweersMarkup(attampt)
-
-
-            $(this).find('.DraggableItem p').text($(this).find('.DraggableItem p').attr('modifierName'))
-
-            $( this ).attr('data-append', true)
-            $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
-
-        } else if($( this ).attr('data-append') == 'false' && ui.draggable.attr('data-correct') !== event.target.getAttribute('data-correct')) {
-          incorrect++
-          attampt++
-          parentinCorrectNum = incorrect
-          var new_signature = $(ui.helper).clone();
-          $(this).append(new_signature);
-          $(new_signature).removeAttr('style')
-          $(new_signature).addClass('error')
-          getCorrectAnsweersMarkup(attampt)
-      
-            $(this).find('.DraggableItem p').text($(this).find('.DraggableItem p').attr('modifierName'))
-            $( this ).attr('data-append', true)
-          $('#DogImage').attr('src', '../assets/img/illustrations/incorrect-image.gif')
-
-            ui.draggable.attr('style', "position: relative")
-        }
-
-        if(attampt === 10) {
-          setTimeout(() => {
-              document.querySelector('.game__result__container').classList.add('active')
-              document.querySelector('.game__result__container').setAttribute('style', 'z-index: 11')
-          }, 2000)
-        }
-
-        
-      }
-    }); 
-
+    $('.DroppableItem').attr('data-append', 'true')
 });
 
 
 $( ".completGame" ).click(function() {
   $('.mainBody').removeAttr('style')
     document.querySelector('.fail').setAttribute('style', 'display: none')
-    document.querySelector('.success').setAttribute('style', 'display: none; position: absolute;top: 0;left: 0;right: 0;z-index: 11111;}')
-    document.querySelector('.game__result__container').classList.remove('active')
-});
-
-$( ".completGame2" ).click(function() {
-  $('.mainBody').removeAttr('style')
-    document.querySelector('.fail').setAttribute('style', 'display: none')
-  $('.success').removeAttr('style')
-  $('.success').attr('style', 'display: none');
+    document.querySelector('.success').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').classList.remove('active')
 });
 
@@ -282,7 +215,7 @@ $( ".game__answer__container" ).mouseleave(function() {
 
 
 $( function() {
-    getCorrectAnsweersMarkup(attampt)
+    getCorrectAnsweersMarkup(correctAnswer)
 
     $( ".DraggableItem" ).draggable({ revert: "invalid", helper : "clone",
     start: function( event, ui ) {
@@ -291,15 +224,17 @@ $( function() {
 
     $( ".DroppableItem" ).droppable({
       drop: function( event, ui ) {
+        
           if($( this ).attr('data-append') == 'false' && ui.draggable.attr('data-correct') == event.target.getAttribute('data-correct')) {
             correctAnswer++
             parentCorrectNum = correctAnswer;
             attampt++
+
             var new_signature = $(ui.helper).clone();
             $(this).append(new_signature);
             $(new_signature).removeAttr('style')
             $(new_signature).addClass('success')
-            getCorrectAnsweersMarkup(attampt)
+            getCorrectAnsweersMarkup(correctAnswer)
 
 
             $(this).find('.DraggableItem p').text($(this).find('.DraggableItem p').attr('modifierName'))
@@ -311,11 +246,11 @@ $( function() {
           incorrect++
           attampt++
           parentinCorrectNum = incorrect
+
           var new_signature = $(ui.helper).clone();
-          $(this).append(new_signature);
-          $(new_signature).removeAttr('style')
-          $(new_signature).addClass('error')
-          getCorrectAnsweersMarkup(attampt)
+            $(this).append(new_signature);
+            $(new_signature).removeAttr('style')
+            $(new_signature).addClass('error')
       
             $(this).find('.DraggableItem p').text($(this).find('.DraggableItem p').attr('modifierName'))
             $( this ).attr('data-append', true)
@@ -324,7 +259,7 @@ $( function() {
             ui.draggable.attr('style', "position: relative")
         }
 
-        if(attampt === 10) {
+        if(attampt === 1) {
           setTimeout(() => {
               document.querySelector('.game__result__container').classList.add('active')
               document.querySelector('.game__result__container').setAttribute('style', 'z-index: 11')
