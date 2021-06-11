@@ -1264,9 +1264,12 @@
     &__header{
       background-color: $component-color14;
       height: 60px;
-      padding: 10px 40px 10px 30px;
+      padding: 10px;
       display: flex;
       align-items: center;
+      @media #{$breakpoint-md} {
+        padding: 10px 40px 10px 30px;
+      }
     }
     &__dot{
       width: 18px;
@@ -1287,8 +1290,11 @@
         background-color: $component-color9;
       }
       &__cont{
-        display: flex;
+        display: none;
         margin-right: 43px;
+        @media #{$breakpoint-md} {
+          display: flex;
+        }
       }
     }
     &__tab{
@@ -1348,16 +1354,34 @@
     &__address{
       display: flex;
       align-items: center;
+      padding-bottom: 30px;
+      border-bottom: 1px solid $component-color3;
+      @media #{$breakpoint-md} {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
       &__tab{
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
         margin-bottom: 34px;
+        @media #{$breakpoint-md} {
+          flex-direction: row;
+        }
       }
     }
     &__date{
       font-family: $firagoRegular;
       font-size: 16px;
       color: $component-color5;
+      padding-bottom: 30px;
+      padding-top: 30px;
+      border-bottom: 1px solid $component-color3;
+      @media #{$breakpoint-md} {
+        padding-bottom: 0;
+        padding-top: 0;
+        border-bottom: none;
+      }
     }
     &__text{
       font-family: $firagoRegular;
@@ -1375,6 +1399,37 @@
       &__margin{
         display: block;
         margin-bottom: 15px;
+      }
+    }
+  }
+  &__web{
+    &__header{
+      background-color: $component-color8;
+      padding: 13px 28px;
+      &__img{
+        width: 30px;
+        object-fit: contain;
+      }
+      &__logo{
+        display: flex;
+        align-items: center;
+        &-div{
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 4px;
+          background-color: $component-color2;
+          margin-right: 10px;
+        }
+        &__title{
+          color: $white;
+          font-family: $firagoBold;
+          font-size: 16px;
+          margin-bottom: 0;
+          text-transform: uppercase;
+        }
       }
     }
   }
