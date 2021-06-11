@@ -729,11 +729,15 @@
     }
     &__td {
       border-left: 1px solid rgba($color: $component-color5, $alpha: 0.4);
-      // vertical-align: bottom;
       vertical-align: middle;
+      &.flex {
+        width: 100%;
+        display: flex;
+      }
     }
     &__body {
       background-color: $white;
+      border-radius: 0 0 10px 10px;
       &__tr {
         border-bottom: 1px solid rgba($color: $component-color5, $alpha: 0.4);
         &:last-child {
@@ -753,6 +757,13 @@
         text-align: center;
         vertical-align: middle;
         padding: 28px !important;
+      }
+      &.block {
+        display: block;
+        min-height: 240px;
+        @media #{$breakpoint-lg} {
+          min-height: 400px;
+        }
       }
     }
     .game__answer__container {
@@ -775,6 +786,33 @@
       &.success {
         background-color: $component-color9;
         border: 2px solid $component-color9;
+      }
+      &.blue-border {
+        .game__text {
+          color: $black;
+        }
+        &.error {
+          border: 2px solid $error-red;
+          background-color: $white;
+          &:hover {
+            background-color: $error-red;
+          }
+        }
+        &.success {
+          border: 2px solid $component-color9;
+          background-color: $white;
+          &:hover {
+            background-color: $component-color9;
+          }
+        }
+        &.mr {
+          margin-right: 20px;
+        }
+        &:hover {
+          .game__text {
+            color: $white;
+          }
+        }
       }
     }
   }
@@ -1213,11 +1251,247 @@
       }
     }
   }
+  &__mail {
+    border: 2px solid $component-color14;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    &__title {
+      font-family: $firagoMedium;
+      font-size: 21px;
+      color: $black;
+      margin-bottom: 34px;
+    }
+    &__header {
+      background-color: $component-color14;
+      height: 60px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      @media #{$breakpoint-md} {
+        padding: 10px 40px 10px 30px;
+      }
+    }
+    &__dot {
+      width: 18px;
+      height: 18px;
+      display: block;
+      border-radius: 50%;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.red {
+        background-color: $error-red;
+      }
+      &.yellow {
+        background-color: $component-color7;
+      }
+      &.green {
+        background-color: $component-color9;
+      }
+      &__cont {
+        display: none;
+        margin-right: 43px;
+        @media #{$breakpoint-md} {
+          display: flex;
+        }
+      }
+    }
+    &__tab {
+      width: 100%;
+      height: 40px;
+      background-color: $white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .icon {
+        stroke: #afb5b8;
+        height: 20px;
+        width: 18px;
+      }
+      &__text {
+        font-size: 16px;
+        margin-bottom: 0;
+        color: $component-color15;
+      }
+    }
+    &__body {
+      padding: 30px;
+    }
+    &__user {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $component-color2;
+      border-radius: 50%;
+      margin-right: 10px;
+      .icon {
+        width: 25px;
+        fill: $white;
+      }
+      &__from {
+        font-family: $firagoMedium;
+        font-size: 16px;
+        color: $black;
+        margin-bottom: 5px;
+      }
+      &__to {
+        font-family: $firagoRegular;
+        font-size: 16px;
+        color: $component-color5;
+        .icon {
+          width: 7px;
+          height: 5px;
+          fill: $component-color5;
+          cursor: pointer;
+        }
+      }
+    }
+    &__address {
+      display: flex;
+      align-items: center;
+      padding-bottom: 30px;
+      border-bottom: 1px solid $component-color3;
+      @media #{$breakpoint-md} {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      &__tab {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 34px;
+        @media #{$breakpoint-md} {
+          flex-direction: row;
+        }
+      }
+    }
+    &__date {
+      font-family: $firagoRegular;
+      font-size: 16px;
+      color: $component-color5;
+      padding-bottom: 30px;
+      padding-top: 30px;
+      border-bottom: 1px solid $component-color3;
+      @media #{$breakpoint-md} {
+        padding-bottom: 0;
+        padding-top: 0;
+        border-bottom: none;
+      }
+    }
+    &__text {
+      font-family: $firagoRegular;
+      font-size: 16px;
+      color: $component-color5;
+      margin-bottom: 0;
+      .bold {
+        font-family: $firagoBold;
+        color: $black;
+      }
+      .link {
+        color: $component-color2;
+        text-decoration: underline;
+      }
+      &__margin {
+        display: block;
+        margin-bottom: 15px;
+      }
+    }
+  }
+  &__web {
+    &__header {
+      background-color: $component-color8;
+      padding: 13px 28px;
+      @media #{$breakpoint-md} {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &__img {
+        width: 30px;
+        object-fit: contain;
+      }
+      &__logo {
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $white;
+        @media #{$breakpoint-md} {
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+        &-div {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 4px;
+          background-color: $component-color2;
+          margin-right: 10px;
+        }
+        &__title {
+          color: $white;
+          font-family: $firagoBold;
+          font-size: 16px;
+          margin-bottom: 0;
+          text-transform: uppercase;
+        }
+      }
+      &__nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 17px;
+        @media #{$breakpoint-md} {
+          margin-top: 0;
+          margin-bottom: 0;
+          justify-content: flex-end;
+        }
+        &__item {
+          width: 40px;
+          height: 40px;
+          border-radius: 8px;
+          margin-left: 10px;
+          background-color: $white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .icon {
+            stroke: $black;
+            width: 14px;
+            height: 14px;
+          }
+        }
+        &__img {
+          width: 21px;
+          object-fit: contain;
+        }
+      }
+    }
+    &__body {
+      &__title {
+        font-size: 21px;
+        text-align: left;
+        @media #{$breakpoint-md} {
+          font-size: 34px;
+          text-align: center;
+        }
+      }
+      .form-group {
+        margin-bottom: 21px;
+      }
+    }
+  }
 }
 
 .game__answer__container.zIndex {
   z-index: 111111;
-} 
+}
 
 .gameResult__btn {
   width: fit-content;
@@ -1237,5 +1511,165 @@
   /* landscape-specific styles */
   #rightsMarketGameModal {
     display: none;
+  }
+}
+
+.swiper {
+  &-container {
+    position: relative;
+    width: 98%;
+    @media #{$breakpoint-md} {
+      width: 100%;
+    }
+    @media #{$breakpoint-lg} {
+      width: 918px;
+    }
+    @media #{$breakpoint-xl} {
+      width: 1158px;
+    }
+    @media #{$breakpoint-xl-ex} {
+      width: 1158px;
+    }
+    @media #{$breakpoint-xxl} {
+      width: 1638px;
+    }
+
+    & > .swiper-slide__content {
+      position: absolute;
+      top: 0;
+    }
+  }
+  &-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 200ms linear;
+    transform: scale(0.8);
+    opacity: 0.2;
+    position: relative;
+    // height: 382px;
+    margin-bottom: 62px;
+    &.swiper-slide-active {
+      transform: scale(1);
+      opacity: 1;
+    }
+    @media #{$breakpoint-md} {
+      height: 420px;
+      margin-bottom: 0;
+    }
+    @media #{$breakpoint-lg} {
+      height: 458px;
+    }
+    @media #{$breakpoint-xl} {
+      height: 484px;
+    }
+    @media #{$breakpoint-xxl} {
+      height: 660px;
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &-drop {
+      width: 60px;
+      height: 93px;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      backdrop-filter: blur(15px) brightness(150%);
+      border: 2px solid $white;
+      @media only screen and (min-width: 400px) {
+        width: 93px;
+        height: 130px;
+      }
+      @media #{$breakpoint-sm} {
+        width: 135px;
+        height: 172px;
+      }
+      @media #{$breakpoint-md} {
+        width: 66px;
+        height: 103px;
+      }
+      @media #{$breakpoint-lg} {
+        width: 73px;
+        height: 112px;
+      }
+      @media #{$breakpoint-xl} {
+        width: 76px;
+        height: 119px;
+      }
+      @media #{$breakpoint-xxl} {
+        width: 104px;
+        height: 163px;
+      }
+      .age__categories__item {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &-button {
+    fill: $component-color2;
+    @media #{$breakpoint-xxl} {
+      width: 46px;
+    }
+    &::after {
+      content: none;
+    }
+    &-prev {
+      transform: rotate(180deg) translate(-50%);
+      bottom: 15px;
+      top: auto;
+      left: 30%;
+      @media #{$breakpoint-md} {
+        bottom: auto;
+        top: 50%;
+        left: 27%;
+      }
+      @media #{$breakpoint-lg} {
+        left: 30%;
+      }
+    }
+    &-next {
+      transform: translateX(-50%);
+      bottom: 15px;
+      top: auto;
+      right: 30%;
+      @media #{$breakpoint-md} {
+        bottom: auto;
+        top: 50%;
+        right: 27%;
+      }
+      @media #{$breakpoint-lg} {
+        right: 30%;
+      }
+    }
+  }
+}
+
+.age__categories {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  @media #{$breakpoint-lg} {
+    overflow-x: visible;
+  }
+  &__item {
+    height: 55px;
+    margin-right: 37px;
+    object-fit: contain;
+    &:last-child {
+      margin-right: 0;
+    }
+    @media #{$breakpoint-md} {
+      height: 112px;
+    }
+  }
+  &__title {
+    font-size: 21px;
+    color: $black;
+    font-family: $firagoMedium;
+    margin-bottom: 34px;
   }
 }

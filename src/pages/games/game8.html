@@ -1,0 +1,152 @@
+---
+layout: gamesLayout
+title: მოსწავლეების რესურსი
+---
+
+<div class="modal-body game__modal-body mainBody">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <h2 class="game__text lg mb-34">პაროლის ნიმუშები</h2>
+      <div class="game__dragAndDrop__container">
+        <div class="game__answer__container blue blue-border mr ">
+          <p class="game__text md">Nata_Bulia14</p>
+        </div>
+        <div class="game__answer__container blue blue-border mr ">
+          <p class="game__text md">Mozart56-Nata07</p>
+        </div>
+        <div class="game__answer__container blue blue-border mr ">
+          <p class="game__text md">Nata-Music2007</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="table-responsive-lg">
+            <table class="table game__table">
+              <thead class="game__table__thead">
+                <tr class="game__table__thead__tr">
+                  <th scope="col" class="game__table__th text-center">დაცული პაროლი</th>
+                </tr>
+              </thead>
+              <tbody class="game__table__body block">
+                <tr class="game__table__body__tr">
+                  <td class="game__table__td flex">
+                    <div class="game__answer__container blue blue-border mr success">
+                      <p class="game__text md">Mozart56-Nata07</p>
+                    </div>
+                    <div class="game__answer__container blue blue-border mr success">
+                      <p class="game__text md">Mozart56-Nata07</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="table-responsive-lg">
+            <table class="table game__table">
+              <thead class="game__table__thead">
+                <tr class="game__table__thead__tr">
+                  <th scope="col" class="game__table__th text-center">დაუცველი პაროლი</th>
+                </tr>
+              </thead>
+              <tbody class="game__table__body block">
+                <tr class="game__table__body__tr">
+                  <td class="game__table__td flex">
+                    <div class="game__answer__container blue blue-border mr error">
+                      <p class="game__text md">Mozart56-Nata07</p>
+                    </div>
+                    <div class="game__answer__container blue blue-border mr">
+                      <p class="game__text md">Mozart56-Nata07</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 game__content-col-bottom">
+      <div class="row game__img__btn__row align-center-xl-ex">
+        <div class="col-12 col-md-2 game__img__col-relative">
+          <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+            class="game__img__picture game__img-dog lg bottom">
+        </div>
+        <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
+          <div class="game__button__container">
+            <button id="resetButton" class="about__page__btn game__button mr bt-gray">თავიდან დაწყება</button>
+            <button id="finishButton" class="about__page__btn game__button bt-blue">შემოწმება</button>
+            <button id="completBtn" class="about__page__btn game__button bt-blue"
+              style="display: none;">დასრულება</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="game__result__container">
+  <a href="#" class="game__result">
+    <p class="game__result__text">თქვენ დაასრულეთ თამაში</p>
+    <div class="game__result__btn" id="successModalBtn">შედეგების ნახვა</div>
+  </a>
+</div>
+
+<div class="modal-body game__modal-body successModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+      <h2 class="game__finish__text lg green">გილოცავთ !</h2>
+      <p class="game__finish__text">თქვენ წარმატებით დაასრულეთ თამაში! <span class="d-block" id="correctAnswers">0/16
+          კითხვა</span></p>
+      <picture>
+        <source media="(min-width:768px)" srcset="../assets/img/illustrations/happy.gif" type="image/gif">
+        <source srcset="../assets/img/illustrations/happy-mobile.gif" type="image/gif">
+        <img src="../assets/img/illustrations/happy-mobile.gif" alt="congratulations" class="game__finish__img">
+      </picture>
+      <div class="game__button__container justify-content-center mb-0">
+        <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-body game__modal-body failModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+      <h2 class="game__finish__text lg orange">კიდევ სცადე</h2>
+      <p class="game__finish__text">სულ ცოტა დაგაკლდა. <span class="d-block" id="correctAnswers">0/16 კითხვა</span></p>
+      <p class="game__finish__text sm">კიდევ სცადე და ყველაფერი გამოგივა. მთავარია, ყურადღებით გაუყვე კითხვებს.</p>
+      <img src="../assets/img/illustrations/support.gif" alt="congratulations" class="game__finish__img">
+      <div class="game__button__container justify-content-center mb-0">
+        <button class="about__page__btn game__button mr bt-gray" id="gameReset">ახლიდან დაწყება</button>
+        <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
+    <div class="modal-content radius-16">
+      <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+        <svg class="icon">
+          <use xlink:href="#cancel-icon"></use>
+        </svg>
+      </button>
+      <div class="modal-body notificationModal-body">
+        <p class="section__main__text mb-0">
+          შეავსეთ ყველა უჯრა
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -138,6 +138,15 @@
       &:hover {
         text-decoration: none;
       }
+      &.search {
+        margin-right: 0px;
+        @media #{$breakpoint-sm} {
+          margin-right: 20px;
+        }
+        @media #{$breakpoint-lg} {
+          margin-right: 30px;
+        }
+      }
       &-link {
         font-size: 21px;
         font-family: $firagoMedium;

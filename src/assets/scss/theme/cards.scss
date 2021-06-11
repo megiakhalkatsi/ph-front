@@ -2,9 +2,12 @@
     &__item {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        //align-items: center;
         width: 100%;
         margin-bottom: 10px;
+        @media #{$breakpoint-md} {
+            align-items: center;
+        }
         &:hover {
             text-decoration: none;
             .theme__item__title {
@@ -18,15 +21,11 @@
             }
         }
         &__img {
-            height: 270px;
-            width: 270px;
+            height: 100%;
+            width: 100%;
             object-fit: cover;
             object-position: center;
             border-radius: 16px;
-            @media #{$breakpoint-xxs} {
-                height: 290px;
-                width: 290px;
-            }
             @media #{$breakpoint-md} {
                 height: 202px;
                 width: 202px;
@@ -44,12 +43,8 @@
                 width: 248px;
             }
             &.sm {
-                height: 270px;
-                width: 270px;
-                @media #{$breakpoint-xxs} {
-                    height: 290px;
-                    width: 290px;
-                }
+                height: 100%;
+                width: 100%;
                 @media #{$breakpoint-md} {
                     height: 202px;
                     width: 202px;
@@ -74,6 +69,7 @@
             color: $black;
             margin-top: 14px;
             margin-bottom: 0;
+            text-align: center;
             @media #{$breakpoint-xl-ex} {
                 font-size: 21px;
             }
@@ -177,6 +173,12 @@
             height: 100%;
             border-radius: 8px 8px 0 0;
             &.rd-16 {
+                border-radius: 16px;
+            }
+            .bg-video,
+            .about__video__section__bg,
+            .video-container {
+                overflow: hidden;
                 border-radius: 16px;
             }
         }
