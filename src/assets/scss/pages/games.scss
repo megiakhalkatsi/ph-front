@@ -730,7 +730,7 @@
     &__td {
       border-left: 1px solid rgba($color: $component-color5, $alpha: 0.4);
       vertical-align: middle;
-      &.flex{
+      &.flex {
         width: 100%;
         display: flex;
       }
@@ -758,7 +758,7 @@
         vertical-align: middle;
         padding: 28px !important;
       }
-      &.block{
+      &.block {
         display: block;
         min-height: 240px;
         @media #{$breakpoint-lg} {
@@ -787,29 +787,29 @@
         background-color: $component-color9;
         border: 2px solid $component-color9;
       }
-      &.blue-border{
-        .game__text{
+      &.blue-border {
+        .game__text {
           color: $black;
         }
         &.error {
           border: 2px solid $error-red;
           background-color: $white;
-          &:hover{
+          &:hover {
             background-color: $error-red;
           }
         }
         &.success {
           border: 2px solid $component-color9;
           background-color: $white;
-          &:hover{
+          &:hover {
             background-color: $component-color9;
           }
         }
         &.mr {
           margin-right: 20px;
         }
-        &:hover{
-          .game__text{
+        &:hover {
+          .game__text {
             color: $white;
           }
         }
@@ -1251,17 +1251,17 @@
       }
     }
   }
-  &__mail{
+  &__mail {
     border: 2px solid $component-color14;
     border-radius: 8px;
     margin-bottom: 5px;
-    &__title{
+    &__title {
       font-family: $firagoMedium;
       font-size: 21px;
       color: $black;
       margin-bottom: 34px;
     }
-    &__header{
+    &__header {
       background-color: $component-color14;
       height: 60px;
       padding: 10px;
@@ -1271,25 +1271,25 @@
         padding: 10px 40px 10px 30px;
       }
     }
-    &__dot{
+    &__dot {
       width: 18px;
       height: 18px;
       display: block;
       border-radius: 50%;
       margin-right: 10px;
-      &:last-child{
+      &:last-child {
         margin-right: 0;
       }
-      &.red{
+      &.red {
         background-color: $error-red;
       }
-      &.yellow{
+      &.yellow {
         background-color: $component-color7;
       }
-      &.green{
+      &.green {
         background-color: $component-color9;
       }
-      &__cont{
+      &__cont {
         display: none;
         margin-right: 43px;
         @media #{$breakpoint-md} {
@@ -1297,7 +1297,7 @@
         }
       }
     }
-    &__tab{
+    &__tab {
       width: 100%;
       height: 40px;
       background-color: $white;
@@ -1306,21 +1306,21 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .icon{
-        stroke: #AFB5B8;
+      .icon {
+        stroke: #afb5b8;
         height: 20px;
         width: 18px;
       }
-      &__text{
+      &__text {
         font-size: 16px;
         margin-bottom: 0;
         color: $component-color15;
       }
     }
-    &__body{
+    &__body {
       padding: 30px;
     }
-    &__user{
+    &__user {
       width: 38px;
       height: 38px;
       display: flex;
@@ -1329,21 +1329,21 @@
       background-color: $component-color2;
       border-radius: 50%;
       margin-right: 10px;
-      .icon{
+      .icon {
         width: 25px;
         fill: $white;
       }
-      &__from{
+      &__from {
         font-family: $firagoMedium;
         font-size: 16px;
         color: $black;
         margin-bottom: 5px;
       }
-      &__to{
+      &__to {
         font-family: $firagoRegular;
         font-size: 16px;
         color: $component-color5;
-        .icon{
+        .icon {
           width: 7px;
           height: 5px;
           fill: $component-color5;
@@ -1351,7 +1351,7 @@
         }
       }
     }
-    &__address{
+    &__address {
       display: flex;
       align-items: center;
       padding-bottom: 30px;
@@ -1360,7 +1360,7 @@
         padding-bottom: 0;
         border-bottom: none;
       }
-      &__tab{
+      &__tab {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -1370,7 +1370,7 @@
         }
       }
     }
-    &__date{
+    &__date {
       font-family: $firagoRegular;
       font-size: 16px;
       color: $component-color5;
@@ -1383,37 +1383,48 @@
         border-bottom: none;
       }
     }
-    &__text{
+    &__text {
       font-family: $firagoRegular;
       font-size: 16px;
       color: $component-color5;
       margin-bottom: 0;
-      .bold{
+      .bold {
         font-family: $firagoBold;
         color: $black;
       }
-      .link{
+      .link {
         color: $component-color2;
         text-decoration: underline;
       }
-      &__margin{
+      &__margin {
         display: block;
         margin-bottom: 15px;
       }
     }
   }
-  &__web{
-    &__header{
+  &__web {
+    &__header {
       background-color: $component-color8;
       padding: 13px 28px;
-      &__img{
+      @media #{$breakpoint-md} {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &__img {
         width: 30px;
         object-fit: contain;
       }
-      &__logo{
+      &__logo {
         display: flex;
         align-items: center;
-        &-div{
+        padding-bottom: 20px;
+        border-bottom: 1px solid $white;
+        @media #{$breakpoint-md} {
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+        &-div {
           width: 40px;
           height: 40px;
           display: flex;
@@ -1423,13 +1434,56 @@
           background-color: $component-color2;
           margin-right: 10px;
         }
-        &__title{
+        &__title {
           color: $white;
           font-family: $firagoBold;
           font-size: 16px;
           margin-bottom: 0;
           text-transform: uppercase;
         }
+      }
+      &__nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 17px;
+        @media #{$breakpoint-md} {
+          margin-top: 0;
+          margin-bottom: 0;
+          justify-content: flex-end;
+        }
+        &__item {
+          width: 40px;
+          height: 40px;
+          border-radius: 8px;
+          margin-left: 10px;
+          background-color: $white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .icon {
+            stroke: $black;
+            width: 14px;
+            height: 14px;
+          }
+        }
+        &__img {
+          width: 21px;
+          object-fit: contain;
+        }
+      }
+    }
+    &__body {
+      &__title {
+        font-size: 21px;
+        text-align: left;
+        @media #{$breakpoint-md} {
+          font-size: 34px;
+          text-align: center;
+        }
+      }
+      .form-group {
+        margin-bottom: 21px;
       }
     }
   }

@@ -217,6 +217,7 @@
     &__img {
       width: 100%;
       object-fit: contain;
+      border-radius: 10px;
     }
     &__header {
       display: flex;
@@ -729,6 +730,7 @@
       max-width: 230px;
       object-fit: contain;
       margin: 34px auto;
+      border-radius: 10px;
       @media #{$breakpoint-md} {
         margin: 55px auto;
         max-width: 300px;

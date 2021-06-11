@@ -20,7 +20,7 @@ title: მოსწავლეების რესურსი
             </svg>
           </div>
         </div>
-        <div class="game__web__body">
+        <div>
           <div class="game__web__header">
             <div class="game__web__header__logo">
               <div class="game__web__header__logo-div">
@@ -28,6 +28,71 @@ title: მოსწავლეების რესურსი
               </div>
               <h2 class="game__web__header__logo__title">tansatsmeli</h2>
             </div>
+            <div class="game__web__header__nav">
+              <div class="game__web__header__nav__item">
+                <svg class="icon">
+                  <use xlink:href="#ico-search"></use>
+                </svg>
+              </div>
+              <div class="game__web__header__nav__item"> 
+                <img src="../assets/img/icons/shoppingCart.svg" class="game__web__header__nav__img">
+              </div>
+              <div class="game__web__header__nav__item">
+                <img src="../assets/img/icons/menu.png" class="game__web__header__nav__img">
+              </div>
+            </div>
+          </div>
+          <div class="game__web__body">
+            <div class="container">
+              <section class="page__nav">
+                  <ul class="page__nav__list">
+                      <li class="page__nav__list__item">
+                          <a href="#" class="page__nav__list__item-link">მთავარი</a>
+                      </li>
+                      <li class="page__nav__list__item">
+                          <svg class="icon">
+                              <use xlink:href="#ico-chevron-right"></use>
+                          </svg>
+                      </li>
+                      <li class="page__nav__list__item">
+                          <a href="#" class="page__nav__list__item-link">გადახდა</a>
+                      </li>
+                  </ul>
+              </section>
+              <section class="form__section">
+                  <div class="row">
+                      <div class="col-12">
+                          <h1 class="form__section__title game__web__body__title">დავალიანების გადახდა</h1>
+                          <form class="form">
+                              <div class="form-group">
+                                  <label for="fullName" class="form__label">სახელი და გვარი</label>
+                                  <input type="text" class="form-control form__input" id="fullName" >
+                              </div>
+                              <div class="form-group">
+                                <label for="privateNumb" class="form__label">ბარათის ნომერი</label>
+                                <input type="text" class="form-control form__input" id="privateNumb" >
+                              </div>
+                              <div class="row">
+                                <div class="col-12 col-md-6">
+                                  <div class="form-group">
+                                    <label for="date" class="form__label">მოქმედების ვადა</label>
+                                    <input type="text" class="form-control form__input" id="date" placeholder="თთ/წწ">
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="form-group">
+                                    <label for="cvc" class="form__label">ბარათის CVC</label>
+                                    <input type="text" class="form-control form__input" id="cvc" >
+                                  </div>
+                                </div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </section>
+          </div>
+
+
           </div>
         </div>
       </div>
