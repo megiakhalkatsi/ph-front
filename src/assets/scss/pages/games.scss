@@ -318,7 +318,7 @@
       }
     }
     &-dog {
-      margin-right: 10px;
+      // margin-right: 10px;
       width: 338px;
       height: 230px;
       object-fit: contain;
@@ -326,6 +326,7 @@
       @media #{$breakpoint-md} {
         width: 200px;
         margin-bottom: 0;
+        margin-right: 10px;
       }
       @media #{$breakpoint-xl} {
         min-width: 280px;
@@ -553,6 +554,15 @@
       margin: auto;
       @media #{$breakpoint-lg} {
         max-width: 100%;
+      }
+      &.mw-762{
+        max-width: 666px;
+        @media #{$breakpoint-md} {
+          max-width: 762px;
+        }
+        @media #{$breakpoint-lg} {
+          max-width: 100%;
+        }
       }
     }
   }
@@ -1411,6 +1421,9 @@
         justify-content: space-between;
         align-items: center;
       }
+      &.dark{
+        background-color: $component-color5;
+      }
       &__img {
         width: 30px;
         object-fit: contain;
@@ -1433,6 +1446,9 @@
           border-radius: 4px;
           background-color: $component-color2;
           margin-right: 10px;
+          &.white{
+            background-color: $white;
+          }
         }
         &__title {
           color: $white;
@@ -1484,6 +1500,70 @@
       }
       .form-group {
         margin-bottom: 21px;
+      }
+      .purple{
+        display: block;
+        color: $component-color2;
+        font-size: 21px;
+      }
+    }
+  }
+  &__hacker{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__img{
+      width: 100%;
+      height: 347px;
+      object-fit: contain;
+      margin-bottom: 34px;
+    }
+    &__text{
+      font-family: $firagoRegular;
+      font-size: 21px;
+      color: $black;
+      text-align: center;
+      .bold{
+        color: $component-color2;
+        font-family: $firagoMedium;
+        font-size: 34px;
+        display: block;
+      }
+    }
+  }
+  &__rightDec{
+    text-align: center;
+    padding: 80px 0;
+    @media #{$breakpoint-xl-ex} {
+      padding: 150px 0;
+    }
+    &__icon{
+      height: 30px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      @media #{$breakpoint-md} {
+        height: 50px;
+      }
+    }
+    &__title{
+      font-family: $firagoMedium;
+      font-size: 21px;
+      margin-bottom: 10px;
+      color: $component-color2;
+      @media #{$breakpoint-md} {
+        font-size: 34px;
+      }
+    }
+    &__text{
+      font-family: $firagoRegular;
+      font-size: 16px;
+      color: rgba($color: $black, $alpha: 0.6);
+      @media #{$breakpoint-md} {
+        font-size: 21px;
+      }
+      .link{
+        color: $component-color2;
+        text-decoration: underline;
       }
     }
   }
