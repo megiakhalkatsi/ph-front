@@ -175,6 +175,9 @@ body {
             flex: none;
             margin-top: 8px;
           }
+          a{
+            display: contents;
+          }
         }
       }
       ol {
@@ -190,6 +193,9 @@ body {
             font-size: 16px;
             margin-right: 10px;
             flex: none;
+          }
+          a{
+            display: contents;
           }
         }
       }
