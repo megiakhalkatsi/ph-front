@@ -676,7 +676,7 @@
             font-family: $firagoRegular;
             font-size: 16px;
             color: rgba($color: $black, $alpha: 0.3);
-            &.selected{
+            &.selected {
                 color: $black;
             }
             &:after {
@@ -687,14 +687,21 @@
         }
         &.opened {
             border: 2px solid $component-color2;
-            border-bottom:  transparent;
+            border-bottom: transparent;
             border-radius: 8px 8px 0 0;
             .custom-options {
                 border-top: transparent;
                 border-radius: 0 0 8px 8px;
-                width: 100.8%;
+                width: 101.4%;
                 left: -2px;
-                top: 30px;
+                top: 28px;
+                @media only screen and (min-width: 340px){
+                    width: 101%;
+                }
+                @media #{$breakpoint-lg} {
+                    width: 100.8%;
+                    top: 29px;
+                }
             }
             .custom-select-trigger:after {
                 transform: translateY(-50%) rotate(180deg);
@@ -702,10 +709,10 @@
             }
         }
     }
-    .custom-option{
+    .custom-option {
         color: $component-color2;
         border-radius: 8px;
-        &:hover{
+        &:hover {
             background-color: $component-color2;
             color: $white;
         }
