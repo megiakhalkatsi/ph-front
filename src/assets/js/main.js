@@ -154,6 +154,7 @@ $(".custom-select").each(function() {
     $(this).addClass("selection");
     $(this).parents(".custom-select").removeClass("opened");
     $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+    $(this).parents(".custom-select").find(".custom-select-trigger").addClass("selected");
   });
 
 // dropdown
