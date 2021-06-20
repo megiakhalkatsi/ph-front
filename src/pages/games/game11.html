@@ -1,0 +1,107 @@
+---
+layout: gamesLayout
+title: მოსწავლეების რესურსი
+---
+
+<div class="modal-body game__modal-body">
+    <div class="row">
+        <div class="col-12 col-lg-8 page__content-col m-auto">
+            <div class="game__box__container overflow-hidden">
+                <div class="game__box__header orange">
+                    <h2 class="game__box__title">დანაშაულის პრევენციის გზები</h2>
+                </div>
+                <div class="row flex-nowrap overflow-auto">
+                    <div class="col-8 col-md-4">
+                        <div class="game__box__body orange relative">
+                            <div class="game__box__body__title">სახელმწიფო</div>
+                            <div class="editable game__box__list__container" contenteditable="true">
+                                <ul class="game__box__list"> </ul>
+                            </div>
+                            <div class="game__box__btn">
+                                <span class="plus">+</span>
+                                <span>ჩაწერა</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 col-md-4">
+                        <div class="game__box__body orange relative">
+                            <div class="game__box__body__title">სკოლა</div>
+                            <div class="editable game__box__list__container" contenteditable="true">
+                                <ul class="game__box__list"> </ul>
+                            </div>
+                            <div class="game__box__btn">
+                                <span class="plus">+</span>
+                                <span>ჩაწერა</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 col-md-4">
+                        <div class="game__box__body orange relative">
+                            <div class="game__box__body__title">ოჯახი</div>
+                            <div class="editable game__box__list__container" contenteditable="true">
+                                <ul class="game__box__list"> </ul>
+                            </div>
+                            <div class="game__box__btn">
+                                <span class="plus">+</span>
+                                <span>ჩაწერა</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 game__difference__container m-auto">
+            <div class="row game__img__btn__row align-center">
+                <div class="col-12 col-md-2 game__img__col-relative">
+                    <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+                        class="game__img-dog">
+                </div>
+                <div class="col-12 col-md-10 col-lg-8">
+                    <div class="game__button__container">
+                        <button class="about__page__btn game__button mr bt-gray">თავიდან დაწყება</button>
+                        <button class="about__page__btn game__button bt-blue">გადმოწერა</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(".game__box__bulletsList").focus(function () {
+        if (document.getElementById('game__box__bulletsList').value === '') {
+            document.getElementById('game__box__bulletsList').value += '• ';
+        }
+    });
+
+    $(".game__box__bulletsList").keyup(function (event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            document.getElementById('game__box__bulletsList').value += '• ' + getElementById('');
+        }
+        var txtval = document.getElementById('game__box__bulletsList').value;
+        if (txtval.substr(txtval.length - 1) == '\n') {
+            document.getElementById('game__box__bulletsList').value = txtval.substring(0, txtval.length - 1);
+        }
+    });
+
+
+
+    $('.game__box__btn').click(function (e) {
+        $(this).addClass('hide');
+        $(this).parent().addClass('active');
+        $(this).prev('.game__box__list__container').addClass('active');
+        $(this).prev('.game__box__list__container').children(".game__box__list").append('<li class="game__box__list__item game__box__item__text"></li>');
+        e.stopPropagation()
+    });
+    $(document).on("click", function (e) {
+        if ($(e.target).is(".game__box__list__item") === false) {
+            $('.game__box__btn').removeClass('hide');
+        }
+    });
+
+</script>

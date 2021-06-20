@@ -641,9 +641,6 @@
     transform: translateY(-15px);
 }
 
-// .option-hover:before {
-//     background: #f9f9f9;
-// }
 .custom-option {
     position: relative;
     display: block;
@@ -661,5 +658,63 @@
         color: $black;
         border-radius: 8px;
         background-color: $component-color4;
+    }
+}
+
+.form-register {
+    .custom-select {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid $component-color2;
+        &-wrapper {
+            display: block;
+            width: 100%;
+        }
+        &-trigger {
+            width: 100%;
+            padding: 8px 20px 8px 12px;
+            font-family: $firagoRegular;
+            font-size: 16px;
+            color: rgba($color: $black, $alpha: 0.3);
+            &.selected {
+                color: $black;
+            }
+            &:after {
+                right: 20px;
+                width: 13.65px;
+                background-image: url("../img/icons/arrow-dropdown-blue.svg");
+            }
+        }
+        &.opened {
+            border: 2px solid $component-color2;
+            border-bottom: transparent;
+            border-radius: 8px 8px 0 0;
+            .custom-options {
+                border-top: transparent;
+                border-radius: 0 0 8px 8px;
+                width: 101.4%;
+                left: -2px;
+                top: 28px;
+                @media only screen and (min-width: 340px){
+                    width: 101%;
+                }
+                @media #{$breakpoint-lg} {
+                    width: 100.8%;
+                    top: 29px;
+                }
+            }
+            .custom-select-trigger:after {
+                transform: translateY(-50%) rotate(180deg);
+                top: 50%;
+            }
+        }
+    }
+    .custom-option {
+        color: $component-color2;
+        border-radius: 8px;
+        &:hover {
+            background-color: $component-color2;
+            color: $white;
+        }
     }
 }

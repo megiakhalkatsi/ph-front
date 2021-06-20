@@ -400,9 +400,8 @@
         }
       }
       &__p {
-        margin-bottom: 55px !important;
-        &.margins {
-          margin: 34px 0 31px !important;
+        &.mt-34{
+          margin: 0!important;
         }
       }
     }
@@ -664,6 +663,9 @@
             flex: none;
             margin-top: 8px;
           }
+          a{
+            display: contents;
+          }
         }
       }
       ol {
@@ -679,6 +681,9 @@
             font-size: 16px;
             margin-right: 10px;
             flex: none;
+          }
+          a{
+            display: contents;
           }
         }
       }
