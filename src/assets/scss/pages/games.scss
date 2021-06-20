@@ -1813,6 +1813,101 @@
       }
     }
   }
+  &__percent {
+    border: 2px solid $component-color12;
+    border-radius: 10px;
+    padding: 61px 0 55px;
+    margin-bottom: 34px;
+    &__title {
+      font-family: $firagoRegular;
+      font-size: 21px;
+      color: $component-color2;
+      margin-bottom: 34px;
+    }
+    &__line {
+      &__cont {
+        width: 90%;
+        max-width: 804px;
+        margin: auto;
+      }
+      width: 100%;
+      height: 3px;
+      background-color: $component-color2;
+      position: relative;
+    }
+    &-active {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &-circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid $component-color20;
+        background-color: $component-color9;
+        cursor: pointer;
+      }
+      &-numb {
+        color: $component-color9;
+        font-size: 21px;
+        font-family: $firagoMedium;
+        display: block;
+      }
+    }
+    &__numb {
+      margin-top: 20px;
+      font-family: $firagoMedium;
+      font-size: 16px;
+      color: rgba($color: $black, $alpha: 0.6);
+    }
+    &__answer{
+      margin-top: 68px;
+      color: $black;
+      font-size: 21px;
+      font-family: $firagoRegular;
+      text-align: center;
+      @media #{$breakpoint-md} {
+        margin-top: 86px;
+      }
+      .purple{
+        display: block;
+        color: $component-color2;
+        font-family: $firagoMedium;
+        font-size: 34px;
+      }
+      &-incorrect{
+        font-family: $firagoRegular;
+        font-size: 16px;
+        color: $component-color5;
+        text-align: center;
+        margin-top: 34px;
+        .red{
+          color: $error-red;
+          display: block;
+        }
+      }
+    }
+    &__btn{
+      padding: 10px 0;
+      width: 90%;
+      text-align: center;
+      background-color: $component-color6;
+      border-radius: 8px;
+      font-family: $firagoMedium;
+      font-size: 16px;
+      color: $white;
+      margin-top: 34px;
+      cursor: pointer;
+      @media #{$breakpoint-md} {
+        padding: 10px 48px;
+        width: auto;
+      }
+    }
+  }
 }
 
 .game__answer__container.zIndex {
