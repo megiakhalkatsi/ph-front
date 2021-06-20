@@ -1653,14 +1653,14 @@
         @media #{$breakpoint-lg} {
           right: -70px;
         }
-        &.translate-0{
+        &.translate-0 {
           transform: translate(0);
         }
-        &.mr-10px{
+        &.mr-10px {
           margin-right: 10px;
         }
       }
-      &-modal-text{
+      &-modal-text {
         font-family: $firagoMedium;
         font-size: 16px;
         color: rgba($color: $black, $alpha: 0.6);
@@ -1751,6 +1751,66 @@
     flex: none;
     @media #{$breakpoint-md} {
       margin-right: 20px;
+    }
+  }
+  &__sentence {
+    &__header {
+      width: 100%;
+      text-align: center;
+      padding: 17px;
+      border-radius: 10px;
+      color: $white;
+      font-family: $firagoMedium;
+      font-size: 21px;
+      &.orange {
+        background-color: $component-color8;
+      }
+      &.blue {
+        background-color: $component-color6;
+      }
+    }
+    &__cont {
+      border-bottom: 1px solid $component-color3;
+      margin-top: 34px;
+      &__list {
+        margin: auto;
+        @media #{$breakpoint-lg} {
+          max-width: 400px;
+        }
+        @media #{$breakpoint-xl} {
+          max-width: 420px;
+        }
+        @media #{$breakpoint-xl-ex} {
+          max-width: 466px;
+        }
+      }
+      &--border {
+        @media #{$breakpoint-md} {
+          border-right: 2px dashed $component-color3;
+        }
+      }
+    }
+    &__title {
+      font-family: $firagoMedium;
+      font-size: 21px;
+      color: $black;
+      margin-bottom: 21px;
+    }
+    &__input {
+      width: 100%;
+      border: 2px dashed $component-color10;
+      border-radius: 16px;
+      padding: 23px 30px;
+      outline: none;
+      font-family: $firagoMedium;
+      font-size: 16px;
+      margin-bottom: 34px;
+      &::placeholder {
+        color: rgba($color: $black, $alpha: 0.3);
+      }
+      &:focus::placeholder {
+        color: transparent;
+      }
     }
   }
 }
