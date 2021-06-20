@@ -456,47 +456,23 @@
             <div class="col-12">
                 <h1 class="form__section__title">რეგისტრაცია</h1>
                 <p class="form__section__text">ავტორიზაცია შესაძლებელია მხოლოდ განმანათლებლებისთვის</p>
-                <form class="form">
+                <form class="form form-register">
                     <div class="form-group">
                         <label for="region" class="form__label required">რეგიონი</label>
-                        <div class="dropdown__elem form-control form-select" id="2">
-                            <div class="dropdown__elem--inner dropdown--toggler">
-                                <span class="text--active dropdown--selected">
-                                   აირჩიეთ რეგიონი
-                                </span>
-                                <svg class="icon">
-                                    <use xlink:href="#arrow-dropdown"></use>
-                                </svg>
-                            </div>
-                            <div class="dropdown" data-for="2">
-                                <nav class="dropdown__nav">
-                                    <li class="dropdown__item dropdown__item--active" value="0">თბილისი</li>
-                                    <li class="dropdown__item" value="1">მცხეთა</li>
-                                    <li class="dropdown__item" value="2">რუსთავი</li>
-                                    <li class="dropdown__item" value="3">ბათუმი</li>
-                                </nav>
-                            </div>
-                        </div>
+                        <select class="custom-select" placeholder="აირჩიეთ რეგიონი">
+                            <option value="1">თბილისი</option>
+                            <option value="2">მცხეთა</option>
+                            <option value="3">რუსთავი</option>
+                            <option value="4">ბათუმი</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="position" class="form__label required">პოზიცია</label>
-                        <div class="dropdown__elem form-control form-select" id="3">
-                            <div class="dropdown__elem--inner dropdown--toggler">
-                                <span class="text--active dropdown--selected">
-                                   აირჩიეთ პოზიცია
-                                </span>
-                                <svg class="icon">
-                                    <use xlink:href="#arrow-dropdown"></use>
-                                </svg>
-                            </div>
-                            <div class="dropdown" data-for="3">
-                                <nav class="dropdown__nav">
-                                    <li class="dropdown__item dropdown__item--active" value="0">მასწავლებელი</li>
-                                    <li class="dropdown__item" value="1">სამართალდამცავი</li>
-                                    <li class="dropdown__item select_other" value="2">სხვა</li>
-                                </nav>
-                            </div>
-                        </div>
+                        <select class="custom-select" placeholder="აირჩიეთ პოზიცია">
+                            <option value="1">მასწავლებელი</option>
+                            <option value="2">სამართალდამცავი</option>
+                            <option value="3" class="select_other">სხვა</option>
+                        </select>
                     </div>
                     <div class="form-group" id="txtData" style="display:none;">
                         <label for="otherPosition" class="form__label required">სხვა პოზიცია</label>
@@ -520,24 +496,25 @@
                     </div>
                     <div class="form-group">
                         <label for="password" class="form__label required">პაროლი</label>
-                        <input type="password" class="form-control form__input" id="password">  
+                        <input type="password" class="form-control form__input" id="password">
                     </div>
                     <div class="form-group">
                         <label for="repeatPassword" class="form__label required">გაიმეორეთ პაროლი</label>
-                        <input type="password" class="form-control form__input" id="repeatPassword">  
+                        <input type="password" class="form-control form__input" id="repeatPassword">
                     </div>
                     <label class="checkbox-container mt-4">
                         <input type="checkbox" checked="checked">
                         <span class="checkmark"></span>
-                        ვეთახმები პლატფორმის <a href="termsOfUse.html" class="checkbox-link">მოხმარების პირობებს</a> 
-                      </label>
-                      <label class="checkbox-container mb-34">
+                        ვეთახმები პლატფორმის <a href="termsOfUse.html" class="checkbox-link">მოხმარების პირობებს</a>
+                    </label>
+                    <label class="checkbox-container mb-34">
                         <input type="checkbox">
                         <span class="checkmark"></span>
-                        გავეცანი <a href="privacy.html" class="checkbox-link">კონფიდენციალურობის პოლიტიკას</a> 
-                      </label>
+                        გავეცანი <a href="privacy.html" class="checkbox-link">კონფიდენციალურობის პოლიტიკას</a>
+                    </label>
                     <div class="form__row">
-                        <button type="submit" class="form__row__btn form__row__btn-login bt-blue w-100">რეგისტრაცია</button>
+                        <button type="submit"
+                            class="form__row__btn form__row__btn-login bt-blue w-100">რეგისტრაცია</button>
                     </div>
                     <p class="form__error__message">გთხოვთ შეავსოთ ყველა ველი</p>
                 </form>
@@ -562,7 +539,7 @@
                         მიყევით ამ ბმულს
                         <svg class="icon">
                             <use xlink:href="#feather-arrow-up-right"></use>
-                          </svg>
+                        </svg>
                     </a>
                 </div>
             </div>
