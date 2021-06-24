@@ -417,7 +417,6 @@
       position: relative;
       margin-bottom: 54px;
       @media #{$breakpoint-md} {
-        margin-bottom: 0;
         padding: 41px 31px 34px;
       }
       @media #{$breakpoint-xl-ex} {
@@ -428,11 +427,11 @@
         margin-bottom: 0;
         @media #{$breakpoint-md} {
           margin-top: 109px;
-          margin-bottom: 89px;
+          margin-bottom: 35px;
         }
         @media #{$breakpoint-xl-ex} {
           margin-top: 164px;
-          margin-bottom: 144px;
+          margin-bottom: 94px;
         }
       }
       &__img {
@@ -663,7 +662,10 @@
             flex: none;
             margin-top: 8px;
           }
-          a{
+          a, em, span, strong{
+            display: contents;
+          }
+          *{
             display: contents;
           }
         }
@@ -682,7 +684,10 @@
             margin-right: 10px;
             flex: none;
           }
-          a{
+          a, em, span, strong{
+            display: contents;
+          }
+          *{
             display: contents;
           }
         }
