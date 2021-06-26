@@ -148,8 +148,9 @@ $( "#resetButton" ).click(function() {
     $('.checkbox-container').removeClass('correct')
     $('.checkboxItem').attr('checked', false)
     $(".checkboxItem").prop("checked", false);
-    let incorrectAttampt = 0;
-    let correctAttampt = 0;
+    incorrectAttampt = 0;
+    correctAttampt = 0;
+    $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
     $('.successModal').attr('style', 'display: none; position: fixed; top: 0;left: 0;right: 0; z-index: 11111;')
 
 });
@@ -162,8 +163,9 @@ $( "#resetButton2" ).click(function() {
     $('.checkbox-container').removeClass('correct')
     $('.checkboxItem').attr('checked', false)
     $(".checkboxItem").prop("checked", false);
-    let incorrectAttampt = 0;
-    let correctAttampt = 0;
+    incorrectAttampt = 0;
+    correctAttampt = 0;
+    $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
     $('.successModal').attr('style', 'display: none; position: fixed; top: 0;left: 0;right: 0; z-index: 11111;')
 });
 
