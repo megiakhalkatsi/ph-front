@@ -1,0 +1,75 @@
+---
+layout: gamesLayout
+title: მოსწავლეების რესურსი
+---
+
+<div class="modal-body game__modal-body">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <h2 class="game__percent__title">1-14 წლამდე ასაკის ბავშვების რამდენი პროცენტის მიმართ გამოიყენეს მშობლებმა/მშობელმა აღზრდის მხოლოდ არაძალადობრივი მეთოდი?</h2>
+      <div class="game__percent">
+          <div class="game__percent__line__cont">
+              <div class="game__percent__line">
+                  <div class="game__percent-active">
+                      <span class="game__percent-active-numb">50%</span>
+                      <div class="game__percent-active-circle"></div>
+                  </div>
+                </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="game__percent__numb">0%</span>
+                    <span class="game__percent__numb">100%</span>
+                  </div>
+          </div>
+          <div class="d-flex flex-column align-items-center">
+            <div class="game__percent__answer">თქვენი პასუხი <span class="purple">50%</span></div>
+            <div class="game__percent__btn" data-bs-toggle="modal" data-bs-target="#checkAnswer">პასუხის შემოწმება</div>
+          </div>
+      </div>
+    </div>
+    <div class="col-12 game__content-col-bottom">
+        <div class="row game__img__btn__row align-center-xl-ex">
+          <div class="col-12 col-md-2 game__img__col-relative">
+            <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+              class="game__img__picture game__img-dog lg bottom">
+          </div>
+          <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
+            <div class="game__button__container column">
+                <button id="prevStep" class="about__page__btn game__button mr bt-gray">წინა კითხვა</button>
+                <button id="nextStep" class="about__page__btn game__button bt-blue">შემდეგი კითხვა</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+              <div class="game__progress__cont-align">
+                <div class="game__progress__cont" id="ProgressBar">
+                  <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">0</span> / 4
+                    დან</h3>
+                  <div class="game__progress__circle line__0" id="ProgressLine"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Check Answer - popup -->
+
+<div class="modal fade notificationModal chooseRoleModal" id="checkAnswer" tabindex="-1"
+  aria-labelledby="chooseRoleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
+    <div class="modal-content radius-16">
+      <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+        <svg class="icon">
+          <use xlink:href="#cancel-icon"></use>
+        </svg>
+      </button>
+      <div class="modal-body notificationModal-body padding-sm">
+        <div class="game__percent__answer mt-0">სწორი პასუხია <span class="purple">26%</span></div>
+        <div class="game__percent__answer-incorrect">თქვენი პასუხია <span class="red">50%</span></div>
+      </div>
+    </div>
+  </div>
+</div>

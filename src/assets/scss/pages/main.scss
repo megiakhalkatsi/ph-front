@@ -175,7 +175,10 @@ body {
             flex: none;
             margin-top: 8px;
           }
-          a{
+          a, em, span, strong{
+            display: contents;
+          }
+          *{
             display: contents;
           }
         }
@@ -194,7 +197,10 @@ body {
             margin-right: 10px;
             flex: none;
           }
-          a{
+          a, em, span, strong{
+            display: contents;
+          }
+          *{
             display: contents;
           }
         }
