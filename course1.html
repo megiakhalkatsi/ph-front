@@ -401,15 +401,71 @@
               <h1 class="header__logo">სამართლებრივი კულტურა</h1>
             </a>
             <nav class="header__nav">
+              <div class="header__nav__menuIcon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="header__nav__list__container">
+                <div class="language__mobile">
+                  <span class="dropdown__elem--gray">ენის არჩევა: </span>
+                  <div class="dropdown__elem" id="language__mobile">
+                    <div class="dropdown__elem--inner dropdown--toggler">
+                      <span class="text--active dropdown--selected">
+                        En
+                      </span>
+                      <svg class="icon">
+                        <use xlink:href="#arrow-dropdown"></use>
+                      </svg>
+                    </div>
+                    <div class="dropdown" data-for="language__mobile">
+                      <nav class="dropdown__nav">
+                        <li class="dropdown__item dropdown__item--active">En</li>
+                        <li class="dropdown__item">ქა</li>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+                
+                <ul class="header__nav__list">
+                  <li class="header__nav__item"><a href="about.html" class="header__nav__item-link active">ჩვენზე</a></li>
+                  <li class="header__nav__item"><a href="themes.html" class="header__nav__item-link">თემები</a></li>
+                  <li class="header__nav__item"><a href="resources.html" class="header__nav__item-link">რესურსები</a></li>
+                </ul>
+                <div class="header__nav__item__footer">
+                  <div class="footer__contact center">
+                    <a href="mailto:info@school.ge" class="footer__link footer__item">info@school.ge</a>
+                    <div class="footer__line footer__item"></div>
+                    <a href="#" class="footer__item footer__contact__icon">
+                      <svg class="icon">
+                        <use xlink:href="#icon-fb"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="footer__item footer__contact__icon">
+                      <svg class="icon">
+                        <use xlink:href="#youtube"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
               <div class="header__nav__item">
-                <a href="#" class="header__nav__btn bt-blue" data-bs-toggle="modal" data-bs-target="#tableOfConents">
-                  <svg class="icon feather-icon">
-                    <use xlink:href="#feather-layers"></use>
+                <a href="login.html" class="header__nav__btn bt-blue">
+                  <svg class="icon">
+                    <use xlink:href="#metro-user"></use>
                   </svg>
-                  სარჩევი
+                  შესვლა
                 </a>
               </div>
-              <div class="dropdown__elem" id="1">
+              <div class="header__nav__item search">
+                <a href="#" class="header__nav__search">
+                  <svg class="icon">
+                    <use xlink:href="#ico-search"></use>
+                  </svg>
+                </a>
+              </div>
+              <div class="dropdown__elem language__desktop" id="1">
                 <div class="dropdown__elem--inner dropdown--toggler">
                   <span class="text--active dropdown--selected">
                     En
@@ -428,9 +484,9 @@
             </nav>
           </div>
         </div>
-      </header>      <div class="page__content white">
-<section class="page__nav">
-  <div class="container">
+      </header>      <div class="page__content dark">
+<div class="container">
+  <section class="page__nav">
     <ul class="page__nav__list">
       <li class="page__nav__list__item">
         <a href="index.html" class="page__nav__list__item-link">მთავარი</a>
@@ -441,265 +497,174 @@
         </svg>
       </li>
       <li class="page__nav__list__item">
-        <a href="themes.html" class="page__nav__list__item-link">თემები</a>
-      </li>
-      <li class="page__nav__list__item">
-        <svg class="icon">
-          <use xlink:href="#ico-chevron-right"></use>
-        </svg>
-      </li>
-      <li class="page__nav__list__item">
-        <a href="theme1.html" class="page__nav__list__item-link">სამართლებრივი კულტურა</a>
+        <a href="#" class="page__nav__list__item-link">სასწავლო კურსები</a>
       </li>
     </ul>
+  </section>
+</div>
+<section>
+  <div class="container">
+    <div class="course__intro">
+      <div class="row">
+        <div class="col-12 col-lg-10">
+          <div class="course__intro__content light">
+            <h2>ტრადიციული და სოციალური მედია</h2>
+            <a href="#">1. ლექცია - სათაური რაღაც გრძელი</a>
+            <p>როგორ შეცვალა სოციალურმა მედიამ ტრადიციული, როგორ განხორციელდა ეს ცვლილებები ან საერთოდ, რას ნიშნავს
+              მედია - ლექციის ფარგლებში ამ და სხვა საჭირო ინფორმაციას მიიღებთ აღნიშნული მიმართულების შესახებ.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
-<div class="section__theme__container">
-  <section>
-    <div class="section__theme__header">
-      <h2 class="section__theme__title mb-0">სამართლებრივი კულტურა</h2>
-      <div class="section__theme__type__cont mobile-none">
-        <img src="assets/img/icons/definition.png" alt="img" class="tableOfConents__item__img">
-        <div>
-          <h3 class="tableOfConents__item__title m-0">განმარტება</h3>
+  <div class="course__intro-bottom">
+    <div class="course__intro__header">
+      <div class="container">
+        <div class="course__intro__header__row">
+          <div class="course__intro__header__item">პროგრესი: <span>1</span>/<span>10</span> თემიდან</div>
+          <div class="course__intro__header__item"><a href="course-extra-resources.html">დამატებითი რესურსები</a></div>
         </div>
       </div>
     </div>
-    <div class="document__line m-0"></div>
-    <a href="#" class="section__theme__header__bottom">
-      <img src="assets/img/icons/step.png" alt="img" class="tableOfConents__item__img">
-      <p class="section__theme__header__bottom-p"><span class="tableOfConents__item__title">ნაბიჯი
-          1:</span>საქართველოში
-        გავრცელებული კიბერდანაშაული და მასთან დაკავშირებული
-        საფრთხეები; საქართველოს კანონმდებლობა და კიბერდანაშაული</p>
-      <div class="section__theme__type__cont desktop-none">
-        <img src="assets/img/icons/definition.png" alt="img" class="tableOfConents__item__img">
-        <div>
-          <h3 class="tableOfConents__item__title m-0">განმარტება</h3>
-        </div>
-      </div>
-    </a>
-    <div class="document__line m-0"></div>
-  </section>
-  <section class="section__description margins-sm">
-    <div class="section__description__header">
-      <a href="#" class="game__modal-close dark" data-bs-dismiss="modal" aria-label="Close">
-        <svg class="icon">
-          <use xlink:href="#cancel-icon"></use>
-        </svg>
-      </a>
-    </div>
-    <div class="section__description__body section__description__content pd-md-sm pt-md-0">
-      <div class="row">
-        <div class="col-12 page__content-col m-auto">
-          <h2>სათაურის ტექსტი თუ საჭირო გახდა</h2>
-          <h3>ქვესათაური თუ საჭირო გახდა</h3>
-          <p>
-            ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის
-            აღქმაში ხელი შეუშალოს. გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს,
-            ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი
-            წაითხვა კი შეუძლებელია.
-            <span class="moreText">
-              ლორემ იპსუმ რთავდნენ გადაუწყვიტეს დედაკაცები სამკუთხედი ინგლისურად გოჭმა გამოსახულებას
-              დანიშვნის დაესაჯა
-              სწორკუთხა გადამეკიდა გზაასაქცევი. ლუარსაბისა გაეპრანჭება ყვიროდნენ განიკითხავს გადაუწყვიტეს
-              გადამეკიდა
-              პირდაღვრემილია, დანიშვნის გარეუბნებს იტირებდა გასცემ კნიაზობა უცერემონიოდ შეხვდებოდნენ.
-            </span>
-          </p>
-          <button class="readMoreBtn header__nav__btn bt-blue">მაჩვენე მეტი
-            <svg class="icon">
-              <use xlink:href="#arrow-dropdown"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="row">
-      <div class="col-12 m-auto">
-        <div class="section__theme__page__img__container mb-lg">
-            <img src="assets/img/bg.jpg" alt="image" class="section__theme__page__img">
-            <div class="section__theme__page__img-hover">
-                <h3 class="section__theme__page__img-hover-h3">სამართლებრივი-კულტურა.jpg</h3>
-                <p class="section__theme__page__img-hover-p">ვინ არის სამართალდამცავი</p>
-                <a href="#" target="_blank" class="form__section__text-sm-link sm">
-                    წყარო
-                    <svg class="icon">
-                        <use xlink:href="#feather-arrow-up-right"></use>
-                    </svg>
-                </a>
+    <div class="course__intro-bottom__container">
+      <div class="container">
+        <div class="row course__content__row">
+          <div class="col-12 col-xl-7">
+            <div class="course__intro__video__container">
+              <iframe class="course__intro__video" width="100%" height="100%"
+                src="https://www.youtube.com/embed/fPasjUl-Vg4?rel=0&amp;showinfo=0" frameborder="0"
+                allowfullscreen="allowfullscreen"></iframe>
             </div>
-        </div>
-    </div>
-    </div>
-  </section>
-  <section>
-    <div class="document__line m-0"></div>
-    <section class="section__theme__resources">
-      <div class="row">
-        <div class="col-12 page__content-col m-auto">
-          <h3 class="section__theme__resources__title">დამატებითი რესურსი</h3>
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 col-xxl-3 resource__item__container">
-              <div class="resource__item">
-                <div class="resource__item-relative">
-                  <img src="assets/img/resource-img.png" alt="resource image" class="resource__item__img"
-                    data-bs-toggle="modal" data-bs-target="#fullscreenImgModal" />
-                  <div class="resource__item__icon__position">
-                    <div class="resource__item__icon__container">
-                      <div class="resource__item__icon__bg">
-                        <svg class="icon resource__item__icon"><use xlink:href="#icon-image"></use></svg>
-                      </div>
-                      <div class="resource__item__icon__bg">
-                        <a href="assets/img/resource-img.png" download>
-                          <svg class="icon resource__item__icon"><use xlink:href="#icon-feather-download"></use></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a href="#" class="resource__item-link">
-                  <h2 class="resource__item__title">სამართლებრივი-კულტურა.jpg</h2>
-                  <p class="resource__item__description">ვინ არის სამართალდამცავი</p>
-                </a>
-                <a href="#" class="form__section__text-sm-link sm resource__item-link">
-                  წყარო
-                  <svg class="icon">
-                    <use xlink:href="#feather-arrow-up-right"></use>
-                  </svg>
-                </a>
+            <div class="game__quiz__quest course__quiz__quest">
+              <span class="text">კითხვა რომელიც იწყება აქედან და გრძელდება ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი
+                წაითხვა კი შეუძლებელია ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია ?</span>
+              <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
+            </div>
+            <div class="game__quiz__answ__cont course__quiz__answ__cont">
+              <div class="game__quiz__answ">
+                <div class="game__checkbox"></div>
+                <span class="text">ცხოვრების ჯანსაღი წესი</span>
+              </div>
+              <div class="game__quiz__answ error">
+                <div class="game__checkbox"></div>
+                <span class="text">მოკლე პასუხი თუ იყო საჭირო</span>
+              </div>
+              <div class="game__quiz__answ success">
+                <div class="game__checkbox"></div>
+                <span class="text"> შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
+              </div>
+              <div class="game__quiz__answ">
+                <div class="game__checkbox"></div>
+                <span class="text">ცხოვრების ჯანსაღი წესი არა ისა კიდე</span>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xxl-3 resource__item__container">
-              <div class="resource__item">
-                <div class="resource__item-relative">
-                    <a href="#" class="w-100 h-100 d-flex justify-content-center align-items-center">
-                      <img src="assets/img/icons/file.svg" alt="resource image"
-                      class="resource__item__img file"/>
-                    </a>
-                  <div class="resource__item__icon__position">
-                    <div class="resource__item__icon__container">
-                      <div class="resource__item__icon__bg">
-                        <svg class="icon resource__item__icon"><use xlink:href="#icon-file"></use></svg>
-                      </div>
-                      <div class="resource__item__icon__bg">
-                        <a href="assets/img/test.pdf" download>
-                          <svg class="icon resource__item__icon"><use xlink:href="#icon-feather-download"></use></svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a href="#" class="resource__item-link">
-                  <h2 class="resource__item__title">ახალი წიგნი.pdf</h2>
-                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
-                </a>
-              </div>
+            <div class="game__button__container course__quiz__button__container">
+              <button class="about__page__btn game__button mr bt-gray">ახლიდან დაწყება</button>
+              <button class="about__page__btn game__button bt-blue">შემდეგი საკითხი</button>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xxl-3 resource__item__container">
-              <div class="resource__item">
-                <div class="resource__item-relative">
-                  <a href="#" class="w-100 h-100 d-flex justify-content-center align-items-center">
-                    <img src="assets/img/icons/feather-arrow-up-right.svg" alt="resource image"
-                    class="resource__item__img file"/>
-                  </a>
-                  <div class="resource__item__icon__position">
-                    <div class="resource__item__icon__container">
-                      <div class="resource__item__icon__bg">
-                        <svg class="icon resource__item__icon"><use xlink:href="#icon-feather-arrow-up-right"></use></svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a href="#" class="resource__item-link">
-                  <h2 class="resource__item__title underline">მოძრაობის წესები და ქვეითები</h2>
-                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
-                </a>
-                <a href="#" class="form__section__text-sm-link sm resource__item-link">
-                  წყარო
-                  <svg class="icon">
-                    <use xlink:href="#feather-arrow-up-right"></use>
-                  </svg>
-                </a>
-              </div>
+            <div class="course__intro__line d-none d-md-block"></div>
+            <div class="page__content__text">
+              <p>ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის
+                აღქმაში ხელი შეუშალოს. გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე
+                ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი
+                შეუძლებელია. ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და
+                დიზაინის აღქმაში ხელი შეუშალოს. გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს,
+                ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა
+                კი შეუძლებელია. დღეს უამრავი პერსონალური საგამომცემლო პროგრამა და ვებგვერდი იყენებს როგორც დროებით
+                ტექსტს წყობის შესავსებად; მოძებნისას კი საძიებო სისტემები ბევრ დაუსრულებელ გვერდს გვიჩვენებენ. წლების
+                მანძილზე ამ ტექსტის უამრავი ვერსია გამოჩნდა, ზოგი შემთხვევით დაშვებული შეცდომის გამო, ზოგი კი განზრახ,
+                ხუმრობით.</p>
+              <p>
+                დღეს უკვე პასაჟის უამრავი ვერსია არსებობს. მათი დიდი ნაწილი ხუმრობით არის შეცვლილი, ბევრი კი
+                უბრალოდ სიტყვების შემთხვევითი გენერირებით დაიწერა. ინტერნეტში არსებული გენერატორები, როგორც წესი,
+                წინასწარ განსაზღვრული ტექსტის ნაგლეჯს იმეორებენ ხოლმე, ამიტომ ეს პირველი ნამდვილი გენერატორია. იგი რთული
+                და მართებული სტრუქტურის წინადადებების ასაწყობად 200-მდე ლათინური სიტყვისგან შემდგარ ლექსიკონს იყენებს.
+                შედეგად მიიღება ტექსტი, რომელიც ვიზუალურად მაქსიმალურად ახლოსაა რეალურთან. გენერირებული არასოდეს არ არის
+                გამეორებადი, შემთხვევითი სიტყვების ან ხუმრობების შემცველი.
+              </p>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xxl-3 resource__item__container">
-              <div class="resource__item">
-                <div class="resource__item-relative">
-                  <div class="resource__item__video">
-                    <div class="video-container paddings">
-                      <iframe width="100%" height="100%"
-                        src="https://www.youtube.com/embed/i-80SGWfEjM?rel=0&amp;showinfo=0" frameborder="0"
-                        allowfullscreen="allowfullscreen"></iframe>
-                    </div>
-                  </div>
-                  <div class="resource__item__icon__position">
-                    <div class="resource__item__icon__container">
-                      <div class="resource__item__icon__bg">
-                        <svg class="icon resource__item__icon"><use xlink:href="#icon-awesome-play-circle"></use></svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a href="#" class="resource__item-link">
-                  <h2 class="resource__item__title">პოლიციელი ჩემი მეგობარია.mov</h2>
-                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
-                </a>
-              </div>
+            <div class="course__intro__line d-none d-md-block"></div>
+            <div class="course__download__btn">
+              <a href="#">
+                ტესტის გადმოწერა
+                <svg class="icon"><use xlink:href="#icon-feather-download"></use></svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xl-5">
+            <div class="course__list__btn">
+              <h3> მიმდინარე ლექცია: <span class="purple"><span>1.</span> ლექცია - სათაური რაღაც გრძელი</span> </h3>
+              <svg class="icon">
+                <use xlink:href="#arrow-dropdown"></use>
+              </svg>
+            </div>
+            <div class="course__list">
+              <a href="#" class="course__intro__list__item passed">
+                <h3> <span>1.</span> ლექცია - სათაური რაღაც გრძელი </h3>
+                <p>როგორ შეცვალა სოციალურმა მედიამ ტრადიციული, როგორ განხორციელდა ეს ცვლილებები ან საერთოდ, რას
+                  ნიშნავს მედია - ლექციის ფარგლებში ამ და სხვა საჭირო ინფორმაციას მიიღებთ აღნიშნული მიმართულების
+                  შესახებ.</p>
+              </a>
+              <a href="#" class="course__intro__list__item passed">
+                <h3> <span>2.</span> ლექცია - მეორე სათაური რა კაია </h3>
+                <p>სოციალური მედია იმდენად სწრაფი ტემპებით განვითარდა, რომ ტრადიციულ მედიას, ფაქტობრივად, წაართვა ის
+                  პოზიცია, რაც მას ასწლეულის განმავლობაში ეკავა. ლექციაში მოისმენთ, როგორ განვითარდა ეს მოვლენები.
+                </p>
+              </a>
+              <a href="#" class="course__intro__list__item active">
+                <h3> <span>3.</span> ლექცია - მოკლე სათაური </h3>
+                <p>რა არის პოდკასტი, როგორი ზეგავლენა მოახდინა სოციალური მედია არხების გაპოპულარულებამ ტელევიზიებზე.
+                </p>
+              </a>
+              <a href="#" class="course__intro__list__item" data-bs-toggle="modal" data-bs-target="#courseNotification">
+                <h3> <span>4.</span> ლექცია - სათაურია მთლიანად ისედაც </h3>
+                <p>ლექციის საშუალებით, ნახავთ განსხვავებებს ინფორმაციის გავრცელების ძველ და ახალ საშუალებებს შორის.
+                </p>
+              </a>
+              <a href="#" class="course__intro__list__item">
+                <h3> <span>5.</span> ლექცია - შეიძლება იმ ლექციის გარეშეც იყოს როგორც გინდათ </h3>
+                <p>ბოლო ლექციაში მოისმენთ, რა ძალა აქვს სოციალურ მედიას და რა გავლენების მოხდენა შეუძლია მას, ასევე,
+                  საინტერესო ისტორიას, როგორ იმოქმედა სოციალურ მედიაში გავრცელებულმა პოსტებმა დიდ კომპანიაზე.</p>
+              </a>
+              <a href="#" class="course__intro__list__item">
+                <h3> <span>6.</span> ლექცია - მოკლე სათაური </h3>
+                <p>რა არის პოდკასტი, როგორი ზეგავლენა მოახდინა სოციალური მედია არხების გაპოპულარულებამ ტელევიზიებზე.
+                </p>
+              </a>
+              <a href="#" class="course__intro__list__item">
+                <h3> <span>7.</span> ლექცია - სათაურია მთლიანად ისედაც </h3>
+                <p>ლექციის საშუალებით, ნახავთ განსხვავებებს ინფორმაციის გავრცელების ძველ და ახალ საშუალებებს შორის.
+                </p>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </section>
-
-  <div class="d-flex justify-content-center">
-    <div class="paging__container sm">
-      <a href="#" class="paging__item bt-blue">
-        <svg class="icon arrow-left">
-          <use xlink:href="#ico-chevron-right"></use>
-        </svg>
-      </a>
-      <a href="#" class="paging__item active">1</a>
-      <a href="#" class="paging__item green">2</a>
-      <a href="#" class="paging__item">3</a>
-      <a href="#" class="paging__item">4</a>
-      <a href="#" class="paging__item">5</a>
-      <a href="#" class="paging__item">6</a>
-      <a href="#" class="paging__item">7</a>
-      <a href="#" class="paging__item">8</a>
-      <a href="#" class="paging__item">9</a>
-      <a href="#" class="paging__item">10</a>
-      <a href="#" class="paging__item">11</a>
-      <a href="#" class="paging__item green">12</a>
-      <a href="#" class="paging__item">13</a>
-      <a href="#" class="paging__item">14</a>
-      <a href="#" class="paging__item">15</a>
-      <a href="#" class="paging__item">16</a>
-      <a href="#" class="paging__item">17</a>
-      <a href="#" class="paging__item">18</a>
-      <a href="#" class="paging__item">19</a>
-      <a href="#" class="paging__item">20</a>
-      <a href="#" class="paging__item">21</a>
-      <a href="#" class="paging__item">22</a>
-      <a href="#" class="paging__item">23</a>
-      <a href="#" class="paging__item">24</a>
-      <a href="#" class="paging__item">25</a>
-      <a href="#" class="paging__item">26</a>
-      <a href="#" class="paging__item">27</a>
-      <a href="#" class="paging__item">28</a>
-      <a href="#" class="paging__item">29</a>
-      <a href="#" class="paging__item">30</a>
-      <a href="#" class="paging__item bt-blue">
-        <svg class="icon">
-          <use xlink:href="#ico-chevron-right"></use>
-        </svg>
-      </a>
     </div>
   </div>
-</div>
+</section>
+
+<script src="../assets/vendors/js/jquery.min.js"></script>
+<script>
+
+  $('.game__quiz__answ').click(function () {
+    $('.game__quiz__answ.checked').removeClass('checked');
+    $('.game__quiz__answ__cont.answered-suc').removeClass('answered-suc');
+    $('.game__quiz__answ__cont.answered-err').removeClass('answered-err');
+    $('.game__quiz__answ.success.active').removeClass('active');
+    $(this).addClass('checked');
+    if ($(this).hasClass('checked')&& $(this).hasClass('success')) {
+      $(this).parents(".game__quiz__answ__cont").addClass("answered-suc");
+    }else if ($(this).hasClass('checked')&& $(this).hasClass('error')) {
+      $(this).parents(".game__quiz__answ__cont").addClass("answered-err");
+    }
+     if($(this).hasClass('checked')&& $(this).hasClass('error')) {
+      $(".game__quiz__answ.success").addClass("active");
+    }
+    $('.course__quiz__button__container').addClass('show');
+  });
+
+</script>
 </div>
       <footer class="footer">
           <div class="container">
@@ -771,6 +736,34 @@
               </div>
           </div>
       </footer>    </div>
+
+    <div class="search__container">
+      <div class="search__container__content">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 page__content-col m-auto">
+              <div class="search__container__row">
+                <h3 class="search__container__title">ჩაწერეთ საძიებო სიტყვა ან ფრაზა</h3>
+                <div class="search__close">
+                  <svg class="icon">
+                    <use xlink:href="#close"></use>
+                  </svg>
+                </div>
+              </div>
+              <form action="" class="search__container__form">
+                <input type="search" class="search__container__form__input" placeholder="ძიება">
+                <a href="searchResult.html">
+                  <svg class="icon search__icon">
+                    <use xlink:href="#ico-search"></use>
+                  </svg>
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   <script src="assets/vendors/js/jquery.min.js"></script>
   <script src="assets/vendors/js/bootstrap.min.js"></script>
