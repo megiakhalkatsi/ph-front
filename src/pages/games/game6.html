@@ -1,7 +1,7 @@
 ---
 layout: gamesLayout
 title: მოსწავლეების რესურსი
-gameScripts: ../assets/vendors/js/games/game1.js
+gameScripts: ../assets/vendors/js/games/game6.js
 ---
 
 
@@ -9,80 +9,19 @@ gameScripts: ../assets/vendors/js/games/game1.js
 <div class="modal-body game__modal-body">
   <div class="row">
     <div class="col-12 col-xl-8 page__content-col m-auto">
-      <!-- <div class="game__list__header">
+      <div class="game__list__header">
         <h2 class="game__list__header__title">პოლიციის ფუნქციები</h2>
         <div class="game__progress__cont mb-0">
           <h3 class="game__progress__text">სწორი პასუხი <span class="purple">1/4</span></h3>
         </div>
-      </div> -->
+      </div>
       <div class="game__list">
         <div class="game__list-top">
           <h3 class="game__list__title">გაეცანით და ჩამოთვლილი ვარიანტებიდან მონიშნეთ ისეთები, რომლებიც განეკუთვნება
             პოლიციის ფუნქციებს.</h3>
         </div>
         <div class="game__list__content">
-          <form>
-            <label class="checkbox-container correct">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">განაჩენი გამოუტანოს და დამნაშავედ ცნოს ბრალდებული;</span>
-            </label>
-            <label class="checkbox-container incorrect">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">გადაწყვიტოს მოსწავლე დამნაშავეა თუ არა სკოლის შინაგანაწესის დარღვევაში;</span>
-            </label>
-            <label class="checkbox-container">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">ცვლილებები შეიტანოს საგზაო მოძრაობის წესების შესახებ კანონში;</span>
-            </label>
-            <label class="checkbox-container">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">გადაწყვიტოს ქონებრივი დავა მეზობლებს შორის;</span>
-            </label>
-            <label class="checkbox-container">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">განაჩენი გამოუტანოს და დამნაშავედ ცნოს ბრალდებული;</span>
-            </label>
-            <label class="checkbox-container">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">გადაწყვიტოს მოსწავლე დამნაშავეა თუ არა სკოლის შინაგანაწესის დარღვევაში;</span>
-            </label>
-            <label class="checkbox-container">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">ცვლილებები შეიტანოს საგზაო მოძრაობის წესების შესახებ კანონში;</span>
-            </label>
-            <label class="checkbox-container">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">გადაწყვიტოს ქონებრივი დავა მეზობლებს შორის;</span>
-            </label>
-            <label class="checkbox-container">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">განაჩენი გამოუტანოს და დამნაშავედ ცნოს ბრალდებული;</span>
-            </label>
-            <label class="checkbox-container">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">გადაწყვიტოს მოსწავლე დამნაშავეა თუ არა სკოლის შინაგანაწესის დარღვევაში;</span>
-            </label>
-            <label class="checkbox-container">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">განაჩენი გამოუტანოს და დამნაშავედ ცნოს ბრალდებული;</span>
-            </label>
-            <label class="checkbox-container">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-              <span class="text">გადაწყვიტოს მოსწავლე დამნაშავეა თუ არა სკოლის შინაგანაწესის დარღვევაში;</span>
-            </label>
-          </form>
+          <form id="GameWrapper"></form>
         </div>
       </div>
     </div>
@@ -94,9 +33,48 @@ gameScripts: ../assets/vendors/js/games/game1.js
         </div>
         <div class="col-12 col-md-10 col-lg-8">
           <div class="game__button__container justify-content-center">
-            <button class="about__page__btn game__button bt-gray">თავიდან დაწყება</button>
+            <button id="resetButton" class="about__page__btn game__button mr bt-gray">თავიდან დაწყება</button>
+            <button id="completBtn" class="about__page__btn game__button bt-blue">დასრულება</button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-body game__modal-body successModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg green">გილოცავთ !</h2>
+        <p class="game__finish__text">თქვენ წარმატებით დაასრულეთ თამაში!</p>
+        <picture>
+          <source media="(min-width:768px)" srcset="../assets/img/illustrations/happy.gif" type="image/gif">
+          <source srcset="../assets/img/illustrations/happy-mobile.gif" type="image/gif">
+          <img src="../assets/img/illustrations/happy-mobile.gif" alt="congratulations" class="game__finish__img">
+        </picture>
+        <div class="game__button__container justify-content-center mb-0">
+            <button id="resetButton2" class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
+    </div>
+  </div>
+
+
+<div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
+    <div class="modal-content radius-16">
+      <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+        <svg class="icon">
+          <use xlink:href="#cancel-icon"></use>
+        </svg>
+      </button>
+      <div class="modal-body notificationModal-body">
+        <p class="section__main__text mb-0">
+          გთხოვთ, კიდევ ერთხელ გაეცნოთ სამართლებრივი კულტურის სახელმძღვანელოს მე-13 გვერდზე მოცემულ <a href="#"
+            class="section__main__text-link">ინფორმაციას</a> პოლიციის ძირითადი უფლებამოსილების შესახებ.
+
+        </p>
       </div>
     </div>
   </div>

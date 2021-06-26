@@ -52,6 +52,11 @@ function clickers() {
         $('.moreText').toggleClass('inline');
         $(this).hide();
     });
+    //course list - responsive
+    $('.course__list__btn').click(function () {
+        $(this).toggleClass('active');
+        $('.course__list').toggleClass('active');
+    });
 }
 clickers();
 
@@ -130,7 +135,7 @@ $(".custom-select").each(function() {
     $(this).hide();
     $(this).after(template);
   });
-  $('.custom-select-trigger').each(function() {  
+  $('.form-register .custom-select-trigger').each(function() {  
     $(this).addClass("selected"); 
     $(this).text($(this).parents(".custom-select").children(".custom-options").children(".custom-option:first-child").text());
   }); 
@@ -244,7 +249,3 @@ togglePassword.addEventListener('click', function (e) {
             }, false)
         })
 })()
-
-
-
-
