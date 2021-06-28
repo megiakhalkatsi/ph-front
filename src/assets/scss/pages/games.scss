@@ -892,6 +892,13 @@
           background-color: $component-color6;
         }
       }
+      &.purple {
+        border: 1px solid rgba($color: $component-color2, $alpha: 0.4);
+        border-radius: 10px;
+        .game__box__list__item::before {
+          background-color: $component-color2;
+        }
+      }
       &.relative {
         position: relative;
         padding: 75px 20px 20px;
