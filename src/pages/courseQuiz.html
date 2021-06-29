@@ -17,6 +17,14 @@ title: მოსწავლეების რესურსი
       <li class="page__nav__list__item">
         <a href="#" class="page__nav__list__item-link">სასწავლო კურსები</a>
       </li>
+      <li class="page__nav__list__item">
+        <svg class="icon">
+          <use xlink:href="#ico-chevron-right"></use>
+        </svg>
+      </li>
+      <li class="page__nav__list__item">
+        <a href="#" class="page__nav__list__item-link">კურსის სახელი</a>
+      </li>
     </ul>
   </section>
 </div>
@@ -36,7 +44,7 @@ title: მოსწავლეების რესურსი
     <div class="course__intro__header">
       <div class="container">
         <div class="course__intro__header__row">
-          <div class="course__intro__header__item">პროგრესი: <span>1</span>/<span>10</span> თემიდან</div>
+          <div class="course__intro__header__item">პროგრესი: <span>1</span>/<span>10</span> ნაწილიდან</div>
         </div>
       </div>
     </div>
@@ -65,7 +73,7 @@ title: მოსწავლეების რესურსი
                   <div class="game__checkbox"></div>
                   <span class="text"> შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
                 </div>
-                <div class="game__quiz__answ">
+                <div class="game__quiz__answ success-border">
                   <div class="game__checkbox"></div>
                   <span class="text">ცხოვრების ჯანსაღი წესი არა ისა კიდე</span>
                 </div>
@@ -90,7 +98,7 @@ title: მოსწავლეების რესურსი
                   <div class="game__checkbox"></div>
                   <span class="text"> შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
                 </div>
-                <div class="game__quiz__answ">
+                <div class="game__quiz__answ success-border">
                   <div class="game__checkbox"></div>
                   <span class="text">ცხოვრების ჯანსაღი წესი არა ისა კიდე</span>
                 </div>
@@ -131,7 +139,7 @@ title: მოსწავლეების რესურსი
                   <div class="game__checkbox"></div>
                   <span class="text"> შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
                 </div>
-                <div class="game__quiz__answ">
+                <div class="game__quiz__answ success-border">
                   <div class="game__checkbox"></div>
                   <span class="text">ცხოვრების ჯანსაღი წესი არა ისა კიდე</span>
                 </div>
@@ -152,11 +160,11 @@ title: მოსწავლეების რესურსი
 <script>
 
   $('.game__quiz__answ').click(function () {
-    $('.game__quiz__answ.checked').removeClass('checked');
+   // $('.game__quiz__answ.checked').removeClass('checked');
     $('.game__quiz__answ__cont.answered-suc').removeClass('answered-suc');
     $('.game__quiz__answ__cont.answered-err').removeClass('answered-err');
     $('.game__quiz__answ.success.active').removeClass('active');
-    $(this).addClass('checked');
+    $(this).toggleClass('checked');
     if ($(this).hasClass('checked') && $(this).hasClass('success')) {
       $(this).parents(".game__quiz__answ__cont").addClass("answered-suc");
     } else if ($(this).hasClass('checked') && $(this).hasClass('error')) {

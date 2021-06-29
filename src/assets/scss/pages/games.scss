@@ -1736,10 +1736,16 @@
           }
         }
       }
+      
       &__cont {
         &.answered-suc {
           .game__quiz__answ:not(.success) {
             opacity: 0.2;
+          }
+          .success-border{
+            border: 1px solid $component-color9;
+            opacity: 1!important;
+            background-color: #FFD98233;
           }
         }
         &.answered-err {
