@@ -355,8 +355,8 @@
             </svg>
           </button>
           <div class="modal-body notificationModal-body padding-sm">
-            <h2 class="course__list__modal-h2">თემა მიუწვდომელია</h2>
-            <p class="course__list__modal-p">ამ თემის გასავლელად საჭიროა მის წინამდებარე თემების გავლა</p>
+            <h2 class="course__list__modal-h2">ნაწილი მიუწვდომელია</h2>
+            <p class="course__list__modal-p">ამ ნაწილის გასავლელად საჭიროა მისი წინამდებარე ნაწილების გავლა</p>
           </div>
         </div>
       </div>
@@ -520,6 +520,14 @@
       <li class="page__nav__list__item">
         <a href="#" class="page__nav__list__item-link">სასწავლო კურსები</a>
       </li>
+      <li class="page__nav__list__item">
+        <svg class="icon">
+          <use xlink:href="#ico-chevron-right"></use>
+        </svg>
+      </li>
+      <li class="page__nav__list__item">
+        <a href="#" class="page__nav__list__item-link">კურსის სახელი</a>
+      </li>
     </ul>
   </section>
 </div>
@@ -542,8 +550,17 @@
     <div class="course__intro__header">
       <div class="container">
         <div class="course__intro__header__row">
-          <div class="course__intro__header__item">პროგრესი: <span>1</span>/<span>10</span> თემიდან</div>
-          <div class="course__intro__header__item"><a href="course-extra-resources.html">დამატებითი რესურსები</a></div>
+          <div class="course__intro__header__item">პროგრესი: <span>1</span>/<span>10</span> ნაწილიდან</div>
+          <div class="course__intro__header__item">
+            <span class="link">
+            დამატებითი რესურსები
+          </span>
+          <span class="ps-2 close-icon">
+            <svg class="icon">
+              <use xlink:href="#close"></use>
+            </svg>
+          </span>
+        </div>
         </div>
       </div>
     </div>
@@ -551,39 +568,41 @@
       <div class="container">
         <div class="row course__content__row">
           <div class="col-12 col-xl-7">
-            <div class="course__intro__video__container">
-              <iframe class="course__intro__video" width="100%" height="100%"
-                src="https://www.youtube.com/embed/fPasjUl-Vg4?rel=0&amp;showinfo=0" frameborder="0"
-                allowfullscreen="allowfullscreen"></iframe>
+            <div class="course__intro__video__container course__intro__video__container-hide">
+              <div id="player" class="course__intro__video"></div>
             </div>
-            <div class="game__quiz__quest course__quiz__quest">
-              <span class="text">კითხვა რომელიც იწყება აქედან და გრძელდება ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი
-                წაითხვა კი შეუძლებელია ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია ?</span>
-              <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
+            <script src="http://www.youtube.com/player_api"></script>
+            <div class="course__quiz__quest-hide">
+              <div class="game__quiz__quest course__quiz__quest">
+                <span class="text">კითხვა რომელიც იწყება აქედან და გრძელდება ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი
+                  წაითხვა კი შეუძლებელია ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია ?</span>
+                <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
+              </div>
+              <div class="game__quiz__answ__cont course__quiz__answ__cont">
+                <div class="game__quiz__answ">
+                  <div class="game__checkbox"></div>
+                  <span class="text">ცხოვრების ჯანსაღი წესი</span>
+                </div>
+                <div class="game__quiz__answ error">
+                  <div class="game__checkbox"></div>
+                  <span class="text">მოკლე პასუხი თუ იყო საჭირო</span>
+                </div>
+                <div class="game__quiz__answ success">
+                  <div class="game__checkbox"></div>
+                  <span class="text"> შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
+                </div>
+                <div class="game__quiz__answ success-border">
+                  <div class="game__checkbox"></div>
+                  <span class="text">ცხოვრების ჯანსაღი წესი არა ისა კიდე</span>
+                </div>
+              </div>
+              <button class="about__page__btn game__button bt-blue checkQuiz__tbn">შემოწმება</button>
+              <div class="game__button__container course__quiz__button__container">
+                <button class="about__page__btn game__button mr bt-gray" id="startQuiz">ახლიდან დაწყება</button>
+                <button class="about__page__btn game__button bt-blue">შემდეგი საკითხი</button>
+              </div>
             </div>
-            <div class="game__quiz__answ__cont course__quiz__answ__cont">
-              <div class="game__quiz__answ">
-                <div class="game__checkbox"></div>
-                <span class="text">ცხოვრების ჯანსაღი წესი</span>
-              </div>
-              <div class="game__quiz__answ error">
-                <div class="game__checkbox"></div>
-                <span class="text">მოკლე პასუხი თუ იყო საჭირო</span>
-              </div>
-              <div class="game__quiz__answ success">
-                <div class="game__checkbox"></div>
-                <span class="text"> შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
-              </div>
-              <div class="game__quiz__answ">
-                <div class="game__checkbox"></div>
-                <span class="text">ცხოვრების ჯანსაღი წესი არა ისა კიდე</span>
-              </div>
-            </div>
-            <div class="game__button__container course__quiz__button__container">
-              <button class="about__page__btn game__button mr bt-gray">ახლიდან დაწყება</button>
-              <button class="about__page__btn game__button bt-blue">შემდეგი საკითხი</button>
-            </div>
-            <div class="course__intro__line d-none d-md-block"></div>
+            <div class="course__intro__line"></div>
             <div class="page__content__text">
               <p>ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის
                 აღქმაში ხელი შეუშალოს. გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე
@@ -604,59 +623,316 @@
                 გამეორებადი, შემთხვევითი სიტყვების ან ხუმრობების შემცველი.
               </p>
             </div>
-            <div class="course__intro__line d-none d-md-block"></div>
+            <div class="course__intro__line"></div>
             <div class="course__download__btn">
               <a href="#">
-                ტესტის გადმოწერა
-                <svg class="icon"><use xlink:href="#icon-feather-download"></use></svg>
+                ტექსტის გადმოწერა
+                <svg class="icon">
+                  <use xlink:href="#icon-feather-download"></use>
+                </svg>
               </a>
             </div>
           </div>
           <div class="col-12 col-xl-5">
             <div class="course__list__btn">
-              <h3> მიმდინარე ლექცია: <span class="purple"><span>1.</span> ლექცია - სათაური რაღაც გრძელი</span> </h3>
+              <h3> მიმდინარე ნაწილი: <span class="purple"><span>1.</span> ნაწილი - სათაური რაღაც გრძელი</span> </h3>
               <svg class="icon">
                 <use xlink:href="#arrow-dropdown"></use>
               </svg>
             </div>
             <div class="course__list">
               <a href="#" class="course__intro__list__item passed">
-                <h3> <span>1.</span> ლექცია - სათაური რაღაც გრძელი </h3>
+                <h3> <span>1.</span> ნაწილი - სათაური რაღაც გრძელი </h3>
                 <p>როგორ შეცვალა სოციალურმა მედიამ ტრადიციული, როგორ განხორციელდა ეს ცვლილებები ან საერთოდ, რას
                   ნიშნავს მედია - ლექციის ფარგლებში ამ და სხვა საჭირო ინფორმაციას მიიღებთ აღნიშნული მიმართულების
                   შესახებ.</p>
               </a>
               <a href="#" class="course__intro__list__item passed">
-                <h3> <span>2.</span> ლექცია - მეორე სათაური რა კაია </h3>
+                <h3> <span>2.</span> ნაწილი - მეორე სათაური რა კაია </h3>
                 <p>სოციალური მედია იმდენად სწრაფი ტემპებით განვითარდა, რომ ტრადიციულ მედიას, ფაქტობრივად, წაართვა ის
                   პოზიცია, რაც მას ასწლეულის განმავლობაში ეკავა. ლექციაში მოისმენთ, როგორ განვითარდა ეს მოვლენები.
                 </p>
               </a>
               <a href="#" class="course__intro__list__item active">
-                <h3> <span>3.</span> ლექცია - მოკლე სათაური </h3>
+                <h3> <span>3.</span> ნაწილი - მოკლე სათაური </h3>
                 <p>რა არის პოდკასტი, როგორი ზეგავლენა მოახდინა სოციალური მედია არხების გაპოპულარულებამ ტელევიზიებზე.
                 </p>
               </a>
               <a href="#" class="course__intro__list__item" data-bs-toggle="modal" data-bs-target="#courseNotification">
-                <h3> <span>4.</span> ლექცია - სათაურია მთლიანად ისედაც </h3>
+                <h3> <span>4.</span> ნაწილი - სათაურია მთლიანად ისედაც </h3>
                 <p>ლექციის საშუალებით, ნახავთ განსხვავებებს ინფორმაციის გავრცელების ძველ და ახალ საშუალებებს შორის.
                 </p>
               </a>
               <a href="#" class="course__intro__list__item">
-                <h3> <span>5.</span> ლექცია - შეიძლება იმ ლექციის გარეშეც იყოს როგორც გინდათ </h3>
+                <h3> <span>5.</span> ნაწილი - შეიძლება იმ ლექციის გარეშეც იყოს როგორც გინდათ </h3>
                 <p>ბოლო ლექციაში მოისმენთ, რა ძალა აქვს სოციალურ მედიას და რა გავლენების მოხდენა შეუძლია მას, ასევე,
                   საინტერესო ისტორიას, როგორ იმოქმედა სოციალურ მედიაში გავრცელებულმა პოსტებმა დიდ კომპანიაზე.</p>
               </a>
               <a href="#" class="course__intro__list__item">
-                <h3> <span>6.</span> ლექცია - მოკლე სათაური </h3>
+                <h3> <span>6.</span> ნაწილი - მოკლე სათაური </h3>
                 <p>რა არის პოდკასტი, როგორი ზეგავლენა მოახდინა სოციალური მედია არხების გაპოპულარულებამ ტელევიზიებზე.
                 </p>
               </a>
               <a href="#" class="course__intro__list__item">
-                <h3> <span>7.</span> ლექცია - სათაურია მთლიანად ისედაც </h3>
+                <h3> <span>7.</span> ნაწილი - სათაურია მთლიანად ისედაც </h3>
                 <p>ლექციის საშუალებით, ნახავთ განსხვავებებს ინფორმაციის გავრცელების ძველ და ახალ საშუალებებს შორის.
                 </p>
               </a>
+            </div>
+            <div class="course__intro__line dark d-none d-xl-block"></div>
+          </div>
+        </div>
+        <div class="course__content__resources">
+          <div class="section__resources__row mt-0">
+            <h2 class="section__resources__title">დამატებითი რესურსები</h2>
+            <form>
+              <select class="custom-select" placeholder="სორტირება">
+                <option value="1">თარიღი კლებადი</option>
+                <option value="2">თარიღი ზრდადი</option>
+                <option value="3">ანბანი კლებადი</option>
+                <option value="4">ანბანი ზრდადი</option>
+              </select>
+            </form>
+          </div>
+          <div class="document__line mg-sm"></div>
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <img src="assets/img/resource-img.png" alt="resource image" class="resource__item__img"
+                    data-bs-toggle="modal" data-bs-target="#fullscreenImgModal" />
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-image"></use>
+                        </svg>
+                      </div>
+                      <div class="resource__item__icon__bg">
+                        <a href="assets/img/resource-img.png" download>
+                          <svg class="icon resource__item__icon">
+                            <use xlink:href="#icon-feather-download"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">სამართლებრივი-კულტურა.jpg</h2>
+                  <p class="resource__item__description">ვინ არის სამართალდამცავი</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <a href="#" class="w-100 h-100 d-flex justify-content-center align-items-center">
+                    <img src="assets/img/icons/file.svg" alt="resource image" class="resource__item__img file" />
+                  </a>
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-file"></use>
+                        </svg>
+                      </div>
+                      <div class="resource__item__icon__bg">
+                        <a href="assets/img/test.pdf" download>
+                          <svg class="icon resource__item__icon">
+                            <use xlink:href="#icon-feather-download"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">ახალი წიგნი.pdf</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <a href="#" class="w-100 h-100 d-flex justify-content-center align-items-center">
+                    <img src="assets/img/icons/feather-arrow-up-right.svg" alt="resource image"
+                      class="resource__item__img file" />
+                  </a>
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-feather-arrow-up-right"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title underline">მოძრაობის წესები და ქვეითები</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <div class="resource__item__video">
+                    <div class="video-container paddings">
+                      <iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/i-80SGWfEjM?rel=0&amp;showinfo=0" frameborder="0"
+                        allowfullscreen="allowfullscreen"></iframe>
+                    </div>
+                  </div>
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-awesome-play-circle"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">პოლიციელი ჩემი მეგობარია.mov</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <img src="assets/img/resource-img.png" alt="resource image" class="resource__item__img"
+                    data-bs-toggle="modal" data-bs-target="#fullscreenImgModal" />
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-image"></use>
+                        </svg>
+                      </div>
+                      <div class="resource__item__icon__bg">
+                        <a href="assets/img/resource-img.png" download>
+                          <svg class="icon resource__item__icon">
+                            <use xlink:href="#icon-feather-download"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">სამართლებრივი-კულტურა.jpg</h2>
+                  <p class="resource__item__description">ვინ არის სამართალდამცავი</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <img src="assets/img/illustrations/illustration1.png" alt="resource image"
+                    class="resource__item__img file active" data-bs-toggle="modal"
+                    data-bs-target="#fullscreenImgModal" />
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-file"></use>
+                        </svg>
+                      </div>
+                      <div class="resource__item__icon__bg">
+                        <a href="assets/img/test.pdf" download>
+                          <svg class="icon resource__item__icon">
+                            <use xlink:href="#icon-feather-download"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">ახალი წიგნი.pdf</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <img src="assets/img/themes/theme1.png" alt="resource image" class="resource__item__img file active"
+                    data-bs-toggle="modal" data-bs-target="#fullscreenImgModal" />
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-feather-arrow-up-right"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title underline">მოძრაობის წესები და ქვეითები</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <div class="resource__item__video">
+                    <div class="video-container paddings">
+                      <iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/i-80SGWfEjM?rel=0&amp;showinfo=0" frameborder="0"
+                        allowfullscreen="allowfullscreen"></iframe>
+                    </div>
+                  </div>
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-awesome-play-circle"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">პოლიციელი ჩემი მეგობარია.mov</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <img src="assets/img/resource-img.png" alt="resource image" class="resource__item__img"
+                    data-bs-toggle="modal" data-bs-target="#fullscreenImgModal" />
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-image"></use>
+                        </svg>
+                      </div>
+                      <div class="resource__item__icon__bg">
+                        <a href="assets/img/resource-img.png" download>
+                          <svg class="icon resource__item__icon">
+                            <use xlink:href="#icon-feather-download"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">სამართლებრივი-კულტურა.jpg</h2>
+                  <p class="resource__item__description">ვინ არის სამართალდამცავი</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -669,19 +945,24 @@
 <script>
 
   $('.game__quiz__answ').click(function () {
-    $('.game__quiz__answ.checked').removeClass('checked');
+    // $('.game__quiz__answ.checked').removeClass('checked');
     $('.game__quiz__answ__cont.answered-suc').removeClass('answered-suc');
     $('.game__quiz__answ__cont.answered-err').removeClass('answered-err');
     $('.game__quiz__answ.success.active').removeClass('active');
-    $(this).addClass('checked');
-    if ($(this).hasClass('checked')&& $(this).hasClass('success')) {
+    $(this).toggleClass('checked');
+    if ($(this).hasClass('checked') && $(this).hasClass('success')) {
       $(this).parents(".game__quiz__answ__cont").addClass("answered-suc");
-    }else if ($(this).hasClass('checked')&& $(this).hasClass('error')) {
+    } else if ($(this).hasClass('checked') && $(this).hasClass('error')) {
       $(this).parents(".game__quiz__answ__cont").addClass("answered-err");
     }
-     if($(this).hasClass('checked')&& $(this).hasClass('error')) {
+    if ($(this).hasClass('checked') && $(this).hasClass('error')) {
       $(".game__quiz__answ.success").addClass("active");
     }
+    $('.checkQuiz__tbn').addClass('show');
+  });
+
+  $('.checkQuiz__tbn').click(function () {
+    $(this).removeClass('show');
     $('.course__quiz__button__container').addClass('show');
   });
 

@@ -57,6 +57,22 @@ function clickers() {
         $(this).toggleClass('active');
         $('.course__list').toggleClass('active');
     });
+    $('#startQuiz').click(function () {
+        $(".course__intro__video__container-hide").removeClass("active");
+        $(".course__quiz__quest-hide").removeClass("active");
+    });
+    $('.course__intro__header__item .link').click(function () {
+        $(this).addClass("active");
+        $(".course__intro__header__item .close-icon").addClass("active");
+        $(".course__content__row").addClass("hide");
+        $(".course__content__resources").addClass("active");
+    });
+    $('.course__intro__header__item .close-icon').click(function () {
+        $(this).removeClass("active");
+        $(".course__intro__header__item .link").removeClass("active");
+        $(".course__content__row").removeClass("hide");
+        $(".course__content__resources").removeClass("active");
+    });
 }
 clickers();
 
@@ -101,7 +117,7 @@ $(function () {
 // function tabsLink() {
 //     var hash = window.location.hash;
 //     hash && $('#aboutTabs a[href="' + hash + '"]').tab('show');
-  
+
 //     $('#aboutTabs a').click(function (e) {
 //       $(this).tab('show');
 //       var scrollmem = $('body').scrollTop();
@@ -118,40 +134,68 @@ function onloadPage() {
 }
 window.onload = onloadPage;
 
+// check when video finished
+
+// create youtube player
+var player;
+function onYouTubePlayerAPIReady() {
+    player = new YT.Player('player', {
+        videoId: 'fPasjUl-Vg4',
+        events: {
+            //'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+// autoplay video
+// function onPlayerReady(event) {
+//     event.target.playVideo();
+// }
+
+// when video ends
+function onPlayerStateChange(event) {
+    if (event.data === 0) {
+        $(".course__intro__video__container-hide").addClass("active");
+        $(".course__quiz__quest-hide").addClass("active");
+    }
+}
+
+
 //custom select
-$(".custom-select").each(function() {
+$(".custom-select").each(function () {
     var classes = $(this).attr("class"),
-        id      = $(this).attr("id"),
-        name    = $(this).attr("name");
-    var template =  '<div class="' + classes + '">';
-        template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
-        template += '<div class="custom-options">';
-        $(this).find("option").each(function() {
-          template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
-        });
+        id = $(this).attr("id"),
+        name = $(this).attr("name");
+    var template = '<div class="' + classes + '">';
+    template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+    template += '<div class="custom-options">';
+    $(this).find("option").each(function () {
+        template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+    });
     template += '</div></div>';
-    
+
     $(this).wrap('<div class="custom-select-wrapper"></div>');
     $(this).hide();
     $(this).after(template);
-  });
-  $('.form-register .custom-select-trigger').each(function() {  
-    $(this).addClass("selected"); 
+});
+$('.form-register .custom-select-trigger').each(function () {
+    $(this).addClass("selected");
     $(this).text($(this).parents(".custom-select").children(".custom-options").children(".custom-option:first-child").text());
-  }); 
-  $(".custom-option:first-of-type").hover(function() {
+});
+$(".custom-option:first-of-type").hover(function () {
     $(this).parents(".custom-options").addClass("option-hover");
-  }, function() {
+}, function () {
     $(this).parents(".custom-options").removeClass("option-hover");
-  });
-  $(".custom-select-trigger").on("click", function() {
-    $('html').one('click',function() {
-      $(".custom-select").removeClass("opened");
+});
+$(".custom-select-trigger").on("click", function () {
+    $('html').one('click', function () {
+        $(".custom-select").removeClass("opened");
     });
     $(this).parents(".custom-select").toggleClass("opened");
     event.stopPropagation();
-  });
-  $(".custom-option").on("click", function() {
+});
+$(".custom-option").on("click", function () {
     $('#txtData').hide();
     $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
     $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
@@ -159,10 +203,10 @@ $(".custom-select").each(function() {
     $(this).parents(".custom-select").removeClass("opened");
     $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
     $(this).parents(".custom-select").find(".custom-select-trigger").addClass("selected");
-  });
-   $(".custom-option.select_other").on("click", function() {
+});
+$(".custom-option.select_other").on("click", function () {
     $('#txtData').show();
-  });
+});
 
 // dropdown
 
