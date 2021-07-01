@@ -429,15 +429,15 @@
           <div class="game__checkbox"></div>
           <span class="text">ცხოვრების ჯანსაღი წესი</span>
         </div>
-        <div class="game__quiz__answ yellow error">
+        <div class="game__quiz__answ yellow success">
           <div class="game__checkbox"></div>
           <span class="text">შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
         </div>
-        <div class="game__quiz__answ pink success">
+        <div class="game__quiz__answ pink error">
           <div class="game__checkbox"></div>
           <span class="text">ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია.</span>
         </div>
-        <div class="game__quiz__answ purple">
+        <div class="game__quiz__answ purple success-border">
           <div class="game__checkbox"></div>
           <span class="text">ცხოვრების ჯანსაღი წესი</span>
         </div>
@@ -475,11 +475,11 @@
 <script>
 
   $('.game__quiz__answ').click(function () {
-    $('.game__quiz__answ.checked').removeClass('checked');
+    // $('.game__quiz__answ.checked').removeClass('checked');
     $('.game__quiz__answ__cont.answered-suc').removeClass('answered-suc');
     $('.game__quiz__answ__cont.answered-err').removeClass('answered-err');
     $('.game__quiz__answ.success.active').removeClass('active');
-    $(this).addClass('checked');
+    $(this).toggleClass('checked');
     if ($(this).hasClass('checked')&& $(this).hasClass('success')) {
       $(this).parents(".game__quiz__answ__cont").addClass("answered-suc");
     }else if ($(this).hasClass('checked')&& $(this).hasClass('error')) {
