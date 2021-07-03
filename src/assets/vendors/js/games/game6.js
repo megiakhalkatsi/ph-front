@@ -105,16 +105,19 @@ $( function() {
                         correctAttampt++
                         document.querySelector('.purple').innerText = `${correctAttampt}/4`
                         $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
-                    } else if(incorrectAttampt < 3) {
+                        clearTimeout(timeout)
+                        
+                    } else if(incorrectAttampt < 2) {
                         incorrectAttampt++
                         e.target.parentElement.classList.add('incorrect')
                         $('#DogImage').attr('src', '../assets/img/illustrations/incorrect-image.gif')
-                            setTimeout(() => {
+                           const timeout = setTimeout(() => {
                             $('.checkbox-container').removeAttr('incorrect')
                             for(var i = 0; i < document.querySelectorAll('.checkbox-container.incorrect').length; i++) {
                                  document.querySelectorAll('.checkbox-container.incorrect')[i].querySelector('input').checked = false;   
                             }
 
+                            clearTimeout(timeout)
                             incorrectAttampt = 0
                         }, 3000)
                     } else {
@@ -123,7 +126,7 @@ $( function() {
                         $('#notificationModal').modal('show');
                     }
 
-                } else if(e.target.checked === false && incorrectAttampt <= 3) {
+                } else if(e.target.checked === false && incorrectAttampt <= 2) {
                     e.target.removeAttribute('checked')
                     e.target.checked = false;
 
@@ -171,7 +174,7 @@ $( "#resetButton2" ).click(function() {
 
 
 $( "#completBtn" ).click(function() {
-    if(correctAttampt === 4) {
+    if(correctAttampt === 3) {
         $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
         $('.successModal').attr('style', 'display: block; height: 100vh; position: fixed; top: 0;left: 0;right: 0; z-index: 11111;')
     } else {
