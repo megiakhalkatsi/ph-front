@@ -1,6 +1,7 @@
 ---
 layout: gamesLayout
 title: მოსწავლეების რესურსი
+gameScripts: ../assets/vendors/js/games/game4.js
 ---
 
 <div class="modal-body game__modal-body">
@@ -21,7 +22,7 @@ title: მოსწავლეების რესურსი
             <span class="game__box__item__text">ლორემ იპსუმ წამეჩხუბება უსასრულობის ორმოცდაათკაპიკიან ჩარდახების
               უოლტერსი შეუსვენებლად ჩამოსული, დაბორიალობენ ვეჭიდებით, გატაცებულთა სთელავენ ზეიმობს.</span>
           </div>
-          <div class="editable game__box__list__container" contenteditable="true">
+          <div class="editable game__box__list__container" id="editable1" contenteditable="true">
             <ul class="game__box__list"> </ul>
           </div>
           <div class="game__box__btn">
@@ -76,42 +77,3 @@ title: მოსწავლეების რესურსი
     </div>
   </div>
 </div>
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-  $(".game__box__bulletsList").focus(function () {
-    if (document.getElementById('game__box__bulletsList').value === '') {
-      document.getElementById('game__box__bulletsList').value += '• ';
-    }
-  });
-
-  $(".game__box__bulletsList").keyup(function (event) {
-    var keycode = (event.keyCode ? event.keyCode : event.which);
-    if (keycode == '13') {
-      document.getElementById('game__box__bulletsList').value += '• ' + getElementById('');
-    }
-    var txtval = document.getElementById('game__box__bulletsList').value;
-    if (txtval.substr(txtval.length - 1) == '\n') {
-      document.getElementById('game__box__bulletsList').value = txtval.substring(0, txtval.length - 1);
-    }
-  });
-
-
-
-  $('.game__box__btn').click(function (e) {
-    $(this).addClass('hide');
-    $(this).parent().addClass('active');
-    $(this).prev('.game__box__list__container').addClass('active');
-    $(this).prev('.game__box__list__container').children(".game__box__list").append('<li class="game__box__list__item game__box__item__text"></li>');
-    e.stopPropagation()
-  });
-  $(document).on("click", function (e) {
-    if ($(e.target).is(".game__box__list__item") === false) {
-      $('.game__box__btn').removeClass('hide');
-    }
-  });
-
-</script>
