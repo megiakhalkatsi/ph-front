@@ -1,22 +1,46 @@
 ---
 layout: gamesLayout
 title: მოსწავლეების რესურსი
+gameScripts: ../assets/vendors/js/games/game8.js
 ---
+
+<style>
+  .game__table .game__answer__container {
+    padding: 3px;
+    display: inline-block;
+  }
+</style>
 
 <div class="modal-body game__modal-body mainBody">
   <div class="row">
     <div class="col-12 page__content-col-md m-auto">
       <h2 class="game__text lg mb-34">პაროლის ნიმუშები</h2>
       <div class="game__dragAndDrop__container">
-        <div class="game__answer__container blue blue-border mr ">
-          <p class="game__text md">Nata_Bulia14</p>
+        <div class="game__answer__container blue blue-border mr DraggableItem" data-correct="false">
+          <p class="game__text md">Nata_142007</p>
         </div>
-        <div class="game__answer__container blue blue-border mr ">
+        <div class="game__answer__container blue blue-border mr DraggableItem" data-correct="false">
           <p class="game__text md">Mozart56-Nata07</p>
         </div>
-        <div class="game__answer__container blue blue-border mr ">
+        <div class="game__answer__container blue blue-border mr DraggableItem" data-correct="false">
+          <p class="game__text md">Nata_Bulia14</p>
+        </div>
+        <div class="game__answer__container blue blue-border mr DraggableItem" data-correct="false">
           <p class="game__text md">Nata-Music2007</p>
         </div>
+        <div class="game__answer__container blue blue-border mr DraggableItem" data-correct="false">
+          <p class="game__text md">NataBulia2007</p>
+        </div>
+        <div class="game__answer__container blue blue-border mr DraggableItem" data-correct="true">
+          <p class="game__text md">MLH@14</p>
+        </div>
+        <div class="game__answer__container blue blue-border mr DraggableItem" data-correct="true">
+          <p class="game__text md">Chemi*Auto@44</p>
+        </div>
+        <div class="game__answer__container blue blue-border mr DraggableItem" data-correct="true">
+          <p class="game__text md">2007Ronaldo1985</p>
+        </div>
+
       </div>
       <div class="row">
         <div class="col-12 col-lg-6">
@@ -27,18 +51,7 @@ title: მოსწავლეების რესურსი
                   <th scope="col" class="game__table__th text-center">დაცული პაროლი</th>
                 </tr>
               </thead>
-              <tbody class="game__table__body block">
-                <tr class="game__table__body__tr">
-                  <td class="game__table__td flex">
-                    <div class="game__answer__container blue blue-border mr success">
-                      <p class="game__text md">Mozart56-Nata07</p>
-                    </div>
-                    <div class="game__answer__container blue blue-border mr success">
-                      <p class="game__text md">Mozart56-Nata07</p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody class="game__table__body block DroppableItem tbody1" style="padding: .5rem .5rem;" data-answer="true"></tbody>
             </table>
           </div>
         </div>
@@ -50,18 +63,7 @@ title: მოსწავლეების რესურსი
                   <th scope="col" class="game__table__th text-center">დაუცველი პაროლი</th>
                 </tr>
               </thead>
-              <tbody class="game__table__body block">
-                <tr class="game__table__body__tr">
-                  <td class="game__table__td flex">
-                    <div class="game__answer__container blue blue-border mr error">
-                      <p class="game__text md">Mozart56-Nata07</p>
-                    </div>
-                    <div class="game__answer__container blue blue-border mr">
-                      <p class="game__text md">Mozart56-Nata07</p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody class="game__table__body block DroppableItem tbody2" style="padding: .5rem .5rem;" data-answer="false"></tbody>
             </table>
           </div>
         </div>
@@ -102,7 +104,7 @@ title: მოსწავლეების რესურსი
   <div class="row">
     <div class="col-12 page__content-col m-auto">
       <h2 class="game__finish__text lg green">გილოცავთ !</h2>
-      <p class="game__finish__text">თქვენ წარმატებით დაასრულეთ თამაში! <span class="d-block" id="correctAnswers">0/16
+      <p class="game__finish__text">თქვენ წარმატებით დაასრულეთ თამაში! <span class="d-block" id="correctAnswers">0/8
           კითხვა</span></p>
       <picture>
         <source media="(min-width:768px)" srcset="../assets/img/illustrations/happy.gif" type="image/gif">
@@ -121,7 +123,7 @@ title: მოსწავლეების რესურსი
   <div class="row">
     <div class="col-12 page__content-col m-auto">
       <h2 class="game__finish__text lg orange">კიდევ სცადე</h2>
-      <p class="game__finish__text">სულ ცოტა დაგაკლდა. <span class="d-block" id="correctAnswers">0/16 კითხვა</span></p>
+      <p class="game__finish__text">სულ ცოტა დაგაკლდა. <span class="d-block" id="correctAnswers">0/8 კითხვა</span></p>
       <p class="game__finish__text sm">კიდევ სცადე და ყველაფერი გამოგივა. მთავარია, ყურადღებით გაუყვე კითხვებს.</p>
       <img src="../assets/img/illustrations/support.gif" alt="congratulations" class="game__finish__img">
       <div class="game__button__container justify-content-center mb-0">
@@ -144,7 +146,7 @@ title: მოსწავლეების რესურსი
       </button>
       <div class="modal-body notificationModal-body">
         <p class="section__main__text mb-0">
-          შეავსეთ ყველა უჯრა
+          გთხოვთ, სვეტებში გაანაწილოთ ყველა პაროლი
         </p>
       </div>
     </div>
