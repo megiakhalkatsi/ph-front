@@ -24,7 +24,7 @@ $(".game__box__bulletsList").focus(function () {
     $(this).parent().addClass('active');
     $(this).prev('.game__box__list__container').addClass('active');
     $(this).prev('.game__box__list__container').children(".game__box__list").append('<li class="game__box__list__item game__box__item__text"></li>');
-    document.getElementById("editable1").focus();
+    $('.game__box__list__container').focus()
   });
   $(document).on("click", function (e) {
     if ($(e.target).is(".game__box__list__item") === false) {
