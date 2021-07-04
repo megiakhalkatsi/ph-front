@@ -55,6 +55,13 @@
           color: rgba($color: $black, $alpha: 0.6);
         }
       }
+      .user-icon {
+        width: 30px;
+        height: 30px;
+        fill: rgba($color: $black, $alpha: 0.6);
+        margin-bottom: 21px;
+        margin-right: 10px;
+      }
     }
     &__line {
       width: 100%;
@@ -479,6 +486,21 @@
     height: 192px;
     background-color: $component-color9;
     margin-bottom: 34px;
+    &__item{
+      border: 1px solid $component-color1;
+      border-radius: 8px;
+      padding: 34px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 34px;
+      &__title{
+        text-align: center;
+        font-family: $firagoMedium;
+        font-size: 21px;
+        color: $black;
+      }
+    }
   }
   &__result {
     padding: 55px 0;
@@ -590,13 +612,13 @@
           }
         }
       }
-      &__btn{
+      &__btn {
         padding: 21px;
         @media #{$breakpoint-lg} {
           display: none;
         }
       }
-      &.course__list{
+      &.course__list {
         @media #{$breakpoint-lg} {
           display: block;
           border: none;
