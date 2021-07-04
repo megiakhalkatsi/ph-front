@@ -8,12 +8,11 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1.0,user-scalable=0, shrink-to-fit=no">
   <title>მოსწავლეების რესურსი</title>
-  <link rel="icon" href="../assets/img/icons/logo1.ico" />
-  <link rel="stylesheet" href="../assets/vendors/css/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="assets/img/icons/logo1.ico" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body style="background-color: white;">
+<body>
   <!--svg sprite all used icons-->
   <svg width="0" height="0" class="hidden d-none">
     <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.825 5" id="arrow-dropdown">
@@ -152,7 +151,7 @@
   <!--svg sprite all used icons end-->
   <!-- onload event -->
   <div class="page__onload">
-    <img src="../assets/img/illustrations/run.gif" alt="loading" class="page__onload__img">
+    <img src="assets/img/illustrations/run.gif" alt="loading" class="page__onload__img">
   </div>
   <!-- onload event end -->
   <div class="page active">
@@ -471,94 +470,373 @@
       </div>
     </div>    <!--******-->
     <div class="page__main">
-      <div>
-
-<div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
-    <div class="modal-content radius-16">
-      <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+      <header class="header" id="header">
+        <div class="container">
+          <div class="header__container">
+            <a href="index.html" class="header__logo__container">
+              <img src="assets/img/icons/logo.svg" alt="სამართლებრივი კულტურა" class="header__logo__img">
+              <h1 class="header__logo">სამართლებრივი კულტურა</h1>
+            </a>
+            <nav class="header__nav">
+              <div class="header__nav__menuIcon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="header__nav__list__container">
+                <div class="language__mobile">
+                  <span class="dropdown__elem--gray">ენის არჩევა: </span>
+                  <div class="dropdown__elem" id="language__mobile">
+                    <div class="dropdown__elem--inner dropdown--toggler">
+                      <span class="text--active dropdown--selected">
+                        En
+                      </span>
+                      <svg class="icon">
+                        <use xlink:href="#arrow-dropdown"></use>
+                      </svg>
+                    </div>
+                    <div class="dropdown" data-for="language__mobile">
+                      <nav class="dropdown__nav">
+                        <li class="dropdown__item dropdown__item--active">En</li>
+                        <li class="dropdown__item">ქა</li>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+                
+                <ul class="header__nav__list">
+                  <li class="header__nav__item"><a href="about.html" class="header__nav__item-link active">ჩვენზე</a></li>
+                  <li class="header__nav__item"><a href="themes.html" class="header__nav__item-link">თემები</a></li>
+                  <li class="header__nav__item"><a href="resources.html" class="header__nav__item-link">რესურსები</a></li>
+                </ul>
+                <div class="header__nav__item__footer">
+                  <div class="footer__contact center">
+                    <a href="mailto:info@school.ge" class="footer__link footer__item">info@school.ge</a>
+                    <div class="footer__line footer__item"></div>
+                    <a href="#" class="footer__item footer__contact__icon">
+                      <svg class="icon">
+                        <use xlink:href="#icon-fb"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="footer__item footer__contact__icon">
+                      <svg class="icon">
+                        <use xlink:href="#youtube"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="header__nav__item">
+                <a href="login.html" class="header__nav__btn bt-blue">
+                  <svg class="icon">
+                    <use xlink:href="#metro-user"></use>
+                  </svg>
+                  შესვლა
+                </a>
+              </div>
+              <div class="header__nav__item search">
+                <a href="#" class="header__nav__search">
+                  <svg class="icon">
+                    <use xlink:href="#ico-search"></use>
+                  </svg>
+                </a>
+              </div>
+              <div class="dropdown__elem language__desktop" id="1">
+                <div class="dropdown__elem--inner dropdown--toggler">
+                  <span class="text--active dropdown--selected">
+                    En
+                  </span>
+                  <svg class="icon">
+                    <use xlink:href="#arrow-dropdown"></use>
+                  </svg>
+                </div>
+                <div class="dropdown" data-for="1">
+                  <nav class="dropdown__nav">
+                    <li class="dropdown__item dropdown__item--active">En</li>
+                    <li class="dropdown__item">ქა</li>
+                  </nav>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>      <div class="page__content dark">
+<div class="container">
+  <section class="page__nav">
+    <ul class="page__nav__list">
+      <li class="page__nav__list__item">
+        <a href="index.html" class="page__nav__list__item-link">მთავარი</a>
+      </li>
+      <li class="page__nav__list__item">
         <svg class="icon">
-          <use xlink:href="#cancel-icon"></use>
+          <use xlink:href="#ico-chevron-right"></use>
         </svg>
-      </button>
-      <div class="modal-body notificationModal-body">
-        <p class="section__main__text mb-0">
-          გთხოვთ, კიდევ ერთხელ გაეცნოთ სამართლებრივი კულტურის სახელმძღვანელოს მე-13 გვერდზე მოცემულ <a href="#"
-            class="section__main__text-link">ინფორმაციას</a> პოლიციის ძირითადი უფლებამოსილების შესახებ.
-        </p>
+      </li>
+      <li class="page__nav__list__item">
+        <a href="#" class="page__nav__list__item-link">სასწავლო კურსები</a>
+      </li>
+      <li class="page__nav__list__item">
+        <svg class="icon">
+          <use xlink:href="#ico-chevron-right"></use>
+        </svg>
+      </li>
+      <li class="page__nav__list__item">
+        <a href="#" class="page__nav__list__item-link">კურსის სახელი</a>
+      </li>
+    </ul>
+  </section>
+</div>
+<section>
+  <div class="container">
+    <div class="course__intro pd-sm">
+      <div class="row">
+        <div class="col-12 col-lg-10">
+          <div class="course__intro__content light">
+            <div class="d-flex align-items-center">
+              <svg class="icon user-icon">
+                <use xlink:href="#metro-user"></use>
+              </svg>
+              <h2>განმანათლებლის პროფილი</h2>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-<div class="modal-body game__modal-body">
-  <div class="row">
-    <div class="col-12 page__content-col m-auto">
-        <h2 class="game__finish__text lg orange">კიდევ სცადე</h2>
-        <p class="game__finish__text">სულ ცოტა დაგაკლდა. <span class="d-block">5/10 კითხვა</span></p>
-        <p class="game__finish__text sm">კიდევ სცადე და ყველაფერი გამოგივა. მთავარია, ყურადღებით გაუყვე კითხვებს.</p>
-        <img src="../assets/img/illustrations/support.gif" alt="congratulations" class="game__finish__img">
-        <div class="game__button__container justify-content-center mb-0">
-            <button id='prevStep' class="about__page__btn game__button mr bt-gray">წინა კითხვა</button>
-            <button id='nextStep' class="about__page__btn game__button bt-blue">შემდეგი კითხვა</button>
+  <div class="course__intro-bottom">
+    <div class="course__intro__header">
+      <div class="container">
+        <div class="course__intro__header__row">
+          <div class="course__intro__header__item">
+            <a href="#">დამატებითი ინსტრუქცია განმანათლებლისთვის
+              <span class="ps-2">
+                <svg class="icon arrow-icon">
+                  <use xlink:href="#feather-arrow-up-right"></use>
+                </svg>
+              </span>
+            </a>
           </div>
+          <div class="course__intro__header__item">
+            <a href="#">FB ჯგუფი
+              <span class="ps-2">
+                <svg class="icon arrow-icon">
+                  <use xlink:href="#feather-arrow-up-right"></use>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="course__intro-bottom__container">
+      <div class="container">
+        <div class="course__profile__row">
+          <div>
+            <div class="course__list__btn course__profile__menu__btn align-items-center">
+              <h3> <span class="purple"> ჩემი კურსები </span> </h3>
+              <svg class="icon">
+                <use xlink:href="#arrow-dropdown"></use>
+              </svg>
+            </div>
+            <div class="course__profile__menu course__list">
+              <ul>
+                <li class="course__profile__menu__item"><a href="#" class="course__profile__menu__link active">ჩემი
+                    კურსები</a></li>
+                <li class="course__profile__menu__item"><a href="#"
+                    class="course__profile__menu__link">სერთიფიკატები</a></li>
+                <li class="course__profile__menu__item"><a href="#" class="course__profile__menu__link">პროფილის
+                    რედაქტირება</a></li>
+                <div class="filter__line mt-34"></div>
+                <li class="course__profile__menu__item">
+                  <a href="#" class="course__profile__menu__link red">გამოსვლა
+                    <svg class="icon">
+                      <use xlink:href="#logOut"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="course__current__list">
+            <div class="row">
+              <div class="col-12 col-xl-10 m-auto">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="d-flex align-items-xl-center flex-column flex-xl-row align-items-xl-center justify-content-xl-between mb-4 ms-lg-3 ms-xl-0">
+                      <h2 class="section__resources__title mb-xl-0">ჩემი სერთიფიკატები</h2>
+                      <a href="#" class="form__section__text-sm-link" data-bs-toggle="modal" data-bs-target="#createCertificate">
+                        სერთიფიკატი მოსწავლისთვის
+                         <svg class="icon">
+                           <use xlink:href="#feather-arrow-up-right"></use>
+                         </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6">
+                    <div class="course__certificate__item">
+                      <div class="course__certificate"></div>
+                      <h3 class="course__certificate__item__title">სამართლებრივი კულტურა</h3>
+                      <div class="course__intro__line"></div>
+                      <button class="w-100 form__section__btn-social download bt-blue mb-4 mr-0">
+                        <img src="assets/img/icons/feather-download-white.svg" alt="icon" class="icon">
+                        გადმოწერა
+                      </button>
+                      <button class="w-100 form__section__btn-social fb">
+                        <svg class="icon">
+                          <use xlink:href="#icon-fb"></use>
+                        </svg>
+                        გააზიარე Facebook-ით
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6">
+                    <div class="course__certificate__item">
+                      <div class="course__certificate"></div>
+                      <h3 class="course__certificate__item__title">სამართლებრივი კულტურა</h3>
+                      <div class="course__intro__line"></div>
+                      <button class="w-100 form__section__btn-social download bt-blue mb-4 mr-0">
+                        <img src="assets/img/icons/feather-download-white.svg" alt="icon" class="icon">
+                        გადმოწერა
+                      </button>
+                      <button class="w-100 form__section__btn-social fb">
+                        <svg class="icon">
+                          <use xlink:href="#icon-fb"></use>
+                        </svg>
+                        გააზიარე Facebook-ით
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6">
+                    <div class="course__certificate__item">
+                      <div class="course__certificate"></div>
+                      <h3 class="course__certificate__item__title">სამართლებრივი კულტურა</h3>
+                      <div class="course__intro__line"></div>
+                      <button class="w-100 form__section__btn-social download bt-blue mb-4 mr-0">
+                        <img src="assets/img/icons/feather-download-white.svg" alt="icon" class="icon">
+                        გადმოწერა
+                      </button>
+                      <button class="w-100 form__section__btn-social fb">
+                        <svg class="icon">
+                          <use xlink:href="#icon-fb"></use>
+                        </svg>
+                        გააზიარე Facebook-ით
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 </div>
-</div>
+      <footer class="footer">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <img src="assets/img/phinternational.svg" alt="ph-international" class="footer__top__img">
+                  </div>
+              </div>
+              <div class="footer__bottom">
+                  <div class="row">
+                      <div class="col-12 col-lg-5 d-flex align-items-end align-items-lg-start align-items-xxl-end">
+                          <p class="footer__text">
+                              ვებ-გვერდზე განთავსებული ინფორმაცია არ წარმოადგენს ამერიკის შეერთებული შტატების მთავრობის ოფიციალურ ინფორმაციას და არ ასახავს ამერიკის შეერთებული შტატების სახელმწიფო დეპარტამენტისა და ამერიკის შეერთებული შტატების მთავრობის შეხედულებებს
+                          </p>
+                      </div>
+                      <div class="footer__contact center mobile-block">
+                          <a href="mailto:info@school.ge" class="footer__link footer__item">info@school.ge</a>
+                      <div class="footer__line footer__item"></div>
+                      <a href="#" class="footer__item footer__contact__icon">
+                          <svg class="icon">
+                              <use xlink:href="#icon-fb"></use>
+                          </svg>
+                      </a>
+                      <a href="#" class="footer__item footer__contact__icon">
+                          <svg class="icon">
+                              <use xlink:href="#youtube"></use>
+                          </svg>
+                      </a>
+                      </div>
+                      <div class="col-12 col-lg-7 col-xl-7 col-xxl-6 offset-xxl-1 d-flex align-items-end">
+                          <div class="footer__contact cont">
+                              <div class="footer__contact left">
+                                  <div class="footer__item-flex">
+                                      <a href="termsOfUse.html" class="footer__item footer__text black">
+                                          მოხმარების პირობები
+                                      </a>
+                                      <div class="footer__line first footer__item"></div>
+                                  </div>
+                                  <div class="footer__item-flex">
+                                      <a href="privacy.html" class="footer__item footer__text black">
+                                          კონფიდენციალურობა
+                                      </a>
+                                      <div class="footer__line second footer__item"></div>
+                                  </div>
+                                  <div class="footer__item-flex">
+                                      <p class="footer__item footer__text black mobile-block hover-black">© 2021 ყველა უფლება დაცულია</p>
+                                  </div>
+                              </div>
+                              <div class="footer__contact-right">
+                                  <div class="footer__contact center mobile-none">
+                                      <a href="mailto:info@school.ge" class="footer__link footer__item">info@school.ge</a>
+                                  <div class="footer__line footer__item"></div>
+                                  <a href="#" class="footer__item footer__contact__icon">
+                                      <svg class="icon">
+                                          <use xlink:href="#icon-fb"></use>
+                                      </svg>
+                                  </a>
+                                  <a href="#" class="footer__item footer__contact__icon">
+                                      <svg class="icon">
+                                          <use xlink:href="#youtube"></use>
+                                      </svg>
+                                  </a>
+                                  </div>
+                                  <p class="footer__item footer__text black mobile-none hover-black">© 2021 ყველა უფლება დაცულია</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </footer>    </div>
+
+    <div class="search__container">
+      <div class="search__container__content">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 page__content-col m-auto">
+              <div class="search__container__row">
+                <h3 class="search__container__title">ჩაწერეთ საძიებო სიტყვა ან ფრაზა</h3>
+                <div class="search__close">
+                  <svg class="icon">
+                    <use xlink:href="#close"></use>
+                  </svg>
+                </div>
+              </div>
+              <form action="" class="search__container__form">
+                <input type="search" class="search__container__form__input" placeholder="ძიება">
+                <a href="searchResult.html">
+                  <svg class="icon search__icon">
+                    <use xlink:href="#ico-search"></use>
+                  </svg>
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
-  <script src="../assets/vendors/js/jquery.min.js"></script>
-  <script src="../assets/vendors/js/jquery-ui.min.js"></script>
-  <script src="../assets/vendors/js/jquery-ui-touch-punch.js"></script>
-  <script src="../assets/vendors/js/bootstrap.min.js"></script>
-  <script src="../assets/vendors/js/swiper-bundle.min.js"></script>
-  <!-- <script src="../assets/js/main.js"></script> -->
-  <script src=../assets/vendors/js/games/game1.js></script>
-  <script>
-    // onload page
-    function onloadPage() {
-      $(".page__onload").addClass("active");
-    }
-    window.onload = onloadPage;
-  </script>
-
-  <script>
-    $(document).ready(function() {
-  // Assign some jquery elements we'll need
-  var $swiper = $(".swiper-container");
-  var $bottomSlide = null; // Slide whose content gets 'extracted' and placed
-  // into a fixed position for animation purposes
-  var $bottomSlideContent = null; // Slide content that gets passed between the
-  // panning slide stack and the position 'behind'
-  // the stack, needed for correct animation style
-
-  var mySwiper = new Swiper(".swiper-container", {
-    spaceBetween: 1,
-    slidesPerView: 1,
-    centeredSlides: true,
-    roundLengths: true,
-    loop: true,
-    // loopAdditionalSlides: 30,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    },
-    breakpoints: {
-        767: {
-          slidesPerView: 2.7,
-        },
-        991: {
-          slidesPerView: 3,
-        }
-    }
-  });
-});
-
-  </script>
+  <script src="assets/vendors/js/jquery.min.js"></script>
+  <script src="assets/vendors/js/bootstrap.min.js"></script>
+  <script src="assets/vendors/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

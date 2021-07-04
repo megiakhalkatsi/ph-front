@@ -143,6 +143,10 @@
     <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460.8 460.8" id="email-user">
       <path d="M230.432 0c-65.829 0-119.641 53.812-119.641 119.641s53.812 119.641 119.641 119.641 119.641-53.812 119.641-119.641S296.261 0 230.432 0zm205.323 334.89c-3.135-7.837-7.314-15.151-12.016-21.943-24.033-35.527-61.126-59.037-102.922-64.784-5.224-.522-10.971.522-15.151 3.657-21.943 16.196-48.065 24.555-75.233 24.555s-53.29-8.359-75.233-24.555c-4.18-3.135-9.927-4.702-15.151-3.657-41.796 5.747-79.412 29.257-102.922 64.784-4.702 6.792-8.882 14.629-12.016 21.943-1.567 3.135-1.045 6.792.522 9.927 4.18 7.314 9.404 14.629 14.106 20.898 7.314 9.927 15.151 18.808 24.033 27.167 7.314 7.314 15.673 14.106 24.033 20.898 41.273 30.825 90.906 47.02 142.106 47.02s100.833-16.196 142.106-47.02c8.359-6.269 16.718-13.584 24.033-20.898 8.359-8.359 16.718-17.241 24.033-27.167 5.224-6.792 9.927-13.584 14.106-20.898 2.611-3.135 3.133-6.793 1.566-9.927z"></path>
     </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.7 12.7" id="logOut">
+      <path d="M7.056 1.411h-4.94v9.878h4.94v-.706H2.822V2.117h4.234z"></path>
+      <path d="M4.233 5.644h4.94L7.055 3.528l.705-.706 3.53 3.528-3.53 3.528-.705-.706 2.116-2.116H4.233z"></path>
+    </symbol>
   </svg>
   <!--svg sprite all used icons end-->
   <!-- onload event -->
@@ -207,8 +211,8 @@
     
     
     <!-- Table Of Contents Modal -->
-    <div class="modal fade notificationModal tableOfConents__modal" id="tableOfConents" tabindex="-1" aria-labelledby="tableOfConentsLabel"
-      aria-hidden="true">
+    <div class="modal fade notificationModal tableOfConents__modal" id="tableOfConents" tabindex="-1"
+      aria-labelledby="tableOfConentsLabel" aria-hidden="true">
       <div class="modal-dialog tableOfConents__modal-dialog">
         <div class="modal-content tableOfConents__modal-content">
           <div class="bg-white">
@@ -273,7 +277,8 @@
                 <img src="assets/img/icons/complex.png" alt="img" class="tableOfConents__item__img">
                 <div>
                   <h3 class="tableOfConents__item__title">კომპლექსური დავალება</h3>
-                  <p class="tableOfConents__item__text">საქართველოში გავრცელებული კიბერდანაშაული და მასთან დაკავშირებული საფრთხეები; საქართველოს კანონმდებლობა და კიბერდანაშაული</p>
+                  <p class="tableOfConents__item__text">საქართველოში გავრცელებული კიბერდანაშაული და მასთან დაკავშირებული
+                    საფრთხეები; საქართველოს კანონმდებლობა და კიბერდანაშაული</p>
                 </div>
               </div>
               <div class="tableOfConents__item__number">2</div>
@@ -313,7 +318,8 @@
                 <img src="assets/img/icons/exercise.png" alt="img" class="tableOfConents__item__img">
                 <div>
                   <h3 class="tableOfConents__item__title">სავარჯიშო</h3>
-                  <p class="tableOfConents__item__text">საქართველოში გავრცელებული კიბერდანაშაული და მასთან დაკავშირებული საფრთხეები; საქართველოს კანონმდებლობა და კიბერდანაშაული</p>
+                  <p class="tableOfConents__item__text">საქართველოში გავრცელებული კიბერდანაშაული და მასთან დაკავშირებული
+                    საფრთხეები; საქართველოს კანონმდებლობა და კიბერდანაშაული</p>
                 </div>
               </div>
               <div class="tableOfConents__item__number">6</div>
@@ -409,6 +415,56 @@
             <div class="d-flex justify-content-center">
               <a href="#" class="about__page__btn game__button bt-blue">კითხვარის შევსება</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Create Certificate Modal -->
+    <div class="modal fade notificationModal createCertificateModal" id="createCertificate" tabindex="-1"
+      aria-labelledby="createCertificateLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
+        <div class="modal-content radius-16">
+          <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+            <svg class="icon">
+              <use xlink:href="#cancel-icon"></use>
+            </svg>
+          </button>
+          <div class="modal-body notificationModal-body padding-sm">
+            <section class="form__section mw">
+              <div class="row">
+                  <div class="col-12">
+                      <h1 class="form__section__title">სერთიფიკატის გენერირება</h1>
+                      <form class="form form-register">
+                          <div class="form-group">
+                              <label for="region" class="form__label required">აირჩიეთ თემა</label>
+                              <select class="custom-select" placeholder="">
+                                  <option value="1">სამართლებრივი კულტურა</option>
+                                  <option value="2">ბავშთა უფლებები</option>
+                                  <option value="3">ცხოვრების ჯანსაღი წესი</option>
+                                  <option value="4">კიბერდანაშაული</option>
+                              </select>
+                          </div>
+                          <h2 class="form__section__title regular">მოსწავლის მონაცემები</h2>
+                          <div class="form-group">
+                              <label for="name" class="form__label required">სახელი</label>
+                              <input type="text" class="form-control form__input" id="name">
+                          </div>
+                          <div class="form-group">
+                              <label for="surname" class="form__label required">გვარი</label>
+                              <input type="text" class="form-control form__input" id="surname">
+                          </div>
+                          <div class="form-group">
+                              <label for="date" class="form__label required">თარიღი</label>
+                              <input type="text" class="form-control form__input" id="date">
+                          </div>
+                          <div class="form__row">
+                              <button type="submit" class="form__row__btn form__row__btn-login bt-blue w-100">სერთიფიკატის გენერირება</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>
@@ -544,10 +600,25 @@
     </div>
   </div>
   <div class="course__intro-bottom">
-    <div class="course__intro__header"></div>
+    <div class="course__intro__header">
+      <div class="container">
+        <div class="course__intro__header__row">
+          <div class="course__intro__header__item">
+            <span class="link">
+            დამატებითი რესურსები
+          </span>
+          <span class="ps-2 close-icon">
+            <svg class="icon">
+              <use xlink:href="#close"></use>
+            </svg>
+          </span>
+        </div>
+        </div>
+      </div>
+    </div>
     <div class="course__intro-bottom__container">
       <div class="container">
-        <div class="row">
+        <div class="row course__content__row">
           <div class="col-12 col-lg-10 m-auto">
             <div class="course__result">
               <div class="d-flex flex-column align-items-center text-center">
@@ -558,6 +629,260 @@
               <div class="game__button__container justify-content-center column m-0">
                 <button class="about__page__btn game__button mr bt-blue">ახლიდან დაწყება</button>
                 <button class="about__page__btn game__button bt-gray">თემები</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="course__content__resources">
+          <div class="section__resources__row mt-0">
+            <h2 class="section__resources__title">დამატებითი რესურსები</h2>
+            <form>
+              <select class="custom-select" placeholder="სორტირება">
+                <option value="1">თარიღი კლებადი</option>
+                <option value="2">თარიღი ზრდადი</option>
+                <option value="3">ანბანი კლებადი</option>
+                <option value="4">ანბანი ზრდადი</option>
+              </select>
+            </form>
+          </div>
+          <div class="document__line mg-sm"></div>
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <img src="assets/img/resource-img.png" alt="resource image" class="resource__item__img"
+                    data-bs-toggle="modal" data-bs-target="#fullscreenImgModal" />
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-image"></use>
+                        </svg>
+                      </div>
+                      <div class="resource__item__icon__bg">
+                        <a href="assets/img/resource-img.png" download>
+                          <svg class="icon resource__item__icon">
+                            <use xlink:href="#icon-feather-download"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">სამართლებრივი-კულტურა.jpg</h2>
+                  <p class="resource__item__description">ვინ არის სამართალდამცავი</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <a href="#" class="w-100 h-100 d-flex justify-content-center align-items-center">
+                    <img src="assets/img/icons/file.svg" alt="resource image" class="resource__item__img file" />
+                  </a>
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-file"></use>
+                        </svg>
+                      </div>
+                      <div class="resource__item__icon__bg">
+                        <a href="assets/img/test.pdf" download>
+                          <svg class="icon resource__item__icon">
+                            <use xlink:href="#icon-feather-download"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">ახალი წიგნი.pdf</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <a href="#" class="w-100 h-100 d-flex justify-content-center align-items-center">
+                    <img src="assets/img/icons/feather-arrow-up-right.svg" alt="resource image"
+                      class="resource__item__img file" />
+                  </a>
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-feather-arrow-up-right"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title underline">მოძრაობის წესები და ქვეითები</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <div class="resource__item__video">
+                    <div class="video-container paddings">
+                      <iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/i-80SGWfEjM?rel=0&amp;showinfo=0" frameborder="0"
+                        allowfullscreen="allowfullscreen"></iframe>
+                    </div>
+                  </div>
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-awesome-play-circle"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">პოლიციელი ჩემი მეგობარია.mov</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <img src="assets/img/resource-img.png" alt="resource image" class="resource__item__img"
+                    data-bs-toggle="modal" data-bs-target="#fullscreenImgModal" />
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-image"></use>
+                        </svg>
+                      </div>
+                      <div class="resource__item__icon__bg">
+                        <a href="assets/img/resource-img.png" download>
+                          <svg class="icon resource__item__icon">
+                            <use xlink:href="#icon-feather-download"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">სამართლებრივი-კულტურა.jpg</h2>
+                  <p class="resource__item__description">ვინ არის სამართალდამცავი</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <img src="assets/img/illustrations/illustration1.png" alt="resource image"
+                    class="resource__item__img file active" data-bs-toggle="modal"
+                    data-bs-target="#fullscreenImgModal" />
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-file"></use>
+                        </svg>
+                      </div>
+                      <div class="resource__item__icon__bg">
+                        <a href="assets/img/test.pdf" download>
+                          <svg class="icon resource__item__icon">
+                            <use xlink:href="#icon-feather-download"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">ახალი წიგნი.pdf</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <img src="assets/img/themes/theme1.png" alt="resource image" class="resource__item__img file active"
+                    data-bs-toggle="modal" data-bs-target="#fullscreenImgModal" />
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-feather-arrow-up-right"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title underline">მოძრაობის წესები და ქვეითები</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <div class="resource__item__video">
+                    <div class="video-container paddings">
+                      <iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/i-80SGWfEjM?rel=0&amp;showinfo=0" frameborder="0"
+                        allowfullscreen="allowfullscreen"></iframe>
+                    </div>
+                  </div>
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-awesome-play-circle"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">პოლიციელი ჩემი მეგობარია.mov</h2>
+                  <p class="resource__item__description">სამართლებრივი კულტურა</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 resource__item__container">
+              <div class="resource__item">
+                <div class="resource__item-relative">
+                  <img src="assets/img/resource-img.png" alt="resource image" class="resource__item__img"
+                    data-bs-toggle="modal" data-bs-target="#fullscreenImgModal" />
+                  <div class="resource__item__icon__position">
+                    <div class="resource__item__icon__container">
+                      <div class="resource__item__icon__bg">
+                        <svg class="icon resource__item__icon">
+                          <use xlink:href="#icon-image"></use>
+                        </svg>
+                      </div>
+                      <div class="resource__item__icon__bg">
+                        <a href="assets/img/resource-img.png" download>
+                          <svg class="icon resource__item__icon">
+                            <use xlink:href="#icon-feather-download"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="resource__item-link">
+                  <h2 class="resource__item__title">სამართლებრივი-კულტურა.jpg</h2>
+                  <p class="resource__item__description">ვინ არის სამართალდამცავი</p>
+                </a>
               </div>
             </div>
           </div>
