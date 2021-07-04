@@ -1,6 +1,7 @@
 ---
 layout: gamesLayout
 title: მოსწავლეების რესურსი
+gameScripts: ../assets/vendors/js/games/game13.js
 ---
 
 <div class="modal-body game__modal-body">
@@ -38,7 +39,7 @@ title: მოსწავლეების რესურსი
         </div>
         <div class="col-12 col-md-6">
           <div class="game__sentence__cont__list">
-            <div class="game__sentence__header blue">18 წლამდე</div>
+            <div class="game__sentence__header blue">18 წლის შემდეგ</div>
             <div class="game__sentence__cont">
               <h2 class="game__sentence__title">მე შემიძლია მონაწილეობა მივიღო</h2>
               <input type="text" placeholder="დაასრულეთ წინადადება" class="game__sentence__input">
@@ -60,7 +61,7 @@ title: მოსწავლეების რესურსი
               <input type="text" placeholder="დაასრულეთ წინადადება" class="game__sentence__input">
             </div>
             <div class="game__sentence__cont">
-              <h2 class="game__sentence__title">შემიძლია შევქმნა</h2>
+              <h2 class="game__sentence__title">მე შემიძლია შევქმნა</h2>
               <input type="text" placeholder="დაასრულეთ წინადადება" class="game__sentence__input">
             </div>
           </div>
@@ -75,8 +76,8 @@ title: მოსწავლეების რესურსი
         </div>
         <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
           <div class="game__button__container">
-            <button class="about__page__btn game__button mr bt-gray">თავიდან დაწყება</button>
-            <button class="about__page__btn game__button bt-blue">გადმოწერა</button>
+            <button id="downloadBtn" class="about__page__btn game__button mr bt-gray">გადმოწერა</button>
+            <button class="about__page__btn game__button bt-blue">დასრულება</button>
           </div>
         </div>
       </div>

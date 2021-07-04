@@ -851,6 +851,9 @@
       &.orange {
         background-color: $component-color8;
       }
+      &.pink {
+        background-color: #FF97BB;
+      }
       &.green {
         background-color: $component-color9;
       }
@@ -885,6 +888,11 @@
       &.green {
         .game__box__list__item::before {
           background-color: $component-color9;
+        }
+      }
+      &.pink {
+        .game__box__list__item::before {
+          background-color: #FF97BB;
         }
       }
       &.blue {
@@ -1793,6 +1801,9 @@
       }
       &.blue {
         background-color: $component-color6;
+      }
+      &.pink {
+        background-color: #FF97BB;
       }
     }
     &__cont {
