@@ -114,12 +114,19 @@ function onloadPage() {
 window.onload = onloadPage;
 
 //custom select
+const sortableOptions = {date_asc: 'თარიღი კლებადი', date_desc: 'თარიღი ზრდადი', char_asc: 'ანბანი კლებადი', char_desc: 'ანბანი ზრდადი'};
+
 $(".custom-select").each(function() {
     var classes = $(this).attr("class"),
         id      = $(this).attr("id"),
         name    = $(this).attr("name");
+    let activeOption = $('#sort_select').val();
+    if(activeOption) {
+        activeOption = sortableOptions[activeOption];
+    }
+
     var template =  '<div class="' + classes + '">';
-        template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+        template += '<span class="custom-select-trigger">' + (activeOption ?? $(this).attr("placeholder")) + '</span>';
         template += '<div class="custom-options">';
         $(this).find("option").each(function() {
           template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
@@ -133,7 +140,7 @@ $(".custom-select").each(function() {
   $('.custom-select-trigger').each(function() {  
     $(this).addClass("selected"); 
     $(this).text($(this).parents(".custom-select").children(".custom-options").children(".custom-option:first-child").text());
-  }); 
+  });
   $(".custom-option:first-of-type").hover(function() {
     $(this).parents(".custom-options").addClass("option-hover");
   }, function() {
@@ -149,14 +156,11 @@ $(".custom-select").each(function() {
   $(".custom-option").on("click", function() {
     $('#txtData').hide();
     $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+    $('#sort_select').val($(this).data("value")).change();
     $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
     $(this).addClass("selection");
     $(this).parents(".custom-select").removeClass("opened");
     $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
-    $(this).parents(".custom-select").find(".custom-select-trigger").addClass("selected");
-  });
-   $(".custom-option.select_other").on("click", function() {
-    $('#txtData').show();
   });
 
 // dropdown
