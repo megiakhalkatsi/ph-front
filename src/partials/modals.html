@@ -263,10 +263,10 @@
 </div>
 
 <!-- Create Certificate Modal -->
-<div class="modal fade notificationModal createCertificateModal" id="createCertificate" tabindex="-1"
-  aria-labelledby="createCertificateLabel" aria-hidden="true">
+<div class="modal fade notificationModal createCertificateModal" id="createCertificate" aria-hidden="true"
+  aria-labelledby="createCertificateLabel" tabindex="-1">
   <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
-    <div class="modal-content radius-16">
+    <div class="modal-content radius-16" id="createCertificateLabel">
       <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
         <svg class="icon">
           <use xlink:href="#cancel-icon"></use>
@@ -275,38 +275,68 @@
       <div class="modal-body notificationModal-body padding-sm">
         <section class="form__section mw">
           <div class="row">
-              <div class="col-12">
-                  <h1 class="form__section__title">სერთიფიკატის გენერირება</h1>
-                  <form class="form form-register">
-                      <div class="form-group">
-                          <label for="region" class="form__label required">აირჩიეთ თემა</label>
-                          <select class="custom-select" placeholder="">
-                              <option value="1">სამართლებრივი კულტურა</option>
-                              <option value="2">ბავშთა უფლებები</option>
-                              <option value="3">ცხოვრების ჯანსაღი წესი</option>
-                              <option value="4">კიბერდანაშაული</option>
-                          </select>
-                      </div>
-                      <h2 class="form__section__title regular">მოსწავლის მონაცემები</h2>
-                      <div class="form-group">
-                          <label for="name" class="form__label required">სახელი</label>
-                          <input type="text" class="form-control form__input" id="name">
-                      </div>
-                      <div class="form-group">
-                          <label for="surname" class="form__label required">გვარი</label>
-                          <input type="text" class="form-control form__input" id="surname">
-                      </div>
-                      <div class="form-group">
-                          <label for="date" class="form__label required">თარიღი</label>
-                          <input type="text" class="form-control form__input" id="date">
-                      </div>
-                      <div class="form__row">
-                          <button type="submit" class="form__row__btn form__row__btn-login bt-blue w-100">სერთიფიკატის გენერირება</button>
-                      </div>
-                  </form>
-              </div>
+            <div class="col-12">
+              <h1 class="form__section__title">სერთიფიკატის გენერირება</h1>
+              <form class="form form-register">
+                <div class="form-group">
+                  <label for="region" class="form__label required">აირჩიეთ თემა</label>
+                  <select class="custom-select" placeholder="">
+                    <option value="1">სამართლებრივი კულტურა</option>
+                    <option value="2">ბავშთა უფლებები</option>
+                    <option value="3">ცხოვრების ჯანსაღი წესი</option>
+                    <option value="4">კიბერდანაშაული</option>
+                  </select>
+                </div>
+                <h2 class="form__section__title regular">მოსწავლის მონაცემები</h2>
+                <div class="form-group">
+                  <label for="name" class="form__label required">სახელი</label>
+                  <input type="text" class="form-control form__input" id="name">
+                </div>
+                <div class="form-group">
+                  <label for="surname" class="form__label required">გვარი</label>
+                  <input type="text" class="form-control form__input" id="surname">
+                </div>
+                <div class="form-group">
+                  <label for="date" class="form__label required">თარიღი</label>
+                  <input type="text" class="form-control form__input" id="date">
+                </div>
+                <div class="form__row">
+                  <button type="submit" class="form__row__btn form__row__btn-login bt-blue w-100"
+                    data-bs-target="#generateCertificate" data-bs-toggle="modal" data-bs-dismiss="modal">სერთიფიკატის
+                    გენერირება</button>
+                </div>
+              </form>
+            </div>
           </div>
         </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Generate Certificate Modal -->
+<div class="modal fade notificationModal generateCertificateModal" id="generateCertificate" aria-hidden="true"
+  aria-labelledby="generateCertificateLabel2" tabindex="-1">
+  <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
+    <div class="modal-content radius-16" id="generateCertificateLabel2">
+      <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+        <svg class="icon">
+          <use xlink:href="#cancel-icon"></use>
+        </svg>
+      </button>
+      <div class="modal-body notificationModal-body generateCertificateModal-body padding-sm">
+        <img src="assets/img/icons/thumbsUp.svg" alt="" class="game__rightDec__icon">
+        <h2 class="game__rightDec__title">სერთიფიკატი წარმატებით დაგენერირდა</h2>
+        <div class="generateCertificateModal-content">
+          <div class="course__certificate"></div>
+          <h3 class="course__certificate__item__title">სამართლებრივი კულტურა</h3>
+          <div class="generateCertificateModal__text">გიორგი ავალიანი <span class="d-block">23 დეკ. 2021</span></div>
+          <div class="course__intro__line"></div>
+          <button class="w-100 form__section__btn-social download bt-blue mb-4 mr-0">
+            <img src="assets/img/icons/feather-download-white.svg" alt="icon" class="icon">
+            გადმოწერა
+          </button>
+        </div>
       </div>
     </div>
   </div>
