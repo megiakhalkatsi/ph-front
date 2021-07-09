@@ -1,21 +1,29 @@
 ---
 layout: gamesLayout
 title: მოსწავლეების რესურსი
+gameScripts: ../assets/vendors/js/games/game7.js
 ---
 
-<div class="modal-body game__modal-body">
+
+<style>
+    .DraggableItem {
+        z-index: 114234;
+    }
+</style>
+
+<div class="modal-body game__modal-body mainBody">
     <div class="row">
         <div class="col-12 col-xl-8 page__content-col m-auto">
             <h2 class="age__categories__title">
                 ასაკობრივი კატეგორიები
             </h2>
             <div class="age__categories">
-                <img src="../assets/img/games/ESRB_C.png" alt="img" class="age__categories__item">
-                <img src="../assets/img/games/ESRB_E.png" alt="img" class="age__categories__item">
-                <img src="../assets/img/games/ESRB_E-10.png" alt="img" class="age__categories__item">
-                <img src="../assets/img/games/ESRB_T.png" alt="img" class="age__categories__item">
-                <img src="../assets/img/games/ESRB_M.png" alt="img" class="age__categories__item">
-                <img src="../assets/img/games/ESRB_A.png" alt="img" class="age__categories__item">
+                <img src="../assets/img/games/ESRB_C.png" alt="img" data-answer="C" class="age__categories__item DraggableItem">
+                <img src="../assets/img/games/ESRB_E.png" alt="img" data-answer="E" class="age__categories__item DraggableItem">
+                <img src="../assets/img/games/ESRB_E-10.png" alt="img" data-answer="E-10" class="age__categories__item DraggableItem">
+                <img src="../assets/img/games/ESRB_T.png" alt="img" data-answer="T" class="age__categories__item DraggableItem">
+                <img src="../assets/img/games/ESRB_M.png" alt="img" data-answer="M" class="age__categories__item DraggableItem">
+                <img src="../assets/img/games/ESRB_A.png" alt="img" data-answer="A" class="age__categories__item DraggableItem">
             </div>
             <div class="game__line"></div>
         </div>
@@ -27,27 +35,23 @@ title: მოსწავლეების რესურსი
             <!-- Slides -->
             <div class="swiper-slide">
                 <img src="../assets/img/games/Picture5.png" alt="image" class="swiper-slide-img">
-                <div class="swiper-slide-drop success">
-                    <img src="../assets/img/games/ESRB_C.png" alt="img" class="age__categories__item">
-                </div>
+                <div class="swiper-slide-drop DroppableItem" data-answer="T"></div>
             </div>
             <div class="swiper-slide">
                 <img src="../assets/img/games/Picture1.png" alt="image" class="swiper-slide-img">
-                <div class="swiper-slide-drop error">
-                    <img src="../assets/img/games/ESRB_E.png" alt="img" class="age__categories__item">
-                </div>
+                <div class="swiper-slide-drop DroppableItem" data-answer="E-10"></div>
             </div>
             <div class="swiper-slide">
                 <img src="../assets/img/games/Picture2.png" alt="image" class="swiper-slide-img">
-                <div class="swiper-slide-drop"></div>
+                <div class="swiper-slide-drop DroppableItem" data-answer="E"></div>
             </div>
             <div class="swiper-slide">
                 <img src="../assets/img/games/Picture3.png" alt="image" class="swiper-slide-img">
-                <div class="swiper-slide-drop"></div>
+                <div class="swiper-slide-drop DroppableItem" data-answer="M"></div>
             </div>
             <div class="swiper-slide">
                 <img src="../assets/img/games/Picture4.png" alt="image" class="swiper-slide-img">
-                <div class="swiper-slide-drop"></div>
+                <div class="swiper-slide-drop DroppableItem" data-answer="T"></div>
             </div>
         </div>
         <!-- If we need navigation buttons -->
@@ -66,9 +70,55 @@ title: მოსწავლეების რესურსი
         <div class="col-12 game__content-col-bottom">
             <div class="col-12">
                 <div class="game__button__container justify-content-center">
-                    <button class="about__page__btn game__button bt-gray">თავიდან დაწყება</button>
+                    <button class="about__page__btn game__button bt-gray" id="resetButton">თავიდან დაწყება</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+<div class="game__result__container" style="z-index: 342234242">
+    <a href="#" class="game__result">
+      <p class="game__result__text">თქვენ დაასრულეთ თამაში</p>
+      <div class="game__result__btn" id="successModalBtn">შედეგების ნახვა</div>
+    </a>
+  </div>
+  
+  <div class="modal-body game__modal-body successModal" style="display: none;">
+    <div class="row">
+      <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg green">გილოცავთ !</h2>
+        <p class="game__finish__text">თქვენ წარმატებით დაასრულეთ თამაში! <span class="d-block" id="correctAnswers">0/8
+            კითხვა</span></p>
+        <picture>
+          <source media="(min-width:768px)" srcset="../assets/img/illustrations/happy.gif" type="image/gif">
+          <source srcset="../assets/img/illustrations/happy-mobile.gif" type="image/gif">
+          <img src="../assets/img/illustrations/happy-mobile.gif" alt="congratulations" class="game__finish__img">
+        </picture>
+        <div class="game__button__container justify-content-center mb-0">
+          <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="modal-body game__modal-body failModal" style="display: none;">
+    <div class="row">
+      <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg orange">კიდევ სცადე</h2>
+        <p class="game__finish__text">სულ ცოტა დაგაკლდა. <span class="d-block" id="correctAnswers">0/8 კითხვა</span></p>
+        <p class="game__finish__text sm">კიდევ სცადე და ყველაფერი გამოგივა. მთავარია, ყურადღებით გაუყვე კითხვებს.</p>
+        <img src="../assets/img/illustrations/support.gif" alt="congratulations" class="game__finish__img">
+        <div class="game__button__container justify-content-center mb-0">
+          <button class="about__page__btn game__button mr bt-gray" id="gameReset">ახლიდან დაწყება</button>
+          <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
