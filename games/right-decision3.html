@@ -558,7 +558,7 @@
   // panning slide stack and the position 'behind'
   // the stack, needed for correct animation style
 
-  var mySwiper = new Swiper(".swiper-container", {
+  var mySwiper = new Swiper(".drop-swiper-container", {
     spaceBetween: 1,
     slidesPerView: 1,
     centeredSlides: true,
@@ -578,6 +578,19 @@
         }
     }
   });
+
+  var phishingSwiper = new Swiper(".phishing-swiper-container", {
+    spaceBetween: 1,
+    slidesPerView: 1,
+    centeredSlides: true,
+    roundLengths: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+  
 });
 
   </script>

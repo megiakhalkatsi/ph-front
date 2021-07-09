@@ -551,7 +551,13 @@
             <div class="game__progress__cont" id="ProgressBar">
               <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">0</span> / 4
                 დან</h3>
-              <div class="game__progress__circle line__0" id="ProgressLine"></div>
+                <div class="game__progress__circle progress-18" id="ProgressLine">
+                  <div class="pie">
+                    <div class="left-side half-circle"></div>
+                    <div class="right-side half-circle"></div>
+                  </div>
+                  <div class="filled"></div>
+                </div>
             </div>
           </div>
         </div>
@@ -700,7 +706,7 @@
   // panning slide stack and the position 'behind'
   // the stack, needed for correct animation style
 
-  var mySwiper = new Swiper(".swiper-container", {
+  var mySwiper = new Swiper(".drop-swiper-container", {
     spaceBetween: 1,
     slidesPerView: 1,
     centeredSlides: true,
@@ -720,6 +726,19 @@
         }
     }
   });
+
+  var phishingSwiper = new Swiper(".phishing-swiper-container", {
+    spaceBetween: 1,
+    slidesPerView: 1,
+    centeredSlides: true,
+    roundLengths: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+  
 });
 
   </script>
