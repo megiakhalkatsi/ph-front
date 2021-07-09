@@ -144,6 +144,9 @@ $default-size: 55px;
     &.mb-34 {
       margin-bottom: 34px;
     }
+    &.light{
+      color: rgba($color: $black, $alpha: 0.6);
+    }
   }
   &__title {
     font-family: $firagoBold;
@@ -927,8 +930,17 @@ $default-size: 55px;
   &__instruction {
     display: flex;
     align-items: center;
+    &.collapsed{
+      .game__instruction__text{
+        color: $black;
+      }
+      .icon{
+        fill: $black;
+        transform: rotate(-90deg);
+      }
+    }
     &__text {
-      color: $black;
+      color: $component-color2;
       text-decoration: underline;
       font-size: 16px;
       font-family: $firagoMedium;
@@ -943,8 +955,10 @@ $default-size: 55px;
     .icon {
       width: 8px;
       height: 7px;
-      transform: rotate(-90deg);
+      transform: rotate(0);
       margin-left: 6px;
+      fill: $component-color2;
+      transition: .3s;
     }
   }
   &__rotate__notification {
@@ -1970,6 +1984,9 @@ $default-size: 55px;
         font-family: $firagoSemiBold;
         font-size: 16px;
         color: $black;
+        .purple{
+          color: $component-color2;
+        }
       }
       &-div {
         background-color: $component-color4;
@@ -2097,6 +2114,19 @@ $default-size: 55px;
             opacity: 0.2;
           }
         }
+      }
+    }
+    &__img{
+      width: 100%;
+      max-height: 406px;
+      object-fit: contain;
+      margin: 20px auto;
+      @media #{$breakpoint-md} {
+        margin: 0 auto 20px;
+        max-height: 506px;
+      }
+      @media #{$breakpoint-xxl} {
+        max-height: 606px;
       }
     }
   }

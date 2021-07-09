@@ -1,0 +1,88 @@
+---
+layout: gamesLayout
+title: მოსწავლეების რესურსი
+---
+
+<div class="modal-body game__modal-body">
+  <div class="row">
+    <div class="col-12 col-md-8 page__content-col">
+      <div class="game__quiz__quest">
+        <span class="text">მოგესახმებით, მე თეონა მქვია. მირჩიეს, რომ კვალიფიციური იურიდიული დახმარების მისაღებად თქვენთვის მომემართა. ჩემმა მეზობელმა წყალი ჩამომიშვა და ახლად გაკეთებული რემონნტი დამიზიანა. თავად პასუხისმგებლობას თავს არიდებს და ზიანის ანაზღაურებაზე უარს მეუბნება. ვის შემიძლია მივმართო ჩემი უფლებების დასაცავად ?</span>
+      </div>
+      <div class="game__quiz__answ__cont">
+        <div class="game__quiz__answ blue success">
+          <div class="game__checkbox"></div>
+          <span class="text">თქვენ შეგიძლიათ, მიმართოთ პოლიციას.</span>
+        </div>
+        <div class="game__quiz__answ yellow success-border">
+          <div class="game__checkbox"></div>
+          <span class="text">თქვენ შეგიძლიათ, მიმართოთ მერიას.</span>
+        </div>
+        <div class="game__quiz__answ pink error">
+          <div class="game__checkbox"></div>
+          <span class="text">თქვენ შეგიძლიათ, მიმართოთ სასამართლოს.</span>
+        </div>
+      </div>
+      <div class="game__instruction collapsed mt-4" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+        <img src="../assets/img/icons/info-circle.svg" alt="instruction" class="game__instruction__img">
+        <span class="game__instruction__text">მინიშნება</span>
+        <svg class="icon">
+          <use xlink:href="#arrow-dropdown"></use>
+        </svg>
+      </div>
+      <div class="collapse mt-3" id="hint">
+        <p class="section__theme__page__subtitle-sm">ქვესათაური თუ საჭირო გახდა</p>
+        <p class="game__text md mb-0 light">
+            ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს.
+        </p>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <img src="../assets/img/games/consultation.gif" alt="" class="game__quiz__img">
+    </div>
+    <div class="col-12 game__content-col-bottom">
+        <div class="game__button__container justify-content-center column">
+            <button id="prevStep" class="about__page__btn game__button mr bt-gray">წინა კითხვა</button>
+            <button id="nextStep" class="about__page__btn game__button bt-blue">შემდეგი კითხვა</button>
+          </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="game__progress__cont-align">
+            <div class="game__progress__cont" id="ProgressBar">
+              <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">0</span> / 4
+                დან</h3>
+                <div class="game__progress__circle progress-18" id="ProgressLine">
+                  <div class="pie">
+                    <div class="left-side half-circle"></div>
+                    <div class="right-side half-circle"></div>
+                  </div>
+                  <div class="filled"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/vendors/js/jquery.min.js"></script>
+<script>
+
+  $('.game__quiz__answ').click(function () {
+    // $('.game__quiz__answ.checked').removeClass('checked');
+    $('.game__quiz__answ__cont.answered-suc').removeClass('answered-suc');
+    $('.game__quiz__answ__cont.answered-err').removeClass('answered-err');
+    $('.game__quiz__answ.success.active').removeClass('active');
+    $(this).toggleClass('checked');
+    if ($(this).hasClass('checked')&& $(this).hasClass('success')) {
+      $(this).parents(".game__quiz__answ__cont").addClass("answered-suc");
+    }else if ($(this).hasClass('checked')&& $(this).hasClass('error')) {
+      $(this).parents(".game__quiz__answ__cont").addClass("answered-err");
+    }
+     if($(this).hasClass('checked')&& $(this).hasClass('error')) {
+      $(".game__quiz__answ.success").addClass("active");
+    }
+  });
+
+</script>
