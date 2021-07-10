@@ -502,26 +502,68 @@
     </div>    <!--******-->
     <div class="page__main">
       <div>
-<div class="modal-body game__modal-body">
+
+<style>
+  .slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3px;
+    background: #7279ff;
+    outline: none;
+    transition: opacity .2s;
+
+
+  }
+/*   
+.slider::after {
+  content: '10%';
+  position: absolute;
+  top: 0;
+} */
+
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #69a572;
+    background: #80c78b;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  </style>
+
+<div class="modal-body game__modal-body mainBody">
   <div class="row">
     <div class="col-12 page__content-col-md m-auto">
-      <h2 class="game__percent__title">1-14 წლამდე ასაკის ბავშვების რამდენი პროცენტის მიმართ გამოიყენეს მშობლებმა/მშობელმა აღზრდის მხოლოდ არაძალადობრივი მეთოდი?</h2>
+      <h2 class="game__percent__title"></h2>
       <div class="game__percent">
-          <div class="game__percent__line__cont">
-              <div class="game__percent__line">
-                  <div class="game__percent-active">
-                      <span class="game__percent-active-numb">50%</span>
-                      <div class="game__percent-active-circle"></div>
-                  </div>
-                </div>
-                  <div class="d-flex justify-content-between">
-                    <span class="game__percent__numb">0%</span>
-                    <span class="game__percent__numb">100%</span>
-                  </div>
-          </div>
+          <div class="game__percent__line__cont"></div>
           <div class="d-flex flex-column align-items-center">
-            <div class="game__percent__answer">თქვენი პასუხი <span class="purple">50%</span></div>
-            <div class="game__percent__btn" data-bs-toggle="modal" data-bs-target="#checkAnswer">პასუხის შემოწმება</div>
+            <div class="slidecontainer relative" style="width: 90%; max-width: 804px; margin: auto;">
+              <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+              <div class="d-flex justify-content-between">
+                <span class="game__percent__numb purple1">0%</span>
+                <span class="game__percent__numb">100%</span>
+              </div>
+            </div>
+            <div class="game__percent__answer" style="display: none;">თქვენი პასუხი <span class="purple purple3"></span></div>
+            <div id="checkAnswer" class="game__percent__btn">პასუხის შემოწმება</div>
           </div>
       </div>
     </div>
@@ -562,7 +604,7 @@
 
 <!-- Check Answer - popup -->
 
-<div class="modal fade notificationModal chooseRoleModal" id="checkAnswer" tabindex="-1"
+<div class="modal fade notificationModal chooseRoleModal show modalContainer" style="display: none;" tabindex="-1"
   aria-labelledby="chooseRoleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
     <div class="modal-content radius-16">
@@ -572,9 +614,54 @@
         </svg>
       </button>
       <div class="modal-body notificationModal-body padding-sm">
-        <div class="game__percent__answer mt-0">სწორი პასუხია <span class="purple">26%</span></div>
-        <div class="game__percent__answer-incorrect">თქვენი პასუხია <span class="red">50%</span></div>
+        <div class="game__percent__answer mt-0">სწორი პასუხია <span class="purple modalCorrectAnswer"></span></div>
+        <div class="game__percent__answer-incorrect">თქვენი პასუხია <span class="red modalMyAnswer"></span></div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="game__result__container">
+  <a href="#" class="game__result">
+    <p class="game__result__text">თქვენ დაასრულეთ თამაში</p>
+    <div class="game__result__btn" id="successModalBtn">შედეგების ნახვა</div>
+  </a>
+</div>
+
+
+<div class="modal-body game__modal-body successModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg green">გილოცავთ !</h2>
+        <p class="game__finish__text">თქვენ წარმატებით დაასრულეთ თამაში! <span class="d-block" id="correctAnswers">0/16 კითხვა</span></p>
+        <picture>
+          <source media="(min-width:768px)" srcset="../assets/img/illustrations/happy.gif" type="image/gif">
+          <source srcset="../assets/img/illustrations/happy-mobile.gif" type="image/gif">
+          <img src="../assets/img/illustrations/happy-mobile.gif" alt="congratulations" class="game__finish__img">
+        </picture>
+        <div class="game__button__container justify-content-center mb-0">
+            <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-body game__modal-body failModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg orange">კიდევ სცადე</h2>
+        <p class="game__finish__text">სულ ცოტა დაგაკლდა. <span class="d-block" id="correctAnswers">0/16 კითხვა</span></p>
+        <p class="game__finish__text sm">კიდევ სცადე და ყველაფერი გამოგივა. მთავარია, ყურადღებით გაუყვე კითხვებს.</p>
+        <img src="../assets/img/illustrations/support.gif" alt="congratulations" class="game__finish__img">
+        <div class="game__button__container justify-content-center mb-0">
+            <button class="about__page__btn game__button mr bt-gray" id="gameReset">ახლიდან დაწყება</button>
+            <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
     </div>
   </div>
 </div>
@@ -588,7 +675,7 @@
   <script src="../assets/vendors/js/bootstrap.min.js"></script>
   <script src="../assets/vendors/js/swiper-bundle.min.js"></script>
   <!-- <script src="../assets/js/main.js"></script> -->
-  <script src=></script>
+  <script src=../assets/vendors/js/games/game14.js></script>
   <script>
     // onload page
     function onloadPage() {
