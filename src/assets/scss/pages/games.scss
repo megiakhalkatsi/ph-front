@@ -1177,6 +1177,9 @@ $default-size: 55px;
         @media #{$breakpoint-md} {
           margin-bottom: 55px;
         }
+        .purple{
+          color: $component-color2;
+        }
       }
     }
     &__header {
@@ -2298,6 +2301,52 @@ $default-size: 55px;
         padding: 10px 48px;
         width: auto;
       }
+    }
+  }
+  &__wishlist{
+    &__item{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      background-color: $component-color22;
+      
+      &.active{
+        border: 2px solid $component-color9;
+        background-color: $component-color23;
+        &::after{
+          content: url("../img/icons/check.svg");
+          background-color: $component-color9;
+          border-radius: 50%;
+          width: 22px;
+          height: 22px;
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      &__write{
+        width: 100%;
+        height: 100%;
+        min-height: 252px;
+        .game__box__body{
+          min-height: auto;
+          height: 100%;
+          border: none;
+          border-radius: 0;
+        }
+      }
+      &-margin{
+        margin-bottom: 30px;
+      }
+    }
+    &__img{
+      width: 100%;
     }
   }
 }
