@@ -15,7 +15,7 @@ title: მოსწავლეების რესურსი
         </svg>
       </li>
       <li class="page__nav__list__item">
-        <a href="#" class="page__nav__list__item-link">სასწავლო კურსები</a>
+        <a href="#" class="page__nav__list__item-link">პროფილი</a>
       </li>
       <li class="page__nav__list__item">
         <svg class="icon">
@@ -23,7 +23,7 @@ title: მოსწავლეების რესურსი
         </svg>
       </li>
       <li class="page__nav__list__item">
-        <a href="#" class="page__nav__list__item-link">კურსის სახელი</a>
+        <a href="#" class="page__nav__list__item-link">რედაქტირება</a>
       </li>
     </ul>
   </section>
@@ -72,15 +72,15 @@ title: მოსწავლეების რესურსი
     </div>
     <div class="course__intro-bottom__container">
       <div class="container">
-        <div class="course__profile__row">
+        <div class="course__profile__row mt-4">
           <div>
-            <div class="course__list__btn course__profile__menu__btn align-items-center">
+            <div class="course__list__btn course__profile__menu__btn ml-130 align-items-center">
               <h3> <span class="purple"> ჩემი კურსები </span> </h3>
               <svg class="icon">
                 <use xlink:href="#arrow-dropdown"></use>
               </svg>
             </div>
-            <div class="course__profile__menu course__list">
+            <div class="course__profile__menu ml-130 course__list">
               <ul>
                 <li class="course__profile__menu__item"><a href="#" class="course__profile__menu__link active">ჩემი
                     კურსები</a></li>
@@ -100,7 +100,7 @@ title: მოსწავლეების რესურსი
             </div>
           </div>
           <div class="course__current__list">
-            <section class="form__section">
+            <section class="form__section pt-0">
               <div class="row">
                 <div class="col-12">
                   <h2 class="form__section__title-md">პერსონალური მონაცემები</h2>
@@ -157,12 +157,16 @@ title: მოსწავლეების რესურსი
                       <input type="password" class="form-control form__input" id="repeatPassword">
                     </div>
                     <div class="form__row">
-                      <button type="submit" class="form__row__btn form__row__btn-login bt-blue w-100">ცვლილებების
-                        შენახვა</button>
+                      <div class="form__row__btn form__row__btn-login cursor-pointer bt-blue w-100" id="btn-data-submit">ცვლილებების
+                        შენახვა</div>
                     </div>
                   </form>
                 </div>
               </div>
+            </section>
+            <section class="course__data__updated">
+              <img src="../assets/img/icons/thumbsUp.svg" alt="" class="game__rightDec__icon">
+              <h2 class="game__rightDec__title">მონაცემები წარმატებით განახლდა</h2>
             </section>
           </div>
         </div>

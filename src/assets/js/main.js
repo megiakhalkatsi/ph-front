@@ -73,6 +73,11 @@ function clickers() {
         $(".course__content__row").removeClass("hide");
         $(".course__content__resources").removeClass("active");
     });
+    //profile edit - data updated
+    $('#btn-data-submit').click(function () {
+        $(".form__section").hide();
+        $(".course__data__updated").show();
+    });
 }
 clickers();
 
