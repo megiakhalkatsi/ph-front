@@ -141,6 +141,17 @@ slider.oninput = function() {
 }
 
 
+function getCorrectAnsweersMarkup(index){
+  if(index !== 0) {
+      if(index > 1) {
+          $('#ProgressLine').removeClass(`progress-${(index - 1) * 9.09}`)
+      }
+    $('#ProgressLine').addClass(`progress-${index * 9.09}`)
+  }
+  $('#ProgressText').html(`კითხვა <span class="purple">${index}</span> / 11 დან`)
+
+}
+
 
 
 $( function() {
@@ -158,6 +169,7 @@ $( function() {
 $('#checkAnswer').click(() => {
     attampt++
 
+    // getCorrectAnsweersMarkup(attampt)
 
     let selected = parseInt(selectedAnswer)
     let formula1 = selected - correctAnswer < 11
