@@ -1,7 +1,6 @@
 
 
 
-
 var questions = [
   {
     correctAnswer: 5,
@@ -80,13 +79,18 @@ var parentCorrectNum = 0;
 var parentinCorrectNum = 0;
 
 
-function getCorrectAnsweersMarkup(correct){
-  if(correct !== 0) {
-    $('#ProgressLine').removeClass(`line__${correct - 1}`)
-    $('#ProgressLine').addClass(`line__${correct}`)
+
+function getCorrectAnsweersMarkup(index){
+  if(index !== 0) {
+      if(index > 1) {
+          $('#ProgressLine').removeClass(`progress-${(index - 1) * 10}`)
+      }
+    $('#ProgressLine').addClass(`progress-${index * 10}`)
   }
-  $('#ProgressText').html(`კითხვა <span class="purple">${correct}</span> / 10 დან`)
+  $('#ProgressText').html(`კითხვა <span class="purple">${index}</span> / 10 დან`)
+
 }
+
 
 function getQuestionsMarkup(index, array){
 
