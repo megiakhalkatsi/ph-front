@@ -192,6 +192,7 @@ $( "#gameReset" ).click(function() {
     document.querySelector('.game__result__container').classList.remove('active')
     $('#DogImage').attr('src', '../assets/img/illustrations/fiqrobs-image.gif')
 
+    document.querySelector('.game__progress__circle').classList.remove('progress-100')
   incorrect = 0;
   correctAnswer = 0;
   attampt = 0;

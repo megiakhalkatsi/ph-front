@@ -1,9 +1,5 @@
 
 
-
-
-
-
 var questions = [
   {
     number: 1,
@@ -144,9 +140,17 @@ slider.oninput = function() {
 function getCorrectAnsweersMarkup(index){
   if(index !== 0) {
       if(index > 1) {
-          $('#ProgressLine').removeClass(`progress-${(index - 1) * 9.09}`)
+          $('#ProgressLine').removeClass(`progress-${(index - 1) * 9}`)
+      } else if(index === 11) {
+          $('#ProgressLine').removeClass(`progress-99`)
+
       }
-    $('#ProgressLine').addClass(`progress-${index * 9.09}`)
+
+      if(index === 11) {
+          $('#ProgressLine').addClass(`progress-100`)
+      } else {
+          $('#ProgressLine').addClass(`progress-${index * 9}`)
+      }
   }
   $('#ProgressText').html(`კითხვა <span class="purple">${index}</span> / 11 დან`)
 
@@ -169,7 +173,7 @@ $( function() {
 $('#checkAnswer').click(() => {
     attampt++
 
-    // getCorrectAnsweersMarkup(attampt)
+    getCorrectAnsweersMarkup(attampt)
 
     let selected = parseInt(selectedAnswer)
     let formula1 = selected - correctAnswer < 11
@@ -334,6 +338,8 @@ $( "#gameReset" ).click(function() {
   activeQuestion = randomArray[index].number
   document.querySelector('.game__percent__title').innerText = randomArray[index].question
 
+  getCorrectAnsweersMarkup(0)
+  document.querySelector('.game__progress__circle').classList.remove('progress-100')
   
   index = 0;
   attampt = 0;
