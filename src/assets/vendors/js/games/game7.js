@@ -1,6 +1,5 @@
 
 
-
 let attamp = 0;
 let correct = 0;
 let incorrect = 0;
@@ -14,19 +13,22 @@ $( function() {
       drop: function( event, ui ) {
           console.log(event)
           console.log(ui)
-            if(!event.target.querySelector('img')) {
+
+          console.log(event.target)
+
+            if(!event.target.querySelector('.swiper-slide-drop img')) {
               attamp++
       
               var new_signature = $(ui.helper).clone();
-              $(this).append(new_signature);
+              $(this).children('.swiper-slide-drop').append(new_signature);
               $(new_signature).removeAttr('style')
       
               if(ui.draggable[0].getAttribute('data-answer') === event.target.getAttribute('data-answer')) {
                   correct++
-                  event.target.classList.add('success')
+                  event.target.querySelector('.swiper-slide-drop').classList.add('success')
               } else {
                   incorrect++
-                  event.target.classList.add('error')
+                  event.target.querySelector('.swiper-slide-drop').classList.add('error')
               }
           }
 
@@ -42,9 +44,9 @@ $( function() {
 
 
 $( "#resetButton" ).click(function() {
-    $('.DroppableItem').removeClass('success')
-    $('.DroppableItem').removeClass('error')
-    $('.DroppableItem').html('')
+    $('.DroppableItem .swiper-slide-drop').removeClass('success')
+    $('.DroppableItem .swiper-slide-drop').removeClass('error')
+    $('.DroppableItem .swiper-slide-drop').html('')
     $('#completBtn').attr('style', 'display: none')
     $('#finishButton').attr('style', 'display: block')
 
@@ -55,14 +57,9 @@ $( "#resetButton" ).click(function() {
   });
 
 
-
-
 $( "#successModalBtn" ).click(function() {
     document.querySelector('.mainBody').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').setAttribute('style', 'display: none')
-    
-    console.log(correct)
-    console.log(incorrect)
 
     if(correct === 5) {
         $('.successModal').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
@@ -76,17 +73,14 @@ $( "#successModalBtn" ).click(function() {
 });
 
 
-
-
-
 $( "#gameReset" ).click(function() {
     document.querySelector('.mainBody').setAttribute('style', 'display: block')
     document.querySelector('.failModal').setAttribute('style', 'display: none')
     document.querySelector('.successModal').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').classList.remove('active')
-    $('.DroppableItem').removeClass('success')
-    $('.DroppableItem').removeClass('error')
-    $('.DroppableItem').html('')
+    $('.DroppableItem .swiper-slide-drop').removeClass('success')
+    $('.DroppableItem .swiper-slide-drop').removeClass('error')
+    $('.DroppableItem .swiper-slide-drop').html('')
     $('#completBtn').attr('style', 'display: none')
     $('#finishButton').attr('style', 'display: block')
 

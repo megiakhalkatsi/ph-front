@@ -2,6 +2,8 @@
 
 
 
+
+
 var questions = [
   {
     number: 1,
@@ -127,12 +129,15 @@ var selectedAnswer = 0;
 var correctAnswerCount = 0;
 
 var slider = document.getElementById("myRange");
-var output = document.querySelector(".purple1");
+var output = document.querySelector(".purple3");
 output.innerHTML = `${slider.value}%`;
 
 slider.oninput = function() {
   output.innerHTML = `${this.value}%`;
-  selectedAnswer = this.value
+  selectedAnswer = this.value;
+
+  document.querySelector('.game__percent__answer .purple3').innerText = `${this.value}%`
+  document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block')
 }
 
 
@@ -145,6 +150,7 @@ $( function() {
 
   correctAnswer = randomArray[index].correctAnswer
   activeQuestion = randomArray[index].number
+
   document.querySelector('.game__percent__title').innerText = randomArray[index].question
 });
 
@@ -152,15 +158,19 @@ $( function() {
 $('#checkAnswer').click(() => {
     attampt++
 
-    if(correctAnswer === parseInt(selectedAnswer)) {
+
+    let selected = parseInt(selectedAnswer)
+    let formula1 = selected - correctAnswer < 11
+    let formula2 = correctAnswer - selected < 11
+
+    if(formula1 && (selected - correctAnswer >= 0) || formula2 && (correctAnswer - selected >= 0)) {
         correctAnswerCount++
         document.querySelector('.purple3').innerText = `${selectedAnswer}%`;
         document.querySelector('.purple3').setAttribute('style', 'color: #80c78b')
-        document.querySelector('.game__percent__answer').setAttribute('style', 'display: block')
 
         let r = questions.map(w => {
             if(activeQuestion === w.number) {
-                return { ...w, selectAnswer: true, selectedAnswer: selectedAnswer, iscorrect: true }
+                return { ...w, selectAnswer: true, selectedAnswer: selectedAnswer, iscorrect: true, isDisabled: true }
             }
 
             return w
@@ -169,7 +179,7 @@ $('#checkAnswer').click(() => {
         questions = r;
       } else {
           $('.modalContainer').modal('show');
-          document.querySelector('.game__percent__answer').setAttribute('style', 'display: block')
+          document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block')
           document.querySelector('.purple3').removeAttribute('style')
           document.querySelector('.purple3').innerText = `${selectedAnswer}%`;
           document.querySelector('.modalCorrectAnswer').innerText = `${correctAnswer}%`;
@@ -177,7 +187,7 @@ $('#checkAnswer').click(() => {
 
           let r = questions.map(w => {
               if(activeQuestion === w.number) {
-                  return { ...w, selectAnswer: true, selectedAnswer: selectedAnswer, iscorrect: false }
+                  return { ...w, selectAnswer: true, selectedAnswer: selectedAnswer, iscorrect: false, isDisabled: true }
               }
 
               return w
@@ -185,6 +195,8 @@ $('#checkAnswer').click(() => {
 
           questions = r;
     }
+
+    slider.disabled = true;
 
     if(attampt === 11) {
       document.querySelector('.game__result__container').classList.add('active') 
@@ -209,24 +221,26 @@ $( "#nextStep" ).click(function() {
 
   if(items.selectAnswer === true && items.iscorrect == true) {
       document.querySelector('.purple3').innerText = `${items.correctAnswer}%`;
-      document.querySelector('.game__percent__answer').setAttribute('style', 'display: block')
+      document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block')
       document.querySelector('.purple3').setAttribute('style', 'color: #80c78b')
       slider.value = items.selectedAnswer;
+      slider.disabled = true;
       output.innerHTML = `${items.selectedAnswer}%`;
 
   } else if(items.selectAnswer === true && items.iscorrect == false) {
       document.querySelector('.purple3').innerText = `${items.selectedAnswer}%`;
       document.querySelector('.purple3').removeAttribute('style')
-      document.querySelector('.game__percent__answer').setAttribute('style', 'display: block')
-
+      document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block')
+      slider.disabled = true;
       slider.value = items.selectedAnswer;
       output.innerHTML = `${items.selectedAnswer}%`;
   } else {
       document.querySelector('.purple3').innerText = '';
       document.querySelector('.purple3').removeAttribute('style')
-      document.querySelector('.game__percent__answer').setAttribute('style', 'display: none')
+      document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: none')
       selectedAnswer = 0;
       slider.value = 0;
+      slider.disabled = false;
       output.innerHTML = `0%`;
   }
 });
@@ -247,24 +261,27 @@ $( "#prevStep" ).click(function() {
 
   if(items.selectAnswer === true && items.iscorrect == true) {
       document.querySelector('.purple3').innerText = `${items.correctAnswer}%`;
-      document.querySelector('.game__percent__answer').setAttribute('style', 'display: block')
+      document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block')
       document.querySelector('.purple3').setAttribute('style', 'color: #80c78b')
       slider.value = items.selectedAnswer;
+      slider.disabled = true;
       output.innerHTML = `${items.selectedAnswer}%`;
 
   } else if(items.selectAnswer === true && items.iscorrect == false) {
       document.querySelector('.purple3').innerText = `${items.selectedAnswer}%`;
       document.querySelector('.purple3').removeAttribute('style')
-      document.querySelector('.game__percent__answer').setAttribute('style', 'display: block')
+      document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block')
       slider.value = items.selectedAnswer;
+      slider.disabled = true;
       output.innerHTML = `${items.selectedAnswer}%`;
 
   } else {
       document.querySelector('.purple3').innerText = '';
       document.querySelector('.purple3').removeAttribute('style')
-      document.querySelector('.game__percent__answer').setAttribute('style', 'display: none')
+      document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: none')
       selectedAnswer = 0;
       slider.value = 0;
+      slider.disabled = false;
       output.innerHTML = `0%`;
   }
 });
@@ -293,7 +310,7 @@ $( "#gameReset" ).click(function() {
 
   document.querySelector('.mainBody').removeAttribute('style')
   document.querySelector('.game__result__container').removeAttribute('style')
-  document.querySelector('.game__percent__answer').setAttribute('style', 'display: none')
+  document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: none')
 
   slider.value = 0;
 
