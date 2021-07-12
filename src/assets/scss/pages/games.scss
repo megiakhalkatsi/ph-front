@@ -959,6 +959,7 @@ $default-size: 55px;
       margin-left: 6px;
       fill: $component-color2;
       transition: .3s;
+      flex: none;
     }
   }
   &__rotate__notification {
@@ -2334,12 +2335,35 @@ $default-size: 55px;
         width: 100%;
         height: 100%;
         min-height: 252px;
-        .game__box__body{
-          min-height: auto;
+        textarea{
+          width: 100%;
           height: 100%;
-          border: none;
-          border-radius: 0;
+          outline: none;
+          position: relative;
+          padding: 20px;
+          color: $black;
+          font-family: $firagoRegular;
+          font-size: 21px;
+          resize: none;
+          &::placeholder {
+            color: $component-color12;
+            font-size: 21px;
+            font-family: $firagoRegular;
+            text-align: center;
+            line-height:212px;
+          }
+          &:focus{
+            &::placeholder{
+              opacity: 0;
+            }
+          }
         }
+        // .game__box__body{
+        //   min-height: auto;
+        //   height: 100%;
+        //   border: none;
+        //   border-radius: 0;
+        // }
       }
       &-margin{
         margin-bottom: 30px;
