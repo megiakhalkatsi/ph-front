@@ -2,6 +2,7 @@
 
 
 
+let incorrectAnswer = 0;
 let correctAnswer = 0;
 let arr = []
 let index = 0;
@@ -11,7 +12,7 @@ $('.game__difference__img__container').mousedown(function (event) {
     index ++
     attampt ++
 
-    if(index <= 2) {
+
         if (!event) event = window.event;
         var x = event.pageX;
         var y = event.pageY;
@@ -26,7 +27,6 @@ $('.game__difference__img__container').mousedown(function (event) {
           template = $(`<div class="game__difference__circle issuccess"></div>`);
         } else {
           template = $(`<div class="game__difference__circle iserror"></div>`);
-
         }
 
         $(template).css(styles)
@@ -40,29 +40,27 @@ $('.game__difference__img__container').mousedown(function (event) {
         } else if(event.target.classList.contains('divider2') && !arr.includes('divider2')) {
             arr.push('divider2')
             correctAnswer++
+        } else {
+          incorrectAnswer++
         }
-
-    }
-
-    console.log(arr)
 });
 
 
 
 
 
-$( "#successModalBtn" ).click(function() {
+  $( "#successModalBtn" ).click(function() {
     document.querySelector('.mainBody').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').setAttribute('style', 'display: none')
   
-    if(correctAnswer === 2) {
+    if(correctAnswer === 2 && incorrectAnswer === 0) {
         $('.successModal').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
-        document.querySelector('.successModal #correctAnswers').innerHTML = `${correctAnswer}/2 კითხვა`
+        document.querySelector('.successModal #correctAnswers').innerHTML = `${correctAnswer}/2 სწორად არჩეული განსხვავება`
     }
     
-    if(correctAnswer < 2) {
+    if(correctAnswer < 2 || incorrectAnswer > 0) {
         $('.failModal').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
-        document.querySelector('.failModal #correctAnswers').innerHTML = `${correctAnswer}/2 კითხვა`
+        document.querySelector('.failModal #correctAnswers').innerHTML = `${correctAnswer}/${incorrectAnswer} სწორად არჩეული განსხვავება`
     }
   });
   
@@ -78,6 +76,7 @@ $( "#successModalBtn" ).click(function() {
     $('.game__difference__circle').remove()
 
 
+    incorrectAnswer = 0;
     correctAnswer = 0;
     arr = []
     attampt = 0;
@@ -102,9 +101,6 @@ $( "#successModalBtn" ).click(function() {
       if($('.game__difference__img__container2 .game__difference__circle').hasClass('iserror')) {
         $('.game__difference__img__container2 .game__difference__circle.iserror').addClass('error')
       }
-
-    
-    
   });
   
   $( "#compl" ).click(function() {

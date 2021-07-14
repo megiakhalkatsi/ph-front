@@ -1,5 +1,6 @@
 
 
+
 var questions = [
   {
     number: 1,
@@ -24,7 +25,7 @@ var questions = [
   {
     number: 5,
     correctAnswer: 85,
-    question: 'შესაბამისი ასაკის ბავშვების რამდენი პროცენტი სარგებლობს განათლების მიღების უფლებით და ესწრება სკოლის სრულ საშუალო საფეხურს (X-XII კლ?',
+    question: 'შესაბამისი ასაკის ბავშვების რამდენი პროცენტი სარგებლობს განათლების მიღების უფლებით და ესწრება სკოლის სრულ საშუალო საფეხურს (X-XII კლ)?',
   },
   {
     number: 6,
@@ -83,7 +84,7 @@ var questions2 = [
   {
     number: 5,
     correctAnswer: 85,
-    question: 'შესაბამისი ასაკის ბავშვების რამდენი პროცენტი სარგებლობს განათლების მიღების უფლებით და ესწრება სკოლის სრულ საშუალო საფეხურს (X-XII კლ?',
+    question: 'შესაბამისი ასაკის ბავშვების რამდენი პროცენტი სარგებლობს განათლების მიღების უფლებით და ესწრება სკოლის სრულ საშუალო საფეხურს (X-XII კლ)?',
   },
   {
     number: 6,
@@ -181,24 +182,30 @@ $('#checkAnswer').click(() => {
 
     if(formula1 && (selected - correctAnswer >= 0) || formula2 && (correctAnswer - selected >= 0)) {
         correctAnswerCount++
+        $('.modalContainer').modal('show');
+        document.querySelector('.modalCorrectAnswer').innerText = `${correctAnswer}%`;
         document.querySelector('.purple3').innerText = `${selectedAnswer}%`;
         document.querySelector('.purple3').setAttribute('style', 'color: #80c78b')
-
+        document.querySelector('.modalMyAnswer').setAttribute('style', 'color: #80c78b')
+        document.querySelector('.modalMyAnswer').innerText = `${selectedAnswer}%`
+        
         let r = questions.map(w => {
-            if(activeQuestion === w.number) {
-                return { ...w, selectAnswer: true, selectedAnswer: selectedAnswer, iscorrect: true, isDisabled: true }
-            }
-
-            return w
+          if(activeQuestion === w.number) {
+            return { ...w, selectAnswer: true, selectedAnswer: selectedAnswer, iscorrect: true, isDisabled: true }
+          }
+          
+          return w
         })
-
+        
         questions = r;
       } else {
-          $('.modalContainer').modal('show');
-          document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block')
-          document.querySelector('.purple3').removeAttribute('style')
-          document.querySelector('.purple3').innerText = `${selectedAnswer}%`;
-          document.querySelector('.modalCorrectAnswer').innerText = `${correctAnswer}%`;
+        $('.modalContainer').modal('show');
+        document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block')
+        document.querySelector('.purple3').removeAttribute('style')
+        document.querySelector('.purple3').setAttribute('style', 'color: #e74c3c')
+        document.querySelector('.purple3').innerText = `${selectedAnswer}%`;
+        document.querySelector('.modalCorrectAnswer').innerText = `${correctAnswer}%`;
+        document.querySelector('.modalMyAnswer').setAttribute('style', 'color: #e74c3c')
           document.querySelector('.modalMyAnswer').innerText = `${selectedAnswer}%`
 
           let r = questions.map(w => {
@@ -242,11 +249,11 @@ $( "#nextStep" ).click(function() {
       slider.value = items.selectedAnswer;
       slider.disabled = true;
       output.innerHTML = `${items.selectedAnswer}%`;
-
-  } else if(items.selectAnswer === true && items.iscorrect == false) {
+      
+    } else if(items.selectAnswer === true && items.iscorrect == false) {
       document.querySelector('.purple3').innerText = `${items.selectedAnswer}%`;
       document.querySelector('.purple3').removeAttribute('style')
-      document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block')
+      document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block; color: #e74c3c')
       slider.disabled = true;
       slider.value = items.selectedAnswer;
       output.innerHTML = `${items.selectedAnswer}%`;
@@ -285,8 +292,7 @@ $( "#prevStep" ).click(function() {
 
   } else if(items.selectAnswer === true && items.iscorrect == false) {
       document.querySelector('.purple3').innerText = `${items.selectedAnswer}%`;
-      document.querySelector('.purple3').removeAttribute('style')
-      document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block')
+      document.querySelector('.game__percent__answer .purple3').setAttribute('style', 'display: block; color: #e74c3c')
       slider.value = items.selectedAnswer;
       slider.disabled = true;
       output.innerHTML = `${items.selectedAnswer}%`;
