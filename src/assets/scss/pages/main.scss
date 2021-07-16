@@ -150,7 +150,7 @@ body {
         color: $component-color5;
         margin-bottom: 31px;
         span {
-          display: block;
+          display: contents;
         }
       }
       a {
@@ -372,15 +372,14 @@ body {
     background: $white;
     min-height: 100vh;
     z-index: 2;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     transition: 0.3s;
-    transform: translateY(-100%);
     box-shadow: 0px 0px 30px #2026311a;
     position: fixed;
     height: 100%;
     overflow-y: auto;
+    display: none;
     &::-webkit-scrollbar {
       width: 8px;
       &-track {
@@ -397,18 +396,8 @@ body {
     }
 
     &.active {
-      transform: translateY(0);
+      display: flex;
     }
-    // &.result__active {
-    //   top: 60px;
-    //   .search__container__content {
-    //     position: absolute;
-    //     top: 60px;
-    //     left: 50%;
-    //     transform: translateX(-50%);
-    //     width: 100%;
-    //   }
-    // }
     &__row {
       display: flex;
       width: 100%;
@@ -436,7 +425,7 @@ body {
         color: $black;
         border-radius: 8px;
         height: 60px;
-        padding: 0 30px;
+        padding: 0 56px 0 30px;
         &::-webkit-input-placeholder {
           color: rgba($color: $black, $alpha: 0.3);
         }
@@ -448,9 +437,6 @@ body {
         }
         &:-moz-placeholder {
           color: rgba($color: $black, $alpha: 0.3);
-        }
-        &:focus::placeholder {
-          color: transparent;
         }
         &:focus {
           outline: none;
@@ -615,6 +601,7 @@ body {
     font-size: 16px;
     line-height: 1.2;
     transition: 0.3s;
+    border: 1px solid transparent;
     @media #{$breakpoint-md} {
       min-width: 387px;
       max-width: auto;
@@ -624,6 +611,7 @@ body {
       text-decoration: none;
       color: $black;
       box-shadow: none;
+      border: 1px solid $component-color2;
     }
   }
 }

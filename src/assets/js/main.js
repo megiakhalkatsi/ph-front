@@ -12,6 +12,10 @@ function fixedHeaderFunction() {
 window.onscroll = function () { fixedHeaderFunction() };
 
 
+// focusMethod = function getFocus() {
+//     document.getElementById("myTextField").focus();
+//   }
+  
 function clickers() {
     $('.header__nav__item-link').click(function () {
         $('.header__nav__item-link').removeClass('active')
@@ -21,6 +25,7 @@ function clickers() {
         $(this).toggleClass('active');
         $('.search__container').toggleClass('active');
         $("body").toggleClass("open-modal");
+        $("#searchInput").focus();
     })
     $('.search__close').click(function () {
         $('.search__container').removeClass('active');
@@ -111,6 +116,13 @@ function imageZoom(ele) {
     document.getElementById("image-fullscreen").style.backgroundSize = 'contain';
     console.log(document.getElementById("image-fullscreen").style);
 }
+
+$(window).click(function() {
+    $('#fullscreenImgModal').modal('hide');
+});
+$('.image-fullscreen').click(function(e) {
+    e.stopPropagation();
+});
 
 //header navigation - active items
 $(function () {
@@ -263,6 +275,19 @@ const selectDropdown = () => {
     })
 }
 selectDropdown()
+
+$(window).click(function() {
+    $('.language__desktop').removeClass('open')  
+    $('.language__desktop .dropdown').removeClass('open')  
+    $('#language__mobile').removeClass('open')  
+    $('#language__mobile .dropdown').removeClass('open')  
+});
+$('.language__desktop').click(function(e) {
+    e.stopPropagation();
+});
+$('#language__mobile').click(function(e) {
+    e.stopPropagation();
+});
 
 // password show function
 const togglePassword = document.querySelector('#togglePassword');
