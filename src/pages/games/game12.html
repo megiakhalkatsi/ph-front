@@ -16,15 +16,15 @@ title: მოსწავლეების რესურსი
           <div class="game__checkbox"></div>
           <span class="text">ცხოვრების ჯანსაღი წესი</span>
         </div>
-        <div class="game__quiz__answ yellow error">
+        <div class="game__quiz__answ yellow success">
           <div class="game__checkbox"></div>
           <span class="text">შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
         </div>
-        <div class="game__quiz__answ pink success">
+        <div class="game__quiz__answ pink error">
           <div class="game__checkbox"></div>
           <span class="text">ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია.</span>
         </div>
-        <div class="game__quiz__answ purple">
+        <div class="game__quiz__answ purple success-border">
           <div class="game__checkbox"></div>
           <span class="text">ცხოვრების ჯანსაღი წესი</span>
         </div>
@@ -58,46 +58,15 @@ title: მოსწავლეების რესურსი
   </div>
 </div>
 
-<!-- Game Quiz Question Modal -->
-<div class="modal fade notificationModal tableOfConents__modal" id="gameQuizQuest" tabindex="-1"
-  aria-labelledby="tableOfConentsLabel" aria-hidden="true">
-  <div class="modal-dialog tableOfConents__modal-dialog">
-    <div class="modal-content tableOfConents__modal-content">
-      <div class="bg-white">
-        <div class="tableOfConents__modal-header">
-          <div class="d-flex align-items-center">
-            <div class="game__quiz__quest-div position-static translate-0 mr-10px"> ? </div>
-            <h2 class="tableOfConents__modal__title"> კომენტარი </h2>
-          </div>
-          <a href="#" class="game__modal-close" data-bs-dismiss="modal" aria-label="Close">
-            <svg class="icon">
-              <use xlink:href="#cancel-icon"></use>
-            </svg>
-          </a>
-        </div>
-        <div class="document__line m-0"></div>
-      </div>
-      <div class="modal-body tableOfConents__modal-body">
-        <div class="game__quiz__quest-modal-text">
-          ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი
-          შეუშალოს. გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი
-          სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია.
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <script src="../assets/vendors/js/jquery.min.js"></script>
 <script>
 
   $('.game__quiz__answ').click(function () {
-    $('.game__quiz__answ.checked').removeClass('checked');
+    // $('.game__quiz__answ.checked').removeClass('checked');
     $('.game__quiz__answ__cont.answered-suc').removeClass('answered-suc');
     $('.game__quiz__answ__cont.answered-err').removeClass('answered-err');
     $('.game__quiz__answ.success.active').removeClass('active');
-    $(this).addClass('checked');
+    $(this).toggleClass('checked');
     if ($(this).hasClass('checked')&& $(this).hasClass('success')) {
       $(this).parents(".game__quiz__answ__cont").addClass("answered-suc");
     }else if ($(this).hasClass('checked')&& $(this).hasClass('error')) {
