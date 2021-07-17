@@ -28,6 +28,16 @@
             @media #{$breakpoint-xl} {
                 font-size: 55px;
             }
+            &-md {
+                color: $black;
+                font-family: $firagoRegular;
+                font-size: 21px;
+                margin-bottom: 34px;
+                text-align: left;
+                @media #{$breakpoint-xl} {
+                    font-size: 34px;
+                }
+            }
         }
         &__text {
             font-family: $firagoRegular;
@@ -130,6 +140,9 @@
     }
     &-group {
         margin-bottom: 34px;
+        &.disabled {
+            opacity: 0.4;
+        }
     }
     &__label {
         font-family: $firagoMedium;
@@ -180,6 +193,10 @@
                 fill: $white;
                 cursor: pointer;
             }
+        }
+        &:read-only {
+            background-color: $white;
+            cursor: not-allowed;
         }
     }
     &__row {
@@ -695,7 +712,7 @@
                 width: 101.4%;
                 left: -2px;
                 top: 28px;
-                @media only screen and (min-width: 340px){
+                @media only screen and (min-width: 340px) {
                     width: 101%;
                 }
                 @media #{$breakpoint-lg} {

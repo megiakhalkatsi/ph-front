@@ -1,9 +1,10 @@
 ---
 layout: gamesLayout
 title: მოსწავლეების რესურსი
+gameScripts: ../assets/vendors/js/games/game9.js
 ---
 
-<div class="modal-body game__modal-body mainBody">
+<div class="modal-body game__modal-body game__modal-body1 mainBody">
   <div class="row">
     <div class="col-12 page__content-col-md m-auto">
       <h2 class="game__mail__title">სასწრაფო შეტყობინება - დროულად გადაიხადეთ დავალიანება და მიიღეთ საჩუქარი!</h2>
@@ -73,10 +74,596 @@ title: მოსწავლეების რესურსი
         </div>
         <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
           <div class="game__button__container">
-            <a href="tansatsmelige.html" class="about__page__btn game__button mr bt-gray">
-              გადამიყვანე გვერდზე</a>
-            <a href="right-decision.html" class="about__page__btn game__button bt-gray">
-              არ მსურს გადასვლა</a>
+            <span class="about__page__btn game__button mr bt-gray goToPage1 cursor-pointer">გადამიყვანე გვერდზე</span>
+            <span class="about__page__btn game__button bt-gray cursor-pointer iDontWant1">არ მსურს გადასვლა</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal-body game__modal-body mainBody game__modal-body2" style="display: none;">
+  <div class="row">
+      <div class="col-12 page__content-col-md m-auto">
+          <h2 class="game__mail__title">URGENT!!</h2>
+          <div class="game__mail">
+              <div class="game__mail__header">
+                  <div class="game__mail__dot__cont">
+                      <div class="game__mail__dot red"></div>
+                      <div class="game__mail__dot yellow"></div>
+                      <div class="game__mail__dot green"></div>
+                  </div>
+                  <div class="game__mail__tab">
+                      <h3 class="game__mail__tab__text">http://e-mail.ge/ka</h3>
+                      <svg class="icon">
+                          <use xlink:href="#refresh"></use>
+                      </svg>
+                  </div>
+              </div>
+              <div class="game__mail__body">
+                  <div class="game__mail__address__tab">
+                      <div class="game__mail__address">
+                          <div class="game__mail__user">
+                              <svg class="icon">
+                                  <use xlink:href="#email-user"></use>
+                              </svg>
+                          </div>
+                          <div>
+                              <h4 class="game__mail__user__from">italianbank@gmail.com</h4>
+                              <div class="game__mail__user__to">
+                                  <span>to me</span>
+                                  <svg class="icon">
+                                      <use xlink:href="#arrow-dropdown"></use>
+                                  </svg>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="game__mail__date">
+                          <span>Sat, Jan 9, 7:00 PM (2 hours ago))</span>
+                      </div>
+                  </div>
+                  <p class="game__mail__text">
+                      Dear Irina, Congratulations! 
+                      <span class="game__mail__text__margin"></span>
+                      You won a prize 500 USD. To get this money you have update your
+                      profile and enter your Bank Card information. Please go in the link: italianbank.com
+                      <span class="game__mail__text__margin"></span>
+                      Sincerely,
+                      <span class="d-block"></span>
+                      The Italian Bank 
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="col-12 game__content-col-bottom">
+          <div class="row game__img__btn__row align-center-xl-ex">
+              <div class="col-12 col-md-2 game__img__col-relative">
+                  <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+                      class="game__img__picture game__img-dog lg bottom">
+              </div>
+              <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
+                  <div class="game__button__container">
+                      <span class="about__page__btn game__button mr bt-gray goToPage134 cursor-pointer">გადამიყვანე გვერდზე</span>
+                      <span class="about__page__btn game__button bt-gray iDontWant2 cursor-pointer">არ მსურს გადასვლა</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="modal-body game__modal-body mainBody game__modal-body3" style="display: none;">
+  <div class="row">
+      <div class="col-12 page__content-col-md m-auto">
+          <h2 class="game__mail__title">გამოკითხვა KAHOOT-ის დახმარებით</h2>
+          <div class="game__mail">
+              <div class="game__mail__header">
+                  <div class="game__mail__dot__cont">
+                      <div class="game__mail__dot red"></div>
+                      <div class="game__mail__dot yellow"></div>
+                      <div class="game__mail__dot green"></div>
+                  </div>
+                  <div class="game__mail__tab">
+                      <h3 class="game__mail__tab__text">http://e-mail.ge/ka</h3>
+                      <svg class="icon">
+                          <use xlink:href="#refresh"></use>
+                      </svg>
+                  </div>
+              </div>
+              <div class="game__mail__body">
+                  <div class="game__mail__address__tab">
+                      <div class="game__mail__address">
+                          <div class="game__mail__user">
+                              <svg class="icon">
+                                  <use xlink:href="#email-user"></use>
+                              </svg>
+                          </div>
+                          <div>
+                              <h4 class="game__mail__user__from">k.lomidze@gmail.com</h4>
+                              <div class="game__mail__user__to">
+                                  <span>to me</span>
+                                  <svg class="icon">
+                                      <use xlink:href="#arrow-dropdown"></use>
+                                  </svg>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="game__mail__date">
+                          <span>Sat, Jan 9, 7:00 PM (2 hours ago)</span>
+                      </div>
+                  </div>
+                  <p class="game__mail__text">
+                      ნიკა, გამარჯობა. 
+                      <span class="game__mail__text__margin"></span>
+                      შეგახსენებ, რომ ხვალ ისტორიის გაკვეთილზე უნდა ჩავატაროთ საკლასო გამოკითხვა
+                      Kahoot-ის გამოყენებით. 
+                      <span class="game__mail__text__margin"></span>
+                      იმისათვის, რომ შეძლო გამოკითხვაში მონაწილეობის მიღება, გთხოვ,
+                      გაითვალისწინო, რომ საჭირო იქნება გადახვიდე ვებგვერდზე kahoot.it 
+                      <span class="game__mail__text__margin"></span>
+                      ამ გვერდზე გადასვლის შემდეგ უნდა
+                      შეიყვანო ის პინკოდი, რომელსაც მე გამოგიგზავნით, შემდეგ კი უპასუხო ეკრანზე გამოსულ კითხვებს.
+                      <span class="game__mail__text__margin"></span>
+                      საუკეთესო სურვილებით, 
+                      <span class="d-block"></span>
+                      ქეთი მასწავლებელი.
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="col-12 game__content-col-bottom">
+          <div class="row game__img__btn__row align-center-xl-ex">
+              <div class="col-12 col-md-2 game__img__col-relative">
+                  <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+                      class="game__img__picture game__img-dog lg bottom">
+              </div>
+              <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
+                  <div class="game__button__container">
+                      <span class="about__page__btn game__button mr bt-gray iDontWant33333 cursor-pointer">
+                          გადამიყვანე გვერდზე</span>
+                      <span class="about__page__btn game__button bt-gray iDontWant3 cursor-pointer">
+                          არ მსურს გადასვლა</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal-body game__modal-body hakerPage mainBody" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <div class="game__hacker">
+        <img src="../assets/img/illustrations/hacker.gif" alt="" class="game__hacker__img">
+        <h3 class="game__hacker__text">შენ გაები ჰაკერის <span class="bold">მახეში!</span></h3>
+      </div>
+      <div class="game__line"></div>
+    </div>
+    <div class="col-12 game__content-col-bottom">
+      <div class="row game__img__btn__row align-center-xl-ex">
+        <div class="col-12 col-md-2 game__img__col-relative">
+          <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+            class="game__img__picture game__img-dog lg bottom">
+        </div>
+        <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
+          <div class="game__button__container">
+            <span class="about__page__btn game__button mr bt-gray resetGame cursor-pointer">
+              თავიდან დაწყება</span>
+            <span class="about__page__btn game__button bt-blue cursor-pointer continue1">
+              თამაშის გაგრძელება</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal-body game__modal-body hakerPage2 mainBody" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <div class="game__hacker">
+        <img src="../assets/img/illustrations/hacker.gif" alt="" class="game__hacker__img">
+        <h3 class="game__hacker__text">შენ გაები ჰაკერის <span class="bold">მახეში!</span></h3>
+      </div>
+      <div class="game__line"></div>
+    </div>
+    <div class="col-12 game__content-col-bottom">
+      <div class="row game__img__btn__row align-center-xl-ex">
+        <div class="col-12 col-md-2 game__img__col-relative">
+          <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+            class="game__img__picture game__img-dog lg bottom">
+        </div>
+        <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
+          <div class="game__button__container">
+            <span class="about__page__btn game__button mr bt-gray resetGame cursor-pointer">
+              თავიდან დაწყება</span>
+            <span class="about__page__btn game__button bt-blue cursor-pointer continue187987">
+              თამაშის გაგრძელება</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--  rightDecision  -->
+<div class="modal-body game__modal-body rightDecision rightDecision1 mainBody" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <div class="game__rightDec">
+        <img src="../assets/img/icons/thumbsUp.svg" alt="" class="game__rightDec__icon">
+        <h2 class="game__rightDec__title">სწორი გადაწყვეტილებაა</h2>
+        <p class="game__rightDec__text">გააცანი ამ გადაწყვეტილების შესაბამისი არგუმენტები თანაკლასელებსა და მასწავლებლებს.</p>
+      </div>
+    </div>
+    <div class="col-12 game__content-col-bottom">
+        <div class="row game__img__btn__row align-center-xl-ex">
+          <div class="col-12 col-md-2 game__img__col-relative">
+            <img id="DogImage" src="../assets/img/illustrations/correct-image.gif" alt="dog"
+              class="game__img__picture game__img-dog lg bottom">
+          </div>
+          <div class="col-12 col-md-10 col-lg-8">
+            <div class="game__button__container">
+              <span class="about__page__btn game__button mr bt-gray cursor-pointer">თავიდან დაწყება</span>
+              <span class="about__page__btn game__button bt-blue continue1 cursor-pointer">თამაშის გაგრძელება</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!--  rightDecision2  -->
+<div class="modal-body game__modal-body rightDecision rightDecision2 mainBody" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <div class="game__rightDec">
+        <img src="../assets/img/icons/thumbsUp.svg" alt="" class="game__rightDec__icon">
+        <h2 class="game__rightDec__title">სწორი გადაწყვეტილებაა</h2>
+        <p class="game__rightDec__text">გააცანი ამ გადაწყვეტილების შესაბამისი არგუმენტები თანაკლასელებსა და მასწავლებლებს.</p>
+      </div>
+    </div>
+    <div class="col-12 game__content-col-bottom">
+        <div class="row game__img__btn__row align-center-xl-ex">
+          <div class="col-12 col-md-2 game__img__col-relative">
+            <img id="DogImage" src="../assets/img/illustrations/correct-image.gif" alt="dog"
+              class="game__img__picture game__img-dog lg bottom">
+          </div>
+          <div class="col-12 col-md-10 col-lg-8">
+            <div class="game__button__container">
+              <span class="about__page__btn game__button mr bt-gray cursor-pointer">თავიდან დაწყება</span>
+              <span class="about__page__btn game__button bt-blue continue2 cursor-pointer">თამაშის გაგრძელება</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!--  rightDecision3  -->
+<div class="modal-body game__modal-body rightDecision rightDecision3 mainBody" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <div class="game__rightDec">
+        <img src="../assets/img/icons/thumbsUp.svg" alt="" class="game__rightDec__icon">
+        <h2 class="game__rightDec__title">სწორი გადაწყვეტილებაა</h2>
+        <p class="game__rightDec__text">გააცანი ამ გადაწყვეტილების შესაბამისი არგუმენტები თანაკლასელებსა და მასწავლებლებს.</p>
+      </div>
+    </div>
+    <div class="col-12 game__content-col-bottom">
+        <div class="row game__img__btn__row align-center-xl-ex">
+          <div class="col-12 col-md-2 game__img__col-relative">
+            <img id="DogImage" src="../assets/img/illustrations/correct-image.gif" alt="dog"
+              class="game__img__picture game__img-dog lg bottom">
+          </div>
+          <div class="col-12 col-md-10 col-lg-8">
+            <div class="game__button__container">
+              <span class="about__page__btn game__button mr bt-gray cursor-pointer">თავიდან დაწყება</span>
+              <span class="about__page__btn game__button bt-blue continue2 cursor-pointer">თამაშის გაგრძელება</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="modal-body game__modal-body rightDecision4 mainBody">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <div class="game__rightDec">
+        <img src="../assets/img/icons/thumbsUp.svg" alt="" class="game__rightDec__icon">
+        <h2 class="game__rightDec__title">სწორი გადაწყვეტილებაა</h2>
+        <p class="game__rightDec__text"><a href="https://kahoot.com/schools-u/" target="_blank" class="link" rel="noopener noreferrer">Kahoot.it </a> რეალური და ძალიან საინტერესო გვერდია. დაუსვი კითხვები მასწავლებელს ამ გვერდთან დაკავშირებით ან თავად მოიძიე ინფორმაცია, რა მიზნით შეგიძლია მისი გამოყენება.</p>
+      </div>
+    </div>
+    <div class="col-12 game__content-col-bottom">
+        <div class="row game__img__btn__row align-center-xl-ex">
+          <div class="col-12 col-md-2 game__img__col-relative">
+            <img id="DogImage" src="../assets/img/illustrations/correct-image.gif" alt="dog"
+              class="game__img__picture game__img-dog lg bottom">
+          </div>
+          <div class="col-12 col-md-10 col-lg-8">
+            <div class="game__button__container">
+              <a href="#" class="about__page__btn game__button mr bt-gray">
+                თავიდან დაწყება</a>
+              <a href="#" class="about__page__btn game__button bt-blue">
+                თამაშის დასრულება</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="modal-body game__modal-body tansatsmeliPage mainBody" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <div class="game__mail">
+        <div class="game__mail__header">
+          <div class="game__mail__dot__cont">
+            <div class="game__mail__dot red"></div>
+            <div class="game__mail__dot yellow"></div>
+            <div class="game__mail__dot green"></div>
+          </div>
+          <div class="game__mail__tab">
+            <h3 class="game__mail__tab__text">http://tansatsmeli.ge/ka</h3>
+            <svg class="icon">
+              <use xlink:href="#refresh"></use>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <div class="game__web__header">
+            <div class="game__web__header__logo">
+              <div class="game__web__header__logo-div">
+                <img src="../assets/img/icons/clothes.svg" class="game__web__header__img">
+              </div>
+              <h2 class="game__web__header__logo__title">tansatsmeli</h2>
+            </div>
+            <div class="game__web__header__nav">
+              <div class="game__web__header__nav__item">
+                <svg class="icon">
+                  <use xlink:href="#ico-search"></use>
+                </svg>
+              </div>
+              <div class="game__web__header__nav__item">
+                <img src="../assets/img/icons/shoppingCart.svg" class="game__web__header__nav__img">
+              </div>
+              <div class="game__web__header__nav__item">
+                <img src="../assets/img/icons/menu.png" class="game__web__header__nav__img">
+              </div>
+            </div>
+          </div>
+          <div class="game__web__body">
+            <div class="container">
+              <section class="page__nav">
+                <ul class="page__nav__list">
+                  <li class="page__nav__list__item">
+                    <a href="#" class="page__nav__list__item-link">მთავარი</a>
+                  </li>
+                  <li class="page__nav__list__item">
+                    <svg class="icon">
+                      <use xlink:href="#ico-chevron-right"></use>
+                    </svg>
+                  </li>
+                  <li class="page__nav__list__item">
+                    <a href="#" class="page__nav__list__item-link">გადახდა</a>
+                  </li>
+                </ul>
+              </section>
+              <section class="form__section">
+                <div class="row">
+                  <div class="col-12">
+                    <h1 class="form__section__title game__web__body__title">დავალიანების გადახდა</h1>
+                    <form class="form">
+                      <div class="form-group">
+                        <label for="fullName" class="form__label">სახელი და გვარი</label>
+                        <input type="text" class="form-control form__input" id="fullName" readonly>
+                      </div>
+                      <div class="form-group">
+                        <label for="privateNumb" class="form__label">ბარათის ნომერი</label>
+                        <input type="text" class="form-control form__input" id="privateNumb" readonly>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="date" class="form__label">მოქმედების ვადა</label>
+                            <input type="text" class="form-control form__input" id="date" placeholder="თთ/წწ" readonly>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="cvc" class="form__label">ბარათის CVC</label>
+                            <input type="text" class="form-control form__input" id="cvc" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 game__content-col-bottom mw-762">
+      <div class="row game__img__btn__row align-center-xl-ex">
+        <div class="col-12 col-md-2 game__img__col-relative">
+          <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+            class="game__img__picture game__img-dog lg bottom">
+        </div>
+        <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
+          <div class="game__button__container">
+            <span class="about__page__btn game__button mr bt-gray iDontWant55 cursor-pointer">
+              მსურს მონაცემების შეყვანა</span>
+            <span class="about__page__btn game__button bt-gray cursor-pointer iDontWant1">
+              არ მსურს მონაცემების შეყვანა</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="game__result__container">
+  <a href="#" class="game__result">
+    <p class="game__result__text">თქვენ დაასრულეთ თამაში</p>
+    <div class="game__result__btn" id="successModalBtn">შედეგების ნახვა</div>
+  </a>
+</div>
+
+
+<div class="modal-body game__modal-body successModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg green">გილოცავთ !</h2>
+        <p class="game__finish__text">თქვენ წარმატებით დაასრულეთ თამაში! <span class="d-block" id="correctAnswers">0/16 სწორად არჩეული განსხვავება</span></p>
+        <picture>
+          <source media="(min-width:768px)" srcset="../assets/img/illustrations/happy.gif" type="image/gif">
+          <source srcset="../assets/img/illustrations/happy-mobile.gif" type="image/gif">
+          <img src="../assets/img/illustrations/happy-mobile.gif" alt="congratulations" class="game__finish__img">
+        </picture>
+        <div class="game__button__container justify-content-center mb-0">
+            <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-body game__modal-body failModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg orange">კიდევ სცადე</h2>
+        <p class="game__finish__text">სულ ცოტა დაგაკლდა. <span class="d-block" id="correctAnswers">0/16 სწორად არჩეული განსხვავება</span></p>
+        <p class="game__finish__text sm">კიდევ სცადე და ყველაფერი გამოგივა. მთავარია, ყურადღებით გაუყვე კითხვებს.</p>
+        <img src="../assets/img/illustrations/support.gif" alt="congratulations" class="game__finish__img">
+        <div class="game__button__container justify-content-center mb-0">
+            <button class="about__page__btn game__button mr bt-gray" id="gameReset">ახლიდან დაწყება</button>
+            <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal-body game__modal-body italianbank mainBody" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col-md m-auto">
+      <div class="game__mail">
+        <div class="game__mail__header">
+          <div class="game__mail__dot__cont">
+            <div class="game__mail__dot red"></div>
+            <div class="game__mail__dot yellow"></div>
+            <div class="game__mail__dot green"></div>
+          </div>
+          <div class="game__mail__tab">
+            <h3 class="game__mail__tab__text">http://tansatsmeli.ge/ka</h3>
+            <svg class="icon">
+              <use xlink:href="#refresh"></use>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <div class="game__web__header dark">
+            <div class="game__web__header__logo">
+              <div class="game__web__header__logo-div white">
+                <img src="../assets/img/icons/bank-building.svg" class="game__web__header__img">
+              </div>
+              <h2 class="game__web__header__logo__title">italianbank</h2>
+            </div>
+            <div class="game__web__header__nav">
+              <div class="game__web__header__nav__item">
+                <svg class="icon">
+                  <use xlink:href="#ico-search"></use>
+                </svg>
+              </div>
+              <div class="game__web__header__nav__item">
+                <img src="../assets/img/icons/menu.png" class="game__web__header__nav__img">
+              </div>
+            </div>
+          </div>
+          <div class="game__web__body">
+            <div class="container">
+              <section class="page__nav">
+                <ul class="page__nav__list">
+                  <li class="page__nav__list__item">
+                    <a href="#" class="page__nav__list__item-link">Homepage</a>
+                  </li>
+                  <li class="page__nav__list__item">
+                    <svg class="icon">
+                      <use xlink:href="#ico-chevron-right"></use>
+                    </svg>
+                  </li>
+                  <li class="page__nav__list__item">
+                    <a href="#" class="page__nav__list__item-link">Prize</a>
+                  </li>
+                </ul>
+              </section>
+              <section class="form__section">
+                <div class="row">
+                  <div class="col-12">
+                    <h1 class="form__section__title game__web__body__title">Your Prize <div class="purple">500 $</div></h1>
+                    <form class="form">
+                      <div class="form-group">
+                        <label for="fullName" class="form__label">Full name</label>
+                        <input type="text" class="form-control form__input" id="fullName" readonly>
+                      </div>
+                      <div class="form-group">
+                        <label for="privateNumb" class="form__label">Card number</label>
+                        <input type="text" class="form-control form__input" id="privateNumb" readonly>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="date" class="form__label">Expiration date</label>
+                            <input type="text" class="form-control form__input" id="date" placeholder="mm/yy" readonly>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="cvc" class="form__label">Card CVC</label>
+                            <input type="text" class="form-control form__input" id="cvc" readonly>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 game__content-col-bottom mw-762">
+      <div class="row game__img__btn__row align-center-xl-ex">
+        <div class="col-12 col-md-2 game__img__col-relative">
+          <img id="DogImage" src="../assets/img/illustrations/fiqrobs-image.gif" alt="dog"
+            class="game__img__picture game__img-dog lg bottom">
+        </div>
+        <div class="col-12 col-md-10 col-lg-8 mt-4 mt-lg-0">
+          <div class="game__button__container">
+            <span class="about__page__btn game__button mr bt-gray goToPage1000 cursor-pointer">მსურს მონაცემების შეყვანა</span>
+            <span class="about__page__btn game__button bt-gray iDontWant2 cursor-pointer">არ მსურს მონაცემების შეყვანა</span>
           </div>
         </div>
       </div>

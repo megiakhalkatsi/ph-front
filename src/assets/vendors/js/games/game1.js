@@ -1,4 +1,5 @@
 
+
 var questions = [
   {
     number: 1,
@@ -97,12 +98,14 @@ var questions = [
 var index = 0;
 
 
-function getCorrectAnsweersMarkup(correctAnswer){
-  if(correctAnswer !== 0) {
-    $('#ProgressLine').removeClass(`line__${correctAnswer - 1}`)
-    $('#ProgressLine').addClass(`line__${correctAnswer}`)
+function getCorrectAnsweersMarkup(index){
+  if(index !== 0) {
+      if(index > 1) {
+          $('#ProgressLine').removeClass(`progress-${(index - 1) * 25}`)
+      }
+    $('#ProgressLine').addClass(`progress-${index * 25}`)
   }
-  $('#ProgressText').html(`კითხვა <span class="purple">${correctAnswer}</span> / ${questions.length} დან`)
+  $('#ProgressText').html(`კითხვა <span class="purple">${index}</span> / ${questions.length} დან`)
 
 }
 
@@ -213,11 +216,11 @@ $( "#successModalBtn" ).click(function() {
 
 
 $( function() {
-    let incorrect = 0;
-    let attempt = 0;
-    let correctAnswer = 0;
+    var incorrect = 0;
+    var attempt = 0;
+    var correctAnswer = 0;
 
-    getCorrectAnsweersMarkup(correctAnswer)
+    getCorrectAnsweersMarkup(attempt)
 
     $( ".DraggableItem" ).draggable({ revert: "invalid" });
     $( ".DroppableItem" ).droppable({

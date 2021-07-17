@@ -1,0 +1,176 @@
+---
+layout: tr-default
+title: მოსწავლეების რესურსი
+---
+
+<div class="container">
+  <section class="page__nav">
+    <ul class="page__nav__list">
+      <li class="page__nav__list__item">
+        <a href="index.html" class="page__nav__list__item-link">მთავარი</a>
+      </li>
+      <li class="page__nav__list__item">
+        <svg class="icon">
+          <use xlink:href="#ico-chevron-right"></use>
+        </svg>
+      </li>
+      <li class="page__nav__list__item">
+        <a href="#" class="page__nav__list__item-link">პროფილი</a>
+      </li>
+      <li class="page__nav__list__item">
+        <svg class="icon">
+          <use xlink:href="#ico-chevron-right"></use>
+        </svg>
+      </li>
+      <li class="page__nav__list__item">
+        <a href="#" class="page__nav__list__item-link">რედაქტირება</a>
+      </li>
+    </ul>
+  </section>
+</div>
+<section>
+  <div class="container">
+    <div class="course__intro pd-sm">
+      <div class="row">
+        <div class="col-12 col-lg-10">
+          <div class="course__intro__content light">
+            <div class="d-flex align-items-center">
+              <svg class="icon user-icon">
+                <use xlink:href="#metro-user"></use>
+              </svg>
+              <h2>განმანათლებლის პროფილი</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="course__intro-bottom">
+    <div class="course__intro__header">
+      <div class="container">
+        <div class="course__intro__header__row">
+          <div class="course__intro__header__item">
+            <a href="#" target="_blank" rel="noopener noreferrer">დამატებითი ინსტრუქცია განმანათლებლისთვის
+              <span class="ps-2">
+                <svg class="icon arrow-icon">
+                  <use xlink:href="#feather-arrow-up-right"></use>
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div class="course__intro__header__item">
+            <a href="#" target="_blank" rel="noopener noreferrer">FB ჯგუფი
+              <span class="ps-2">
+                <svg class="icon arrow-icon">
+                  <use xlink:href="#feather-arrow-up-right"></use>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="course__intro-bottom__container">
+      <div class="container">
+        <div class="course__profile__row mt-4">
+          <div>
+            <div class="course__list__btn course__profile__menu__btn ml-130 align-items-center">
+              <h3> <span class="purple"> ჩემი კურსები </span> </h3>
+              <svg class="icon">
+                <use xlink:href="#arrow-dropdown"></use>
+              </svg>
+            </div>
+            <div class="course__profile__menu ml-130 course__list">
+              <ul>
+                <li class="course__profile__menu__item"><a href="#" class="course__profile__menu__link active">ჩემი
+                    კურსები</a></li>
+                <li class="course__profile__menu__item"><a href="#"
+                    class="course__profile__menu__link">სერთიფიკატები</a></li>
+                <li class="course__profile__menu__item"><a href="#" class="course__profile__menu__link">პროფილის
+                    რედაქტირება</a></li>
+                <div class="filter__line mt-34"></div>
+                <li class="course__profile__menu__item">
+                  <a href="#" class="course__profile__menu__link red">გამოსვლა
+                    <svg class="icon">
+                      <use xlink:href="#logOut"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="course__current__list">
+            <section class="form__section pt-0">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="form__section__title-md">პერსონალური მონაცემები</h2>
+                  <form class="form form-register">
+                    <div class="form-group">
+                      <label for="region" class="form__label required">რეგიონი</label>
+                      <select class="custom-select" placeholder="აირჩიეთ რეგიონი">
+                        <option value="1">თბილისი</option>
+                        <option value="2">მცხეთა</option>
+                        <option value="3">რუსთავი</option>
+                        <option value="4">ბათუმი</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="position" class="form__label required">პოზიცია</label>
+                      <select class="custom-select" placeholder="აირჩიეთ პოზიცია">
+                        <option value="1">მასწავლებელი</option>
+                        <option value="2">სამართალდამცავი</option>
+                        <option value="3" class="select_other">სხვა</option>
+                      </select>
+                    </div>
+                    <div class="form-group" id="txtData" style="display:none;">
+                      <label for="otherPosition" class="form__label required">სხვა პოზიცია</label>
+                      <input type="text" class="form-control form__input" id="otherPosition">
+                    </div>
+                    <div class="form-group">
+                      <label for="workingPlace" class="form__label">სამუშაო ადგილი</label>
+                      <input type="text" class="form-control form__input" id="workingPlace" value="თელავის #1 სკოლა">
+                    </div>
+                    <div class="form-group disabled">
+                      <label for="email" class="form__label required">ელ. ფოსტა</label>
+                      <input type="email" class="form-control form__input" id="email"
+                        value="nodar.okruashvili@geolab.edu.ge" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="name" class="form__label required">სახელი</label>
+                      <input type="text" class="form-control form__input" id="name" value="ნოდარ">
+                    </div>
+                    <div class="form-group">
+                      <label for="surname" class="form__label required">გვარი</label>
+                      <input type="text" class="form-control form__input" id="surname" value="ოქრუაშვილი">
+                    </div>
+                    <h2 class="form__section__title-md">პაროლის შეცვლა</h2>
+                    <div class="form-group">
+                      <label for="oldPassword" class="form__label required">ძველი პაროლი</label>
+                      <input type="password" class="form-control form__input" id="oldPassword">
+                    </div>
+                    <div class="form-group">
+                      <label for="password" class="form__label required">ახალი პაროლი</label>
+                      <input type="password" class="form-control form__input" id="password">
+                    </div>
+                    <div class="form-group">
+                      <label for="repeatPassword" class="form__label required">გაიმეორეთ ახალი პაროლი</label>
+                      <input type="password" class="form-control form__input" id="repeatPassword">
+                    </div>
+                    <div class="form__row">
+                      <div class="form__row__btn form__row__btn-login cursor-pointer bt-blue w-100" id="btn-data-submit">ცვლილებების
+                        შენახვა</div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </section>
+            <section class="course__data__updated">
+              <img src="assets/img/icons/thumbsUp.svg" alt="" class="game__rightDec__icon">
+              <h2 class="game__rightDec__title">მონაცემები წარმატებით განახლდა</h2>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

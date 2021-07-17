@@ -1,3 +1,34 @@
+// -- vars
+$default-size: 55px;
+// -- mixins
+@mixin size($width, $height) {
+  height: $height;
+  width: $width;
+}
+@mixin draw-progress($progress) {
+  .pie {
+    .half-circle {
+      border-color: $component-color2;
+    }
+
+    .left-side {
+      transform: rotate($progress * 3.6deg);
+    }
+
+    @if $progress <= 50 {
+      .right-side {
+        display: none;
+      }
+    } @else {
+      clip: rect(auto, auto, auto, auto);
+
+      .right-side {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
 .game__modal {
   padding-right: 0 !important;
   background-color: $component-color1;
@@ -112,6 +143,9 @@
     }
     &.mb-34 {
       margin-bottom: 34px;
+    }
+    &.light{
+      color: rgba($color: $black, $alpha: 0.6);
     }
   }
   &__title {
@@ -511,48 +545,333 @@
       }
     }
     &__circle {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: inline-block;
-      padding: 4px;
-      --v: 0deg;
-      background: linear-gradient($white, $white) content-box,
-        linear-gradient(var(--v), $component-color4 50%, transparent 0),
-        linear-gradient(to right, $component-color4 50%, $component-color2 0);
-      transition: 0.3s;
-      @media #{$breakpoint-xl} {
-        width: 55px;
-        height: 55px;
+      @include size($default-size, $default-size);
+      position: relative;
+    
+      .pie {
+        @include size(100%, 100%);
+        clip: rect(0, $default-size, $default-size, $default-size / 2);
+        left: 0;
+        position: absolute;
+        top: 0;
+    
+        .half-circle {
+          @include size(100%, 100%);
+          border: 4px solid transparent;
+          border-radius: 50%;
+          clip: rect(0, $default-size / 2, $default-size, 0);
+          left: 0;
+          position: absolute;
+          top: 0;
+        }
       }
-      &.line__0 {
-        transition: 0.3s;
-        background: linear-gradient(#fff, #fff) content-box, linear-gradient(var(--v), #f1f2f4 50%, transparent 0),
-          linear-gradient(90deg, #f1f2f4 100%, #7279ff 0);
+    
+      .filled {
+        @include size(100%, 100%);
+        border: 4px solid #f1f2f4;
+        border-radius: 50%;
       }
-      &.line__1 {
-        transition: 0.3s;
-        background: linear-gradient($white, $white) content-box,
-          linear-gradient(var(--v), $component-color4 50%, transparent 0),
-          linear-gradient(to right, $component-color4 50%, $component-color2 0);
-      }
-      &.line__2 {
-        transition: 0.3s;
-        background: linear-gradient($white, $white) content-box,
-          linear-gradient(var(--v), $component-color4 0%, transparent 0),
-          linear-gradient(to right, $component-color4 50%, $component-color2 0);
-      }
-      &.line__3 {
-        transition: 0.3s;
-        background: linear-gradient($white, $white) content-box,
-          linear-gradient(var(--v), $component-color4 0%, transparent 0),
-          linear-gradient(135deg, $component-color4 25%, #7279ff 0);
-      }
-      &.line__4 {
-        transition: 0.3s;
-        background: linear-gradient($white, $white) content-box,
-          linear-gradient(var(--v), $component-color4 0%, transparent 0),
-          linear-gradient(to right, $component-color4 0%, $component-color2 0);
+      &.progress{
+        &-1 {
+          @include draw-progress(1);
+        }
+        &-2 {
+          @include draw-progress(2);
+        }
+        &-3 {
+          @include draw-progress(3);
+        }
+        &-4 {
+          @include draw-progress(4);
+        }
+        &-5 {
+          @include draw-progress(5);
+        }
+        &-6 {
+          @include draw-progress(6);
+        }
+        &-7 {
+          @include draw-progress(7);
+        }
+        &-8 {
+          @include draw-progress(8);
+        }
+        &-9 {
+          @include draw-progress(9);
+        }
+        &-10 {
+          @include draw-progress(10);
+        }
+        &-11 {
+          @include draw-progress(11);
+        }
+        &-12 {
+          @include draw-progress(12);
+        }
+        &-13 {
+          @include draw-progress(13);
+        }
+        &-14 {
+          @include draw-progress(14);
+        }
+        &-15 {
+          @include draw-progress(15);
+        }
+        &-16 {
+          @include draw-progress(16);
+        }
+        &-17 {
+          @include draw-progress(17);
+        }
+        &-18 {
+          @include draw-progress(18);
+        }
+        &-19 {
+          @include draw-progress(19);
+        }
+        &-20 {
+          @include draw-progress(20);
+        }
+        &-21 {
+          @include draw-progress(21);
+        }
+        &-22 {
+          @include draw-progress(22);
+        }
+        &-23 {
+          @include draw-progress(23);
+        }
+        &-24 {
+          @include draw-progress(24);
+        }
+        &-25 {
+          @include draw-progress(25);
+        }
+        &-26 {
+          @include draw-progress(26);
+        }
+        &-27 {
+          @include draw-progress(27);
+        }
+        &-28 {
+          @include draw-progress(28);
+        }
+        &-29 {
+          @include draw-progress(29);
+        }
+        &-30 {
+          @include draw-progress(30);
+        }
+        &-31 {
+          @include draw-progress(31);
+        }
+        &-32 {
+          @include draw-progress(32);
+        }
+        &-33 {
+          @include draw-progress(33);
+        }
+        &-34 {
+          @include draw-progress(34);
+        }
+        &-35 {
+          @include draw-progress(35);
+        }
+        &-36 {
+          @include draw-progress(36);
+        }
+        &-37 {
+          @include draw-progress(37);
+        }
+        &-38 {
+          @include draw-progress(38);
+        }
+        &-39 {
+          @include draw-progress(39);
+        }
+        &-40 {
+          @include draw-progress(40);
+        }
+        &-41 {
+          @include draw-progress(41);
+        }
+        &-42 {
+          @include draw-progress(42);
+        }
+        &-43 {
+          @include draw-progress(43);
+        }
+        &-44 {
+          @include draw-progress(44);
+        }
+        &-45 {
+          @include draw-progress(45);
+        }
+        &-46 {
+          @include draw-progress(46);
+        }
+        &-47 {
+          @include draw-progress(47);
+        }
+        &-48 {
+          @include draw-progress(48);
+        }
+        &-49 {
+          @include draw-progress(49);
+        }
+        &-50 {
+          @include draw-progress(50);
+        }
+        &-51 {
+          @include draw-progress(51);
+        }
+        &-52 {
+          @include draw-progress(52);
+        }
+        &-53 {
+          @include draw-progress(53);
+        }
+        &-54 {
+          @include draw-progress(54);
+        }
+        &-55 {
+          @include draw-progress(55);
+        }
+        &-56 {
+          @include draw-progress(56);
+        }
+        &-57 {
+          @include draw-progress(57);
+        }
+        &-58 {
+          @include draw-progress(58);
+        }
+        &-59 {
+          @include draw-progress(59);
+        }
+        &-60 {
+          @include draw-progress(60);
+        }
+        &-61 {
+          @include draw-progress(61);
+        }
+        &-62 {
+          @include draw-progress(62);
+        }
+        &-63 {
+          @include draw-progress(63);
+        }
+        &-64 {
+          @include draw-progress(64);
+        }
+        &-65 {
+          @include draw-progress(65);
+        }
+        &-66 {
+          @include draw-progress(66);
+        }
+        &-67 {
+          @include draw-progress(67);
+        }
+        &-68 {
+          @include draw-progress(68);
+        }
+        &-69 {
+          @include draw-progress(69);
+        }
+        &-70 {
+          @include draw-progress(70);
+        }
+        &-71 {
+          @include draw-progress(71);
+        }
+        &-72 {
+          @include draw-progress(72);
+        }
+        &-73 {
+          @include draw-progress(73);
+        }
+        &-74 {
+          @include draw-progress(74);
+        }
+        &-75 {
+          @include draw-progress(75);
+        }
+        &-76 {
+          @include draw-progress(76);
+        }
+        &-77 {
+          @include draw-progress(77);
+        }
+        &-78 {
+          @include draw-progress(78);
+        }
+        &-79 {
+          @include draw-progress(79);
+        }
+        &-80 {
+          @include draw-progress(80);
+        }
+        &-81 {
+          @include draw-progress(81);
+        }
+        &-82 {
+          @include draw-progress(82);
+        }
+        &-83 {
+          @include draw-progress(83);
+        }
+        &-84 {
+          @include draw-progress(84);
+        }
+        &-85 {
+          @include draw-progress(85);
+        }
+        &-86 {
+          @include draw-progress(86);
+        }
+        &-87 {
+          @include draw-progress(87);
+        }
+        &-88 {
+          @include draw-progress(88);
+        }
+        &-89 {
+          @include draw-progress(89);
+        }
+        &-90 {
+          @include draw-progress(90);
+        }
+        &-91 {
+          @include draw-progress(91);
+        }
+        &-92 {
+          @include draw-progress(92);
+        }
+        &-93 {
+          @include draw-progress(93);
+        }
+        &-94 {
+          @include draw-progress(94);
+        }
+        &-95 {
+          @include draw-progress(95);
+        }
+        &-96 {
+          @include draw-progress(96);
+        }
+        &-97 {
+          @include draw-progress(97);
+        }
+        &-98 {
+          @include draw-progress(98);
+        }
+        &-99 {
+          @include draw-progress(99);
+        }
+        &-100 {
+          @include draw-progress(100);
+        }
       }
     }
   }
@@ -611,8 +930,17 @@
   &__instruction {
     display: flex;
     align-items: center;
+    &.collapsed{
+      .game__instruction__text{
+        color: $black;
+      }
+      .icon{
+        fill: $black;
+        transform: rotate(-90deg);
+      }
+    }
     &__text {
-      color: $black;
+      color: $component-color2;
       text-decoration: underline;
       font-size: 16px;
       font-family: $firagoMedium;
@@ -627,8 +955,11 @@
     .icon {
       width: 8px;
       height: 7px;
-      transform: rotate(-90deg);
+      transform: rotate(0);
       margin-left: 6px;
+      fill: $component-color2;
+      transition: .3s;
+      flex: none;
     }
   }
   &__rotate__notification {
@@ -839,6 +1170,18 @@
       width: 100%;
       border-radius: 10px;
       margin-bottom: 55px;
+      &__title {
+        color: rgba($color: $black, $alpha: 0.6);
+        font-family: $firagoRegular;
+        font-size: 16px;
+        margin-bottom: 34px;
+        @media #{$breakpoint-md} {
+          margin-bottom: 55px;
+        }
+        .purple{
+          color: $component-color2;
+        }
+      }
     }
     &__header {
       border-radius: 10px 10px 0 0;
@@ -852,7 +1195,7 @@
         background-color: $component-color8;
       }
       &.pink {
-        background-color: #FF97BB;
+        background-color: #ff97bb;
       }
       &.green {
         background-color: $component-color9;
@@ -892,7 +1235,7 @@
       }
       &.pink {
         .game__box__list__item::before {
-          background-color: #FF97BB;
+          background-color: #ff97bb;
         }
       }
       &.blue {
@@ -1645,6 +1988,9 @@
         font-family: $firagoSemiBold;
         font-size: 16px;
         color: $black;
+        .purple{
+          color: $component-color2;
+        }
       }
       &-div {
         background-color: $component-color4;
@@ -1744,15 +2090,15 @@
           }
         }
       }
-      
+
       &__cont {
         &.answered-suc {
           .game__quiz__answ:not(.success) {
             opacity: 0.2;
           }
-          .success-border{
+          .success-border {
             border: 2px solid $component-color9;
-            opacity: 1!important;
+            opacity: 1 !important;
             &.blue {
               background-color: rgba($color: $component-color16, $alpha: 0.2);
             }
@@ -1772,6 +2118,19 @@
             opacity: 0.2;
           }
         }
+      }
+    }
+    &__img{
+      width: 100%;
+      max-height: 406px;
+      object-fit: contain;
+      margin: 20px auto;
+      @media #{$breakpoint-md} {
+        margin: 0 auto 20px;
+        max-height: 506px;
+      }
+      @media #{$breakpoint-xxl} {
+        max-height: 606px;
       }
     }
   }
@@ -1803,7 +2162,7 @@
         background-color: $component-color6;
       }
       &.pink {
-        background-color: #FF97BB;
+        background-color: #ff97bb;
       }
     }
     &__cont {
@@ -1901,7 +2260,7 @@
       font-size: 16px;
       color: rgba($color: $black, $alpha: 0.6);
     }
-    &__answer{
+    &__answer {
       margin-top: 68px;
       color: $black;
       font-size: 21px;
@@ -1910,25 +2269,25 @@
       @media #{$breakpoint-md} {
         margin-top: 86px;
       }
-      .purple{
+      .purple {
         display: block;
         color: $component-color2;
         font-family: $firagoMedium;
         font-size: 34px;
       }
-      &-incorrect{
+      &-incorrect {
         font-family: $firagoRegular;
         font-size: 16px;
         color: $component-color5;
         text-align: center;
         margin-top: 34px;
-        .red{
+        .red {
           color: $error-red;
           display: block;
         }
       }
     }
-    &__btn{
+    &__btn {
       padding: 10px 0;
       width: 90%;
       text-align: center;
@@ -1943,6 +2302,75 @@
         padding: 10px 48px;
         width: auto;
       }
+    }
+  }
+  &__wishlist{
+    &__item{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      background-color: $component-color22;
+      
+      &.active{
+        border: 2px solid $component-color9;
+        background-color: $component-color23;
+        &::after{
+          content: url("../img/icons/check.svg");
+          background-color: $component-color9;
+          border-radius: 50%;
+          width: 22px;
+          height: 22px;
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      &__write{
+        width: 100%;
+        height: 100%;
+        min-height: 252px;
+        textarea{
+          width: 100%;
+          height: 100%;
+          outline: none;
+          position: relative;
+          padding: 20px;
+          color: $black;
+          font-family: $firagoRegular;
+          font-size: 21px;
+          resize: none;
+          &::placeholder {
+            color: $component-color12;
+            font-size: 21px;
+            font-family: $firagoRegular;
+            text-align: center;
+            line-height:212px;
+          }
+          &:focus{
+            &::placeholder{
+              opacity: 0;
+            }
+          }
+        }
+        // .game__box__body{
+        //   min-height: auto;
+        //   height: 100%;
+        //   border: none;
+        //   border-radius: 0;
+        // }
+      }
+      &-margin{
+        margin-bottom: 30px;
+      }
+    }
+    &__img{
+      width: 100%;
     }
   }
 }
@@ -1974,130 +2402,131 @@
 
 .swiper {
   &-container {
-    position: relative;
-    width: 98%;
-    @media #{$breakpoint-md} {
-      width: 100%;
-    }
-    @media #{$breakpoint-lg} {
-      width: 918px;
-    }
-    @media #{$breakpoint-xl} {
-      width: 1158px;
-    }
-    @media #{$breakpoint-xl-ex} {
-      width: 1158px;
-    }
-    @media #{$breakpoint-xxl} {
-      width: 1638px;
-    }
-
-    & > .swiper-slide__content {
-      position: absolute;
-      top: 0;
-    }
-  }
-  &-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 200ms linear;
-    transform: scale(0.8);
-    opacity: 0.2;
-    position: relative;
-    // height: 382px;
-    margin-bottom: 62px;
-    &.swiper-slide-active {
-      transform: scale(1);
-      opacity: 1;
-    }
-    @media #{$breakpoint-md} {
-      height: 420px;
-      margin-bottom: 0;
-    }
-    @media #{$breakpoint-lg} {
-      height: 458px;
-    }
-    @media #{$breakpoint-xl} {
-      height: 484px;
-    }
-    @media #{$breakpoint-xxl} {
-      height: 660px;
-    }
-    &-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    &-drop {
-      width: 60px;
-      height: 93px;
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      backdrop-filter: blur(15px) brightness(150%);
-      border: 2px solid $white;
-      @media only screen and (min-width: 400px) {
-        width: 93px;
-        height: 130px;
-      }
-      @media #{$breakpoint-sm} {
-        width: 135px;
-        height: 172px;
-      }
+    &.drop-swiper-container{
+      position: relative;
+      width: 98%;
       @media #{$breakpoint-md} {
-        width: 66px;
-        height: 103px;
+        width: 100%;
       }
       @media #{$breakpoint-lg} {
-        width: 73px;
-        height: 112px;
+        width: 918px;
       }
       @media #{$breakpoint-xl} {
-        width: 76px;
-        height: 119px;
+        width: 1158px;
+      }
+      @media #{$breakpoint-xl-ex} {
+        width: 1158px;
       }
       @media #{$breakpoint-xxl} {
-        width: 104px;
-        height: 163px;
+        width: 1638px;
       }
-      &.success {
-        border: 5px solid $component-color9;
-        &::after {
-          content: url("../img/icons/check.svg");
-          background-color: $component-color9;
-          border-radius: 50%;
-          width: 30px;
-          height: 30px;
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          top: -18px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+  
+      & > .swiper-slide__content {
+        position: absolute;
+        top: 0;
+      }
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 200ms linear;
+        transform: scale(0.8);
+        opacity: 0.2;
+        position: relative;
+        margin-bottom: 62px;
+        &.swiper-slide-active {
+          transform: scale(1);
+          opacity: 1;
         }
-      }
-      &.error {
-        border: 5px solid $error-red;
-        &::after {
-          content: url("../img/icons/close.svg");
-          background-color: $error-red;
-          border-radius: 50%;
-          width: 30px;
-          height: 30px;
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          top: -18px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        @media #{$breakpoint-md} {
+          height: 420px;
+          margin-bottom: 0;
         }
-      }
-      .age__categories__item {
-        width: 100%;
-        height: 100%;
+        @media #{$breakpoint-lg} {
+          height: 458px;
+        }
+        @media #{$breakpoint-xl} {
+          height: 484px;
+        }
+        @media #{$breakpoint-xxl} {
+          height: 660px;
+        }
+        &-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        &-drop {
+          width: 60px;
+          height: 93px;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          backdrop-filter: blur(15px) brightness(150%);
+          border: 2px solid $white;
+          @media only screen and (min-width: 400px) {
+            width: 93px;
+            height: 130px;
+          }
+          @media #{$breakpoint-sm} {
+            width: 135px;
+            height: 172px;
+          }
+          @media #{$breakpoint-md} {
+            width: 66px;
+            height: 103px;
+          }
+          @media #{$breakpoint-lg} {
+            width: 73px;
+            height: 112px;
+          }
+          @media #{$breakpoint-xl} {
+            width: 76px;
+            height: 119px;
+          }
+          @media #{$breakpoint-xxl} {
+            width: 104px;
+            height: 163px;
+          }
+          &.success {
+            border: 5px solid $component-color9;
+            &::after {
+              content: url("../img/icons/check.svg");
+              background-color: $component-color9;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -18px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          &.error {
+            border: 5px solid $error-red;
+            &::after {
+              content: url("../img/icons/close.svg");
+              background-color: $error-red;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -18px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          .age__categories__item {
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
     }
   }
@@ -2142,6 +2571,52 @@
   }
 }
 
+.phishing-swiper-container{
+  .swiper{
+    &-button {
+      &-prev {
+        transform: rotate(180deg) translate(-50%);
+        position: static;
+        outline: none;
+        margin-right: 34px;
+        margin-top: 34px;
+        @media #{$breakpoint-md} {
+          position: absolute;
+          bottom: auto;
+          top: 50%;
+          left: 0;
+          margin-right: 0;
+          margin-top: 0;
+        }
+      }
+      &-next {
+        transform: translateX(-50%);
+        position: static;
+        outline: none;
+        margin-left: 34px;
+        margin-top: 34px;
+        @media #{$breakpoint-md} {
+          position: absolute;
+          bottom: auto;
+          top: 50%;
+          right: 0;
+          margin-left: 0;
+          margin-top: 0;
+        }
+      }
+    }
+    &-slide-img{
+      width: 100%;
+      object-fit: contain;
+      @media #{$breakpoint-md} {
+        width: 90%;
+        margin: auto;
+        display: block;
+      }
+    }
+  }
+}
+
 .age__categories {
   display: flex;
   justify-content: space-between;
@@ -2169,11 +2644,11 @@
 }
 
 // collapse modal
-.collapseModal{
-  &-header{
+.collapseModal {
+  &-header {
     padding: 54px 0 35px;
   }
-  &__title{
+  &__title {
     font-family: $firagoMedium;
     font-size: 21px;
     color: $black;
@@ -2181,38 +2656,38 @@
     margin-bottom: 0;
     width: 100%;
   }
-  &-body{
+  &-body {
     padding: 40px 20px 30px;
   }
-  &__clp{
+  &__clp {
     width: 100%;
     margin-bottom: 20px;
     border: 1px solid $component-color2;
     border-radius: 8px;
     padding: 10px 20px 0;
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
-    &.active{
+    &.active {
       border: 2px solid $component-color2;
     }
-    &__header{
+    &__header {
       width: 100%;
       display: flex;
       font-family: $firagoMedium;
       font-size: 13px;
       color: $black;
       padding-bottom: 10px;
-      &__img{
+      &__img {
         height: 20px;
         flex: none;
         margin-right: 10px;
       }
     }
-    &__body{
+    &__body {
       text-align: left;
       border-top: 1px solid $component-color2;
-      p{
+      p {
         font-family: $firagoRegular;
         font-size: 16px;
         color: $component-color5;
