@@ -106,7 +106,7 @@ burgerMenuResponsive(x) // Call listener function at run time
 x.addListener(burgerMenuResponsive) // Attach listener function on state changes
 
 //full size images
-var imgs = document.getElementsByClassName("resource__item__img");
+var imgs = document.querySelectorAll('.resource__item__img, .section__theme__page__img');
 
 for (var i = 0; i < imgs.length; i++) {
     imgs[i].onclick = function () { imageZoom(this); }
