@@ -502,36 +502,26 @@
     </div>    <!--******-->
     <div class="page__main">
       <div>
-<button type="button" class="btn btn-primary mt-5 ms-5" data-bs-toggle="modal" data-bs-target="#collapseModal">
-  პოპაპის ღილაკი
-</button>
+
+<style>
+
+  .questionContainer .game__quiz__quest,
+  .questionContainer .game__quiz__answ__cont {
+    display: none;
+  }
+
+  .questionContainer.active .game__quiz__quest,
+  .questionContainer.active .game__quiz__answ__cont {
+    display: block !important;
+  }
+
+
+</style>
+
 
 <div class="modal-body game__modal-body">
   <div class="row">
-    <div class="col-12 col-lg-8 page__content-col m-auto">
-      <div class="game__quiz__quest">
-        <span class="text">რას ფიქრობთ ონლაინ აზარტულ თამაშებზე?</span>
-        <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
-      </div>
-      <div class="game__quiz__answ__cont">
-        <div class="game__quiz__answ blue">
-          <div class="game__checkbox"></div>
-          <span class="text">ნებადართული უნდა იყოს</span>
-        </div>
-        <div class="game__quiz__answ yellow error">
-          <div class="game__checkbox"></div>
-          <span class="text">ნებისმიერ შემთხვევაში უნდა იყოს აკრძალული</span>
-        </div>
-        <div class="game__quiz__answ pink success">
-          <div class="game__checkbox"></div>
-          <span class="text">მარტო სპეციალური ლიცენზიის მქონეს მივცემდი ფუნქციონირების საშუალებას</span>
-        </div>
-        <div class="game__quiz__answ purple">
-          <div class="game__checkbox"></div>
-          <span class="text">მარტო ლატარია და ტოტალიზატორი შეიძლება ონლაინ, კაზინო - არა</span>
-        </div>
-      </div>
-    </div>
+    <div class="col-12 col-lg-8 page__content-col m-auto" id="GameWrapper"></div>
     <div class="col-12 game__content-col-bottom mt-5">
       <div class="row game__img__btn__row">
         <div class="col-12 col-md-2 game__img__col-relative">
@@ -610,8 +600,8 @@
       <div class="modal-header collapseModal-header">
         <h2 class="collapseModal__title">შენ მიერ დაფიქსირებული პასუხი ემთხვევა ამ ქვეყნის/ქვეყნების პოლიტიკას:</h2>
       </div>
-      <div class="modal-body collapseModal-body">
-        <div class="collapseModal__clp">
+      <div class="modal-body collapseModal-body" id="GameWrapper2">
+        <div class="collapseModal__clp" data-answer="აშშ">
           <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
             aria-expanded="false" aria-controls="collapseExample">
             <img src="../assets/img/icons/unitedStates.svg" class="collapseModal__clp__header__img">
@@ -623,7 +613,19 @@
             </p>
           </div>
         </div>
-        <div class="collapseModal__clp">
+        <div class="collapseModal__clp" data-answer="არაბთა გაერთიანებული საამიროები">
+          <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">
+            <img src="../assets/img/icons/unitedStates.svg" class="collapseModal__clp__header__img">
+            არაბთა გაერთიანებული საამიროები
+          </button>
+          <div class="collapse collapseModal__clp__body" id="collapseExample">
+            <p>
+              აზარტული თამაშები სხვადასხვა შტატში სხვადასხვა ფორმით ლეგალურია, იუტას გარდა, იუტაში არალეგალურია ნებისმიერი ფორმის აზარტული თამაშები. კალიფორნიის შტატიც კრძალავს აზარტულ თამაშებს, თუმცა ზოგიერთი ფორმა დაშვებულია. მაგალითად, ლატარეა, ბინგო, კარტი. ასევე დაშვებულია ადგილობრივ ინდიელთა ტრადიციული კაზინოები. ნიუ-იორკში კი კომერციული კაზინოები ნებადართულია თუ კრიტერიუმებს აკმაყოფილებენ. ბანკებისთვის და საფინანსო ორგანიზაციებისთვის აკრძალულია აშშ-ში მცხოვრები ადამიანის თანხის გადარიცხვა თამაშების საიტზე, რის გამოც ზოგი საიტი უარს აცხადებს აშშ-ს მოქალაქეების მიღებაზე. ზოგიერთ შტატში ონლაინ აზარტული თამაშები უფრო ხელმისაწვდომია და საიტები ლიცენზიებით ფუნქციონირებენ.
+            </p>
+          </div>
+        </div>
+        <div class="collapseModal__clp" data-answer="დიდი ბრიტანეთი">
           <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
             aria-expanded="false" aria-controls="collapseExample2">
             <img src="../assets/img/icons/unitedKingdom.svg" class="collapseModal__clp__header__img">
@@ -635,7 +637,7 @@
             </p>
           </div>
         </div>
-        <div class="collapseModal__clp">
+        <div class="collapseModal__clp" data-answer="გერმანია">
           <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3"
             aria-expanded="false" aria-controls="collapseExample3">
             <img src="../assets/img/icons/germany.svg" class="collapseModal__clp__header__img">
@@ -647,10 +649,32 @@
             </p>
           </div>
         </div>
+        <div class="collapseModal__clp" data-answer="იაპონია">
+          <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3"
+            aria-expanded="false" aria-controls="collapseExample3">
+            <img src="../assets/img/icons/germany.svg" class="collapseModal__clp__header__img">
+            იაპონია
+          </button>
+          <div class="collapse collapseModal__clp__body" id="collapseExample3">
+            <p>
+              დიდი ხნის განმავლობაში ყველანაირი აზარტული თამაში აკრძალული იყო. 2016 წლიდან ლიცენზირებული კაზინოს ფუნქციონირება ლეგალური გახდა ამისთვის გამოყოფილ სპეციალურ ადგილებში, ასეთი სპეციალური ადგილი შეიძლება არსებობდეს მხოლოდ იაპონიის სამ ტერიტორიაზე, თითოში ერთი კაზინოს გახსნის უფლებით.  ონლაინ აზარტული თამაშები იაპონიაში კვლავ აკრძალულია. 
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+<div class="game__result__container">
+  <a href="#" class="game__result">
+    <p class="game__result__text">თქვენ დაასრულეთ თამაში</p>
+    <div class="game__result__btn" id="successModalBtn">თამაშის დასრულება</div>
+  </a>
+</div>
+
 
 <script src="../assets/vendors/js/jquery.min.js"></script>
 <script>
@@ -687,7 +711,7 @@
   <script src="../assets/vendors/js/bootstrap.min.js"></script>
   <script src="../assets/vendors/js/swiper-bundle.min.js"></script>
   <!-- <script src="../assets/js/main.js"></script> -->
-  <script src=></script>
+  <script src=../assets/vendors/js/games/game12-1.js></script>
   <script>
     // onload page
     function onloadPage() {
