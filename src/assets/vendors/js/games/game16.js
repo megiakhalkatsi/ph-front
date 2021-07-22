@@ -1,7 +1,6 @@
 
 
 
-
 var index = 0;
 var correct = 0;
 var attampt = 0;
