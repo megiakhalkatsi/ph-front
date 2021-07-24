@@ -93,22 +93,22 @@ function getQuestionsMarkup(index){
                 <span class="text">${questions[i].question}</span>
             </div>
             <div class="game__quiz__answ__cont">
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ blue" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${q.answers[0].country}"></div>
                     <span class="text">${q.answers[0].text}</span>
                 </div>
 
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ yellow success" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${q.answers[1].country}"></div>
                     <span class="text">${q.answers[1].text}</span>
                 </div>
 
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ pink error" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${q.answers[2].country}"></div>
                     <span class="text">${q.answers[2].text}</span>
                 </div>
 
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ purple success-border" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${q.answers[3].country}"></div>
                     <span class="text">${q.answers[3].text}</span>
                 </div>
@@ -144,13 +144,11 @@ $( function() {
     $('.game__checkbox').click(function(e) {
         if(e.target.getAttribute('data-checked') ==="true") {
             $(this).parent().removeClass('checked')
-            $(this).parent().removeClass('blue')
             $(this).attr('data-checked', false)
             attampt--
 
         } else {
             $(this).parent().addClass('checked')
-            $(this).parent().addClass('blue')
             $(this).attr('data-checked', true)
             attampt++
 

@@ -2069,18 +2069,18 @@ $default-size: 55px;
             transform: translate(-50%, -50%);
           }
         }
-        &.success {
-          background-color: $component-color9;
-          .text {
-            color: $white;
-          }
-        }
-        &.error {
-          background-color: $error-red;
-          .text {
-            color: $white;
-          }
-        }
+        // &.success {
+        //   background-color: $component-color9;
+        //   .text {
+        //     color: $white;
+        //   }
+        // }
+        // &.error {
+        //   background-color: $error-red;
+        //   .text {
+        //     color: $white;
+        //   }
+        // }
       }
       &.success {
         &.active {
