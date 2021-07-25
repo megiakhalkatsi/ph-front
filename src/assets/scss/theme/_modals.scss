@@ -165,6 +165,11 @@
           }
         }
       }
+      .toc-item:last-child{
+        .tableOfConents__item{
+          margin-bottom: 0;
+        }
+      }
     }
   }
   &__item {
@@ -185,9 +190,9 @@
     &:hover {
       border: 2px solid $component-color2;
     }
-    &:last-child {
-      margin-bottom: 0;
-    }
+    // &:last-child {
+    //   margin-bottom: 0;
+    // }
     &.active {
       border: 2px solid $component-color2;
       .tableOfConents__item__number {
@@ -247,15 +252,17 @@
       font-family: $firagoBold;
       font-size: 16px;
       color: $black;
-      margin: 0 0 0 20px;
-      width: 24px;
-      height: 24px;
+      margin: 0 0 0 5px;
+      width: 35px;
+      height: 35px;
       border-radius: 4px;
-      border-radius: 2px solid transparent;
       display: flex;
       justify-content: center;
       align-items: center;
       flex: none;
+      @media #{$breakpoint-lg} {
+        margin: 0 0 0 20px;
+      }
     }
   }
 }
