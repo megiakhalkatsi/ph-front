@@ -13,9 +13,9 @@
                 margin-bottom: 89px;
             }
         }
-        picture{
+        a{
             &:hover {
-               & + .theme__item__title {
+               & + a .theme__item__title {
                     color: $component-color2;
                     text-decoration: none;
                 }
