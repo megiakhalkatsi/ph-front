@@ -729,6 +729,7 @@
       flex-direction: column;
       align-items: center;
       margin-bottom: 45px;
+      text-align: left;
       @media #{$breakpoint-md} {
         flex-direction: row;
       }
