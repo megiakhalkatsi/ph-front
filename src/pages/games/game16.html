@@ -1,45 +1,17 @@
 ---
 layout: gamesLayout
 title: მოსწავლეების რესურსი
+gameScripts: ../assets/vendors/js/games/game16.js
 ---
 
-<div class="modal-body game__modal-body">
+<div class="modal-body game__modal-body mainBody">
   <div class="row">
-    <div class="col-12 col-md-8 col-xl-7 offset-xl-1 page__content-col">
-      <div class="game__quiz__quest">
-        <span class="text">მოგესახმებით, მე თეონა მქვია. მირჩიეს, რომ კვალიფიციური იურიდიული დახმარების მისაღებად თქვენთვის მომემართა. ჩემმა მეზობელმა წყალი ჩამომიშვა და ახლად გაკეთებული რემონნტი დამიზიანა. თავად პასუხისმგებლობას თავს არიდებს და ზიანის ანაზღაურებაზე უარს მეუბნება. ვის შემიძლია მივმართო ჩემი უფლებების დასაცავად ?</span>
-      </div>
-      <div class="game__quiz__answ__cont">
-        <div class="game__quiz__answ blue success">
-          <div class="game__checkbox"></div>
-          <span class="text">თქვენ შეგიძლიათ, მიმართოთ პოლიციას.</span>
-        </div>
-        <div class="game__quiz__answ yellow success-border">
-          <div class="game__checkbox"></div>
-          <span class="text">თქვენ შეგიძლიათ, მიმართოთ მერიას.</span>
-        </div>
-        <div class="game__quiz__answ pink error">
-          <div class="game__checkbox"></div>
-          <span class="text">თქვენ შეგიძლიათ, მიმართოთ სასამართლოს.</span>
-        </div>
-      </div>
-      <div class="game__instruction collapsed mt-4" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
-        <img src="../assets/img/icons/info-circle.svg" alt="instruction" class="game__instruction__img">
-        <span class="game__instruction__text">მინიშნება</span>
-        <svg class="icon">
-          <use xlink:href="#arrow-dropdown"></use>
-        </svg>
-      </div>
-      <div class="collapse mt-3" id="hint">
-        <p class="section__theme__page__subtitle-sm">ქვესათაური თუ საჭირო გახდა</p>
-        <p class="game__text md mb-0 light">
-            ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს.
-        </p>
-      </div>
-    </div>
+    <div class="col-12 col-md-8 col-xl-7 offset-xl-1 page__content-col" id="GameWrapper"></div>
+
     <div class="col-12 col-md-4">
         <img src="../assets/img/games/consultation.gif" alt="" class="game__quiz__img">
     </div>
+    
     <div class="col-12 game__content-col-bottom">
         <div class="game__button__container justify-content-center column">
             <button id="prevStep" class="about__page__btn game__button mr bt-gray">წინა კითხვა</button>
@@ -65,6 +37,51 @@ title: მოსწავლეების რესურსი
     </div>
   </div>
 </div>
+
+
+
+
+
+<div class="game__result__container">
+  <a href="#" class="game__result">
+    <p class="game__result__text">თქვენ დაასრულეთ თამაში</p>
+    <div class="game__result__btn" id="successModalBtn">შედეგების ნახვა</div>
+  </a>
+</div>
+
+<div class="modal-body game__modal-body successModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg green">გილოცავთ !</h2>
+        <p class="game__finish__text">თქვენ წარმატებით დაასრულეთ თამაში! <span class="d-block" id="correctAnswers">0/16 კითხვა</span></p>
+        <picture>
+          <source media="(min-width:768px)" srcset="../assets/img/illustrations/happy.gif" type="image/gif">
+          <source srcset="../assets/img/illustrations/happy-mobile.gif" type="image/gif">
+          <img src="../assets/img/illustrations/happy-mobile.gif" alt="congratulations" class="game__finish__img">
+        </picture>
+        <div class="game__button__container justify-content-center mb-0">
+            <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-body game__modal-body failModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg orange">კიდევ სცადე</h2>
+        <p class="game__finish__text">სულ ცოტა დაგაკლდა. <span class="d-block" id="correctAnswers">0/16 კითხვა</span></p>
+        <p class="game__finish__text sm">კიდევ სცადე და ყველაფერი გამოგივა. მთავარია, ყურადღებით გაუყვე კითხვებს.</p>
+        <img src="../assets/img/illustrations/support.gif" alt="congratulations" class="game__finish__img">
+        <div class="game__button__container justify-content-center mb-0">
+            <button class="about__page__btn game__button mr bt-gray" id="gameReset">ახლიდან დაწყება</button>
+            <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
+    </div>
+  </div>
+</div>
+
 
 <script src="../assets/vendors/js/jquery.min.js"></script>
 <script>
