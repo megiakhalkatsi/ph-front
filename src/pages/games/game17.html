@@ -1,45 +1,13 @@
 ---
 layout: gamesLayout
 title: მოსწავლეების რესურსი
+gameScripts: ../assets/vendors/js/games/game17.js
 ---
 
 <div class="modal-body game__modal-body">
-  <div class="row">
-    <div class="col-12 col-md-8 col-xl-7 offset-xl-1 page__content-col">
-      <div class="game__quiz__quest">
-        <span class="text"><span class="purple">შეკითხვა:</span> ჩემი ნათლია ავტომობილების ხელოსანია. მას ბევრი კლიენტი ჰყავს, კარგ გასამრჯელოს იღებს და კმაყოფილია თავისი საქმიანობით. შემომთავაზა, რომ მასთან წავიდე სამუშაოდ. ხელოსნობასაც მასწავლის და ყოველთვიურად ხელფასსაც გადამიხდის. ძალიან მომწონს ავტომობილებთან მუშაობა და თან მინდა, რომ ჯიბის ფულიც გამოვიმუშაო. შემიძლია, რომ დავთანხმდე ამ შემოთავაზებას?</span>
-      </div>
-      <div class="game__instruction collapsed mt-4" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
-        <img src="../assets/img/icons/info-circle.svg" alt="instruction" class="game__instruction__img">
-        <span class="game__instruction__text">სამუშაოზე მიღების მინიმალური ასაკი და შრომითი ქმედუნარიანობის წარმოშობა</span>
-        <svg class="icon">
-          <use xlink:href="#arrow-dropdown"></use>
-        </svg>
-      </div>
-      <div class="collapse mt-3" id="hint">
-        <p class="section__theme__page__subtitle-sm">ქვესათაური თუ საჭირო გახდა</p>
-        <p class="game__text md mb-0 light">
-            ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს.
-        </p>
-      </div>
-      <div class="game__quiz__answ__cont mt-4">
-        <div class="game__quiz__answ blue success">
-          <div class="game__checkbox"></div>
-          <span class="text">ავტომობილების შეკეთება შესაძლოა აღმოჩნდეს მძიმე და საშიში სამუშაო. 13 წლის ბავშვისთვის ავტომობილების შეკეთება არ განეკუთვნება სამუშაოდ ნებადართულ სფეროს.</span>
-        </div>
-        <div class="game__quiz__answ yellow success-border">
-          <div class="game__checkbox"></div>
-          <span class="text">შეგიძლია დათანხმდე, თუ მშობლებიც თანახმა იქნებიან, რომ მუშაობა დაიწყო.</span>
-        </div>
-        <div class="game__quiz__answ pink error">
-          <div class="game__checkbox"></div>
-          <span class="text">16 წლამდე საერთოდ არ შეიძლება, რომ მუშაობა დაიწყო.</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-4">
-        <img src="../assets/img/games/teenager.png" alt="" class="game__quiz__img">
-    </div>
+  <div class="row" id="GameWrapper">
+
+
     <div class="col-12 game__content-col-bottom">
         <div class="game__button__container justify-content-center column">
             <button id="prevStep" class="about__page__btn game__button mr bt-gray">წინა კითხვა</button>

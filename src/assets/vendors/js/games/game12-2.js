@@ -111,17 +111,17 @@ function getQuestionsMarkup3(data, i){
                 <span class="text">${data.question}</span>
             </div>
             <div class="game__quiz__answ__cont">
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ blue" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${data.answers[0].country}"></div>
                     <span class="text">${data.answers[0].text}</span>
                 </div>
 
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ yellow success" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${data.answers[1].country}"></div>
                     <span class="text">${data.answers[1].text}</span>
                 </div>
 
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ pink error" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${data.answers[2].country}"></div>
                     <span class="text">${data.answers[2].text}</span>
                 </div>
@@ -139,22 +139,22 @@ function getQuestionsMarkup4(data, i){
             <span class="text">${data.question}</span>
         </div>
         <div class="game__quiz__answ__cont">
-            <div class="game__quiz__answ" style="position: relative">
+            <div class="game__quiz__answ blue" style="position: relative">
                 <div class="game__checkbox" data-checked="false" data-country="${data.answers[0].country}"></div>
                 <span class="text">${data.answers[0].text}</span>
             </div>
 
-            <div class="game__quiz__answ" style="position: relative">
+            <div class="game__quiz__answ yellow success" style="position: relative">
                 <div class="game__checkbox" data-checked="false" data-country="${data.answers[1].country}"></div>
                 <span class="text">${data.answers[1].text}</span>
             </div>
 
-            <div class="game__quiz__answ" style="position: relative">
+            <div class="game__quiz__answ pink error" style="position: relative">
                 <div class="game__checkbox" data-checked="false" data-country="${data.answers[2].country}"></div>
                 <span class="text">${data.answers[2].text}</span>
             </div>
 
-            <div class="game__quiz__answ" style="position: relative">
+            <div class="game__quiz__answ purple success-border" style="position: relative">
                 <div class="game__checkbox" data-checked="false" data-country="${data.answers[3].country}"></div>
                 <span class="text">${data.answers[3].text}</span>
             </div>
@@ -172,26 +172,26 @@ function getQuestionsMarkup5(data, i){
                 <span class="text">${data.question}</span>
             </div>
             <div class="game__quiz__answ__cont">
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ blue" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${data.answers[0].country}"></div>
                     <span class="text">${data.answers[0].text}</span>
                 </div>
 
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ yellow success" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${data.answers[1].country}"></div>
                     <span class="text">${data.answers[1].text}</span>
                 </div>
 
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ pink error" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${data.answers[2].country}"></div>
                     <span class="text">${data.answers[2].text}</span>
                 </div>
 
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ purple success-border" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${data.answers[3].country}"></div>
                     <span class="text">${data.answers[3].text}</span>
                 </div>
-                <div class="game__quiz__answ" style="position: relative">
+                <div class="game__quiz__answ yellow success" style="position: relative">
                     <div class="game__checkbox" data-checked="false" data-country="${data.answers[4].country}"></div>
                     <span class="text">${data.answers[4].text}</span>
                 </div>
@@ -213,18 +213,13 @@ $( function() {
 
     questions = randomArray
 
-    console.log(questions)
-
     let x = questions.map((w, i) => {
         if(w.answers.length === 3) {
-            console.log(w)
             return getQuestionsMarkup3(w, i)
 
         } else if(w.answers.length === 4) {
-            console.log(w)
             return getQuestionsMarkup4(w, i)
         } else {
-            console.log(w)
             return getQuestionsMarkup5(w, i)
         }
     })
@@ -238,7 +233,6 @@ $( function() {
     $('.game__checkbox').click(function(e) {
         if(e.target.getAttribute('data-checked') ==="true") {
             $(this).parent().removeClass('checked')
-            $(this).parent().removeClass('blue')
             $(this).attr('data-checked', false)
             attampt--
         } else {
@@ -246,8 +240,6 @@ $( function() {
             $(this).attr('data-checked', true)
             $(this).parent().addClass('blue')
             attampt++
-
-            console.log($(this).attr('data-country').split(','))
 
             if($(this).attr('data-country').split(',').length == 2) {
                 $('#collapseModal').modal('show');

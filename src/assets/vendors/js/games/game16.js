@@ -1,7 +1,6 @@
 
 
 
-
 var index = 0;
 var correct = 0;
 var attampt = 0;
@@ -170,9 +169,9 @@ $( function() {
 function getCorrectAnsweersMarkup(index){
     if(index !== 0) {
         if(index > 1) {
-            $('#ProgressLine').removeClass(`progress-${(index - 1) * 25}`)
+            $('#ProgressLine').removeClass(`progress-${(index - 1) * 20}`)
         }
-      $('#ProgressLine').addClass(`progress-${index * 25}`)
+      $('#ProgressLine').addClass(`progress-${index * 20}`)
     }
     $('#ProgressText').html(`კითხვა <span class="purple">${index}</span> / ${questions.length} დან`)
   
