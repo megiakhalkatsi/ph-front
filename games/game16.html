@@ -502,6 +502,21 @@
     </div>    <!--******-->
     <div class="page__main">
       <div>
+
+<style>
+  .game__quiz__answ {
+    position: relative;
+  }
+  .game__quiz__answ::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+</style>
+
 <div class="modal-body game__modal-body mainBody">
   <div class="row">
     <div class="col-12 col-md-8 col-xl-7 offset-xl-1 page__content-col" id="GameWrapper"></div>
@@ -521,7 +536,7 @@
             <div class="game__progress__cont" id="ProgressBar">
               <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">0</span> / 4
                 დან</h3>
-                <div class="game__progress__circle progress-18" id="ProgressLine">
+                <div class="game__progress__circle" id="ProgressLine">
                   <div class="pie">
                     <div class="left-side half-circle"></div>
                     <div class="right-side half-circle"></div>
