@@ -12,10 +12,6 @@ function fixedHeaderFunction() {
 window.onscroll = function () { fixedHeaderFunction() };
 
 
-// focusMethod = function getFocus() {
-//     document.getElementById("myTextField").focus();
-//   }
-  
 function clickers() {
     $('.header__nav__item-link').click(function () {
         $('.header__nav__item-link').removeClass('active')
@@ -78,11 +74,6 @@ function clickers() {
         $(".course__content__row").removeClass("hide");
         $(".course__content__resources").removeClass("active");
     });
-    //profile edit - data updated
-    $('#btn-data-submit').click(function () {
-        $(".form__section").hide();
-        $(".course__data__updated").show();
-    });
 }
 clickers();
 
@@ -106,7 +97,7 @@ burgerMenuResponsive(x) // Call listener function at run time
 x.addListener(burgerMenuResponsive) // Attach listener function on state changes
 
 //full size images
-var imgs = document.querySelectorAll('.resource__item__img, .section__theme__page__img');
+var imgs = document.querySelectorAll(".resource__item__img, .section__theme__page__img");
 
 for (var i = 0; i < imgs.length; i++) {
     imgs[i].onclick = function () { imageZoom(this); }
@@ -117,9 +108,7 @@ function imageZoom(ele) {
     console.log(document.getElementById("image-fullscreen").style);
 }
 
-$(window).click(function() {
-    $('#fullscreenImgModal').modal('hide');
-});
+$(window).on('click', () => $('#fullscreenImgModal').modal('hide'))
 $('.image-fullscreen').click(function(e) {
     e.stopPropagation();
 });
@@ -215,6 +204,7 @@ $(".custom-select-trigger").on("click", function () {
 $(".custom-option").on("click", function () {
     $('#txtData').hide();
     $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+    $('#sort_select').val($(this).data("value")).change();
     $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
     $(this).addClass("selection");
     $(this).parents(".custom-select").removeClass("opened");
@@ -289,37 +279,37 @@ $('#language__mobile').click(function(e) {
     e.stopPropagation();
 });
 
-// password show function
-const togglePassword = document.querySelector('#togglePassword');
-const password = document.querySelector('#password');
+// // password show function
+// const togglePassword = document.querySelector('#togglePassword');
+// const password = document.querySelector('#password');
 
-togglePassword.addEventListener('click', function (e) {
-    // toggle the type attribute
-    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);
-    // toggle the eye slash icon
-    // this.classList.toggle('fa-eye-slash');
-});
+// togglePassword.addEventListener('click', function (e) {
+//     // toggle the type attribute
+//     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+//     password.setAttribute('type', type);
+//     // toggle the eye slash icon
+//     // this.classList.toggle('fa-eye-slash');
+// });
 
-// bootstrap forms validation
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-    'use strict'
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
+// // bootstrap forms validation
+// // Example starter JavaScript for disabling form submissions if there are invalid fields
+// (function () {
+//     'use strict'
+//     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//     var forms = document.querySelectorAll('.needs-validation')
 
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
+//     // Loop over them and prevent submission
+//     Array.prototype.slice.call(forms)
+//         .forEach(function (form) {
+//             form.addEventListener('submit', function (event) {
+//                 if (!form.checkValidity()) {
+//                     event.preventDefault()
+//                     event.stopPropagation()
+//                 }
 
-                form.classList.add('was-validated'),
-                    $('.form__label').addClass('error'),
-                    $('.form__error__message').addClass('active')
-            }, false)
-        })
-})()
+//                 form.classList.add('was-validated'),
+//                     $('.form__label').addClass('error'),
+//                     $('.form__error__message').addClass('active')
+//             }, false)
+//         })
+// })()
