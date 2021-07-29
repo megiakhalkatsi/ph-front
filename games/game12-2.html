@@ -515,6 +515,18 @@
     display: block !important;
   }
 
+  .game__quiz__answ {
+    position: relative;
+  }
+  .game__quiz__answ::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
 </style>
 
 
@@ -534,7 +546,23 @@
           </div>
         </div>
       </div>
-
+      <div class="row">
+        <div class="col-12">
+          <div class="game__progress__cont-align">
+            <div class="game__progress__cont" id="ProgressBar">
+              <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">0</span> / 4
+                დან</h3>
+                <div class="game__progress__circle" id="ProgressLine">
+                  <div class="pie">
+                    <div class="left-side half-circle"></div>
+                    <div class="right-side half-circle"></div>
+                  </div>
+                  <div class="filled"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -667,7 +695,7 @@
 </div>
 
 
-<div class="game__result__container">
+<div class="game__result__container" data-isOpen="false">
   <a href="#" class="game__result">
     <p class="game__result__text">თქვენ დაასრულეთ თამაში</p>
     <div class="game__result__btn" id="successModalBtn">თამაშის დასრულება</div>

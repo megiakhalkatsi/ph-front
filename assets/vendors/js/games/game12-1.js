@@ -1,4 +1,7 @@
 
+
+
+
 var questions = [
     {
         id: 1,
@@ -81,6 +84,7 @@ var questions = [
 
 var index = 0;
 var attampt = 0;
+var answersArray = [];
 
 
 
@@ -93,23 +97,23 @@ function getQuestionsMarkup(index){
                 <span class="text">${questions[i].question}</span>
             </div>
             <div class="game__quiz__answ__cont">
-                <div class="game__quiz__answ blue" style="position: relative">
-                    <div class="game__checkbox" data-checked="false" data-country="${q.answers[0].country}"></div>
+                <div class="game__quiz__answ blue" data-id=${i} style="position: relative">
+                    <h6 class="game__checkbox" data-checked="false" data-country="${q.answers[0].country}"></h6>
                     <span class="text">${q.answers[0].text}</span>
                 </div>
 
-                <div class="game__quiz__answ yellow success" style="position: relative">
-                    <div class="game__checkbox" data-checked="false" data-country="${q.answers[1].country}"></div>
+                <div class="game__quiz__answ yellow success" data-id=${i} style="position: relative">
+                    <h6 class="game__checkbox" data-checked="false" data-country="${q.answers[1].country}"></h6>
                     <span class="text">${q.answers[1].text}</span>
                 </div>
 
-                <div class="game__quiz__answ pink error" style="position: relative">
-                    <div class="game__checkbox" data-checked="false" data-country="${q.answers[2].country}"></div>
+                <div class="game__quiz__answ pink error" data-id=${i} style="position: relative">
+                    <h6 class="game__checkbox" data-checked="false" data-country="${q.answers[2].country}"></h6>
                     <span class="text">${q.answers[2].text}</span>
                 </div>
 
-                <div class="game__quiz__answ purple success-border" style="position: relative">
-                    <div class="game__checkbox" data-checked="false" data-country="${q.answers[3].country}"></div>
+                <div class="game__quiz__answ purple success-border" data-id=${i} style="position: relative">
+                    <h6 class="game__checkbox" data-checked="false" data-country="${q.answers[3].country}"></h6>
                     <span class="text">${q.answers[3].text}</span>
                 </div>
             </div>
@@ -119,6 +123,17 @@ function getQuestionsMarkup(index){
   
 }
   
+function getCorrectAnsweersMarkup(index){
+    if(index !== 0) {
+        if(index > 1) {
+            $('#ProgressLine').removeClass(`progress-${(index - 1) * 33}`)
+        }
+      $('#ProgressLine').addClass(`progress-${index * 33}`)
+    }
+    $('#ProgressText').html(`კითხვა <span class="purple">${index}</span> / ${questions.length} დან`)
+  
+  }
+
   
 $( function() {
     var answers = questions.sort(function() {return 0.5 - Math.random()})
@@ -131,8 +146,6 @@ $( function() {
 
     questions = randomArray
 
-    console.log(questions)
-
     const items = getQuestionsMarkup(index)
 
     $('#GameWrapper').append(items)
@@ -141,24 +154,29 @@ $( function() {
 
   
 $( function() {
-    $('.game__checkbox').click(function(e) {
-        if(e.target.getAttribute('data-checked') ==="true") {
-            $(this).parent().removeClass('checked')
-            $(this).attr('data-checked', false)
+    $('.game__quiz__answ').click(function(e) {
+        $('.questionContainer.active .game__quiz__answ').removeClass('checked')
+        document.querySelector('.game__result__container').setAttribute('data-isOpen', false);
+        
+        if(e.target.querySelector('.game__checkbox').getAttribute('data-checked') === "true") {
+            $(this).removeClass('checked')
             attampt--
 
         } else {
-            $(this).parent().addClass('checked')
-            $(this).attr('data-checked', true)
-            attampt++
+            $(this).addClass('checked')
+            if(!answersArray.includes(e.target.getAttribute('data-id'))) {
+                attampt++
+                answersArray.push(e.target.getAttribute('data-id'))
+                getCorrectAnsweersMarkup(answersArray.length)
+            }
 
 
-            if($(this).attr('data-country').split(',').length == 2) {
+            if($(this).find('h6').attr('data-country').split(',').length == 2) {
                 $('#collapseModal').modal('show');
                 $('.collapseModal__clp').attr('style', 'display: none')
 
-                let y = $(this).attr('data-country').split(',')[0].trim()
-                let h = $(this).attr('data-country').split(',')[1].trim()
+                let y = $(this).find('h6').attr('data-country').split(',')[0].trim()
+                let h = $(this).find('h6').attr('data-country').split(',')[1].trim()
 
                 $( ".collapseModal__clp" ).each(function( index ) {
                     if($(this).attr('data-answer') === y || $(this).attr('data-answer') === h) {
@@ -166,13 +184,13 @@ $( function() {
                     }    
                 });
 
-            } else if($(this).attr('data-country').split(',').length == 3) {
+            } else if($(this).find('h6').attr('data-country').split(',').length == 3) {
                 $('#collapseModal').modal('show');
                 $('.collapseModal__clp').attr('style', 'display: none')
 
-                let y = $(this).attr('data-country').split(',')[0].trim()
-                let h = $(this).attr('data-country').split(',')[1].trim()
-                let k = $(this).attr('data-country').split(',')[2].trim()
+                let y = $(this).find('h6').attr('data-country').split(',')[0].trim()
+                let h = $(this).find('h6').attr('data-country').split(',')[1].trim()
+                let k = $(this).find('h6').attr('data-country').split(',')[2].trim()
 
 
                 $( ".collapseModal__clp" ).each(function( index ) {
@@ -185,7 +203,7 @@ $( function() {
                 $('#collapseModal').modal('show');
                 $('.collapseModal__clp').attr('style', 'display: none')
                 
-                let y = $(this).attr('data-country').split(',')[0]
+                let y = $(this).find('h6').attr('data-country').split(',')[0]
                 
                 $( ".collapseModal__clp" ).each(function( index ) {
                     if($(this).attr('data-answer') === y) {
@@ -195,7 +213,7 @@ $( function() {
             }   
             
             
-            if(attampt === 12) {
+            if(answersArray.length === 3 && document.querySelector('.game__result__container').getAttribute('data-isOpen') === "false") {
                 document.querySelector('.game__result__container').classList.add('active') 
                 document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
             }
