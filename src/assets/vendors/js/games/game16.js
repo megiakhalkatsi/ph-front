@@ -1,6 +1,8 @@
 
 
 
+
+
 var index = 0;
 var correct = 0;
 var attampt = 0;
@@ -115,17 +117,17 @@ function getQuestionsMarkup(){
         </div>
 
         <div class="game__quiz__answ__cont">
-            <div class="game__quiz__answ">
+            <div class="game__quiz__answ blue success">
                 <h6 class="game__checkbox" data-checked="false" data-isCorrect="${q.answers[0].isCorrect}"></h6>
                 <span class="text">${q.answers[0].text}</span>
             </div>
 
-            <div class="game__quiz__answ">
+            <div class="game__quiz__answ yellow success-border">
             <h6 class="game__checkbox" data-checked="false" data-isCorrect="${q.answers[1].isCorrect}"></h6>
                 <span class="text">${q.answers[1].text}</span>
             </div>
 
-            <div class="game__quiz__answ">
+            <div class="game__quiz__answ purple">
             <h6 class="game__checkbox" data-checked="false" data-isCorrect="${q.answers[2].isCorrect}"></h6>
                 <span class="text">${q.answers[2].text}</span>
             </div>
@@ -179,22 +181,24 @@ function getCorrectAnsweersMarkup(index){
 
 
 
+
   
 $( function() {
-    $('.game__checkbox').click(function(e) {
-        if(e.target.getAttribute('data-checked') === "false") {
-            if(e.target.getAttribute('data-iscorrect') === "true") {
-                $(this).parent().addClass('yellow')
-                $(this).parent().addClass('checked')
-                $(this).parent().parent().find('h6').attr('data-checked', true)
+    $('.game__quiz__answ').click(function(e) {
+        if(e.target.querySelector('.game__checkbox').getAttribute('data-checked') === "false" || e.target.getAttribute('data-checked') === "false") {
+            if(e.target.querySelector('.game__checkbox').getAttribute('data-iscorrect') === "true") {
+                $(this).addClass('checked')
+                $(this).parent().find('h6').attr('data-checked', true)
+
+                $(this).attr('style', "background-color: #80c78b;")
                 correct++ 
                 attampt++
                 getCorrectAnsweersMarkup(correct)
                 
             } else {
-                $(this).parent().parent().find('h6').attr('data-checked', true)
-                $(this).parent().addClass('pink')
-                $(this).parent().addClass('checked')
+                $(this).parent().find('h6').attr('data-checked', true)
+                $(this).addClass('checked')
+                $(this).attr('style', "background-color: #ff97bb;")
                 attampt++
             }
 
@@ -205,7 +209,6 @@ $( function() {
         }
     })
 });
-      
 
 
 $( "#nextStep" ).click(function() {
@@ -248,7 +251,7 @@ $( "#completBtn" ).click(function() {
     document.querySelector('.mainBody').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').setAttribute('style', 'display: none')
   
-    if(correct > 3) {
+    if(correct >= 3) {
         $('.successModal').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
         document.querySelector('.successModal #correctAnswers').innerHTML = `${correct}/5 კითხვა`
     }
@@ -269,10 +272,7 @@ $( "#completBtn" ).click(function() {
     
     $('#finishButton').attr('style', 'display: block')
     $('#completBtn').attr('style', 'display: none')
-    
-    $('.game__quiz__answ').removeClass('blue')
-    $('.game__quiz__answ').removeClass('yellow')
-    $('.game__quiz__answ').removeClass('pink')
+
     $('.game__quiz__answ').removeClass('checked')
     $('.game__checkbox').attr('data-checked', false)
 

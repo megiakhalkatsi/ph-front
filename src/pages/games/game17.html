@@ -4,7 +4,21 @@ title: მოსწავლეების რესურსი
 gameScripts: ../assets/vendors/js/games/game17.js
 ---
 
-<div class="modal-body game__modal-body">
+<style>
+  .game__quiz__answ {
+    position: relative;
+  }
+  .game__quiz__answ::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+</style>
+
+<div class="modal-body game__modal-body mainBody">
   <div class="row" id="GameWrapper">
 
 
@@ -19,7 +33,7 @@ gameScripts: ../assets/vendors/js/games/game17.js
             <div class="game__progress__cont" id="ProgressBar">
               <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">0</span> / 4
                 დან</h3>
-                <div class="game__progress__circle progress-18" id="ProgressLine">
+                <div class="game__progress__circle" id="ProgressLine">
                   <div class="pie">
                     <div class="left-side half-circle"></div>
                     <div class="right-side half-circle"></div>
@@ -33,6 +47,48 @@ gameScripts: ../assets/vendors/js/games/game17.js
     </div>
   </div>
 </div>
+
+<div class="game__result__container">
+  <a href="#" class="game__result">
+    <p class="game__result__text">თქვენ დაასრულეთ თამაში</p>
+    <div class="game__result__btn" id="successModalBtn">შედეგების ნახვა</div>
+  </a>
+</div>
+
+
+<div class="modal-body game__modal-body successModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg green">გილოცავთ !</h2>
+        <p class="game__finish__text">თქვენ წარმატებით დაასრულეთ თამაში! <span class="d-block" id="correctAnswers">0/16 კითხვა</span></p>
+        <picture>
+          <source media="(min-width:768px)" srcset="../assets/img/illustrations/happy.gif" type="image/gif">
+          <source srcset="../assets/img/illustrations/happy-mobile.gif" type="image/gif">
+          <img src="../assets/img/illustrations/happy-mobile.gif" alt="congratulations" class="game__finish__img">
+        </picture>
+        <div class="game__button__container justify-content-center mb-0">
+            <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-body game__modal-body failModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg orange">კიდევ სცადე</h2>
+        <p class="game__finish__text">სულ ცოტა დაგაკლდა. <span class="d-block" id="correctAnswers">0/16 კითხვა</span></p>
+        <p class="game__finish__text sm">კიდევ სცადე და ყველაფერი გამოგივა. მთავარია, ყურადღებით გაუყვე კითხვებს.</p>
+        <img src="../assets/img/illustrations/support.gif" alt="congratulations" class="game__finish__img">
+        <div class="game__button__container justify-content-center mb-0">
+            <button class="about__page__btn game__button mr bt-gray" id="gameReset">ახლიდან დაწყება</button>
+            <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
+    </div>
+  </div>
+</div>
+
 
 <script src="../assets/vendors/js/jquery.min.js"></script>
 <script>

@@ -177,8 +177,8 @@ $('#checkAnswer').click(() => {
     getCorrectAnsweersMarkup(attampt)
 
     let selected = parseInt(selectedAnswer)
-    let formula1 = selected - correctAnswer < 11
-    let formula2 = correctAnswer - selected < 11
+    let formula1 = selected - correctAnswer < 6
+    let formula2 = correctAnswer - selected < 6
 
     if(formula1 && (selected - correctAnswer >= 0) || formula2 && (correctAnswer - selected >= 0)) {
         correctAnswerCount++

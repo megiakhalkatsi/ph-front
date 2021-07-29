@@ -1,4 +1,6 @@
 
+
+
 let correct = 0;
 
 
@@ -27,13 +29,11 @@ $('.iDontWant55').click(() => {
 $('.goToPage134').click(() => {
     $('.game__modal-body').attr('style', 'display: none')
     $('.italianbank').attr('style', 'display: block')
-    console.log(correct)
 })
 
 $('.iDontWant2').click(() => {
     $('.game__modal-body').attr('style', 'display: none')
     $('.rightDecision2').attr('style', 'display: block')
-    console.log(correct)
 })
 
 
@@ -44,26 +44,20 @@ $('.iDontWant3').click(() => {
     $('.game__modal-body').attr('style', 'display: none')
     $('.rightDecision3').attr('style', 'display: block')
 
-    document.querySelector('.game__result__container').classList.add('active') 
-      document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
-      console.log(correct)
+    // document.querySelector('.game__result__container').classList.add('active') 
+    //   document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
 })
 
 $('.iDontWant33333').click(() => {
     correct++
     $('.game__modal-body').attr('style', 'display: none')
     $('.rightDecision4').attr('style', 'display: block')
-
-    document.querySelector('.game__result__container').classList.add('active') 
-      document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
-      console.log(correct)
 })
 
 
 $('.goToPage1000').click(() => {
     $('.game__modal-body').attr('style', 'display: none')
     $('.hakerPage2').attr('style', 'display: block')
-    console.log(correct)
 })
 
 
@@ -72,7 +66,6 @@ $('.goToPage1000').click(() => {
 $('.continue187987').click(() => {
     $('.game__modal-body').attr('style', 'display: none')
     $('.game__modal-body3').attr('style', 'display: block')
-    console.log(correct)
 })
 
 
@@ -105,12 +98,17 @@ $('.continue2').click(() => {
 })
 
 
+$('.continue3').click(() => {
+    document.querySelector('.game__result__container').classList.add('active') 
+    document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
+})
+
+
 
 $('.resetGame').click(() => {
     correct = 0
     $('.game__modal-body').attr('style', 'display: none')
     $('.game__modal-body1').attr('style', 'display: block')
-    console.log(correct)
 })
 
 
