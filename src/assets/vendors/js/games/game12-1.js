@@ -226,8 +226,7 @@ $( function() {
 $( "#successModalBtn" ).click(function() {
     document.querySelector('.game__result__container').classList.remove('active') 
     document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
-  
-  });
+});
 
 
 $( "#nextStep" ).click(function() {
