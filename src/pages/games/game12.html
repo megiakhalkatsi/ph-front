@@ -1,37 +1,47 @@
 ---
 layout: gamesLayout
 title: მოსწავლეების რესურსი
+gameScripts: ../assets/vendors/js/games/game12.js
 ---
 
 
+<style>
+  .game__quiz__answ.error {
+    background-color: #ff97bb !important;
+  }
+  .game__quiz__answ.success {
+    background-color: #80c78b !important;
+  }
 
-<div class="modal-body game__modal-body">
+  .game__quiz__answ {
+    position: relative;
+  }
+  .game__quiz__answ::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .game__quiz__answ.success-border {
+    background-color: rgba(160,141,255,.2);
+  }
+  .game__quiz__answ.success-border {
+    border: 3px solid #80c78b;
+  }
+</style>
+
+
+<div class="modal-body game__modal-body mainBody">
   <div class="row">
     <div class="col-12 col-lg-8 page__content-col m-auto">
-      <div class="game__quiz__quest">
-        <span class="text">კითხვა რომელიც იწყება აქედან და გრძელდება ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი
-          წაითხვა კი შეუძლებელია ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია ?</span>
-        <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
-      </div>
-      <div class="game__quiz__answ__cont">
-        <div class="game__quiz__answ blue">
-          <div class="game__checkbox"></div>
-          <span class="text">ცხოვრების ჯანსაღი წესი</span>
-        </div>
-        <div class="game__quiz__answ yellow success">
-          <div class="game__checkbox"></div>
-          <span class="text">შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
-        </div>
-        <div class="game__quiz__answ pink error">
-          <div class="game__checkbox"></div>
-          <span class="text">ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია.</span>
-        </div>
-        <div class="game__quiz__answ purple success-border">
-          <div class="game__checkbox"></div>
-          <span class="text">ცხოვრების ჯანსაღი წესი</span>
-        </div>
-      </div>
+      <div class="game__quiz__quest" id="questionParent"></div>
+      <div class="game__quiz__answ__cont" id="answersParent"></div>
     </div>
+
+
     <div class="col-12 game__content-col-bottom mt-5">
       <div class="row game__img__btn__row">
         <div class="col-12 col-md-2 game__img__col-relative">
@@ -40,18 +50,21 @@ title: მოსწავლეების რესურსი
         </div>
         <div class="col-12 col-md-10 col-lg-8">
           <div class="game__button__container column">
-            <button id="prevStep" class="about__page__btn game__button mr bt-gray">წინა კითხვა</button>
-            <button id="nextStep" class="about__page__btn game__button bt-blue">შემდეგი კითხვა</button>
+            <button id="prevStep" class="about__page__btn game__button mr bt-gray" style="display: none;">წინა კითხვა</button>
+            <button id="nextStep" class="about__page__btn game__button bt-blue" style="display: none;">შემდეგი კითხვა</button>
+            <button id="checkQuestion" class="about__page__btn game__button bt-blue">შემოწმება</button>
           </div>
         </div>
       </div>
+
+
       <div class="row">
         <div class="col-12">
           <div class="game__progress__cont-align">
             <div class="game__progress__cont" id="ProgressBar">
-              <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">0</span> / 4
+              <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">0</span> / 3
                 დან</h3>
-                <div class="game__progress__circle progress-18" id="ProgressLine">
+                <div class="game__progress__circle" id="ProgressLine">
                   <div class="pie">
                     <div class="left-side half-circle"></div>
                     <div class="right-side half-circle"></div>
@@ -66,22 +79,44 @@ title: მოსწავლეების რესურსი
   </div>
 </div>
 
-<script>
 
-  $('.game__quiz__answ').click(function () {
-    // $('.game__quiz__answ.checked').removeClass('checked');
-    $('.game__quiz__answ__cont.answered-suc').removeClass('answered-suc');
-    $('.game__quiz__answ__cont.answered-err').removeClass('answered-err');
-    $('.game__quiz__answ.success.active').removeClass('active');
-    $(this).toggleClass('checked');
-    if ($(this).hasClass('checked')&& $(this).hasClass('success')) {
-      $(this).parents(".game__quiz__answ__cont").addClass("answered-suc");
-    }else if ($(this).hasClass('checked')&& $(this).hasClass('error')) {
-      $(this).parents(".game__quiz__answ__cont").addClass("answered-err");
-    }
-     if($(this).hasClass('checked')&& $(this).hasClass('error')) {
-      $(".game__quiz__answ.success").addClass("active");
-    }
-  });
 
-</script>
+<div class="modal-body game__modal-body successModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg green">გილოცავთ !</h2>
+        <p class="game__finish__text">თქვენ წარმატებით დაასრულეთ თამაში! <span class="d-block" id="correctAnswers">0/3 კითხვა</span></p>
+        <picture>
+          <source media="(min-width:768px)" srcset="../assets/img/illustrations/happy.gif" type="image/gif">
+          <source srcset="../assets/img/illustrations/happy-mobile.gif" type="image/gif">
+          <img src="../assets/img/illustrations/happy-mobile.gif" alt="congratulations" class="game__finish__img">
+        </picture>
+        <div class="game__button__container justify-content-center mb-0">
+            <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-body game__modal-body failModal" style="display: none;">
+  <div class="row">
+    <div class="col-12 page__content-col m-auto">
+        <h2 class="game__finish__text lg orange">კიდევ სცადე</h2>
+        <p class="game__finish__text">სულ ცოტა დაგაკლდა. <span class="d-block" id="correctAnswers">0/3 კითხვა</span></p>
+        <p class="game__finish__text sm">კიდევ სცადე და ყველაფერი გამოგივა. მთავარია, ყურადღებით გაუყვე კითხვებს.</p>
+        <img src="../assets/img/illustrations/support.gif" alt="congratulations" class="game__finish__img">
+        <div class="game__button__container justify-content-center mb-0">
+            <button class="about__page__btn game__button mr bt-gray" id="gameReset">ახლიდან დაწყება</button>
+            <button class="about__page__btn game__button bt-blue completGame">თამაშის დასრულება</button>
+          </div>
+    </div>
+  </div>
+</div>
+
+<div class="game__result__container" data-isOpen="false">
+  <a href="#" class="game__result">
+    <p class="game__result__text">თქვენ დაასრულეთ თამაში</p>
+    <div class="game__result__btn" id="successModalBtn">თამაშის დასრულება</div>
+  </a>
+</div>
