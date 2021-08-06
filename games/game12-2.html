@@ -543,6 +543,7 @@
           <div class="game__button__container column">
             <button id="prevStep" class="about__page__btn game__button mr bt-gray">წინა კითხვა</button>
             <button id="nextStep" class="about__page__btn game__button bt-blue">შემდეგი კითხვა</button>
+            <button id="completed" style="display: none;" class="about__page__btn game__button bt-blue">დასრულება</button>
           </div>
         </div>
       </div>
@@ -612,6 +613,8 @@
         <h2 class="collapseModal__title">შენ მიერ დაფიქსირებული პასუხი ემთხვევა ამ ქვეყნის/ქვეყნების პოლიტიკას:</h2>
       </div>
       <div class="modal-body collapseModal-body" id="GameWrapper2">
+
+
         <div class="collapseModal__clp" data-answer="საქართველო">
           <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
             aria-expanded="false" aria-controls="collapseExample">
@@ -623,11 +626,30 @@
                 კანაფის მოხმარება საჯარო სივრცეში, თავშეყრის შენობებში, ტრანსპორტში, კინოში, სკვერში და ა.შ. ისჯება ჯარიმით. ისჯება, თუ მარიხუანას მოწევს 21 წლამდე ადამიანი ან სხვები მოწევენ 21 წლამდე ადამიანის თვალწინ. ნებისმიერი რაოდენობის კანაფის მოყვანა-გავრცელება აკრძალულია. 
             </p>
             <p>
-                წყარო: ადმინისტრაციულ სამართალდარღვევათა კოდექსის 45(1) მუხლი https://matsne.gov.ge/ka/document/view/28216?publication=476
+                წყარო: ადმინისტრაციულ სამართალდარღვევათა კოდექსის 45(1) მუხლი <a href="https://matsne.gov.ge/ka/document/view/28216?publication=476" target="_blank">https://matsne.gov.ge/ka/document/view/28216?publication=476</a>
             </p>
 
           </div>
         </div>
+
+
+        <div class="collapseModal__clp" data-answer="ნიდერლანდები">
+          <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample55"
+            aria-expanded="false" aria-controls="collapseExample55">
+            <img src="../assets/img/icons/nederland.webp" class="collapseModal__clp__header__img">
+            ნიდერლანდები
+          </button>
+          <div class="collapse collapseModal__clp__body" id="collapseExample55">
+            <p>
+              მარიხუანა აკრძალულია, თუმცა ე.წ. “შემწყნარებლობის პოლიტიკის” ფარგლებში პრაქტიკაში პირად მოხმარებას, მცირე რაოდენობით (5 გრამამდე)  ფლობას და გავრცელებას არ სჯიან. ამ პოლიტიკის ფარგლებში მხოლოდ ამსტერდამის მხოლოდ გამოყოფილ  პატარა ადგილას, ე.წ. ყავის სახლებში, მცირე რაოდენობის გაყიდვა-მოხმარება დაშვებულია სპეციალური პირობებით -  თუ ალკოჰოლი არ გაიყიდება ამ კაფეში, მარიხუანას რეკლამა არ ექნება და არასრულწლოვანებს არ მიჰყიდიან. 
+            </p>
+            <p>
+              წყარო: <a href="https://www.government.nl/topics/drugs/am-i-committing-a-criminal-offence-if-i-possess-produce-or-deal-in-drugs" target="_blank">https://www.government.nl/topics/drugs/am-i-committing-a-criminal-offence-if-i-possess-produce-or-deal-in-drugs</a> 
+            </p>
+          </div>
+        </div>
+
+
         <div class="collapseModal__clp" data-answer="აშშ">
           <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
             aria-expanded="false" aria-controls="collapseExample1">
@@ -636,34 +658,51 @@
           </button>
           <div class="collapse collapseModal__clp__body" id="collapseExample1">
             <p>
-              აზარტული თამაშები სხვადასხვა შტატში სხვადასხვა ფორმით ლეგალურია, იუტას გარდა, იუტაში არალეგალურია ნებისმიერი ფორმის აზარტული თამაშები. კალიფორნიის შტატიც კრძალავს აზარტულ თამაშებს, თუმცა ზოგიერთი ფორმა დაშვებულია. მაგალითად, ლატარეა, ბინგო, კარტი. ასევე დაშვებულია ადგილობრივ ინდიელთა ტრადიციული კაზინოები. ნიუ-იორკში კი კომერციული კაზინოები ნებადართულია თუ კრიტერიუმებს აკმაყოფილებენ. ბანკებისთვის და საფინანსო ორგანიზაციებისთვის აკრძალულია აშშ-ში მცხოვრები ადამიანის თანხის გადარიცხვა თამაშების საიტზე, რის გამოც ზოგი საიტი უარს აცხადებს აშშ-ს მოქალაქეების მიღებაზე. ზოგიერთ შტატში ონლაინ აზარტული თამაშები უფრო ხელმისაწვდომია და საიტები ლიცენზიებით ფუნქციონირებენ.
+              შტატების მიხედვით მიდგომა განსხვავდება. ზოგან არალეგალურია, ზოგან მხოლოდ სამედიცინო მიზნებით დაიშვება, ზოგ შტატში მოხმარება არ ისჯება, არის შტატები, სადაც მთლიანად ლეგალურია. ათიდან ცხრა ამერიკელი ცხოვრობს შტატში, სადაც რაღაც კუთხით დაშვებულია მარიხუანის მოხმარება. თუმცა, არასრულწლოვნებისათვის მოხმარება ყველა შტატში იკრძალება.
+            </p>
+            <p>
+              იხილეთ რუკა, რომელზეც შტატების მიხედვით განსხვავებები არის აღრიცხული <a href="https://disa.com/map-of-marijuana-legality-by-state" target="_blank">https://disa.com/map-of-marijuana-legality-by-state</a> 
             </p>
           </div>
         </div>
-        <div class="collapseModal__clp" data-answer="არაბთა გაერთიანებული საამიროები">
+
+
+        <div class="collapseModal__clp" data-answer="საუდის არაბეთი">
           <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
             aria-expanded="false" aria-controls="collapseExample2">
-            <img src="../assets/img/icons/uae.jpg" class="collapseModal__clp__header__img">
-            არაბთა გაერთიანებული საამიროები
+            <img src="../assets/img/icons/saudi.png" class="collapseModal__clp__header__img">
+            საუდის არაბეთი
           </button>
           <div class="collapse collapseModal__clp__body" id="collapseExample2">
             <p>
-              აზარტული თამაშები სხვადასხვა შტატში სხვადასხვა ფორმით ლეგალურია, იუტას გარდა, იუტაში არალეგალურია ნებისმიერი ფორმის აზარტული თამაშები. კალიფორნიის შტატიც კრძალავს აზარტულ თამაშებს, თუმცა ზოგიერთი ფორმა დაშვებულია. მაგალითად, ლატარეა, ბინგო, კარტი. ასევე დაშვებულია ადგილობრივ ინდიელთა ტრადიციული კაზინოები. ნიუ-იორკში კი კომერციული კაზინოები ნებადართულია თუ კრიტერიუმებს აკმაყოფილებენ. ბანკებისთვის და საფინანსო ორგანიზაციებისთვის აკრძალულია აშშ-ში მცხოვრები ადამიანის თანხის გადარიცხვა თამაშების საიტზე, რის გამოც ზოგი საიტი უარს აცხადებს აშშ-ს მოქალაქეების მიღებაზე. ზოგიერთ შტატში ონლაინ აზარტული თამაშები უფრო ხელმისაწვდომია და საიტები ლიცენზიებით ფუნქციონირებენ.
+              კანაფის მოხმარება ეწინააღმდეგება ისლამის კანონებს, ამდენად მკაცრად ისჯება და იკრძალება ნებისმიერი რაოდენობის კანაფის შეძენა, შენახვა, გავრცელება და მოხმარება. ზოგიერთ შემთხვევაში განაჩენი  ითვალისწინებს სიკვდილით დასჯასაც.  
+
+            </p>
+            <p>
+              წყარო: <a href=" https://www.longdom.org/open-access/illegality-of-hashish-usage-in-the-kingdom-of-saudi-arabia-2329-6488-1000296.pdf" target="_blank"> https://www.longdom.org/open-access/illegality-of-hashish-usage-in-the-kingdom-of-saudi-arabia-2329-6488-1000296.pdf</a>
             </p>
           </div>
         </div>
-        <div class="collapseModal__clp" data-answer="დიდი ბრიტანეთი">
+
+
+        <div class="collapseModal__clp" data-answer="რუსეთი">
           <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3"
             aria-expanded="false" aria-controls="collapseExample3">
-            <img src="../assets/img/icons/unitedKingdom.svg" class="collapseModal__clp__header__img">
-            დიდი ბრიტანეთი
+            <img src="../assets/img/icons/russia.png" class="collapseModal__clp__header__img">
+            რუსეთი
           </button>
           <div class="collapse collapseModal__clp__body" id="collapseExample3">
             <p>
-              აზარტული თამაშები სხვადასხვა შტატში სხვადასხვა ფორმით ლეგალურია, იუტას გარდა, იუტაში არალეგალურია ნებისმიერი ფორმის აზარტული თამაშები. კალიფორნიის შტატიც კრძალავს აზარტულ თამაშებს, თუმცა ზოგიერთი ფორმა დაშვებულია. მაგალითად, ლატარეა, ბინგო, კარტი. ასევე დაშვებულია ადგილობრივ ინდიელთა ტრადიციული კაზინოები. ნიუ-იორკში კი კომერციული კაზინოები ნებადართულია თუ კრიტერიუმებს აკმაყოფილებენ. ბანკებისთვის და საფინანსო ორგანიზაციებისთვის აკრძალულია აშშ-ში მცხოვრები ადამიანის თანხის გადარიცხვა თამაშების საიტზე, რის გამოც ზოგი საიტი უარს აცხადებს აშშ-ს მოქალაქეების მიღებაზე. ზოგიერთ შტატში ონლაინ აზარტული თამაშები უფრო ხელმისაწვდომია და საიტები ლიცენზიებით ფუნქციონირებენ.
+              მკაცრად ისჯება კანაფის  შეძენა, შენახვა, გავრცელება, მოხმარება, მათ შორის სამედიცინო მიზნითაც. სასჯელი შეიძლება მოიცავდეს ჯარიმას ან თავისუფლების აღკვეთას. 2018-ში პრეზიდენტი ვლადიმერ პუტინი გამოვიდა რეპის ზოგიერთი სიმღერის აკრძალვის ინიციატივით, რადგან ამ სიმღერებში კანაფისა და ნარკოტიკების მოხმარებაზეა საუბარი. 
+
+            </p>
+            <p>
+              წყარო: <a href="http://www.kremlin.ru/events/president/news/59416" target="_blank">http://www.kremlin.ru/events/president/news/59416</a>
             </p>
           </div>
         </div>
+
+
         <div class="collapseModal__clp" data-answer="გერმანია">
           <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4"
             aria-expanded="false" aria-controls="collapseExample4">
@@ -672,22 +711,17 @@
           </button>
           <div class="collapse collapseModal__clp__body" id="collapseExample4">
             <p>
-              აზარტული თამაშები სხვადასხვა შტატში სხვადასხვა ფორმით ლეგალურია, იუტას გარდა, იუტაში არალეგალურია ნებისმიერი ფორმის აზარტული თამაშები. კალიფორნიის შტატიც კრძალავს აზარტულ თამაშებს, თუმცა ზოგიერთი ფორმა დაშვებულია. მაგალითად, ლატარეა, ბინგო, კარტი. ასევე დაშვებულია ადგილობრივ ინდიელთა ტრადიციული კაზინოები. ნიუ-იორკში კი კომერციული კაზინოები ნებადართულია თუ კრიტერიუმებს აკმაყოფილებენ. ბანკებისთვის და საფინანსო ორგანიზაციებისთვის აკრძალულია აშშ-ში მცხოვრები ადამიანის თანხის გადარიცხვა თამაშების საიტზე, რის გამოც ზოგი საიტი უარს აცხადებს აშშ-ს მოქალაქეების მიღებაზე. ზოგიერთ შტატში ონლაინ აზარტული თამაშები უფრო ხელმისაწვდომია და საიტები ლიცენზიებით ფუნქციონირებენ.
+              მოხმარება არალეგალურია. მცირე რაოდენობის მოხმარებისთვის არ სჯიან, თუ მომხმარებელი დაამტკიცებს, რომ ნამდვილად პირადი მოხმარებისათვის უნდოდა, მანამდე კრიმინალური ისტორია არ აქვს და გარშემო არასრულწლოვანი არ იმყოფება. მცირე რაოდენობად 6 გრამამდე მარიხუანა  ითვლება გერმანიის უმრავლეს ადგილებში, ბერლინში კი ეს რიცხვი 15 გრამამდეა. გაყიდვის დამტკიცების შემთხვევაში დამრღვევს 5 წლამდე ციხე ემუქრება. თუ ვითარება დაუმძიმდა (არასრულწლოვნებს მიჰყიდა, მაგალითად, იარაღი აღმოაჩნდა ან განსაკუთრებით დიდი ოდენობის ფლობა დაუმტკიცდა), 15 წლამდეც შეიძლება გაიზარდოს პატიმრობის დრო. სამედიცინო მიზნებისათვის მოხმარება ლეგალურია 2017 წლიდან. საუბარია სამედიცინო მიზნით კანაფის კულტივაციაზეც. 
+
             </p>
-          </div>
-        </div>
-        <div class="collapseModal__clp" data-answer="იაპონია">
-          <button class="collapseModal__clp__header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5"
-            aria-expanded="false" aria-controls="collapseExample5">
-            <img style="border: 1px solid" src="../assets/img/icons/japan.gif" class="collapseModal__clp__header__img">
-            იაპონია
-          </button>
-          <div class="collapse collapseModal__clp__body" id="collapseExample5">
             <p>
-              დიდი ხნის განმავლობაში ყველანაირი აზარტული თამაში აკრძალული იყო. 2016 წლიდან ლიცენზირებული კაზინოს ფუნქციონირება ლეგალური გახდა ამისთვის გამოყოფილ სპეციალურ ადგილებში, ასეთი სპეციალური ადგილი შეიძლება არსებობდეს მხოლოდ იაპონიის სამ ტერიტორიაზე, თითოში ერთი კაზინოს გახსნის უფლებით.  ონლაინ აზარტული თამაშები იაპონიაში კვლავ აკრძალულია. 
+              წყარო: <a href="https://se-legal.de/criminal-defense-lawyer/drug-offences-and-narcotics-criminal-law-in-germany/marijuana-possession-in-germany-lawyers-advice/?lang=en" target="_blank">https://se-legal.de/criminal-defense-lawyer/drug-offences-and-narcotics-criminal-law-in-germany/marijuana-possession-in-germany-lawyers-advice/?lang=en</a> 
+
             </p>
           </div>
         </div>
+
+
 
       </div>
     </div>

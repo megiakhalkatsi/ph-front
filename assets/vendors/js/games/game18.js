@@ -30,20 +30,32 @@ $('.game__wishlist__img').on({
 
 
   $( "#nextStep" ).click(function() {
-    if(index === 1 && attampt > 16) {
-        $('#notificationModal').modal('show');
-        $('.descript').text('არჩეული უნდა იყოს, მაქსიმუმ, 16 სურვილი/საჭიროება')
-    } else {
-        index++
-        attampt = 0
-        if(index === 2) {
-            $('#nextStep').attr('style', 'display: none')
-            $('#completed').attr('style', 'display: block')
-        }
-    
-        $('.game__box__container__title--text').attr('style', 'display: none;')
-        $('.game__box__container__title--text')[index].setAttribute('style', 'display: block;')
-    }
+      if(attampt === 0) {
+          $('.descript').text('არჩეული უნდა იყოს, მინიმუმ, 1 სურვილი/საჭიროება')
+          $('#notificationModal').modal('show');
+
+      } else {
+          window.scroll({
+              top: 0,
+              left: 0,
+              behavior: 'smooth'
+            });
+      
+          if(index === 1 && attampt > 16) {
+              $('#notificationModal').modal('show');
+              $('.descript').text('არჩეული უნდა იყოს, მაქსიმუმ, 16 სურვილი/საჭიროება')
+          } else {
+              index++
+              if(index === 2) {
+                  $('#nextStep').attr('style', 'display: none')
+                  $('#completed').attr('style', 'display: block')
+              }
+
+              $('.page__content-col').attr('style', 'display: none;')
+              $('.page__content-col')[index].setAttribute('style', 'display: block;')
+          }
+
+      }
     
 });
 
@@ -52,7 +64,7 @@ $('.game__wishlist__img').on({
         $('#notificationModal').modal('show');
         $('.descript').text('არჩეული უნდა იყოს, მაქსიმუმ, 8 სურვილი/საჭიროება')
     }  else {
-        console.log('redirect...')
+        alert('Close Game...')
     }
     
 });
