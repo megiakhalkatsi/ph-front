@@ -1,5 +1,6 @@
 
 
+
 var index = 0;
 var correct = 0;
 var attampt = 0;
@@ -118,20 +119,25 @@ function getQuestionsMarkup(){
         <div class="game__quiz__quest">
             <span class="text"><span class="purple">${q.question2}</span> ${q.question}</span>
         </div>
-        <div class="game__instruction collapsed mt-4" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+        <div class="game__instruction collapsed mt-4 mb-4" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
             <img src="../assets/img/icons/info-circle.svg" alt="instruction" class="game__instruction__img">
             <span class="game__instruction__text">სამუშაოზე მიღების მინიმალური ასაკი და შრომითი ქმედუნარიანობის წარმოშობა</span>
             <svg class="icon">
             <use xlink:href="#arrow-dropdown"></use>
             </svg>
         </div>
-        <div class="collapse mt-3" id="hint">
-            <p class="game__text md mb-0 light">
-            შრომითი ქმედუნარიანობა წარმოიშობა 16 წლის ასაკიდან.
+        <div class="collapse mt-3 mb-4" id="hint">
+            <p class="game__text md mb-0 light mb-3">
+                შრომითი ქმედუნარიანობა წარმოიშობა 16 წლის ასაკიდან.
+            </p>
+            <p class="game__text md mb-0 light mb-3">
             16 წლამდე ასაკის არასრულწლოვნის შრომითი ქმედუნარიანობა წარმოიშობა მისი კანონიერი წარმომადგენლის ან მზრუნველობის/მეურვეობის ორგანოს თანხმობით, თუ შრომითი ურთიერთობა არ ეწინააღმდეგება არასრულწლოვნის ინტერესებს, ზიანს არ აყენებს მის ზნეობრივ, ფიზიკურ და გონებრივ განვითარებას და არ უზღუდავს მას სავალდებულო დაწყებითი და საბაზო განათლების მიღების უფლებასა და შესაძლებლობას.
+            </p>
+            <p class="game__text md mb-0 light mb-3">
             14 წლამდე ასაკის არასრულწლოვანთან შრომითი ხელშეკრულება შეიძლება დაიდოს მხოლოდ სპორტულ, ხელოვნებასთან დაკავშირებულ და კულტურის სფეროში საქმიანობაზე, ასევე სარეკლამო სამუშაოს შესასრულებლად.
+            </p>
+            <p class="game__text md mb-0 light mb-3">
             აკრძალულია არასრულწლოვანთან შრომითი ხელშეკრულების დადება მძიმე, მავნე და საშიშპირობებიანი სამუშაოების შესასრულებლად.
-            
             </p>
         </div>
         <div class="game__quiz__answ__cont">

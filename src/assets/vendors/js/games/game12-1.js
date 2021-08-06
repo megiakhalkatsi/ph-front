@@ -2,6 +2,7 @@
 
 
 
+
 var questions = [
     {
         id: 1,
@@ -155,6 +156,9 @@ $( function() {
   
 $( function() {
     $('.game__quiz__answ').click(function(e) {
+        $('.collapseModal__clp__body').removeClass('show');
+
+
         $('.questionContainer.active .game__quiz__answ').removeClass('checked')
         document.querySelector('.game__result__container').setAttribute('data-isOpen', false);
         
@@ -214,14 +218,20 @@ $( function() {
             
             
             if(answersArray.length === 3 && document.querySelector('.game__result__container').getAttribute('data-isOpen') === "false") {
-                document.querySelector('.game__result__container').classList.add('active') 
-                document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
+                $('#completed').removeAttr('style')
+                $('#nextStep').attr('style', 'display: none')
             }
 
         }
     })
 });
       
+
+
+$( "#completed" ).click(function() {
+    document.querySelector('.game__result__container').classList.add('active') 
+    document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
+});
     
 $( "#successModalBtn" ).click(function() {
     document.querySelector('.game__result__container').classList.remove('active') 

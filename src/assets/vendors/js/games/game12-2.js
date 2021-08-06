@@ -2,7 +2,6 @@
 
 
 
-
 var questions = [
     {
         id: 1,
@@ -10,17 +9,17 @@ var questions = [
         answers: [
             {
                 text: 'კი',
-                country: "საქართველო",
+                country: "ნიდერლანდები, აშშ",
 
             },
             {
                 text: 'არა',
-                country: 'არაბთა გაერთიანებული საამიროები, იაპონია',
+                country: 'რუსეთი, საუდის არაბეთი',
 
             },
             {
                 text: 'მხოლოდ იმ შემთხვევაში, თუ სხვა წამლით ადამიანის მკურნალობა არ გამოდის და აუცილებელია მარიხუანის შემცველობის სუბსტანციის გამოყენება',
-                country: 'დიდი ბრიტანეთი',
+                country: 'გერმანია',
 
             },
 
@@ -32,17 +31,17 @@ var questions = [
         answers: [
             {
                 text: 'მხოლოდ სპეციალიზებულ ადგილებში, რომლებიც ლიცენზიას მოიპოვებენ და მკაცრად გაკონტროლდება ლიცენზიის პირობები',
-                country: "არაბთა გაერთიანებული საამიროები",
+                country: "ნიდერლანდები",
 
             },
             {
                 text: 'არა, არსად არ შეიძლება მარიხუანის მოხმარება',
-                country: "აშშ",
+                country: "რუსეთი, აშშ, საუდის არაბეთი",
 
             },
             {
                 text: 'არა, საჯარო სივრცეში არ შეიძლება მოხმარება, სახლში მცირე ოდენობის მოხმარებისათვის არავის დასჯიან',
-                country: "იაპონია",
+                country: "გერმანია",
 
             },
         ]
@@ -53,25 +52,25 @@ var questions = [
         answers: [
             {
                 text: 'სიკვდილით დასჯა',
-                country: "გერმანია",
+                country: "საუდის არაბეთი",
 
             },
             {
                 text: 'თუ კრიმინალურ ჯგუფებთან არ არის შეკრული და განსაკუთრებით დიდი ოდენობა არ არის, მაშინ არ დავსჯიდი საერთოდ',
-                country: "დიდი ბრიტანეთი",
+                country: "ნიდერლანდები",
 
             },
             {
                 text: '5 წელი ციხე, მაგრამ თუ არასრულწლოვანიც ჩართულია საქმეში, დაუმძიმდება სასჯელი 15 წლამდე',
-                country: "აშშ, არაბთა გაერთიანებული საამიროები, იაპონია",
+                country: "გერმანია",
             },
             {
                 text: '3 წელი ციხე და გამოსასწორებელი სამუშაო საშუალო ოდენობის მარიხუანის შენახვაზე, დიდ ოდენობაზე სასჯელი 10 წლამდე იზრდება',
-                country: "იაპონია",
+                country: "რუსეთი",
             },
             {
                 text: 'ფულად ჯარიმას დავაკისრებდი, მაგრამ არა პატიმრობას',
-                country: "იაპონია",
+                country: "აშშ",
 
             },
         ]
@@ -82,20 +81,20 @@ var questions = [
         answers: [
             {
                 text: 'მცირე ოდენობაზე მხოლოდ ჯარიმით უნდა დაისაჯოს',
-                country: "გერმანია",
+                country: "აშშ",
             },
             {
                 text: 'უნდა ისჯებოდეს მკაცრად',
-                country: "დიდი ბრიტანეთი",
+                country: "რუსეთი, საუდის არაბეთი",
 
             },
             {
                 text: 'არ უნდა ისჯებოდეს, თუ არასრულწლოვანიც არ არის ჩართული',
-                country: "აშშ, არაბთა გაერთიანებული საამიროები, იაპონია",
+                country: "აშშ, ნიდერლანდები",
             },
             {
                 text: 'ოფიციალურად აკრძალული უნდა იყოს მოხმარება, მაგრამ პრაქტიკაში მცირე ოდენობის გამო არავის უნდა სჯიდეს, თვალი უნდა დავხუჭოთ',
-                country: "იაპონია",
+                country: "გერმანია",
             },
         ]
     },
@@ -246,6 +245,8 @@ $( function() {
   
 $( function() {
     $('.game__quiz__answ').click(function(e) {
+        $('.collapseModal__clp__body').removeClass('show');
+
         $('.questionContainer.active .game__quiz__answ').removeClass('checked')
         document.querySelector('.game__result__container').setAttribute('data-isOpen', false);
 
@@ -306,9 +307,8 @@ $( function() {
 
 
         if(attampt === 4 && document.querySelector('.game__result__container').getAttribute('data-isOpen') === "false") {
-            document.querySelector('.game__result__container').classList.add('active') 
-            document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
-            document.querySelector('.game__result__container').setAttribute('data-isOpen', true);
+            $('#completed').removeAttr('style')
+            $('#nextStep').attr('style', 'display: none')
         }
 
     })
@@ -316,6 +316,11 @@ $( function() {
       
 
 
+$( "#completed" ).click(function() {
+    document.querySelector('.game__result__container').classList.add('active') 
+    document.querySelector('.game__result__container').setAttribute('data-isOpen', true);
+});
+    
 
 $( "#successModalBtn" ).click(function() {
     document.querySelector('.game__result__container').classList.remove('active') 
