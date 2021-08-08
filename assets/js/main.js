@@ -84,6 +84,11 @@ $('#tableOfConents').on('shown.bs.modal', function () {
     $("body").removeClass("open-modal")
 });
 
+$('.game__modal').on('shown.bs.modal', function () {
+    $("body").addClass("game__modal-open");
+}).on("hidden.bs.modal", function () {
+    $("body").removeClass("game__modal-open")
+});
 
 
 function burgerMenuResponsive(x) {
@@ -313,4 +318,6 @@ $('#language__mobile').click(function(e) {
 //             }, false)
 //         })
 // })()
+
+
 //# sourceMappingURL=main.js.map

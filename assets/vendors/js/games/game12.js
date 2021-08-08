@@ -227,8 +227,6 @@ $('#checkQuestion').click(function(e) {
                 
             } else if($(this).attr('data-correct') === "true" && !$(this).attr('data-answer')) {
                 $(this).addClass('success-border')
-            } else {
-                $(this).addClass('hidden')
             }
         });
     
@@ -251,13 +249,6 @@ $('#checkQuestion').click(function(e) {
         }
 })
 
-      
-
-$( "#completed" ).click(function() {
-    document.querySelector('.game__result__container').classList.add('active') 
-            document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
-            document.querySelector('.game__result__container').setAttribute('data-isOpen', true);
-});
 
 $( "#nextStep" ).click(function() {
     index++
@@ -393,7 +384,6 @@ $( "#gameReset" ).click(function() {
     $('#prevStep').attr('style', 'display: none');
     $('#nextStep').attr('style', 'display: none');
     $('#checkQuestion').attr('style', "display: block");
-    $('.game__quiz__answ').removeClass('hidden');
 
     
 
