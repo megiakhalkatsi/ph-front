@@ -29,6 +29,23 @@ $default-size: 55px;
   }
 }
 
+.game-layout{
+  &::-webkit-scrollbar {
+    width: 8px;
+    &-track {
+      background-color: $component-color1;
+      border-radius: 10px;
+    }
+    &-thumb {
+      background: $component-color2;
+      border-radius: 10px;
+      &:hover {
+        background: $component-color2;
+      }
+    }
+  }
+}
+
 .game__modal {
   padding-right: 0 !important;
   background-color: $component-color1;
@@ -62,13 +79,17 @@ $default-size: 55px;
         }
       }
     }
+    iframe{
+      width: 100%;
+      height: 100%;
+    }
   }
   &-header {
     display: flex;
     justify-content: flex-end;
-    padding: 10px 15px 0;
+    padding: 10px 15px;
     @media #{$breakpoint-md} {
-      padding: 34px 34px 0;
+      padding: 34px;
     }
     &.between {
       justify-content: space-between;
@@ -77,6 +98,7 @@ $default-size: 55px;
   &-body {
     background-color: $white;
     max-width: 100%;
+    width: 100%;
     margin: auto;
     padding: 55px 30px 30px 30px;
     @media #{$breakpoint-lg} {

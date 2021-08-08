@@ -19,6 +19,12 @@ body {
       opacity: 0;
     }
   }
+  &.game__modal-open{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
 }
 .radius-16 {
   border-radius: 16px;
