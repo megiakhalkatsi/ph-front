@@ -17,6 +17,10 @@ gameScripts: ../assets/vendors/js/games/game16.js
     left: 0;
     right: 0;
   }
+
+  .game__quiz__answ.hidden {
+    opacity: .2;
+  }
 </style>
 
 <div class="modal-body game__modal-body mainBody">
@@ -31,6 +35,7 @@ gameScripts: ../assets/vendors/js/games/game16.js
         <div class="game__button__container justify-content-center column">
             <button id="prevStep" class="about__page__btn game__button mr bt-gray">წინა კითხვა</button>
             <button id="nextStep" class="about__page__btn game__button bt-blue">შემდეგი კითხვა</button>
+            <button id="completed" style="display: none;" class="about__page__btn game__button bt-blue">დასრულება</button>
           </div>
       <div class="row">
         <div class="col-12">

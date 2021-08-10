@@ -1,4 +1,5 @@
 
+
 var index = 0;
 var correct = 0;
 var attampt = 0;
@@ -108,7 +109,7 @@ var questions = [
 function getQuestionsMarkup(){
 
     const questionMarkup = questions.map((q, i) => (
-      `<div class="mainCont" style="${i === index ? "display: block" : "display: none"}"><div class="game__quiz__quest">
+      `<div class="mainCont ${i === index ? "active" : ""}"" style="${i === index ? "display: block" : "display: none"}"><div class="game__quiz__quest">
             <span class="text">${q.question}</span>
         </div>
 
@@ -183,33 +184,43 @@ $( function() {
     $('.game__quiz__answ').click(function(e) {
         if(e.target.querySelector('.game__checkbox').getAttribute('data-checked') === "false" || e.target.getAttribute('data-checked') === "false") {
             if(e.target.querySelector('.game__checkbox').getAttribute('data-iscorrect') === "true") {
+                $('.mainCont.active .game__quiz__answ').addClass('hidden')
                 $(this).addClass('checked')
                 $(this).parent().find('h6').attr('data-checked', true)
 
                 $(this).attr('style', "background-color: #80c78b;")
                 correct++ 
                 attampt++
+                $(this).removeClass('hidden')
                 getCorrectAnsweersMarkup(correct)
                 
             } else {
+                $('.mainCont.active .game__quiz__answ').addClass('hidden')
                 $(this).parent().find('h6').attr('data-checked', true)
                 $(this).addClass('checked')
                 $(this).attr('style', "background-color: #ff97bb;")
+                $(this).removeClass('hidden')
                 attampt++
             }
 
             if(attampt === 5) {
-                document.querySelector('.game__result__container').classList.add('active') 
-                document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
+                $('#completed').removeAttr('style')
+                $('#nextStep').attr('style', 'display: none')
             }
         }
     })
 });
 
 
+$( "#completed" ).click(function() {
+    document.querySelector('.game__result__container').classList.add('active') 
+    document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
+});
+
 $( "#nextStep" ).click(function() {
     index++
   
+    $('.mainCont').removeClass('active');
     $('.mainCont').attr('style', 'display: none');
 
     if(index === questions.length || index > 4 ) {
@@ -217,12 +228,14 @@ $( "#nextStep" ).click(function() {
     } 
 
     $('.mainCont')[index].setAttribute('style', 'display: block');
+    $('.mainCont')[index].classList.add('active')
 });
   
   
 $( "#prevStep" ).click(function() {
     index--
 
+    $('.mainCont').removeClass('active');
     $('.mainCont').attr('style', 'display: none');
     
     if(index < 0) {
@@ -230,7 +243,7 @@ $( "#prevStep" ).click(function() {
     }
 
       $('.mainCont')[index].setAttribute('style', 'display: block');
-  
+      $('.mainCont')[index].classList.add('active')
 });
   
 
@@ -266,10 +279,13 @@ $( "#completBtn" ).click(function() {
     document.querySelector('.mainBody').removeAttribute('style')
     document.querySelector('.game__result__container').removeAttribute('style')
     
+    $('#completed').attr('style', 'display: none')
+    $('#nextStep').removeAttr('style')
     $('#finishButton').attr('style', 'display: block')
     $('#completBtn').attr('style', 'display: none')
-
+    $('.game__quiz__answ').removeClass('hidden')
     $('.game__quiz__answ').removeClass('checked')
+    $('.game__quiz__answ').removeAttr('style')
     $('.game__checkbox').attr('data-checked', false)
 
     index = 0;
