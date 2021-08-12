@@ -519,6 +519,19 @@
   .game__quiz__answ.hidden {
     opacity: .2;
   }
+  .game__quiz__answ.error {
+    background-color: #ff97bb !important;
+  }
+  .game__quiz__answ.success {
+    background-color: #80c78b !important;
+  }
+
+  .game__quiz__answ.success-border {
+    background-color: rgba(160,141,255,.2);
+  }
+  .game__quiz__answ.success-border {
+    border: 3px solid #80c78b;
+  }
 </style>
 
 <div class="modal-body game__modal-body mainBody">
@@ -539,7 +552,7 @@
         <div class="col-12">
           <div class="game__progress__cont-align">
             <div class="game__progress__cont" id="ProgressBar">
-              <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">0</span> / 4
+              <h3 class="game__progress__text" id="ProgressText">კითხვა <span class="purple">0</span> / 5
                 დან</h3>
                 <div class="game__progress__circle" id="ProgressLine">
                   <div class="pie">

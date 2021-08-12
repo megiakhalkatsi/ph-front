@@ -139,12 +139,12 @@ function getQuestionsMarkup(){
             </p>
         </div>
         <div class="game__quiz__answ__cont">
-            <div class="game__quiz__answ blue success">
+            <div class="game__quiz__answ blue">
                 <h6 class="game__checkbox" data-checked="false" data-isCorrect="${q.answers[0].isCorrect}"></h6>
                 <span class="text">${q.answers[0].text}</span>
             </div>
 
-            <div class="game__quiz__answ yellow success-border">
+            <div class="game__quiz__answ yellow">
             <h6 class="game__checkbox" data-checked="false" data-isCorrect="${q.answers[1].isCorrect}"></h6>
                 <span class="text">${q.answers[1].text}</span>
             </div>
@@ -205,16 +205,25 @@ $( function() {
                 correct++ 
                 attampt++
                 $(this).removeClass('hidden')
-                getCorrectAnsweersMarkup(correct)
                 
             } else if(e.target.querySelector('.game__checkbox').getAttribute('data-iscorrect') === "false") {
                 $('.mainCont.active .game__quiz__answ').addClass('hidden')
                 $(this).parent().find('h6').attr('data-checked', true)
                 $(this).addClass('checked')
                 $(this).attr('style', "background-color: #ff97bb;")
+
+                $( ".mainCont.active .game__checkbox" ).each(function( index ) {
+                    if($(this).attr('data-iscorrect') == "true") {
+                        $(this).parent().addClass('success-border')
+                        $(this).parent().removeClass('hidden')
+                    }
+                });
+
                 $(this).removeClass('hidden')
                 attampt++
             }
+
+            getCorrectAnsweersMarkup(attampt)
 
             if(attampt === 5) {
                 $('#completed').removeAttr('style')
@@ -302,6 +311,7 @@ $( "#completBtn" ).click(function() {
     
     $('.game__quiz__answ').removeAttr('style')
     $('.game__quiz__answ').removeClass('checked')
+    $('.game__quiz__answ').removeClass('success-border')
     $('.game__quiz__answ').removeClass('hidden')
     $('.game__checkbox').attr('data-checked', false)
 
@@ -309,6 +319,7 @@ $( "#completBtn" ).click(function() {
     correct = 0;
     attampt = 0;
     
+    getCorrectAnsweersMarkup(attampt)
   });
   
   $( ".completGame" ).click(function() {

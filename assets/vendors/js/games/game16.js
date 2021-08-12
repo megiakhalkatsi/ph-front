@@ -114,12 +114,12 @@ function getQuestionsMarkup(){
         </div>
 
         <div class="game__quiz__answ__cont">
-            <div class="game__quiz__answ blue success">
+            <div class="game__quiz__answ blue">
                 <h6 class="game__checkbox" data-checked="false" data-isCorrect="${q.answers[0].isCorrect}"></h6>
                 <span class="text">${q.answers[0].text}</span>
             </div>
 
-            <div class="game__quiz__answ yellow success-border">
+            <div class="game__quiz__answ yellow">
             <h6 class="game__checkbox" data-checked="false" data-isCorrect="${q.answers[1].isCorrect}"></h6>
                 <span class="text">${q.answers[1].text}</span>
             </div>
@@ -192,15 +192,26 @@ $( function() {
                 correct++ 
                 attampt++
                 $(this).removeClass('hidden')
-                getCorrectAnsweersMarkup(correct)
+                getCorrectAnsweersMarkup(attampt)
                 
             } else {
+                console.log($(this))
                 $('.mainCont.active .game__quiz__answ').addClass('hidden')
                 $(this).parent().find('h6').attr('data-checked', true)
+                attampt++
                 $(this).addClass('checked')
                 $(this).attr('style', "background-color: #ff97bb;")
+
+                $( ".mainCont.active .game__checkbox" ).each(function( index ) {
+                    if($(this).attr('data-iscorrect') == "true") {
+                        $(this).parent().addClass('success-border')
+                        $(this).parent().removeClass('hidden')
+                    }
+                });
+
                 $(this).removeClass('hidden')
-                attampt++
+
+                getCorrectAnsweersMarkup(attampt)
             }
 
             if(attampt === 5) {
@@ -235,6 +246,8 @@ $( "#nextStep" ).click(function() {
 $( "#prevStep" ).click(function() {
     index--
 
+    // $('.game__quiz__answ').removeClass('success-border');
+    // $('.game__quiz__answ').attr('style');
     $('.mainCont').removeClass('active');
     $('.mainCont').attr('style', 'display: none');
     
@@ -284,6 +297,7 @@ $( "#completBtn" ).click(function() {
     $('#finishButton').attr('style', 'display: block')
     $('#completBtn').attr('style', 'display: none')
     $('.game__quiz__answ').removeClass('hidden')
+    $('.game__quiz__answ').removeClass('success-border')
     $('.game__quiz__answ').removeClass('checked')
     $('.game__quiz__answ').removeAttr('style')
     $('.game__checkbox').attr('data-checked', false)
@@ -291,6 +305,8 @@ $( "#completBtn" ).click(function() {
     index = 0;
     correct = 0;
     attampt = 0;
+
+    getCorrectAnsweersMarkup(attampt)
     
   });
   
