@@ -1,4 +1,5 @@
 
+  
 
 const swiper = new Swiper('.swiper-container', { 
     loop: false, 
@@ -47,7 +48,7 @@ const swiper = new Swiper('.swiper-container', {
       
     
       $( "#Rounded_Rectangle_1_copy_5_" ).click(function() {
-          swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="8"> <div class="relative"> <div class="btn1 cursor-pointer"> <img src="../assets/img/games/button-1.svg"/> </div><div class="btn2 cursor-pointer"> <img src="../assets/img/games/button-2.svg"/> </div><img src="../assets/img/games/84-23234.svg" alt="image" class="swiper-slide-img"> </div></div>');
+          swiper.appendSlide('<div class="swiper-slide havenotarrow" role="group" data-swiper-slide-index="8"> <div class="relative"> <div class="btn1 cursor-pointer"> <img src="../assets/img/games/button-1.svg"/> </div><div class="btn2 cursor-pointer"> <img src="../assets/img/games/button-2.svg"/> </div><img src="../assets/img/games/84-23234.svg" alt="image" class="swiper-slide-img"> </div></div>');
           swiper.slideNext(300)	
       });
     
@@ -105,4 +106,35 @@ const swiper = new Swiper('.swiper-container', {
             swiper.slideNext(300)	
         });
     }
+  });
+
+
+  swiper.on('slideChange', function() {
+    var realIndex = swiper.realIndex;
+    
+    if(realIndex === 6) {
+        $('.swiper-button-next').attr('style', 'display: none')
+        
+    } else if($('.swiper-slide.havenotarrow').length > 0 && realIndex <= 8) {
+        
+        $('.swiper-button-next').attr('style', 'display: none')
+
+    } else {
+        $('.swiper-button-next').removeAttr('style')
+
+        if($('.swiper-button-next').hasClass('swiper-button-disabled')) {
+            document.querySelector('.swiper-button-next').classList.remove('swiper-button-disabled')
+
+            if($('.swiper-button-next').attr('aria-disabled') === "true") {
+                $('.swiper-button-next').attr('aria-disabled', false)
+
+                $('.swiper-button-next').click(function(e) {
+                    window.location.reload()
+                })
+            }
+
+        }  
+    }
+
+
   });

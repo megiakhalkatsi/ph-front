@@ -1,6 +1,5 @@
 
 
-
 var appendNumber = 4;
 var prependNumber = 1;
 var swiper = new Swiper('.swiper-container', {
@@ -9,8 +8,9 @@ var swiper = new Swiper('.swiper-container', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
   }, 
+  slidesPerView: 'auto',
   simulateTouch: false,
-  slidesPerView: 1,
+//   slidesPerView: 1,
 });
 
 
@@ -76,3 +76,32 @@ document.querySelector('#გადაეცით_საბანკო_ბა�
   swiper.slideNext(300)	
 
 });
+
+
+swiper.on('slideChange', function() {
+    var realIndex = swiper.realIndex;
+
+    if(realIndex === 2) {
+        $('.swiper-button-next').attr('style', 'display: none')
+    } else {
+        $('.swiper-button-next').removeAttr('style')
+
+        if($('.swiper-button-next').hasClass('swiper-button-disabled')) {
+            document.querySelector('.swiper-button-next').classList.remove('swiper-button-disabled')
+
+            if($('.swiper-button-next').attr('aria-disabled') === "true") {
+                $('.swiper-button-next').attr('aria-disabled', false)
+
+                $('.swiper-button-next').click(function(e) {
+                    console.log('rennder...')
+                    window.location.reload()
+                })
+            }
+
+        }  
+    }
+
+
+  });
+
+
