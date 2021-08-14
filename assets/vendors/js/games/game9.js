@@ -115,7 +115,7 @@ $('.resetGame').click(() => {
 $('.completGame').click(() => {
     correct = 0
 
-    document.querySelector('.mainBody').removeAttribute('style')
+    $('.mainBody').removeAttr('style')
     document.querySelector('.failModal').setAttribute('style', 'display: none')
     document.querySelector('.successModal').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').classList.remove('active')
@@ -132,9 +132,9 @@ $('.completGame2').click(() => {
 
 
 $( "#successModalBtn" ).click(function() {
-    document.querySelector('.mainBody').setAttribute('style', 'display: none')
+    $('.mainBody').attr('style', 'display: none')
     document.querySelector('.game__result__container').setAttribute('style', 'display: none')
-    console.log(correct)
+
 
     if(correct === 3) {
         $('.successModal').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
