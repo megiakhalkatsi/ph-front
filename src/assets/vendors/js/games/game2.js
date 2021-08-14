@@ -95,7 +95,7 @@ $( "#resetButton" ).click(function() {
 
 $( "#completBtn" ).click(function() {
   document.querySelector('.game__result__container').classList.add('active') 
-  document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
+  document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111111')
 });
 
 

@@ -153,6 +153,7 @@ $( "#resetButton" ).click(function() {
     $(".checkboxItem").prop("checked", false);
     incorrectAttampt = 0;
     correctAttampt = 0;
+    document.querySelector('.purple').innerText = `${correctAttampt}/4`
     $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
     $('.successModal').attr('style', 'display: none; position: fixed; top: 0;left: 0;right: 0; z-index: 11111;')
 
