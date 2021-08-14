@@ -1,461 +1,322 @@
-// //fixed header on scroll
+//fixed header on scroll
 
-// var header = document.getElementById("header");
-// function fixedHeaderFunction() {
-//     if (window.pageYOffset > 50) {
-//         header.classList.add("sticky");
-//     } else {
-//         header.classList.remove("sticky");
-//     }
-// }
-
-// window.onscroll = function () { fixedHeaderFunction() };
-
-
-// function clickers() {
-//     $('.header__nav__item-link').click(function () {
-//         $('.header__nav__item-link').removeClass('active')
-//         $(this).addClass('active');
-//     })
-//     $('.header__nav__search').click(function () {
-//         $(this).toggleClass('active');
-//         $('.search__container').toggleClass('active');
-//         $("body").toggleClass("open-modal");
-//         $("#searchInput").focus();
-//     })
-//     $('.search__close').click(function () {
-//         $('.search__container').removeClass('active');
-//         $("body").removeClass("open-modal");
-//     })
-//     //video player
-//     $(".resource__item__video").click(function () {
-//         $('iframe', this)[0].src += "&amp;autoplay=1";
-//         $(this).addClass('open');
-//     });
-//     //burger menu
-//     $('.header__nav__menuIcon').click(function () {
-//         $(this).toggleClass('open');
-//         $('.header__nav__list__container').toggleClass('active');
-//     });
-//     //choose role notification
-//     $('.choose__teacher').click(function () {
-//         $('.chooseRoleModal__bottom').addClass('active');
-//     });
-//     $('.choose__student').click(function () {
-//         $('.chooseRoleModal__bottom').removeClass('active');
-//     });
-//     //filter - responsive
-//     $('.filter__row').click(function () {
-//         $('.filter__form').toggleClass('active');
-//     });
-//     //read more
-//     $('.readMoreBtn').click(function () {
-//         $('.moreText').toggleClass('inline');
-//         $(this).hide();
-//     });
-//     //course list - responsive
-//     $('.course__list__btn').click(function () {
-//         $(this).toggleClass('active');
-//         $('.course__list').toggleClass('active');
-//     });
-//     $('#startQuiz').click(function () {
-//         $(".course__intro__video__container-hide").removeClass("active");
-//         $(".course__quiz__quest-hide").removeClass("active");
-//     });
-//     $('.course__intro__header__item .link').click(function () {
-//         $(this).addClass("active");
-//         $(".course__intro__header__item .close-icon").addClass("active");
-//         $(".course__content__row").addClass("hide");
-//         $(".course__content__resources").addClass("active");
-//     });
-//     $('.course__intro__header__item .close-icon').click(function () {
-//         $(this).removeClass("active");
-//         $(".course__intro__header__item .link").removeClass("active");
-//         $(".course__content__row").removeClass("hide");
-//         $(".course__content__resources").removeClass("active");
-//     });
-// }
-// clickers();
-
-// //not scrolling background while modal is active
-// $('#tableOfConents').on('shown.bs.modal', function () {
-//     $("body").addClass("open-modal");
-// }).on("hidden.bs.modal", function () {
-//     $("body").removeClass("open-modal")
-// });
-
-// $('.game__modal').on('shown.bs.modal', function () {
-//     $("body").addClass("game__modal-open");
-// }).on("hidden.bs.modal", function () {
-//     $("body").removeClass("game__modal-open")
-// });
-
-
-// function burgerMenuResponsive(x) {
-//     if (x.matches) { // If media query matches
-//         $('.header__nav__menuIcon').removeClass('open');
-//         $('.header__nav__list__container').removeClass('active');
-//     }
-// }
-// var x = window.matchMedia("(min-width: 991px)")
-// burgerMenuResponsive(x) // Call listener function at run time
-// x.addListener(burgerMenuResponsive) // Attach listener function on state changes
-
-// //full size images
-// var imgs = document.querySelectorAll(".resource__item__img, .section__theme__page__img");
-
-// for (var i = 0; i < imgs.length; i++) {
-//     imgs[i].onclick = function () { imageZoom(this); }
-// }
-// function imageZoom(ele) {
-//     document.getElementById("image-fullscreen").style.background = 'black url(' + ele.src + ') no-repeat center center';
-//     document.getElementById("image-fullscreen").style.backgroundSize = 'contain';
-//     console.log(document.getElementById("image-fullscreen").style);
-// }
-
-// $(window).on('click', () => $('#fullscreenImgModal').modal('hide'))
-// $('.image-fullscreen').click(function(e) {
-//     e.stopPropagation();
-// });
-
-// //header navigation - active items
-// $(function () {
-//     $('.header__nav__list a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
-// });
-
-// // tabs links
-
-// // function tabsLink() {
-// //     var hash = window.location.hash;
-// //     hash && $('#aboutTabs a[href="' + hash + '"]').tab('show');
-
-// //     $('#aboutTabs a').click(function (e) {
-// //       $(this).tab('show');
-// //       var scrollmem = $('body').scrollTop();
-// //       window.location.hash = this.hash;
-// //       $('html,body').scrollTop(scrollmem);
-// //     });
-// //   };
-
-// //   tabsLink();
-
-// // onload page
-// function onloadPage() {
-//     $(".page__onload").addClass("active");
-// }
-// window.onload = onloadPage;
-
-// // check when video finished
-
-// // create youtube player
-// var player;
-// function onYouTubePlayerAPIReady() {
-//     player = new YT.Player('player', {
-//         videoId: 'fPasjUl-Vg4',
-//         events: {
-//             //'onReady': onPlayerReady,
-//             'onStateChange': onPlayerStateChange
-//         }
-//     });
-// }
-
-// // autoplay video
-// // function onPlayerReady(event) {
-// //     event.target.playVideo();
-// // }
-
-// // when video ends
-// function onPlayerStateChange(event) {
-//     if (event.data === 0) {
-//         $(".course__intro__video__container-hide").addClass("active");
-//         $(".course__quiz__quest-hide").addClass("active");
-//     }
-// }
-
-
-// //custom select
-// $(".custom-select").each(function () {
-//     var classes = $(this).attr("class"),
-//         id = $(this).attr("id"),
-//         name = $(this).attr("name");
-//     var template = '<div class="' + classes + '">';
-//     template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
-//     template += '<div class="custom-options">';
-//     $(this).find("option").each(function () {
-//         template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
-//     });
-//     template += '</div></div>';
-
-//     $(this).wrap('<div class="custom-select-wrapper"></div>');
-//     $(this).hide();
-//     $(this).after(template);
-// });
-// $('.form-register .custom-select-trigger').each(function () {
-//     $(this).addClass("selected");
-//     $(this).text($(this).parents(".custom-select").children(".custom-options").children(".custom-option:first-child").text());
-// });
-// $(".custom-option:first-of-type").hover(function () {
-//     $(this).parents(".custom-options").addClass("option-hover");
-// }, function () {
-//     $(this).parents(".custom-options").removeClass("option-hover");
-// });
-// $(".custom-select-trigger").on("click", function () {
-//     $('html').one('click', function () {
-//         $(".custom-select").removeClass("opened");
-//     });
-//     $(this).parents(".custom-select").toggleClass("opened");
-//     event.stopPropagation();
-// });
-// $(".custom-option").on("click", function () {
-//     $('#txtData').hide();
-//     $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
-//     $('#sort_select').val($(this).data("value")).change();
-//     $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
-//     $(this).addClass("selection");
-//     $(this).parents(".custom-select").removeClass("opened");
-//     $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
-//     $(this).parents(".custom-select").find(".custom-select-trigger").addClass("selected");
-// });
-// $(".custom-option.select_other").on("click", function () {
-//     $('#txtData').show();
-// });
-
-// // dropdown
-
-// const dropdownToggler = () => {
-//     let toggler = document.querySelectorAll('.dropdown--toggler')
-//     toggler.forEach((item) => {
-//         item.addEventListener('click', () => {
-//             let dropdowns = document.querySelectorAll('.dropdown')
-//             item.parentElement.classList.toggle('open')
-//             dropdowns.forEach((elem) => {
-//                 if (
-//                     item.parentElement.getAttribute('id') ===
-//                     elem.getAttribute('data-for')
-//                 ) {
-//                     elem.classList.toggle('open')
-//                 }
-//             })
-//         })
-//     })
-// }
-// dropdownToggler()
-
-// const selectDropdown = () => {
-//     let dropdownItems = document.querySelectorAll('.dropdown__item')
-//     dropdownItems.forEach((item) => {
-//         item.addEventListener('click', (e) => {
-//             let items = e.target.parentElement.children
-//             for (let i = 0; i < items.length; i++) {
-//                 if (items[i].classList.contains('dropdown__item--active')) {
-//                     items[i].classList.remove('dropdown__item--active')
-//                 }
-//             }
-//             let dropdownElems = document.querySelectorAll('.dropdown__elem')
-//             dropdownElems.forEach((elem) => {
-//                 if (
-//                     elem.getAttribute('id') ===
-//                     item.parentElement.parentElement.getAttribute('data-for')
-//                 ) {
-//                     e.target.classList.add('dropdown__item--active')
-//                     let selectedInfo = elem.children[0].children[0]
-//                     selectedInfo.innerHTML = e.target.innerHTML
-//                     selectedInfo.setAttribute('value', e.target.innerHTML)
-//                     $(selectedInfo).addClass('active');
-//                     elem.classList.remove('open')
-//                     e.target.parentElement.parentElement.classList.remove('open')
-//                 }
-//             })
-//         })
-//     })
-// }
-// selectDropdown()
-
-// $(window).click(function() {
-//     $('.language__desktop').removeClass('open')  
-//     $('.language__desktop .dropdown').removeClass('open')  
-//     $('#language__mobile').removeClass('open')  
-//     $('#language__mobile .dropdown').removeClass('open')  
-// });
-// $('.language__desktop').click(function(e) {
-//     e.stopPropagation();
-// });
-// $('#language__mobile').click(function(e) {
-//     e.stopPropagation();
-// });
-
-// // // password show function
-// // const togglePassword = document.querySelector('#togglePassword');
-// // const password = document.querySelector('#password');
-
-// // togglePassword.addEventListener('click', function (e) {
-// //     // toggle the type attribute
-// //     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-// //     password.setAttribute('type', type);
-// //     // toggle the eye slash icon
-// //     // this.classList.toggle('fa-eye-slash');
-// // });
-
-// // // bootstrap forms validation
-// // // Example starter JavaScript for disabling form submissions if there are invalid fields
-// // (function () {
-// //     'use strict'
-// //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-// //     var forms = document.querySelectorAll('.needs-validation')
-
-// //     // Loop over them and prevent submission
-// //     Array.prototype.slice.call(forms)
-// //         .forEach(function (form) {
-// //             form.addEventListener('submit', function (event) {
-// //                 if (!form.checkValidity()) {
-// //                     event.preventDefault()
-// //                     event.stopPropagation()
-// //                 }
-
-// //                 form.classList.add('was-validated'),
-// //                     $('.form__label').addClass('error'),
-// //                     $('.form__error__message').addClass('active')
-// //             }, false)
-// //         })
-// // })()
-
-
-
-
-
-
-  
-
-const swiper = new Swiper('.swiper-container', { 
-    loop: false, 
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }, 
-    simulateTouch: false,
-  });
-  
-  
-  var index = 0;
-  var appendNumber = 1;
-  
-  
-  let n = 0;
-  let n2 = 0;
-  
-  $( function() {
-  
-  
-  
-      $( "#Rounded_Rectangle_1_copy_4_" ).click(function() {
-          swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="8"><img src="../assets/img/games/88-8.jpg" alt="image" class="swiper-slide-img"></div>');    
-          swiper.slideNext(300)	
-      });
-      
-      $( "#Rounded_Rectangle_1_copy_6_" ).click(function() {
-          swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="8"><img src="../assets/img/games/88-8.jpg" alt="image" class="swiper-slide-img"></div>');    
-          swiper.slideNext(300)	
-      });
-      
-      $( ".click2" ).click(function() {
-          swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="8"><img src="../assets/img/games/88-8.jpg" alt="image" class="swiper-slide-img"></div>');    
-          swiper.slideNext(300)	
-      });
-      
-      $( ".ewoufhwibf" ).click(function() {
-          swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="8"><img src="../assets/img/games/88-8.jpg" alt="image" class="swiper-slide-img"></div>');    
-          swiper.slideNext(300)	
-      });
-      
-    
-      $( "#Rounded_Rectangle_1_copy_5_" ).click(function() {
-          swiper.appendSlide('<div class="swiper-slide havenotarrow" role="group" data-swiper-slide-index="8"> <div class="relative"> <div class="btn1 cursor-pointer"> <img src="../assets/img/games/button-1.svg"/> </div><div class="btn2 cursor-pointer"> <img src="../assets/img/games/button-2.svg"/> </div><img src="../assets/img/games/84-23234.svg" alt="image" class="swiper-slide-img"> </div></div>');
-          swiper.slideNext(300)	
-      });
-    
-      $( ".click1" ).click(function() {
-          swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="8"> <div class="relative"> <div class="btn1 cursor-pointer"> <img src="../assets/img/games/button-1.svg"/> </div><div class="btn2 cursor-pointer"> <img src="../assets/img/games/button-2.svg"/> </div><img src="../assets/img/games/84-23234.svg" alt="image" class="swiper-slide-img"> </div></div>');
-          swiper.slideNext(300)	
-      });
-    
-      $( "#Rounded_Rectangle_1_copy_7_" ).click(function() {
-          swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="8"> <div class="relative"> <div class="btn1 cursor-pointer"> <img src="../assets/img/games/button-1.svg"/> </div><div class="btn2 cursor-pointer"> <img src="../assets/img/games/button-2.svg"/> </div><img src="../assets/img/games/84-23234.svg" alt="image" class="swiper-slide-img"> </div></div>');
-          swiper.slideNext(300)	
-      });
-      $( ".wiefhwfwefb" ).click(function() {
-          swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="8"> <div class="relative"> <div class="btn1 cursor-pointer"> <img src="../assets/img/games/button-1.svg"/> </div><div class="btn2 cursor-pointer"> <img src="../assets/img/games/button-2.svg"/> </div><img src="../assets/img/games/84-23234.svg" alt="image" class="swiper-slide-img"> </div></div>');
-          swiper.slideNext(300)	
-      });
-  
-    
-    
-  });
-  
-  
-  
-  $(document).on( 'click', 'div.btn1', function(){
-  
-  
-    if(n < 1) {
-        n++
-  
-        $( ".btn1" ).click(function(e) {
-            swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="9"> <img src="../assets/img/games/12-12.jpg" alt="image" class="swiper-slide-img"> </div>');    
-            swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="10"> <img src="../assets/img/games/13-13.jpg" alt="image" class="swiper-slide-img"> </div>');    
-            swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="11"> <img src="../assets/img/games/14-14.jpg" alt="image" class="swiper-slide-img"> </div>');    
-            swiper.slideNext(300)	
-        });
-  
-        $( ".btn2" ).click(function(e) {
-            swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="9"> <img src="../assets/img/games/88-8.jpg" alt="image" class="swiper-slide-img"> </div>');    
-            swiper.slideNext(300)	
-        });
-    }
-  });
-  
-  
-  $(document).on( 'click', 'div.btn2', function(){
-  
-  
-    if(n < 1) {
-        n++
-  
-        $( ".btn2" ).click(function(e) {
-            swiper.appendSlide('<div class="swiper-slide" role="group" data-swiper-slide-index="9"> <img src="../assets/img/games/88-8.jpg" alt="image" class="swiper-slide-img"> </div>');    
-            swiper.slideNext(300)	
-        });
-    }
-  });
-
-
-  swiper.on('slideChange', function() {
-    var realIndex = swiper.realIndex;
-    
-    if(realIndex === 6) {
-        $('.swiper-button-next').attr('style', 'display: none')
-        
-    } else if($('.swiper-slide.havenotarrow').length > 0 && realIndex <= 8) {
-        
-        $('.swiper-button-next').attr('style', 'display: none')
-
+var header = document.getElementById("header");
+function fixedHeaderFunction() {
+    if (window.pageYOffset > 50) {
+        header.classList.add("sticky");
     } else {
-        $('.swiper-button-next').removeAttr('style')
-
-        if($('.swiper-button-next').hasClass('swiper-button-disabled')) {
-            document.querySelector('.swiper-button-next').classList.remove('swiper-button-disabled')
-
-            if($('.swiper-button-next').attr('aria-disabled') === "true") {
-                $('.swiper-button-next').attr('aria-disabled', false)
-
-                $('.swiper-button-next').click(function(e) {
-                    window.location.reload()
-                })
-            }
-
-        }  
+        header.classList.remove("sticky");
     }
+}
+
+window.onscroll = function () { fixedHeaderFunction() };
 
 
-  });
+function clickers() {
+    $('.header__nav__item-link').click(function () {
+        $('.header__nav__item-link').removeClass('active')
+        $(this).addClass('active');
+    })
+    $('.header__nav__search').click(function () {
+        $(this).toggleClass('active');
+        $('.search__container').toggleClass('active');
+        $("body").toggleClass("open-modal");
+        $("#searchInput").focus();
+    })
+    $('.search__close').click(function () {
+        $('.search__container').removeClass('active');
+        $("body").removeClass("open-modal");
+    })
+    //video player
+    $(".resource__item__video").click(function () {
+        $('iframe', this)[0].src += "&amp;autoplay=1";
+        $(this).addClass('open');
+    });
+    //burger menu
+    $('.header__nav__menuIcon').click(function () {
+        $(this).toggleClass('open');
+        $('.header__nav__list__container').toggleClass('active');
+    });
+    //choose role notification
+    $('.choose__teacher').click(function () {
+        $('.chooseRoleModal__bottom').addClass('active');
+    });
+    $('.choose__student').click(function () {
+        $('.chooseRoleModal__bottom').removeClass('active');
+    });
+    //filter - responsive
+    $('.filter__row').click(function () {
+        $('.filter__form').toggleClass('active');
+    });
+    //read more
+    $('.readMoreBtn').click(function () {
+        $('.moreText').toggleClass('inline');
+        $(this).hide();
+    });
+    //course list - responsive
+    $('.course__list__btn').click(function () {
+        $(this).toggleClass('active');
+        $('.course__list').toggleClass('active');
+    });
+    $('#startQuiz').click(function () {
+        $(".course__intro__video__container-hide").removeClass("active");
+        $(".course__quiz__quest-hide").removeClass("active");
+    });
+    $('.course__intro__header__item .link').click(function () {
+        $(this).addClass("active");
+        $(".course__intro__header__item .close-icon").addClass("active");
+        $(".course__content__row").addClass("hide");
+        $(".course__content__resources").addClass("active");
+    });
+    $('.course__intro__header__item .close-icon').click(function () {
+        $(this).removeClass("active");
+        $(".course__intro__header__item .link").removeClass("active");
+        $(".course__content__row").removeClass("hide");
+        $(".course__content__resources").removeClass("active");
+    });
+}
+clickers();
+
+//not scrolling background while modal is active
+$('#tableOfConents').on('shown.bs.modal', function () {
+    $("body").addClass("open-modal");
+}).on("hidden.bs.modal", function () {
+    $("body").removeClass("open-modal")
+});
+
+$('.game__modal').on('shown.bs.modal', function () {
+    $("body").addClass("game__modal-open");
+}).on("hidden.bs.modal", function () {
+    $("body").removeClass("game__modal-open")
+});
+
+
+function burgerMenuResponsive(x) {
+    if (x.matches) { // If media query matches
+        $('.header__nav__menuIcon').removeClass('open');
+        $('.header__nav__list__container').removeClass('active');
+    }
+}
+var x = window.matchMedia("(min-width: 991px)")
+burgerMenuResponsive(x) // Call listener function at run time
+x.addListener(burgerMenuResponsive) // Attach listener function on state changes
+
+//full size images
+var imgs = document.querySelectorAll(".resource__item__img, .section__theme__page__img");
+
+for (var i = 0; i < imgs.length; i++) {
+    imgs[i].onclick = function () { imageZoom(this); }
+}
+function imageZoom(ele) {
+    document.getElementById("image-fullscreen").style.background = 'black url(' + ele.src + ') no-repeat center center';
+    document.getElementById("image-fullscreen").style.backgroundSize = 'contain';
+    console.log(document.getElementById("image-fullscreen").style);
+}
+
+$(window).on('click', () => $('#fullscreenImgModal').modal('hide'))
+$('.image-fullscreen').click(function(e) {
+    e.stopPropagation();
+});
+
+//header navigation - active items
+$(function () {
+    $('.header__nav__list a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+});
+
+// tabs links
+
+// function tabsLink() {
+//     var hash = window.location.hash;
+//     hash && $('#aboutTabs a[href="' + hash + '"]').tab('show');
+
+//     $('#aboutTabs a').click(function (e) {
+//       $(this).tab('show');
+//       var scrollmem = $('body').scrollTop();
+//       window.location.hash = this.hash;
+//       $('html,body').scrollTop(scrollmem);
+//     });
+//   };
+
+//   tabsLink();
+
+// onload page
+function onloadPage() {
+    $(".page__onload").addClass("active");
+}
+window.onload = onloadPage;
+
+// check when video finished
+
+// create youtube player
+var player;
+function onYouTubePlayerAPIReady() {
+    player = new YT.Player('player', {
+        videoId: 'fPasjUl-Vg4',
+        events: {
+            //'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+// autoplay video
+// function onPlayerReady(event) {
+//     event.target.playVideo();
+// }
+
+// when video ends
+function onPlayerStateChange(event) {
+    if (event.data === 0) {
+        $(".course__intro__video__container-hide").addClass("active");
+        $(".course__quiz__quest-hide").addClass("active");
+    }
+}
+
+
+//custom select
+$(".custom-select").each(function () {
+    var classes = $(this).attr("class"),
+        id = $(this).attr("id"),
+        name = $(this).attr("name");
+    var template = '<div class="' + classes + '">';
+    template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+    template += '<div class="custom-options">';
+    $(this).find("option").each(function () {
+        template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+    });
+    template += '</div></div>';
+
+    $(this).wrap('<div class="custom-select-wrapper"></div>');
+    $(this).hide();
+    $(this).after(template);
+});
+$('.form-register .custom-select-trigger').each(function () {
+    $(this).addClass("selected");
+    $(this).text($(this).parents(".custom-select").children(".custom-options").children(".custom-option:first-child").text());
+});
+$(".custom-option:first-of-type").hover(function () {
+    $(this).parents(".custom-options").addClass("option-hover");
+}, function () {
+    $(this).parents(".custom-options").removeClass("option-hover");
+});
+$(".custom-select-trigger").on("click", function () {
+    $('html').one('click', function () {
+        $(".custom-select").removeClass("opened");
+    });
+    $(this).parents(".custom-select").toggleClass("opened");
+    event.stopPropagation();
+});
+$(".custom-option").on("click", function () {
+    $('#txtData').hide();
+    $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+    $('#sort_select').val($(this).data("value")).change();
+    $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+    $(this).addClass("selection");
+    $(this).parents(".custom-select").removeClass("opened");
+    $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+    $(this).parents(".custom-select").find(".custom-select-trigger").addClass("selected");
+});
+$(".custom-option.select_other").on("click", function () {
+    $('#txtData').show();
+});
+
+// dropdown
+
+const dropdownToggler = () => {
+    let toggler = document.querySelectorAll('.dropdown--toggler')
+    toggler.forEach((item) => {
+        item.addEventListener('click', () => {
+            let dropdowns = document.querySelectorAll('.dropdown')
+            item.parentElement.classList.toggle('open')
+            dropdowns.forEach((elem) => {
+                if (
+                    item.parentElement.getAttribute('id') ===
+                    elem.getAttribute('data-for')
+                ) {
+                    elem.classList.toggle('open')
+                }
+            })
+        })
+    })
+}
+dropdownToggler()
+
+const selectDropdown = () => {
+    let dropdownItems = document.querySelectorAll('.dropdown__item')
+    dropdownItems.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            let items = e.target.parentElement.children
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].classList.contains('dropdown__item--active')) {
+                    items[i].classList.remove('dropdown__item--active')
+                }
+            }
+            let dropdownElems = document.querySelectorAll('.dropdown__elem')
+            dropdownElems.forEach((elem) => {
+                if (
+                    elem.getAttribute('id') ===
+                    item.parentElement.parentElement.getAttribute('data-for')
+                ) {
+                    e.target.classList.add('dropdown__item--active')
+                    let selectedInfo = elem.children[0].children[0]
+                    selectedInfo.innerHTML = e.target.innerHTML
+                    selectedInfo.setAttribute('value', e.target.innerHTML)
+                    $(selectedInfo).addClass('active');
+                    elem.classList.remove('open')
+                    e.target.parentElement.parentElement.classList.remove('open')
+                }
+            })
+        })
+    })
+}
+selectDropdown()
+
+$(window).click(function() {
+    $('.language__desktop').removeClass('open')  
+    $('.language__desktop .dropdown').removeClass('open')  
+    $('#language__mobile').removeClass('open')  
+    $('#language__mobile .dropdown').removeClass('open')  
+});
+$('.language__desktop').click(function(e) {
+    e.stopPropagation();
+});
+$('#language__mobile').click(function(e) {
+    e.stopPropagation();
+});
+
+// // password show function
+// const togglePassword = document.querySelector('#togglePassword');
+// const password = document.querySelector('#password');
+
+// togglePassword.addEventListener('click', function (e) {
+//     // toggle the type attribute
+//     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+//     password.setAttribute('type', type);
+//     // toggle the eye slash icon
+//     // this.classList.toggle('fa-eye-slash');
+// });
+
+// // bootstrap forms validation
+// // Example starter JavaScript for disabling form submissions if there are invalid fields
+// (function () {
+//     'use strict'
+//     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//     var forms = document.querySelectorAll('.needs-validation')
+
+//     // Loop over them and prevent submission
+//     Array.prototype.slice.call(forms)
+//         .forEach(function (form) {
+//             form.addEventListener('submit', function (event) {
+//                 if (!form.checkValidity()) {
+//                     event.preventDefault()
+//                     event.stopPropagation()
+//                 }
+
+//                 form.classList.add('was-validated'),
+//                     $('.form__label').addClass('error'),
+//                     $('.form__error__message').addClass('active')
+//             }, false)
+//         })
+// })()
 
 
