@@ -138,6 +138,17 @@ function getAnswersMarkup(){
 
 
 $( function() {
+    var answers = questions.sort(function() {return 0.5 - Math.random()})
+
+    var randomArray = answers.map(array => {
+        let an = array.answers.sort(function() {return 0.5 - Math.random()})
+
+        return {...array, answers: an}
+    })
+
+    questions = randomArray
+
+    
     const questionsMark = getQuestionsMarkup()
     const answersMak = getAnswersMarkup()
 
