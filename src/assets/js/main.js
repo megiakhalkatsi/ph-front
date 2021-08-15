@@ -318,5 +318,3 @@ $('#language__mobile').click(function(e) {
 //             }, false)
 //         })
 // })()
-
-

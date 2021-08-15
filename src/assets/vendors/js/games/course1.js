@@ -1,5 +1,6 @@
 
 
+
 var questions = [
     {
         id: 1,
@@ -11,6 +12,16 @@ var questions = [
                 id: 1,
                 text: 'ნებადართული უნდა იყოს234',
                 isCorrect: true
+            },
+            {
+                id: 2,
+                text: 'ნებადართული უნდა იყოს234',
+                isCorrect: false
+            },
+            {
+                id: 3,
+                text: 'ნებადართული უნდა იყოს234',
+                isCorrect: false
             },
         ]
     },
@@ -90,12 +101,6 @@ var questions = [
     },
 ]
 
-color = [
-    "blue",
-    "yellow",
-    "purple",
-    "pink",
-]
 
 var corAnswers = 0
 var failAnswers = 0
@@ -119,8 +124,8 @@ function getQuestionsMarkup(){
 
 function getAnswersMarkup(){
     const questionMarkup = questions.map((q, i) => (
-        q.answers.map((a, ind) => (
-            `<div class="game__quiz__answ ${color[ind]}" data-id=${a.id} data-correct=${a.isCorrect}>
+        q.answers.map((a) => (
+            `<div class="game__quiz__answ" data-id=${a.id} data-correct=${a.isCorrect}>
                   <div class="game__checkbox"></div>
                   <span class="text">${a.text}</span>
               </div>`
@@ -129,17 +134,7 @@ function getAnswersMarkup(){
 
     return questionMarkup
 }
-  
-function getCorrectAnsweersMarkup(index){
-    if(index !== 0) {
-        if(index > 1) {
-            $('#ProgressLine').removeClass(`progress-${(index - 1) * 33}`)
-        }
-      $('#ProgressLine').addClass(`progress-${index * 33}`)
-    }
 
-    $('#ProgressText').html(`კითხვა <span class="purple">${index}</span> / ${questions.length} დან`)
-}
 
 
 $( function() {
@@ -208,7 +203,6 @@ $( function() {
 
 $('#checkQuestion').click(function(e) {
         attampt++
-        getCorrectAnsweersMarkup(attampt)
         $('#answersParent').removeAttr('style')
         $('.game__quiz__quest-div').removeAttr('style');
         $('#prevStep').removeAttr('style');
@@ -241,10 +235,8 @@ $('#checkQuestion').click(function(e) {
         if(count === correctAnswers.length) {
             corAnswers++
     
-            $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif') 
         } else {
             failAnswers++
-            $('#DogImage').attr('src', '../assets/img/illustrations/incorrect-image.gif')
         }
 
         if(attampt === 3) {
@@ -258,9 +250,10 @@ $('#checkQuestion').click(function(e) {
 
 $( "#completed" ).click(function() {
     document.querySelector('.game__result__container').classList.add('active') 
-            document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
-            document.querySelector('.game__result__container').setAttribute('data-isOpen', true);
+    document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
+    document.querySelector('.game__result__container').setAttribute('data-isOpen', true);
 });
+
 
 $( "#nextStep" ).click(function() {
     index++
@@ -413,7 +406,6 @@ $( "#gameReset" ).click(function() {
     selectedAnswer = []
 
     
-    getCorrectAnsweersMarkup(attampt)
 
     $('#questionParent').append(questionsMark[index])
     $('.game__quiz__quest-modal-text').text(questions[index].desc)
