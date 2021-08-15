@@ -1,5 +1,7 @@
 
 
+
+
 var questions = [
     {
         id: 1,
@@ -14,17 +16,12 @@ var questions = [
             },
             {
                 id: 2,
-                text: 'ნებისმიერ შემთხვევაში უნდა იყოს აკრძალული',
-                isCorrect: true
-            },
-            {
-                id: 3,
-                text: 'მარტო სპეციალური ლიცენზიის მქონეს მივცემდი ფუნქციონირების საშუალებას',
+                text: 'ნებადართული უნდა იყოს234',
                 isCorrect: false
             },
             {
-                id: 4,
-                text: 'მარტო ლატარია და ტოტალიზატორი შეიძლება ონლაინ, კაზინო - არა',
+                id: 3,
+                text: 'ნებადართული უნდა იყოს234',
                 isCorrect: false
             },
         ]
@@ -45,23 +42,13 @@ var questions = [
                 text: 'ნებისმიერ შემთხვევაში უნდა იყოს აკრძალული',
                 isCorrect: true
             },
-            {
-                id: 3,
-                text: 'მარტო სპეციალური ლიცენზიის მქონეს მივცემდი ფუნქციონირების საშუალებას',
-                isCorrect: false
-            },
-            {
-                id: 4,
-                text: 'მარტო ლატარია და ტოტალიზატორი შეიძლება ონლაინ, კაზინო - არა',
-                isCorrect: true
-            },
         ]
     },
     {
         id: 3,
         question: "რას ფიქრობთ ონლაინ აზარტულ თამაშებზე?333333",
         isMultiAnswer: true,
-        desc: "",
+        desc: "234234234",
         answers: [
             {
                 id: 1,
@@ -87,7 +74,7 @@ var questions = [
     },
     {
         id: 4,
-        question: "რას ფიქრობთ ონლაინ აზარტულ თამაშებზე?333333",
+        question: "რას ფიქრობთ ონლაინ აზარტულ თამაშებზე?4444444444444",
         isMultiAnswer: true,
         desc: "",
         answers: [
@@ -115,12 +102,6 @@ var questions = [
     },
 ]
 
-color = [
-    "blue",
-    "yellow",
-    "purple",
-    "pink",
-]
 
 var corAnswers = 0
 var failAnswers = 0
@@ -136,61 +117,58 @@ var selectedAnswer = []
 
 function getQuestionsMarkup(){
     const questionMarkup = questions.map((q, i) => (
-      `<span class="text">${questions[i].question}</span>
-      <div style="display: none;" class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>`
+      `<div class="game__quiz__quest"><span class="text">${questions[i].question}</span>
+      <div style="display: none;" class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div></div>`
     ))
     return questionMarkup
 }
 
 function getAnswersMarkup(){
     const questionMarkup = questions.map((q, i) => (
-        q.answers.map((a, ind) => (
-            `<div class="game__quiz__answ ${color[ind]}" data-id=${a.id} data-correct=${a.isCorrect}>
+        q.answers.map((a) => (
+            `<div class="game__quiz__answ__cont course__quiz__answ__cont"><div class="game__quiz__answ" data-id=${a.id} data-correct=${a.isCorrect}>
                   <div class="game__checkbox"></div>
                   <span class="text">${a.text}</span>
-              </div>`
+              </div></div>`
           ))
     ))
 
     return questionMarkup
 }
-  
-function getCorrectAnsweersMarkup(index){
-    if(index !== 0) {
-        if(index > 1) {
-            $('#ProgressLine').removeClass(`progress-${(index - 1) * 33}`)
-        }
-      $('#ProgressLine').addClass(`progress-${index * 33}`)
-    }
 
-    $('#ProgressText').html(`კითხვა <span class="purple">${index}</span> / ${questions.length} დან`)
-}
 
 
 $( function() {
+    var answers = questions.sort(function() {return 0.5 - Math.random()})
+
+    var randomArray = answers.map(array => {
+        let an = array.answers.sort(function() {return 0.5 - Math.random()})
+
+        return {...array, answers: an}
+    })
+
+    questions = randomArray
+
+    
     const questionsMark = getQuestionsMarkup()
     const answersMak = getAnswersMarkup()
 
-    $('#questionParent').append(questionsMark[index])
-    $('.game__quiz__quest-modal-text').text(questions[index].desc)
-
     
-    answersMak.map((w, i) => {
-        $('#answersParent').append('<div class="cont"></div>')
+    
+    let x = questionsMark.map((w, i) => {
+        let div = document.createElement('div')
+        div.classList.add('course__quiz__container')
+        div.setAttribute('data-desc', randomArray[i].desc)
 
-        w.map(t => {
-            let x = new DOMParser().parseFromString(t, 'text/html');
-            $('.cont')[i].append(x.body.firstChild)
-        })
+        $(div).append(questionsMark[i])
+        $(div).append(answersMak[i])
+
+        return div
     })
 
-    $('.cont').attr('style', 'display: none')
-
-    let c = document.querySelectorAll('.cont')
-    
-    c[index].setAttribute('style', 'display: block')
-    c[index].classList.add('active')
-
+    x.map(w => (
+        $('#mainDiv').append(w)
+    ))    
 });
 
   
@@ -207,9 +185,10 @@ $( function() {
         }
     })
 
-    $('.game__quiz__answ').click(function(e) {
 
-        if(document.querySelector('.cont.active').getAttribute('isSelected') != "true") {
+    $('.game__quiz__answ').click(function(e) {
+        if(!e.target.parentElement.parentElement.getAttribute('isselected')) {
+
             if(e.target.classList.contains('checked')) {
                 $(this).removeClass('checked')
                 e.target.removeAttribute('data-answer')
@@ -225,67 +204,97 @@ $( function() {
                     e.target.setAttribute('data-answer', false)
                 }
             }
+
+            if(e.target.parentElement.parentElement.querySelectorAll('.game__quiz__answ.checked').length > 0) {
+                e.target.parentElement.parentElement.setAttribute('isChecked', true)
+            } else {
+                e.target.parentElement.parentElement.setAttribute('isChecked', false)
+
+            }
         }
+
     })
 });
 
 
 
 $('#checkQuestion').click(function(e) {
-        attampt++
-        getCorrectAnsweersMarkup(attampt)
-        $('#answersParent').removeAttr('style')
-        $('.game__quiz__quest-div').removeAttr('style');
-        $('#prevStep').removeAttr('style');
-        $('#nextStep').removeAttr('style');
-        $('#checkQuestion').attr('style', "display: none");
-        $('.game__quiz__quest-modal-text').text(questions[index].desc)
+    let c = 0
 
-        var count = 0;
-
-    
-        $('.cont.active .game__quiz__answ').each(function( index ) {
-            if($(this).attr('data-correct') === "true" && $(this).attr('data-correct') == $(this).attr('data-answer')) {
-                $(this).addClass('success')
-                count++
-    
-            } else if($(this).attr('data-correct') === "false" && $(this).attr('data-answer') === "false") {
-                $(this).addClass('error')
-                $(this).addClass('checked')
-                
-            } else if($(this).attr('data-correct') === "true" && !$(this).attr('data-answer')) {
-                $(this).addClass('success-border')
-            } else {
-                $(this).addClass('hidden')
-            }
-        });
-    
-        $('.cont.active').attr('isSelected', 'true')
-
-
-        if(count === correctAnswers.length) {
-            corAnswers++
-    
-            $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif') 
-        } else {
-            failAnswers++
-            $('#DogImage').attr('src', '../assets/img/illustrations/incorrect-image.gif')
+    $('.course__quiz__container').each(function( index ) {
+        if($(this).attr('ischecked')) {
+            c++
         }
+    });
 
-        if(attampt === 3) {
-            document.querySelector('.game__result__container').classList.add('active') 
-            document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
-            document.querySelector('.game__result__container').setAttribute('data-isOpen', true);
-        }
+    if(c === questions.length) {
+        
+                attampt++
+                $('#answersParent').removeAttr('style')
+                $('#prevStep').removeAttr('style');
+                $('#nextStep').removeAttr('style');
+                $('#checkQuestion').attr('style', "display: none");
+        
+        
+                var count = 0;
+        
+                $('#mainDiv .game__quiz__quest-div').each(function( index ) {
+                    if($(this).parent().parent().attr('data-desc')) {
+                        $(this).removeAttr('style')
+                    }
+                });
+            
+                $('.game__quiz__answ').each(function( index ) {
+                    if($(this).attr('data-correct') === "true" && $(this).attr('data-correct') == $(this).attr('data-answer')) {
+                        $(this).addClass('success')
+                        count++
+            
+                    } else if($(this).attr('data-correct') === "false" && $(this).attr('data-answer') === "false") {
+                        $(this).addClass('error')
+                        $(this).addClass('checked')
+                        
+                    } else if($(this).attr('data-correct') === "true" && !$(this).attr('data-answer')) {
+                        $(this).addClass('success-border')
+                    } else {
+                        $(this).addClass('hidden')
+                    }
+                });
+            
+                $('.course__quiz__container').attr('isselected', 'true')
+        
+                if(count === correctAnswers.length) {
+                    corAnswers++
+            
+                } else {
+                    failAnswers++
+                }
+        
+                if(attampt === 3) {
+                    document.querySelector('.game__result__container').classList.add('active') 
+                    document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
+                    document.querySelector('.game__result__container').setAttribute('data-isOpen', true);
+                }
+
+    } else {
+        $('#notificationModal').modal('show');
+    }
+
 })
+
+
+$(document).on( 'click', '.game__quiz__quest-div', function(){
+    $('.game__quiz__quest-modal-text').text($(this).parent().parent().attr('data-desc'))
+});
+
 
       
 
 $( "#completed" ).click(function() {
     document.querySelector('.game__result__container').classList.add('active') 
-            document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
-            document.querySelector('.game__result__container').setAttribute('data-isOpen', true);
+    document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
+    document.querySelector('.game__result__container').setAttribute('data-isOpen', true);
 });
+
 
 $( "#nextStep" ).click(function() {
     index++
@@ -324,7 +333,7 @@ $( "#nextStep" ).click(function() {
     c[index].setAttribute('style', 'display: block')
     c[index].classList.add('active')
 
-    if(document.querySelector('.cont.active').getAttribute('isSelected') === "true") {
+    if(document.querySelector('.cont.active').attr('isSelected') === "true") {
         $('#prevStep').removeAttr('style');
         $('#nextStep').removeAttr('style');
         $('#checkQuestion').attr('style', "display: none");
@@ -438,7 +447,6 @@ $( "#gameReset" ).click(function() {
     selectedAnswer = []
 
     
-    getCorrectAnsweersMarkup(attampt)
 
     $('#questionParent').append(questionsMark[index])
     $('.game__quiz__quest-modal-text').text(questions[index].desc)
