@@ -318,7 +318,4 @@ $('#language__mobile').click(function(e) {
 //             }, false)
 //         })
 // })()
-
-
-
 //# sourceMappingURL=main.js.map

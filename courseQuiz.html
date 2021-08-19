@@ -592,6 +592,38 @@
           </div>
         </div>
       </header>      <div class="page__content dark">
+<style>
+  .game__quiz__answ.error {
+    background-color: #ff97bb !important;
+  }
+  .game__quiz__answ.success {
+    background-color: #80c78b !important;
+  }
+  .game__quiz__answ.hidden {
+    opacity: .2;
+  }
+
+  .game__quiz__answ {
+    position: relative;
+  }
+  .game__quiz__answ::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .game__quiz__answ.success-border {
+    background-color: rgba(160,141,255,.2);
+  }
+  .game__quiz__answ.success-border {
+    border: 3px solid #80c78b;
+  }
+</style>
+
+
 <div class="container">
   <section class="page__nav">
     <ul class="page__nav__list">
@@ -643,99 +675,11 @@
           <div class="col-12 col-md-10 m-auto">
             <h2 class="course__quiz__title">სრული ტესტი</h2>
             <p class="course__quiz__description">სერთიფიკატის ასაღებად გაიარეთ ტესტი</p>
-            <div class="course__quiz__container">
-              <div class="game__quiz__quest">
-                <span class="text">კითხვა რომელიც იწყება აქედან და გრძელდება ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი
-                  წაითხვა კი შეუძლებელია ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია ?</span>
-                <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
-              </div>
-              <div class="game__quiz__answ__cont course__quiz__answ__cont">
-                <div class="game__quiz__answ">
-                  <div class="game__checkbox"></div>
-                  <span class="text">ცხოვრების ჯანსაღი წესი</span>
-                </div>
-                <div class="game__quiz__answ error">
-                  <div class="game__checkbox"></div>
-                  <span class="text">მოკლე პასუხი თუ იყო საჭირო</span>
-                </div>
-                <div class="game__quiz__answ success">
-                  <div class="game__checkbox"></div>
-                  <span class="text"> შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
-                </div>
-                <div class="game__quiz__answ success-border">
-                  <div class="game__checkbox"></div>
-                  <span class="text">ცხოვრების ჯანსაღი წესი არა ისა კიდე</span>
-                </div>
-              </div>
-            </div>
-            <div class="course__quiz__container">
-              <div class="game__quiz__quest">
-                <span class="text">კითხვა რომელიც იწყება აქედან და გრძელდება ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი
-                  წაითხვა კი შეუძლებელია ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია ?</span>
-                <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
-              </div>
-              <div class="game__quiz__answ__cont course__quiz__answ__cont">
-                <div class="game__quiz__answ">
-                  <div class="game__checkbox"></div>
-                  <span class="text">ცხოვრების ჯანსაღი წესი</span>
-                </div>
-                <div class="game__quiz__answ error">
-                  <div class="game__checkbox"></div>
-                  <span class="text">მოკლე პასუხი თუ იყო საჭირო</span>
-                </div>
-                <div class="game__quiz__answ success">
-                  <div class="game__checkbox"></div>
-                  <span class="text"> შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
-                </div>
-                <div class="game__quiz__answ success-border">
-                  <div class="game__checkbox"></div>
-                  <span class="text">ცხოვრების ჯანსაღი წესი არა ისა კიდე</span>
-                </div>
-              </div>
-            </div>
-            <div class="course__quiz__container">
-              <div class="game__quiz__quest">
-                <span class="text">კითხვა რომელიც იწყება აქედან და გრძელდება ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი
-                  წაითხვა კი შეუძლებელია ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია ?</span>
-                <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
-              </div>
-              <div class="game__box__body purple">
-                <div class="editable game__box__list__container" contenteditable="true">
-                  <ul class="game__box__list"> </ul>
-                </div>
-                <div class="game__box__btn">
-                  <span class="plus">+</span>
-                  <span>ჩაწერა</span>
-                </div>
-              </div>
-            </div>
-            <div class="course__quiz__container">
-              <div class="game__quiz__quest">
-                <span class="text">კითხვა რომელიც იწყება აქედან და გრძელდება ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი
-                  წაითხვა კი შეუძლებელია ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია ?</span>
-                <div class="game__quiz__quest-div" data-bs-toggle="modal" data-bs-target="#gameQuizQuest"> ? </div>
-              </div>
-              <div class="game__quiz__answ__cont course__quiz__answ__cont">
-                <div class="game__quiz__answ">
-                  <div class="game__checkbox"></div>
-                  <span class="text">ცხოვრების ჯანსაღი წესი</span>
-                </div>
-                <div class="game__quiz__answ error">
-                  <div class="game__checkbox"></div>
-                  <span class="text">მოკლე პასუხი თუ იყო საჭირო</span>
-                </div>
-                <div class="game__quiz__answ success">
-                  <div class="game__checkbox"></div>
-                  <span class="text"> შედარებით გრძელი პასუხი თუ იყო საჭირო</span>
-                </div>
-                <div class="game__quiz__answ success-border">
-                  <div class="game__checkbox"></div>
-                  <span class="text">ცხოვრების ჯანსაღი წესი არა ისა კიდე</span>
-                </div>
-              </div>
-            </div>
+            <div id="mainDiv"></div>
+
             <div class="game__button__container justify-content-md-between mt-5">
               <button class="about__page__btn game__button mr bt-gray">ახლიდან დაწყება</button>
+              <button id="checkQuestion" class="about__page__btn game__button bt-blue">შემოწმება</button>
               <button class="about__page__btn game__button bt-blue" data-bs-toggle="modal" data-bs-target="#fillQuiz">დასრულება</button>
             </div>
           </div>
@@ -745,7 +689,27 @@
   </div>
 </section>
 
-<script src="assets/vendors/js/jquery.min.js"></script>
+
+
+<div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
+    <div class="modal-content radius-16">
+      <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+        <svg class="icon">
+          <use xlink:href="#cancel-icon"></use>
+        </svg>
+      </button>
+      <div class="modal-body notificationModal-body">
+        <p class="section__main__text mb-0">
+          გთხოვთ უპასუხოთ ყველა შეკითხვას
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script src="assets/vendors/js/jquery.min.js"></script>
 <script>
 
   $('.game__quiz__answ').click(function () {
@@ -778,7 +742,7 @@
     }
   });
 
-</script>
+</script> -->
 </div>
       <footer class="footer">
           <div class="container">
@@ -880,6 +844,7 @@
 
   </div>
   <script src="assets/vendors/js/jquery.min.js"></script>
+  <script src="../assets/vendors/js/jquery-ui.min.js"></script>
   <script src="assets/vendors/js/bootstrap.min.js"></script>
   <script src="assets/vendors/js/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
