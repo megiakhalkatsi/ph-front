@@ -467,16 +467,16 @@ $default-size: 55px;
       }
       @media #{$breakpoint-xxl} {
         position: absolute;
-        height: 327px;
+        height: 307px;
         bottom: 100px;
         left: -50px;
       }
       @media only screen and (min-width: 1800px) {
-        height: 345px;
+        height: 322px;
         left: -20px;
       }
       @media only screen and (min-width: 1900px) {
-        height: 400px;
+        height: 388px;
         left: -40px;
       }
     }
