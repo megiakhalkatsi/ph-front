@@ -418,6 +418,17 @@ $default-size: 55px;
             bottom: -90px;
           }
         }
+        &.up{
+          @media only screen and (min-width: 1200px) {
+            bottom: 180px;
+          }
+          @media only screen and (min-width: 1300px) {
+            bottom: 160px;
+          }
+          @media only screen and (min-width: 1900px) {
+            bottom: 150px;
+          }
+        }
       }
       &.bt-120 {
         // bottom: -200px;
@@ -1567,16 +1578,18 @@ $default-size: 55px;
     &__header {
       display: flex;
       flex-direction: column;
-      margin-bottom: 39px;
+      // margin-bottom: 39px;
+      margin-bottom: 10px;
+      margin-top: -70px;
       @media #{$breakpoint-md} {
-        margin-bottom: 75px;
+        // margin-bottom: 75px;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
       }
-      @media #{$breakpoint-xl-ex} {
-        margin-bottom: 89px;
-      }
+      // @media #{$breakpoint-xl-ex} {
+      //   margin-bottom: 89px;
+      // }
       &__title {
         font-family: $firagoBold;
         font-size: 21px;
