@@ -418,6 +418,17 @@ $default-size: 55px;
             bottom: -90px;
           }
         }
+        &.up{
+          @media only screen and (min-width: 1200px) {
+            bottom: 180px;
+          }
+          @media only screen and (min-width: 1300px) {
+            bottom: 160px;
+          }
+          @media only screen and (min-width: 1900px) {
+            bottom: 150px;
+          }
+        }
       }
       &.bt-120 {
         // bottom: -200px;
@@ -456,16 +467,16 @@ $default-size: 55px;
       }
       @media #{$breakpoint-xxl} {
         position: absolute;
-        height: 327px;
+        height: 307px;
         bottom: 100px;
         left: -50px;
       }
       @media only screen and (min-width: 1800px) {
-        height: 345px;
+        height: 322px;
         left: -20px;
       }
       @media only screen and (min-width: 1900px) {
-        height: 400px;
+        height: 388px;
         left: -40px;
       }
     }
@@ -1567,16 +1578,18 @@ $default-size: 55px;
     &__header {
       display: flex;
       flex-direction: column;
-      margin-bottom: 39px;
+      // margin-bottom: 39px;
+      margin-bottom: 10px;
+      margin-top: -70px;
       @media #{$breakpoint-md} {
-        margin-bottom: 75px;
+        // margin-bottom: 75px;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
       }
-      @media #{$breakpoint-xl-ex} {
-        margin-bottom: 89px;
-      }
+      // @media #{$breakpoint-xl-ex} {
+      //   margin-bottom: 89px;
+      // }
       &__title {
         font-family: $firagoBold;
         font-size: 21px;
@@ -2556,6 +2569,183 @@ $default-size: 55px;
     fill: $component-color2;
     @media #{$breakpoint-xxl} {
       width: 46px;
+    }
+    &::after {
+      content: none;
+    }
+    &-prev {
+      transform: rotate(180deg) translate(-50%);
+      bottom: 15px;
+      top: auto;
+      left: 30%;
+      outline: none;
+      @media #{$breakpoint-md} {
+        bottom: auto;
+        top: 50%;
+        left: 27%;
+      }
+      @media #{$breakpoint-lg} {
+        left: 30%;
+      }
+    }
+    &-next {
+      transform: translateX(-50%);
+      bottom: 15px;
+      top: auto;
+      right: 30%;
+      outline: none;
+      @media #{$breakpoint-md} {
+        bottom: auto;
+        top: 50%;
+        right: 27%;
+      }
+      @media #{$breakpoint-lg} {
+        right: 30%;
+      }
+    }
+  }
+}
+
+.slick {
+  &-container {
+    &.drop-slick-container{
+      position: relative;
+      width: 98%;
+      margin: auto;
+      @media #{$breakpoint-md} {
+        width: 100%;
+      }
+      @media #{$breakpoint-lg} {
+        width: 918px;
+      }
+      @media #{$breakpoint-xl} {
+        width: 1158px;
+      }
+      @media #{$breakpoint-xl-ex} {
+        width: 1158px;
+      }
+      @media #{$breakpoint-xxl} {
+        width: 1638px;
+      }
+      .slick-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 200ms linear;
+        position: relative;
+        margin-bottom: 62px;
+        @media #{$breakpoint-md} {
+          transform: scale(0.8);
+          opacity: 0.2;
+        }
+        &.slick-active.slick-center {
+          transform: scale(1);
+          opacity: 1;
+        }
+        @media #{$breakpoint-md} {
+          height: 420px;
+          margin-bottom: 0;
+        }
+        @media #{$breakpoint-lg} {
+          height: 458px;
+        }
+        @media #{$breakpoint-xl} {
+          height: 484px;
+        }
+        @media #{$breakpoint-xxl} {
+          height: 660px;
+        }
+        &-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        &-drop {
+          width: 60px;
+          height: 93px;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          backdrop-filter: blur(15px) brightness(150%);
+          border: 2px solid $white;
+          @media only screen and (min-width: 400px) {
+            width: 93px;
+            height: 130px;
+          }
+          @media #{$breakpoint-sm} {
+            width: 135px;
+            height: 172px;
+          }
+          @media #{$breakpoint-md} {
+            width: 66px;
+            height: 103px;
+          }
+          @media #{$breakpoint-lg} {
+            width: 73px;
+            height: 112px;
+          }
+          @media #{$breakpoint-xl} {
+            width: 76px;
+            height: 119px;
+          }
+          @media #{$breakpoint-xxl} {
+            width: 104px;
+            height: 163px;
+          }
+          &.success {
+            border: 5px solid $component-color9;
+            &::after {
+              content: url("../img/icons/check.svg");
+              background-color: $component-color9;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -18px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          &.error {
+            border: 5px solid $error-red;
+            &::after {
+              content: url("../img/icons/close.svg");
+              background-color: $error-red;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -18px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          .age__categories__item {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  &-button {
+    z-index: 10;
+    position: absolute;
+    fill: $component-color2;
+    cursor: pointer;
+    .icon{
+      width: 26px;
+      height: 26px;
+      @media #{$breakpoint-xxl} {
+        width: 46px;
+        height: 46px;
+      }
     }
     &::after {
       content: none;

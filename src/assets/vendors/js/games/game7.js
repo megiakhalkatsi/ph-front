@@ -16,19 +16,19 @@ $( function() {
 
           console.log(event.target)
 
-            if(!event.target.querySelector('.swiper-slide-drop img')) {
+            if(!event.target.querySelector('.slick-slide-drop img')) {
               attamp++
       
               var new_signature = $(ui.helper).clone();
-              $(this).children('.swiper-slide-drop').append(new_signature);
+              $(this).children('.slick-slide-drop').append(new_signature);
               $(new_signature).removeAttr('style')
       
               if(ui.draggable[0].getAttribute('data-answer') === event.target.getAttribute('data-answer')) {
                   correct++
-                  event.target.querySelector('.swiper-slide-drop').classList.add('success')
+                  event.target.querySelector('.slick-slide-drop').classList.add('success')
               } else {
                   incorrect++
-                  event.target.querySelector('.swiper-slide-drop').classList.add('error')
+                  event.target.querySelector('.slick-slide-drop').classList.add('error')
               }
           }
 
@@ -44,9 +44,9 @@ $( function() {
 
 
 $( "#resetButton" ).click(function() {
-    $('.DroppableItem .swiper-slide-drop').removeClass('success')
-    $('.DroppableItem .swiper-slide-drop').removeClass('error')
-    $('.DroppableItem .swiper-slide-drop').html('')
+    $('.DroppableItem .slick-slide-drop').removeClass('success')
+    $('.DroppableItem .slick-slide-drop').removeClass('error')
+    $('.DroppableItem .slick-slide-drop').html('')
     $('#completBtn').attr('style', 'display: none')
     $('#finishButton').attr('style', 'display: block')
 
@@ -78,9 +78,9 @@ $( "#gameReset" ).click(function() {
     document.querySelector('.failModal').setAttribute('style', 'display: none')
     document.querySelector('.successModal').setAttribute('style', 'display: none')
     document.querySelector('.game__result__container').classList.remove('active')
-    $('.DroppableItem .swiper-slide-drop').removeClass('success')
-    $('.DroppableItem .swiper-slide-drop').removeClass('error')
-    $('.DroppableItem .swiper-slide-drop').html('')
+    $('.DroppableItem .slick-slide-drop').removeClass('success')
+    $('.DroppableItem .slick-slide-drop').removeClass('error')
+    $('.DroppableItem .slick-slide-drop').html('')
     $('#completBtn').attr('style', 'display: none')
     $('#finishButton').attr('style', 'display: block')
 
