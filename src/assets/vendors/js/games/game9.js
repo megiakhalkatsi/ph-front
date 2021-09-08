@@ -1,6 +1,7 @@
 
 
 
+
 let correct = 0;
 
 
@@ -43,9 +44,6 @@ $('.iDontWant3').click(() => {
     correct++
     $('.game__modal-body').attr('style', 'display: none')
     $('.rightDecision3').attr('style', 'display: block')
-
-    // document.querySelector('.game__result__container').classList.add('active') 
-    //   document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
 })
 
 $('.iDontWant33333').click(() => {
@@ -121,6 +119,8 @@ $('.completGame').click(() => {
     document.querySelector('.game__result__container').classList.remove('active')
     document.querySelector('.rightDecision3').setAttribute('style', 'display: none')
     document.querySelector('.game__modal-body1').setAttribute('style', 'display: block')
+
+    window.location.reload();
 })
 
 $('.completGame2').click(() => {
@@ -129,31 +129,31 @@ $('.completGame2').click(() => {
       console.log(correct)
 })
 
-
-
 $( "#successModalBtn" ).click(function() {
-    $('.mainBody').attr('style', 'display: none')
+    $('.mainBody').removeAttr('style')
     document.querySelector('.game__result__container').setAttribute('style', 'display: none')
 
-
     if(correct === 3) {
-        $('.successModal').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
+        $('.successModal').attr('style', 'display: block; position: fixed; top: 0;left: 0;right: 0; bottom: 18px; width: 100%; z-index: 11111;')
         document.querySelector('.successModal #correctAnswers').innerHTML = `${correct}/3 კითხვა`
+        $('.modal-body').attr('style', 'display: none')
+        $('.successModal').attr('style', 'display: block')
     }
     
     if(correct < 3) {
-        $('.failModal').attr('style', 'display: block; position: absolute; top: 0;left: 0;right: 0; z-index: 11111;')
+        $('.failModal').attr('style', 'display: block; position: fixed; top: 0;left: 0;right: 0; bottom: 18px; width: 100%; z-index: 11111;')
         document.querySelector('.failModal #correctAnswers').innerHTML = `${correct}/3 კითხვა`
+        $('.modal-body').attr('style', 'display: none')
+        $('.failModal').attr('style', 'display: block')
     }
   });
-
-
-    
+  
   $( "#gameReset" ).click(function() {
       correct = 0
+      $('.modal-body').attr('style', 'display: none')
       document.querySelector('.failModal').setAttribute('style', 'display: none')
       document.querySelector('.successModal').setAttribute('style', 'display: none')
       document.querySelector('.game__result__container').classList.remove('active')
       document.querySelector('.game__result__container').removeAttribute('style')
-      document.querySelector('.game__modal-body1').setAttribute('style', 'display: block')
+      $('.game__modal-body1').removeAttr('style')
   });
