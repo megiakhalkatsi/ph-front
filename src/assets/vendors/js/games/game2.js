@@ -1,3 +1,5 @@
+
+
 $( function() {
   $('.game__dragAndDrop__container .game__answer__containe').attr('style', 'z-index: 1111')
   $('.game__answer__container').addClass('Z-index')
@@ -5,30 +7,44 @@ $( function() {
 
 
 $( function() {
-  $( ".DraggableItem" ).draggable({ revert: "invalid", helper : "clone", 
+  $( ".DraggableItem" ).draggable({ revert: "invalid", stack: ".DraggableItem", helper : "clone",
   start: function( event, ui ) {
-    $('.definition__content').attr('style', 'display: none;')
-  } })
+
+      if(!event.target.parentElement.classList.contains('game__dragAndDrop__container')) {
+          $(ui.helper).attr('style', 'position: absolute; background: #7fbcf3;')
+      }
+    } })
   $( ".DroppableItem" ).droppable({
+    accept: ".DraggableItem",
     drop: function( event, ui ) {
-        if(event.target.classList.contains('game__table__td')) {
-          var new_signature = $(ui.helper).clone();
-          $(this).append(new_signature);
-          $(new_signature).removeAttr('style')
-          $('.game__table__td .game__text').attr('style', 'color: #fff')
-          $('.game__table__td .game__answer__container').attr('style', 'background: #7fbcf3;')
+      var droppable = $(this);
+      var draggable = ui.draggable;
 
-          let rowIndex = event.target.parentElement.getAttribute('data-row')
-          let DraggableItemRows = JSON.parse(ui.draggable[0].getAttribute('data-row'))
-          let DraggableItemCollumn = JSON.parse(ui.draggable[0].getAttribute('data-collumn'))
-          let parentIndex = event.target.getAttribute('data-index')
+      var drag = $('.DroppableItem').has(ui.draggable).length ? draggable : draggable.clone().draggable({
+          revert: "invalid",
+          stack: ".draggable",
+          helper: 'clone'
+        });
 
-          if(DraggableItemRows.includes(rowIndex) && DraggableItemCollumn == parentIndex) {
-              event.target.lastElementChild.setAttribute('data-correct', true)
-          } else {
-              event.target.lastElementChild.setAttribute('data-correct', false)
-          }
+        drag.appendTo(droppable);
+        draggable.css({
+          float: 'left'
+        });
+
+        $('.game__table__td .game__text').attr('style', 'color: #fff')
+        $('.game__table__td .game__answer__container').attr('style', 'background: #7fbcf3;')
+
+        let rowIndex = event.target.parentElement.getAttribute('data-row')
+        let DraggableItemRows = JSON.parse(ui.draggable[0].getAttribute('data-row'))
+        let DraggableItemCollumn = JSON.parse(ui.draggable[0].getAttribute('data-collumn'))
+        let parentIndex = event.target.getAttribute('data-index')
+
+        if(DraggableItemRows.includes(rowIndex) && DraggableItemCollumn == parentIndex) {
+            event.target.lastElementChild.setAttribute('data-correct', true)
+        } else {
+            event.target.lastElementChild.setAttribute('data-correct', false)
         }
+
     }
   });
 });
@@ -70,8 +86,6 @@ $( "#finishButton" ).click(function() {
                   $(l).addClass('error')
                   incorrect++
               }
-    
-    
               if(index === 16) {
                   $('#DogImage').attr('src', '../assets/img/illustrations/correct-image.gif')
               } else {
