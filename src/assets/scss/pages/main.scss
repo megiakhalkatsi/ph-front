@@ -82,8 +82,12 @@ body {
 .page {
   &__content {
     padding-top: 80px;
+    padding-left: 5px;
+    padding-right: 5px;
     @media #{$breakpoint-md} {
       padding-top: 100px;
+      padding-left: 0;
+      padding-right: 0;
     }
     &.white {
       padding-top: 50px;
@@ -138,7 +142,9 @@ body {
       }
     }
     &__text {
-      text-align: justify;
+      @media #{$breakpoint-md} {
+        text-align: justify;
+      }
       &.padding {
         padding: 31px 0 0;
       }
