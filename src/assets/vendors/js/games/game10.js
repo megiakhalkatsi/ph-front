@@ -5,15 +5,15 @@ var index = 0;
 
 
 $( function() {
-    $('.page__content-col').attr('style', 'display: none;')
-    $('.page__content-col').removeClass('active')
-    $('.page__content-col')[index].setAttribute('style', 'display: block;')
-    $('.page__content-col')[index].classList.add('active')
+    $('.page__content-col2').attr('style', 'display: none;')
+    $('.page__content-col2').removeClass('active')
+    $('.page__content-col2')[index].setAttribute('style', 'display: block;')
+    $('.page__content-col2')[index].classList.add('active')
 });
 
 $(document).ready(function() {
     $('#downloadBtn').click(() => {
-        $.print(".page__content-col.active .game__box__container");
+        $.print(".page__content-col2.active .game__box__container");
   });
 });
 
@@ -24,10 +24,10 @@ $( "#nextStep" ).click(function() {
         $('#nextStep').attr('style', 'display: none')
         $('#completed').attr('style', 'display: block')
     }
-    $('.page__content-col').attr('style', 'display: none;')
-    $('.page__content-col').removeClass('active')
-    $('.page__content-col')[index].setAttribute('style', 'display: block;')
-    $('.page__content-col')[index].classList.add('active')
+    $('.page__content-col2').attr('style', 'display: none;')
+    $('.page__content-col2').removeClass('active')
+    $('.page__content-col2')[index].setAttribute('style', 'display: block;')
+    $('.page__content-col2')[index].classList.add('active')
 
 
 });
@@ -35,9 +35,9 @@ $( "#nextStep" ).click(function() {
   
 $( "#prevStep" ).click(function() {
     index--
-    $('.page__content-col').attr('style', 'display: none;')
-    $('.page__content-col').removeClass('active')
-   $('.page__content-col')[index].setAttribute('style', 'display: block;')
-   $('.page__content-col')[index].classList.add('active')
+    $('.page__content-col2').attr('style', 'display: none;')
+    $('.page__content-col2').removeClass('active')
+   $('.page__content-col2')[index].setAttribute('style', 'display: block;')
+   $('.page__content-col2')[index].classList.add('active')
 
 });
