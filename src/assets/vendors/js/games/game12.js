@@ -32,41 +32,13 @@ var questions = [
     {
         id: 2,
         question: "რას ფიქრობთ ონლაინ აზარტულ თამაშებზე?222222",
-        isMultiAnswer: true,
+        isMultiAnswer: false,
         desc: "ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია",
         answers: [
             {
                 id: 1,
                 text: 'ნებადართული უნდა იყოს',
-                isCorrect: true
-            },
-            {
-                id: 2,
-                text: 'ნებისმიერ შემთხვევაში უნდა იყოს აკრძალული',
-                isCorrect: true
-            },
-            {
-                id: 3,
-                text: 'მარტო სპეციალური ლიცენზიის მქონეს მივცემდი ფუნქციონირების საშუალებას',
                 isCorrect: false
-            },
-            {
-                id: 4,
-                text: 'მარტო ლატარია და სპორტული ფსონი შეიძლება ონლაინ, კაზინო - არა',
-                isCorrect: true
-            },
-        ]
-    },
-    {
-        id: 3,
-        question: "რას ფიქრობთ ონლაინ აზარტულ თამაშებზე?333333",
-        isMultiAnswer: true,
-        desc: "",
-        answers: [
-            {
-                id: 1,
-                text: 'ნებადართული უნდა იყოს23423423',
-                isCorrect: true
             },
             {
                 id: 2,
@@ -81,35 +53,7 @@ var questions = [
             {
                 id: 4,
                 text: 'მარტო ლატარია და სპორტული ფსონი შეიძლება ონლაინ, კაზინო - არა',
-                isCorrect: false
-            },
-        ]
-    },
-    {
-        id: 4,
-        question: "რას ფიქრობთ ონლაინ აზარტულ თამაშებზე?333333",
-        isMultiAnswer: true,
-        desc: "",
-        answers: [
-            {
-                id: 1,
-                text: 'ნებადართული უნდა იყოს23423423',
                 isCorrect: true
-            },
-            {
-                id: 2,
-                text: 'ნებისმიერ შემთხვევაში უნდა იყოს აკრძალული',
-                isCorrect: false
-            },
-            {
-                id: 3,
-                text: 'მარტო სპეციალური ლიცენზიის მქონეს მივცემდი ფუნქციონირების საშუალებას',
-                isCorrect: false
-            },
-            {
-                id: 4,
-                text: 'მარტო ლატარია და სპორტული ფსონი შეიძლება ონლაინ, კაზინო - არა',
-                isCorrect: false
             },
         ]
     },
@@ -145,7 +89,7 @@ function getQuestionsMarkup(){
 function getAnswersMarkup(){
     const questionMarkup = questions.map((q, i) => (
         q.answers.map((a, ind) => (
-            `<div class="game__quiz__answ ${color[ind]}" data-id=${a.id} data-correct=${a.isCorrect}>
+            `<div class="game__quiz__answ ${color[ind]}" isMulti=${q.isMultiAnswer ? "true" : 'false'} data-id=${a.id} data-correct=${a.isCorrect}>
                   <div class="game__checkbox"></div>
                   <span class="text">${a.text}</span>
               </div>`
@@ -208,13 +152,28 @@ $( function() {
     })
 
     $('.game__quiz__answ').click(function(e) {
-
+        
         if(document.querySelector('.cont.active').getAttribute('isSelected') != "true") {
-            if(e.target.classList.contains('checked')) {
-                $(this).removeClass('checked')
-                e.target.removeAttribute('data-answer')
-    
+            if(e.target.getAttribute('ismulti') === "true") {
+                if(e.target.classList.contains('checked')) {
+                    $(this).removeClass('checked')
+                    e.target.removeAttribute('data-answer')
+        
+                } else {
+                    $(this).addClass('checked')
+        
+                    if(e.target.getAttribute('data-correct') === "true") {
+                        correct++
+                        e.target.setAttribute('data-answer', true)
+                    } else {
+                        incorrect++
+                        e.target.setAttribute('data-answer', false)
+                    }
+                }
             } else {
+                console.log('render...')                
+                $('.cont.active .game__quiz__answ').removeClass('checked')
+                $('.cont.active .game__quiz__answ').removeAttr('data-answer')
                 $(this).addClass('checked')
     
                 if(e.target.getAttribute('data-correct') === "true") {

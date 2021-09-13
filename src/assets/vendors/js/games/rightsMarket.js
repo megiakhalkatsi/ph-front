@@ -92,7 +92,7 @@ $( "#finishBtn" ).click(function() {
   $('.svg__image').attr('style', 'display: none')
   $('.mainH2').attr('style', 'display: none')
   $('#append_div ul').append(generateBullets())
-  $('#append_div').attr('style', 'display: block; padding-left: 10%;')
+  $('#append_div').attr('style', 'display: block; padding-left: 25%;')
   $('#finishBtn').attr('style', 'display: none;')
 
 })

@@ -33,10 +33,11 @@ $(".game__box__bulletsList").focus(function () {
     }
   });
   
+  
 
   $(document).ready(function() {
       $('#downloadBtn').click(() => {
-        window.print()
+        $.print(".editable");
     });
 });
 
