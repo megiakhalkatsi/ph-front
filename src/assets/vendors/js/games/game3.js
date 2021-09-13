@@ -212,7 +212,6 @@ $( "#gameReset" ).click(function() {
 
     $( ".DroppableItem" ).droppable({
       drop: function( event, ui ) {
-          console.log('11111111111111')
           if($( this ).attr('data-append') == 'false' && ui.draggable.attr('data-correct') == event.target.getAttribute('data-correct')) {
             correctAnswer++
             parentCorrectNum = correctAnswer;

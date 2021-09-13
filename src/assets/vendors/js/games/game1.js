@@ -212,8 +212,6 @@ $( "#prevStep" ).click(function() {
 $( "#successModalBtn" ).click(function() {
   document.querySelector('.game__result__container').classList.remove('active')
   document.querySelector('.game__result__container').setAttribute('style', 'z-index: 11')
-
-  console.log(window.location)
 });
 
 

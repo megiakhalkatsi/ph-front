@@ -6,7 +6,6 @@ $( ".clickableItem2" ).click(function() {
 
             $( ".clickableItem" )[parseInt($(this).attr('data-clickable')) - 1].setAttribute('style', 'opacity: 1')
             arr.push($(this).attr('data-title'))
-            console.log(arr)
             atampt++
             
         } else if($(this).attr('style') == "opacity: 1") {
@@ -15,7 +14,6 @@ $( ".clickableItem2" ).click(function() {
             arr.push($(this).attr('data-title'))
             let t = arr.filter(w => w !== $(this).attr('data-title'))
             arr = t
-            console.log(arr)
             atampt--
 
         } else {
@@ -47,7 +45,6 @@ function afterClick(element) {
                     $( ".clickableItem2" )[index].setAttribute('style', 'opacity: 1')
                     $(element).attr('style', 'opacity: 1')
                     arr.push(element.attr('data-title'))
-                    console.log(arr)
                     atampt++
                     
                 } else if($( ".clickableItem2" )[index].getAttribute('style') == "opacity: 1") {
@@ -57,7 +54,6 @@ function afterClick(element) {
                     arr.push(element.attr('data-title'))
                     let t = arr.filter(w => w !== element.attr('data-title'))
                     arr = t
-                    console.log(arr)
                     atampt--
     
                 } else {

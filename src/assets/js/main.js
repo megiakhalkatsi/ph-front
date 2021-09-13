@@ -110,7 +110,6 @@ for (var i = 0; i < imgs.length; i++) {
 function imageZoom(ele) {
     document.getElementById("image-fullscreen").style.background = 'black url(' + ele.src + ') no-repeat center center';
     document.getElementById("image-fullscreen").style.backgroundSize = 'contain';
-    console.log(document.getElementById("image-fullscreen").style);
 }
 
 $(window).on('click', () => $('#fullscreenImgModal').modal('hide'))

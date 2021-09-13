@@ -171,7 +171,7 @@ $( function() {
                     }
                 }
             } else {
-                console.log('render...')                
+          
                 $('.cont.active .game__quiz__answ').removeClass('checked')
                 $('.cont.active .game__quiz__answ').removeAttr('data-answer')
                 $(this).addClass('checked')
