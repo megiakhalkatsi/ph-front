@@ -157,8 +157,6 @@ $( function() {
 
     questions = randomArray
 
-    console.log(questions)
-
     const items = getQuestionsMarkup(index)
 
     $('#GameWrapper').append(items)
@@ -195,7 +193,6 @@ $( function() {
                 getCorrectAnsweersMarkup(attampt)
                 
             } else {
-                console.log($(this))
                 $('.mainCont.active .game__quiz__answ').addClass('hidden')
                 $(this).parent().find('h6').attr('data-checked', true)
                 attampt++

@@ -19,7 +19,6 @@ $( function() {
               $(this).children('.slick-slide-drop').append(new_signature);
               $(new_signature).removeAttr('style')
       
-              console.log(event.target)
               if(ui.draggable[0].getAttribute('data-answer') === event.target.querySelector('.slick-slide-drop').getAttribute('data-answer')) {
                   correct++
                   event.target.querySelector('.slick-slide-drop').classList.add('success')

@@ -95,7 +95,6 @@ swiper.on('slideChange', function() {
                 $('.swiper-button-next').attr('aria-disabled', false)
 
                 $('.swiper-button-next').click(function(e) {
-                    console.log('rennder...')
                     window.location.reload()
                 })
             }

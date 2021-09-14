@@ -1,5 +1,5 @@
 $(document).ready(function() {
     $('#downloadBtn').click(() => {
-      window.print()
+      $.print(".page__content-col-md");
   });
 });

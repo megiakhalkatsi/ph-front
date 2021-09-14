@@ -77,7 +77,6 @@ $('.iDontWant2').click(() => {
 $('.continue1').click(() => {
     $('.game__modal-body').attr('style', 'display: none')
     $('.game__modal-body2').attr('style', 'display: block')
-    console.log(correct)
 })
 
 
@@ -85,14 +84,12 @@ $('.iDontWant2555').click(() => {
     correct++
     $('.game__modal-body').attr('style', 'display: none')
     $('.game__modal-body3').attr('style', 'display: block')
-    console.log(correct)
 })
 
 
 $('.continue2').click(() => {
     $('.game__modal-body').attr('style', 'display: none')
     $('.game__modal-body3').attr('style', 'display: block')
-    console.log(correct)
 })
 
 
@@ -126,7 +123,6 @@ $('.completGame').click(() => {
 $('.completGame2').click(() => {
     document.querySelector('.game__result__container').classList.add('active') 
       document.querySelector('.game__result__container').setAttribute('style', 'z-index: 111')
-      console.log(correct)
 })
 
 $( "#successModalBtn" ).click(function() {
