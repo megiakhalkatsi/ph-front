@@ -75,6 +75,11 @@
   &__nav {
     display: flex;
     align-items: center;
+    .dropdown__elem{
+      .dropdown__item.dropdown__item--active{
+        display: none;
+      }
+    }
     &__list {
       display: none;
       margin: 0;
