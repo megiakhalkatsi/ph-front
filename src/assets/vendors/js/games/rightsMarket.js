@@ -81,6 +81,8 @@ $( "#resetBtn" ).click(function() {
    $('#append_div').attr('style', 'display: none')
    $('.mainH2').removeAttr('style')
    $('.svg__image').attr('style', 'display: block')
+
+
 })
 
 $( "#finishBtn" ).click(function() {
@@ -90,5 +92,6 @@ $( "#finishBtn" ).click(function() {
   $('#append_div ul').append(generateBullets())
   $('#append_div').attr('style', 'display: block; padding-left: 25%;')
   $('#finishBtn').attr('style', 'display: none;')
-
+  $('.btn1').attr('style', 'display: none')
+  $('#wnfwoeifn').attr('style', 'display: block')
 })
