@@ -6,7 +6,7 @@
     }
     &__top__img {
         margin: auto;
-        display: block;
+        display: inline-block;
         max-width: 100%;
         @media #{$breakpoint-md} {
             margin: 0;

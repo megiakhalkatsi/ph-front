@@ -202,6 +202,7 @@ $(".custom-select-trigger").on("click", function () {
     $('html').one('click', function () {
         $(".custom-select").removeClass("opened");
     });
+    $(".custom-select").removeClass("opened");
     $(this).parents(".custom-select").toggleClass("opened");
     event.stopPropagation();
 });
@@ -225,6 +226,8 @@ const dropdownToggler = () => {
     let toggler = document.querySelectorAll('.dropdown--toggler')
     toggler.forEach((item) => {
         item.addEventListener('click', () => {
+            $('.dropdown__elem.form-control.form-select').removeClass("open");
+            $('.dropdown__elem.form-control.form-select .dropdown').removeClass("open");
             let dropdowns = document.querySelectorAll('.dropdown')
             item.parentElement.classList.toggle('open')
             dropdowns.forEach((elem) => {

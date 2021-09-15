@@ -87,14 +87,22 @@
     height: 100%;
     margin-top: 34px;
     margin-bottom: 34px;
+    padding: 34px 0 0;
     @media #{$breakpoint-md} {
       border-radius: 30px;
       margin-top: 55px;
       margin-bottom: 89px;
+      padding: 60px 0 0;
+    }
+    @media #{$breakpoint-lg} {
+      padding: 60px 0;
     }
     @media #{$breakpoint-xl} {
       margin-top: 86px;
       margin-bottom: 90px;
+    }
+    @media #{$breakpoint-xl-ex} {
+      padding: 0;
     }
     &__container {
       width: 100%;
@@ -133,21 +141,21 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 34px 15px;
+      padding: 0 15px 34px;
       @media #{$breakpoint-md} {
-        padding: 89px 58px;
+        padding: 0 58px 60px;
       }
       @media #{$breakpoint-lg} {
-        padding: 141px 30px;
+        padding: 0 30px;
       }
       @media #{$breakpoint-xl} {
-        padding: 173px 47px;
+        padding: 0 47px;
       }
       @media #{$breakpoint-xl-ex} {
-        padding: 173px 60px;
+        padding: 60px;
       }
       @media #{$breakpoint-xxl} {
-        padding: 197px 60px 197px 109px;
+        padding: 60px 60px 60px 109px;
       }
       h2 {
         font-family: $firagoBold;
@@ -235,7 +243,7 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      @media #{$breakpoint-md} {
+      @media #{$breakpoint-xl} {
         // min-height: 418px;
         border-radius: 30px;
       }
