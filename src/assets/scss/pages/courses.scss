@@ -182,12 +182,28 @@
         padding: 6px 10px;
         border-radius: 30px;
         margin-right: 10px;
+        white-space: nowrap;
+        margin: 3px 10px 3px 0;
         &:hover {
           color: $component-color2;
         }
         &__list {
           display: flex;
           overflow: auto;
+          &::-webkit-scrollbar {
+            height: 7px;
+            &-track {
+              background-color: $component-color21;
+              border-radius: 30px;
+            }
+            &-thumb {
+              background: $component-color5;
+              border-radius: 30px;
+              &:hover {
+                background: $component-color5;
+              }
+            }
+          }
         }
       }
     }
