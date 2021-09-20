@@ -191,6 +191,9 @@
           font-family: $firagoRegular;
           display: flex;
           margin-bottom: 1rem;
+          @media #{$breakpoint-xl} {
+            font-size: 18px;
+          }
           &::before {
             content: "";
             width: 9px;
