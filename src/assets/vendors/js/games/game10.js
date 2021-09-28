@@ -22,7 +22,10 @@ $( "#nextStep" ).click(function() {
     
     if(index === 2) {
         $('#nextStep').attr('style', 'display: none')
-        $('#completed').attr('style', 'display: block')
+        $('#completeBtn').removeAttr('style')
+    } else {
+        $('#nextStep').attr('style', 'display: none')
+        $('#completeBtn').removeAttr('style')
     }
     $('.page__content-col2').attr('style', 'display: none;')
     $('.page__content-col2').removeClass('active')
@@ -41,3 +44,21 @@ $( "#prevStep" ).click(function() {
    $('.page__content-col2')[index].classList.add('active')
 
 });
+
+
+
+$(document).ready(function() {
+    $('#completeBtn').click(() => {
+        if(index === 2) {
+            $('#notificationModal').modal('show');
+            $('#dasruleba').removeAttr('style')
+            $('#completeBtn').attr('style', 'display: none')
+        } else {
+            $('#notificationModal').modal('show');
+            $('#nextStep').removeAttr('style')
+            $('#completeBtn').attr('style', 'display: none')
+
+        }
+  });
+});
+

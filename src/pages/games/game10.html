@@ -106,6 +106,7 @@ gameScripts: ../assets/vendors/js/games/game10.js
         </div>
       </div>
     </div>
+    
     <div class="col-12 game__difference__container m-auto">
       <div class="row game__img__btn__row align-center">
         <div class="col-12 col-md-2 game__img__col-relative">
@@ -114,10 +115,33 @@ gameScripts: ../assets/vendors/js/games/game10.js
         <div class="col-12 col-md-10 col-lg-8">
           <div class="game__button__container">
             <button class="about__page__btn game__button mr bt-gray" id="downloadBtn">გადმოწერა</button>
-            <button class="about__page__btn game__button bt-blue" id="nextStep">შემდეგი</button>
-            <button class="about__page__btn game__button bt-blue" style="display: none;" id="completed">დასრულება</button>
+            <button class="about__page__btn game__button bt-blue"  style="display: none;" id="nextStep">შემდეგი</button>
+            <button class="about__page__btn game__button bt-blue" id="completeBtn">დადასტურება</button>
+            <button class="about__page__btn game__button bt-blue" id="dasruleba" style="display: none;">დასრულება</button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade notificationModal" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl notificationModal-xl modal-dialog-centered">
+    <div class="modal-content radius-16">
+      <button type="button" class="game__modal-close center" data-bs-dismiss="modal" aria-label="Close">
+        <svg class="icon">
+          <use xlink:href="#cancel-icon"></use>
+        </svg>
+      </button>
+      <div class="modal-body notificationModal-body">
+        <p class="section__main__text mb-0">
+          თამაშის დასრულებამდე კიდევ ერთხელ გადახედეთ თქვენს პასუხებს
+        </p>
       </div>
     </div>
   </div>
